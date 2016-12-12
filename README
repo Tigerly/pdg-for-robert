@@ -1,0 +1,48 @@
+0. Welcome to Shen's course project code repo!
+
+   If you have any problems please send an email to sxl463@psu.edu
+
+   Notice there is a pdf document inside this repo
+
+   "An brief introduction to PDG implementation.pdf"
+   
+1. What is this repo about?
+
+   This directory lists all the code related to my course project and now you
+
+   can use this project to generate a Program dependence graph for taint analysis.
+
+   The test files are in ./test (obsolete).
+
+
+2. How to build
+
+   llvm/clang/compiler-rt toolchain needs to be pre-installed, please go to 
+
+   the following website and install llvm 3.5.0 first:
+
+   http://llvm.org/releases/3.5.0/docs/GettingStarted.html 
+
+   and then, input "make" directly, if you can see a pdg.so in repo, that
+
+   means you build the project succcessfully.
+
+
+3. How to test?
+
+   Use the testing file strato.bc under ./test as an example
+
+   cd test
+
+   clang --emit-llvm -c strato.c -o strato.bc
+
+   cd ..
+
+   ./run_pdg_pass.sh ./test/strato.bc
+
+   and go to ./visualization/, the PDG graph can be visualized as pdg.png
+
+   (i put a generated png file there already)
+
+
+   Thanks for using my program!

@@ -294,6 +294,8 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
     }
   }
   
+
+
   int funcs = 0;
   int colored_funcs = 0;
   int uncolored_funcs = 0;
@@ -353,6 +355,7 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
       DataDependencyGraph &ddgGraph = getAnalysis<DataDependencyGraph>(*F);
      
       ControlDependencyGraph &cdgGraph = getAnalysis<ControlDependencyGraph>(*F);
+  
       cdgGraph.computeDependencies(*F, cdgGraph.PDT);
 
       //set Entries for Function, set up links between dummy entry nodes and their func*
@@ -370,9 +373,7 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 	    FunctionWrapper::funcMap[InstW->getFunction()]->setEntry(InstW);
 	  }   
 	}
-      }//end for
-
-      //      errs() << "DEBUG 353, before interration in nodes list\n";
+      }//end for set Entries...
 
       clock_t begin2 = clock();
 
@@ -389,7 +390,6 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 	      InstructionWrapper *CallInstW = InstW;
 	      CallInst *cInstruction = dyn_cast<CallInst>(pInstruction);
 	      Function *call_func = cInstruction->getCalledFunction();
-
 
 	      //if this is an indirect function invocation(function pointer, member function...)
 	      // e.g.   %1 = load i32 (i32)** %p, align 8
@@ -454,30 +454,33 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 
 	    }//end callnode
 
-	  //	  clock_t begin = clock();
-
-	  /* here, do your time-consuming job */
 
 	  //second iteration on nodes to add both control and data Dependency
 	  for(std::set<InstructionWrapper*>::iterator nodeIt2 = InstructionWrapper::funcInstWList[&*F].begin();
 	      nodeIt2 != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt2){
 	    InstructionWrapper *InstW2 = *nodeIt2;
 
-	    //process global values
-	    if(InstW->getType() == GLOBAL_VALUE && InstW2->getType() == INST){
-
-	      Instruction *inst2 = InstW2->getInstruction();		
-	      for(llvm::Use &U : inst2->operands()){
-		Value *v = U.get();
-		if(v == InstW->getValue()){
-		  PDG->addDependency(InstW, InstW2, DATA_RAW);
-		  //		    errs() << "&&&&&&&&value Global found in InstW2! " << *v <<" " << *inst2 << "\n";
-		}		 
-	      }
-	    }//end if global
-
-	    // errs() << "DEBUG POINT 6:\n";
+	    errs() << "DEBUG POINT 6:\n";
   
+	    //process all globals see whether dependency exists
+	    if(InstW2->getType() == INST && isa<LoadInst>(InstW2->getInstruction())){
+
+	      LoadInst* LI2 = dyn_cast<LoadInst>(InstW2->getInstruction());
+	      
+	      for(std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin(); 
+		  gi != InstructionWrapper::globalList.end(); ++gi){
+	       
+		errs() << "global v = " << *(*gi)->getValue() << "\n";
+  
+		if(LI2->getPointerOperand() == (*gi)->getValue()){
+		  errs() << *(*gi)->getValue() << " used in " << *LI2 << "\n";
+		  PDG->addDependency(*gi, InstW2, GLOBAL_VALUE);
+		}		
+	      }// end searching globalList
+	    }//end procesing load for global
+
+
+
 	    if(InstW->getType() == INST){	       
 	      if (ddgGraph.DDG->depends(InstW, InstW2)) {
 		//only StoreInst->LoadInst edge can be annotated
@@ -501,23 +504,40 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 	      if (nullptr != InstW2->getInstruction() && cdgGraph.CDG->depends(InstW, InstW2))
 		PDG->addDependency(InstW, InstW2, CONTROL);
 	    }	    
-
 	  }//end second iteration for PDG->addDependency...
-
-	  //	  clock_t end = clock();
-	  // double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-
-	  //	  errs() << "TIME for second iteration PDG->addDependency: " << time_spent << "\n";
-
-
 	} //end the iteration for finding CallInst     	
       errs() << "------------------------DEBUG finding CallInst---------------------------\n";
+
+
+
+      // connect globals and instructions
+
+
+
+#if 0
+      //process global values
+      if(InstW->getType() == GLOBAL_VALUE && InstW2->getType() == INST){
+	Instruction *inst2 = InstW2->getInstruction();		
+	for(llvm::Use &U : inst2->operands()){
+	  Value *v = U.get();
+	  if(v == InstW->getValue()){
+	    PDG->addDependency(InstW, InstW2, DATA_RAW);
+	  }		 
+	}
+      }//end if global
+#endif
+
+
+
+
+
+
+
 
       clock_t end2 = clock();
       double time_spent2 = (double)(end2 - begin2) / CLOCKS_PER_SEC;
 
       errs() << "TIME per iteration in big for loop : " << time_spent2 << "\n";
-
 
     }//end for(Module...
 
@@ -528,44 +548,68 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 
   std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = FunctionWrapper::funcMap.begin(); 
 
-  std::set<llvm::Value*> allPtrSet;
+  std::set<llvm::GlobalValue*> senGlobalSet;
+  std::set<llvm::Instruction*> senInstSet;
   
+  std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin();
+  std::set<InstructionWrapper *>::const_iterator ge = InstructionWrapper::globalList.end();
 
+  errs() << "globalList.size = " << InstructionWrapper::globalList.size() << "\n";
+  
+  auto global_annos = M.getNamedGlobal("llvm.global.annotations");
+  if (global_annos){
+    errs() << "global_annos exists!\n";
+    errs() << *global_annos << "\n";
+    auto casted_array = cast<ConstantArray>(global_annos->getOperand(0));
 
-  for(; itF != FunctionWrapper::funcMap.end(); ++itF){
+    for (int i = 0; i < casted_array->getNumOperands(); i++) {
+      auto casted_struct = cast<ConstantStruct>(casted_array->getOperand(i));
 
-    if((*itF).first->isDeclaration())
-      continue;
+      if (auto sen_gv = dyn_cast<GlobalValue>(casted_struct->getOperand(0)->getOperand(0))) {
+	auto anno = cast<ConstantDataArray>(cast<GlobalVariable>(casted_struct->getOperand(1)->getOperand(0))->getOperand(0))->getAsCString();
 
-    errs () << (*itF).first->getName() << " accessed \n";
-
-    std::list<llvm::StoreInst*>::iterator si = (*itF).second->getStoreInstList().begin();
-    std::list<llvm::StoreInst*>::iterator se = (*itF).second->getStoreInstList().end();
-    std::list<llvm::LoadInst*>::iterator li = (*itF).second->getLoadInstList().begin();
-    std::list<llvm::LoadInst*>::iterator le = (*itF).second->getLoadInstList().end();
-    for(; si != se; ++si){
-      errs() << *(*si) << "\n";
+	if (anno == "sensitive") { 
+	  errs() << "sensitive global found! value = " << *sen_gv << "\n";
+	  senGlobalSet.insert(sen_gv);
+	}
+      }
     }
-    for(; li != le; ++li){
-      errs() << *(*li) << "\n";
-    }
+  }//end if (global_annos)
 
-    std::set<llvm::Value*>::iterator vi = (*itF).second->getPtrSet().begin();
-    std::set<llvm::Value*>::iterator ve = (*itF).second->getPtrSet().end();
+  std::deque<const InstructionWrapper*> queue;
 
-    for(; vi != ve; ++vi){
-      errs() << "ptr: " << *(*vi) << "\n";
-      allPtrSet.insert(*vi);
-    }
+  for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
+      nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
+    InstructionWrapper *InstW = *nodeIt;
+    Instruction *pInstruction = InstW->getInstruction();
 
-  }//end for(; itF !=...)
 
-  unsigned int ptr_id = 0;
-  std::set<llvm::Value*>::iterator vi = allPtrSet.begin();
-  std::set<llvm::Value*>::iterator ve = allPtrSet.end();
-  for(; vi != ve; ++vi, ++ptr_id){
-    errs() << ptr_id << " ptr in allPtrSet: " << *(*vi) << "\n";
+    //global value
+    if(InstW->getType() == GLOBAL_VALUE){
+      GlobalValue *gv = dyn_cast<GlobalValue>(InstW->getValue());
+	
+      //if gv is sensitive
+      if(senGlobalSet.end() != senGlobalSet.find(gv)){
+	errs() << *gv << "is in sensitive!\n";
+	DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
+
+	errs() << "global sensitive adjacent list size = " << DNode->getDependencyList().size() << "\n";
+
+	for(int i = 0; i < DNode->getDependencyList().size(); i++){
+	  if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
+	    queue.push_back(DNode->getDependencyList()[i].first->getData());
+	    InstructionWrapper *adjacent_InstW = 
+	      *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
+	    adjacent_InstW->setFlag(true);
+	  }		
+	}//end for i = 0; DNode...
+      }//end judging gv's sensitivity
+    }//end global value
+
+
   }
+
+
 
 
 
@@ -587,103 +631,107 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
   std::deque<const InstructionWrapper*> queue;
 
   for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
-      nodeIt != InstructionWrapper::nodes.end(); ++nodeIt)
-    {
-      InstructionWrapper *InstW = *nodeIt;
-      Instruction *pInstruction = InstW->getInstruction();
+      nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
+    InstructionWrapper *InstW = *nodeIt;
+    Instruction *pInstruction = InstW->getInstruction();
 
-      //global value
-      if(InstW->getType() == GLOBAL_VALUE){
-	GlobalValue *globalV = dyn_cast<GlobalValue>(InstW->getValue());
 
-	if(globalV->getAlignment() == SENSITIVE){
-	  errs() << "sensitive global val :" << *InstW->getValue() << "\n";
+    //global value
+    if(InstW->getType() == GLOBAL_VALUE){
+      GlobalValue *gv = dyn_cast<GlobalValue>(InstW->getValue());
+	
+   
+
+      if(globalV->getAlignment() == SENSITIVE){
+	errs() << "sensitive global val :" << *InstW->getValue() << "\n";
+	DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
+
+	errs() << "global sensitive adjacent list size = " << DNode->getDependencyList().size() << "\n";
+
+	for(int i = 0; i < DNode->getDependencyList().size(); i++){
+	  if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
+	    queue.push_back(DNode->getDependencyList()[i].first->getData());
+	    InstructionWrapper *adjacent_InstW = 
+	      *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
+	    adjacent_InstW->setFlag(true);
+	  }		
+	}//end for i = 0; DNode...
+      }
+
+	
+    }//end global value
+
+
+
+    //process call nodes to find the labeled sensitive instruction, now it must be an allocaInst;
+    if(pInstruction != nullptr && InstW->getType() == INST && isa<AllocaInst>(pInstruction))
+      {
+	AllocaInst *allocaInst =  dyn_cast<AllocaInst>(pInstruction);
+	if(allocaInst->getAlignment() == SENSITIVE){
+	  errs() << "Starting Node, Labeled AllocaInst = " << *pInstruction << "\n";
+	      
 	  DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
-
-	  errs() << "global sensitive adjacent list size = " << DNode->getDependencyList().size() << "\n";
-
+	  // errs() << DNode->getDependencyList().size();
 	  for(int i = 0; i < DNode->getDependencyList().size(); i++){
+	    //.first -- DependencyNode<NodeT>*
+	    //->getData -- const NodeT* (InstructionWrapper*)
+	    // errs() << *DNode->getDependencyList()[i].first->getData()->getInstruction() << "\n";
+	    //if this node has not been visited yet
 	    if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
+
 	      queue.push_back(DNode->getDependencyList()[i].first->getData());
+
 	      InstructionWrapper *adjacent_InstW = 
 		*InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
+
 	      adjacent_InstW->setFlag(true);
-	    }		
-	  }//end for i = 0; DNode...
-	}	
-      }//end global value
 
-
-
-      //process call nodes to find the labeled sensitive instruction, now it must be an allocaInst;
-      if(pInstruction != nullptr && InstW->getType() == INST && isa<AllocaInst>(pInstruction))
-	{
-	  AllocaInst *allocaInst =  dyn_cast<AllocaInst>(pInstruction);
-	  if(allocaInst->getAlignment() == SENSITIVE){
-	    errs() << "Starting Node, Labeled AllocaInst = " << *pInstruction << "\n";
-	      
-	    DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
-	    // errs() << DNode->getDependencyList().size();
-	    for(int i = 0; i < DNode->getDependencyList().size(); i++){
-	      //.first -- DependencyNode<NodeT>*
-	      //->getData -- const NodeT* (InstructionWrapper*)
-	      // errs() << *DNode->getDependencyList()[i].first->getData()->getInstruction() << "\n";
-	      //if this node has not been visited yet
-	      if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
-
-		queue.push_back(DNode->getDependencyList()[i].first->getData());
-
-		InstructionWrapper *adjacent_InstW = 
-		  *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
-
-		adjacent_InstW->setFlag(true);
-
-		if(isa<StoreInst>(adjacent_InstW->getInstruction()) || isa<LoadInst>(adjacent_InstW->getInstruction()) ){
-		  errs() << "adjacent Inst is store/load inst := " << *adjacent_InstW->getInstruction() << "\n";
-		}
+	      if(isa<StoreInst>(adjacent_InstW->getInstruction()) || isa<LoadInst>(adjacent_InstW->getInstruction()) ){
+		errs() << "adjacent Inst is store/load inst := " << *adjacent_InstW->getInstruction() << "\n";
+	      }
 		  
-		//		errs() << "after updated flag = : " << 
-		//  (*InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())))->getFlag()<<"\n";
-	      }
+	      //		errs() << "after updated flag = : " << 
+	      //  (*InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())))->getFlag()<<"\n";
+	    }
 		
-	    }//see class DependencyNode
-	    errs() << "queue size = " << queue.size() << "\n";
-	  }// end if == SENSITIVE
-	}// end if (pInstruction != nullptr && isa<ALLocaInst>(p...)      	
+	  }//see class DependencyNode
+	  errs() << "queue size = " << queue.size() << "\n";
+	}// end if == SENSITIVE
+      }// end if (pInstruction != nullptr && isa<ALLocaInst>(p...)      	
 
-      if(pInstruction != nullptr && InstW->getType() == INST && isa<StoreInst>(pInstruction))
-	{
-	  StoreInst *storeInst =  dyn_cast<StoreInst>(pInstruction);
-	  if(storeInst->getAlignment() == SENSITIVE){
-	    errs() << "Starting Node, Labeled StoreInst = " << *pInstruction << "\n";
-	    //	    errs() << "flag == " << InstW->getFlag();
+    if(pInstruction != nullptr && InstW->getType() == INST && isa<StoreInst>(pInstruction))
+      {
+	StoreInst *storeInst =  dyn_cast<StoreInst>(pInstruction);
+	if(storeInst->getAlignment() == SENSITIVE){
+	  errs() << "Starting Node, Labeled StoreInst = " << *pInstruction << "\n";
+	  //	    errs() << "flag == " << InstW->getFlag();
 	      
-	    DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
-	    // errs() << DNode->getDependencyList().size();
-	    for(int i = 0; i < DNode->getDependencyList().size(); i++){
-	      //.first -- DependencyNode<NodeT>*
-	      //->getData -- const NodeT* (InstructionWrapper*)
-	      // errs() << *DNode->getDependencyList()[i].first->getData()->getInstruction() << "\n";
-	      //if this node has not been visited yet
-	      if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
+	  DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
+	  // errs() << DNode->getDependencyList().size();
+	  for(int i = 0; i < DNode->getDependencyList().size(); i++){
+	    //.first -- DependencyNode<NodeT>*
+	    //->getData -- const NodeT* (InstructionWrapper*)
+	    // errs() << *DNode->getDependencyList()[i].first->getData()->getInstruction() << "\n";
+	    //if this node has not been visited yet
+	    if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
 
-		queue.push_back(DNode->getDependencyList()[i].first->getData());
+	      queue.push_back(DNode->getDependencyList()[i].first->getData());
 
-		InstructionWrapper *adjacent_InstW = 
-		  *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
+	      InstructionWrapper *adjacent_InstW = 
+		*InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
 
-		adjacent_InstW->setFlag(true);
+	      adjacent_InstW->setFlag(true);
 
-		if(isa<StoreInst>(adjacent_InstW->getInstruction()) || isa<LoadInst>(adjacent_InstW->getInstruction()) ){
-		  errs() << "adjacent Inst is store/load inst := " << *adjacent_InstW->getInstruction() << "\n";
-		}
+	      if(isa<StoreInst>(adjacent_InstW->getInstruction()) || isa<LoadInst>(adjacent_InstW->getInstruction()) ){
+		errs() << "adjacent Inst is store/load inst := " << *adjacent_InstW->getInstruction() << "\n";
 	      }
-	    }//end for i DNode
-	    errs() << "queue size = " << queue.size() << "\n";
-	  }// end if storeAlignment == SENSITIVE
-	}// end if (pInstruction != nullptr && isa<StoreInst>(p...)      	
+	    }
+	  }//end for i DNode
+	  errs() << "queue size = " << queue.size() << "\n";
+	}// end if storeAlignment == SENSITIVE
+      }// end if (pInstruction != nullptr && isa<StoreInst>(p...)      	
 
-    }// end for set<...> iteration
+  }// end for set<...> iteration
 
 
   errs() << "before working on queue, queue.size = " << queue.size() << "\n";
@@ -829,5 +877,43 @@ static RegisterPass<cot::ProgramDependencyGraph> PDG("pdg", "Program Dependency 
 
 
 
+#if 0
+for(; itF != FunctionWrapper::funcMap.end(); ++itF){
+
+  if((*itF).first->isDeclaration())
+    continue;
+
+  errs () << (*itF).first->getName() << " accessed \n";
+
+  std::list<llvm::StoreInst*>::iterator si = (*itF).second->getStoreInstList().begin();
+  std::list<llvm::StoreInst*>::iterator se = (*itF).second->getStoreInstList().end();
+  std::list<llvm::LoadInst*>::iterator li = (*itF).second->getLoadInstList().begin();
+  std::list<llvm::LoadInst*>::iterator le = (*itF).second->getLoadInstList().end();
+  for(; si != se; ++si){
+    errs() << *(*si) << "\n";
+  }
+  for(; li != le; ++li){
+    errs() << *(*li) << "\n";
+  }
+
+  std::set<llvm::Value*>::iterator vi = (*itF).second->getPtrSet().begin();
+  std::set<llvm::Value*>::iterator ve = (*itF).second->getPtrSet().end();
+
+  for(; vi != ve; ++vi){
+    errs() << "ptr: " << *(*vi) << "\n";
+    allPtrSet.insert(*vi);
+  }
+
+ }//end for(; itF !=...)
+
+unsigned int ptr_id = 0;
+std::set<llvm::Value*>::iterator vi = allPtrSet.begin();
+std::set<llvm::Value*>::iterator ve = allPtrSet.end();
+for(; vi != ve; ++vi, ++ptr_id){
+  errs() << ptr_id << " ptr in allPtrSet: " << *(*vi) << "\n";
+ }
+
+
+#endif
 
 

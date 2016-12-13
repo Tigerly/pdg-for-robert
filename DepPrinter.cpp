@@ -173,26 +173,6 @@ namespace llvm {
       default: return "";}
     }
   };
-  /*
-    template <>
-    struct DOTGraphTraits<cot::SystemControlDependenceGraph *>
-    : public DOTGraphTraits<cot::DepGraph *> {
-    DOTGraphTraits (bool isSimple = false) : DOTGraphTraits<cot::DepGraph *>(isSimple) {}
-    static std::string getGraphName(SystemControlDependenceGraph *Graph) {
-    return "Intruction-Level System control dependence graph";
-    }
-
-    std::string getNodeLabel(cot::DepGraphNode *Node, cot::SystemControlDependenceGraph *Graph)
-    {
-    return DOTGraphTraits<DepGraph *>::getNodeLabel(Node, Graph->SCDG);
-    }
-
-    static std::string getEdgeSourceLabel(cot::DepGraphNode *Node, cot::DependencyLinkIterator<InstructionWrapper> EI) {
-    //errs() << "getEdgeSourceLabel(): type = " << EI.getDependencyType() << "\n";
-    switch (EI.getDependencyType()) {
-    default: return "";}
-    }
-    };*/
 
   template <>
   struct DOTGraphTraits<cot::ProgramDependencyGraph *>
@@ -202,25 +182,30 @@ namespace llvm {
       : DOTGraphTraits<cot::DepGraph *>(isSimple) {}
 
     static std::string getGraphName(ProgramDependencyGraph *){
-      return "Program Dependency Graph";}
+      return "Program Dependency Graph";
+    }
 
     std::string getNodeLabel(cot::DepGraphNode *Node, cot::ProgramDependencyGraph *Graph){
-      return DOTGraphTraits<DepGraph *>::getNodeLabel(Node, Graph->PDG);}
+      return DOTGraphTraits<DepGraph *>::getNodeLabel(Node, Graph->PDG);
+    }
 
-    std::string getEdgeAttributes(cot::DepGraphNode *Node,
-				  cot::DependencyLinkIterator<InstructionWrapper> &IW,
-				  cot::ProgramDependencyGraph *PD){
-      //return IW.getDependencyType() == DATA ?
+
+     //return IW.getDependencyType() == DATA ?
       //"style=dotted" : "";
  
       //take care of the probable display error here
 
+    std::string getEdgeAttributes(cot::DepGraphNode *Node,
+				  cot::DependencyLinkIterator<InstructionWrapper> &IW,
+				  cot::ProgramDependencyGraph *PD){
 
       switch(IW.getDependencyType())
 	{
 	case CONTROL:
 	  return "";
 	case DATA_GENERAL:
+	  return "style=dotted";
+	case GLOBAL_VALUE:
 	  return "style=dotted";
 	case PARAMETER:
 	  return "style=dashed";
@@ -232,7 +217,6 @@ namespace llvm {
 
 	  Instruction* pInstruction = IW.getDependencyNode()->getInstruction();
 	  //pTo Node must be a LoadInst
-
 	  string ret_str;
 	  if(isa<LoadInst>(pInstruction)){
 	    LoadInst* LI = dyn_cast<LoadInst>(pInstruction);
@@ -244,48 +228,10 @@ namespace llvm {
 	  }
 	  else
 	    errs() << "incorrect instruction for DATA_RAW node!" << "\n";
-
 	  return ret_str;	  
 	}	
-	}
-
-      /*
-	if(IW.getDependencyType() == CONTROL)
-	return "";
-	else if(IW.getDependencyType() == DATA_GENERAL)
-	return "style=dotted";
-	else if(IW.getDependencyType() == DATA_DEF_USE)
-	{
-	Instruction* pFromInst = Node->getData()->getInstruction();
-	//	  errs() << "pFromInst: "<< *pFromInst << "\n";
-	  
-	return "style=dotted,label = \"{DEF_USE}\" ";		  
-	}
-
-	else
-	{ 
-	errs() << "only test whether enter..." << "\n";
-
-	Instruction* pInstruction = IW.getDependencyNode()->getInstruction();
-	//pTo Node must be a LoadInst
-
-	errs() << "inst = " << *pInstruction << "address = " << pInstruction << "\n";
-
-	LoadInst* LI = dyn_cast<LoadInst>(pInstruction);
-	Value* valLI = LI->getPointerOperand();
-
-	string ret_str = "style=dotted,label = \"{RAW} " + valLI->getName().str() + "\"";
-
-	errs() << "only test whether leave..." << "\n\n" ;
-
-	return ret_str;	  
-	}
-      */
-      
-    }
-
-
-
+	}//end switch       
+    }//end getEdgeAttr...
   };
 }// end namespace llvm
 
@@ -416,3 +362,55 @@ static RegisterPass<cot::ProgramDependencyPrinter> PDGPrinter("dot-pdg", "Print 
 
 
 
+/*
+  if(IW.getDependencyType() == CONTROL)
+  return "";
+  else if(IW.getDependencyType() == DATA_GENERAL)
+  return "style=dotted";
+  else if(IW.getDependencyType() == DATA_DEF_USE)
+  {
+  Instruction* pFromInst = Node->getData()->getInstruction();
+  //	  errs() << "pFromInst: "<< *pFromInst << "\n";
+	  
+  return "style=dotted,label = \"{DEF_USE}\" ";		  
+  }
+
+  else
+  { 
+  errs() << "only test whether enter..." << "\n";
+
+  Instruction* pInstruction = IW.getDependencyNode()->getInstruction();
+  //pTo Node must be a LoadInst
+
+  errs() << "inst = " << *pInstruction << "address = " << pInstruction << "\n";
+
+  LoadInst* LI = dyn_cast<LoadInst>(pInstruction);
+  Value* valLI = LI->getPointerOperand();
+
+  string ret_str = "style=dotted,label = \"{RAW} " + valLI->getName().str() + "\"";
+
+  errs() << "only test whether leave..." << "\n\n" ;
+
+  return ret_str;	  
+  }
+*/
+/*
+  template <>
+  struct DOTGraphTraits<cot::SystemControlDependenceGraph *>
+  : public DOTGraphTraits<cot::DepGraph *> {
+  DOTGraphTraits (bool isSimple = false) : DOTGraphTraits<cot::DepGraph *>(isSimple) {}
+  static std::string getGraphName(SystemControlDependenceGraph *Graph) {
+  return "Intruction-Level System control dependence graph";
+  }
+
+  std::string getNodeLabel(cot::DepGraphNode *Node, cot::SystemControlDependenceGraph *Graph)
+  {
+  return DOTGraphTraits<DepGraph *>::getNodeLabel(Node, Graph->SCDG);
+  }
+
+  static std::string getEdgeSourceLabel(cot::DepGraphNode *Node, cot::DependencyLinkIterator<InstructionWrapper> EI) {
+  //errs() << "getEdgeSourceLabel(): type = " << EI.getDependencyType() << "\n";
+  switch (EI.getDependencyType()) {
+  default: return "";}
+  }
+  };*/

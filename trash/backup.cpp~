@@ -1,0 +1,7 @@
+      /* LINE 628
+	if(true != DNode->getDependencyList()[i].first->getData()->getFlag()){
+
+	//	if(DNode->getDependencyList()[i] == nullptr) errs() << "DNode null!\n";
+
+	queue.push_back(DNode->getDependencyList()[i].first->getData());
+	}*/

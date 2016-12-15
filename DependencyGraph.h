@@ -117,7 +117,8 @@ namespace cot
 
       this->BB = nullptr;
       this->Inst = nullptr;
-      this->value = nullptr;
+      //changed by shen
+      this->value = arg;
       this->flag = false;
       this->access = false;
     }
@@ -129,7 +130,7 @@ namespace cot
 
       this->BB = nullptr;
       this->Inst = nullptr;
-      this->value = nullptr;
+      this->value = arg; //changed 12.14
       this->field_id = -1;
       this->field_type = nullptr;
       this->flag = false;
@@ -152,7 +153,7 @@ namespace cot
       this->BB = BB;
       this->Inst = Inst;
       this->type = INST;
-      this->value = nullptr;
+      this->value = Inst; //changed from nullptr to Inst, 12.14
       this->arg = nullptr;
       this->field_id = -1;
       this->field_type = nullptr;
@@ -166,7 +167,7 @@ namespace cot
       this->type = type;
       this->BB = nullptr;
       this->Inst = Inst;
-      this->value = nullptr;
+      this->value = Inst; //changed from nullptr to Inst, 12.14
       this->arg = nullptr;
       this->field_id = -1;
       this->field_type = nullptr;
@@ -238,6 +239,10 @@ namespace cot
     //std::set<InstructionWrapper *> InstructionWrapper::nodes;
     static void constructInstMap(llvm::Function &F) {
       for (llvm::inst_iterator I = inst_begin(F), IE = inst_end(F); I != IE; ++I) {
+
+	//temp testing, remove soon later...
+	//	llvm::errs() << &*I << " " << *I << "\n";
+
 	//if not in instMap yet, insert
 	if (instMap.find(&*I) == instMap.end()) { 
 	    InstructionWrapper *iw = new InstructionWrapper(&*I, &F, INST);

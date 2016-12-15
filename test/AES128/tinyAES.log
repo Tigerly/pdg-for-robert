@@ -1,0 +1,658 @@
+file parameter: test/tiny-AES128-C/final.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 26
+======Global List: ======
+PDG 3.846154e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_encrypt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_encrypt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 36 Function: AES128_ECB_encrypt
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @BlockCopy(i8* %0, i8* %1)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @KeyExpansion()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Cipher()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.750000e-04
+PDG 7.692308e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BlockCopy
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BlockCopy
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 72 Function: BlockCopy
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.000000e-05
+PDG 1.153846e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:KeyExpansion
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:KeyExpansion
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 306 Function: KeyExpansion
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @getSBoxValue(i8 zeroext %31)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.697000e-03
+PDG 1.538462e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Cipher
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Cipher
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 334 Function: Cipher
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @AddRoundKey(i8 zeroext 0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @SubBytes()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @ShiftRows()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @MixColumns()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.390000e-04
+PDG 1.923077e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_decrypt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_decrypt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 356 Function: AES128_ECB_decrypt
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @InvCipher()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.570000e-04
+PDG 2.307692e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvCipher
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvCipher
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 380 Function: InvCipher
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @InvShiftRows()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @InvSubBytes()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @InvMixColumns()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.750000e-04
+PDG 2.692308e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_encrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_encrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 467 Function: AES128_CBC_encrypt_buffer
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @XorWithIv(i8* %11)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.626000e-03
+PDG 3.076923e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:XorWithIv
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:XorWithIv
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 502 Function: XorWithIv
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.390000e-04
+llvm.memset.p0i8.i64 is defined outside!
+PDG 3.461538e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_decrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_decrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 589 Function: AES128_CBC_decrypt_buffer
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.869000e-03
+PDG 3.846154e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AddRoundKey
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AddRoundKey
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 644 Function: AddRoundKey
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.440000e-04
+PDG 4.230769e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 751 Function: InvShiftRows
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.711000e-03
+PDG 4.615385e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvSubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvSubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 794 Function: InvSubBytes
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @getSBoxInvert(i8 zeroext %5)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.340000e-04
+PDG 5.000000e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvMixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvMixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1347 Function: InvMixColumns
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @xtime(i8 zeroext %14)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.472550e-01
+PDG 5.384615e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xtime
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xtime
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1365 Function: xtime
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.700000e-05
+PDG 5.769231e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxInvert
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxInvert
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1373 Function: getSBoxInvert
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.400000e-05
+PDG 6.153846e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:SubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:SubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1416 Function: SubBytes
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.590000e-04
+PDG 6.538462e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1523 Function: ShiftRows
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.951000e-03
+PDG 6.923077e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:MixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:MixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1715 Function: MixColumns
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.937000e-03
+PDG 7.307692e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxValue
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxValue
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1723 Function: getSBoxValue
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.600000e-05
+PDG 7.692308e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1728 Function: main
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @test_encrypt_ecb_verbose()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.800000e-05
+llvm.var.annotation is defined outside!
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+printf is defined outside!
+PDG 8.076923e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:test_encrypt_ecb_verbose
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:test_encrypt_ecb_verbose
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1837 Function: test_encrypt_ecb_verbose
+computerDependencies DEBUG 1
+Intrinsic var_annotation:   %key1 = bitcast [16 x i8]* %key to i8*
+******** BitInst opcode:   %key1 = bitcast [16 x i8]* %key to i8*BitCast 
+DEBUG 411 New call for tree construction:   call void @phex(i8* %add.ptr)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.911000e-03
+PDG 8.461538e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:phex
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:phex
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1889 Function: phex
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.700000e-05
+
+
+ PDG construction completed! ^_^
+
+funcs = 22
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 18
+sensitive_values 0 ==   %key = alloca [16 x i8], align 16
+sensitive_nodes.size = 1
+queue.size = 1
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+SENSITIVE INSTRUCTION [0] Mem Addr :0x2fe82a0 Value :   store i8* %input, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [1] Mem Addr :0x2fe8330 Value :   store i8* %key, i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [2] Mem Addr :0x2fe83c0 Value :   store i8* %output, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [3] Mem Addr :0x2fd6428 Value :   %0 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [4] Mem Addr :0x2fd6498 Value :   %1 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [5] Mem Addr :0x2fd6538 Value :   call void @BlockCopy(i8* %0, i8* %1)
+SENSITIVE INSTRUCTION [6] Mem Addr :0x2fd65b8 Value :   %2 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [7] Mem Addr :0x2fd6628 Value :   %3 = bitcast i8* %2 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [8] Mem Addr :0x2fd66b0 Value :   store [4 x [4 x i8]]* %3, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [9] Mem Addr :0x2fd6728 Value :   %4 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [10] Mem Addr :0x2fd67b0 Value :   store i8* %4, i8** @Key, align 8
+SENSITIVE INSTRUCTION [11] Mem Addr :0x2fec600 Value :   store i8* %output, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [12] Mem Addr :0x2fec690 Value :   store i8* %input, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [13] Mem Addr :0x2fecaf8 Value :   %2 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [14] Mem Addr :0x2fecb80 Value :   %arrayidx = getelementptr inbounds i8* %2, i64 %idxprom
+SENSITIVE INSTRUCTION [15] Mem Addr :0x2fecbf8 Value :   %3 = load i8* %arrayidx, align 1
+SENSITIVE INSTRUCTION [16] Mem Addr :0x2fecd48 Value :   %5 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [17] Mem Addr :0x2fecdd0 Value :   %arrayidx3 = getelementptr inbounds i8* %5, i64 %idxprom2
+SENSITIVE INSTRUCTION [18] Mem Addr :0x2fece60 Value :   store i8 %3, i8* %arrayidx3, align 1
+SENSITIVE INSTRUCTION [19] Mem Addr :0x2ffd1e0 Value :   store i8* %input, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [20] Mem Addr :0x2ffd270 Value :   store i8* %key, i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [21] Mem Addr :0x2ffd300 Value :   store i8* %output, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [22] Mem Addr :0x2ffd378 Value :   %0 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [23] Mem Addr :0x2ffd3e8 Value :   %1 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [24] Mem Addr :0x2ffd488 Value :   call void @BlockCopy(i8* %0, i8* %1)
+SENSITIVE INSTRUCTION [25] Mem Addr :0x2ffd508 Value :   %2 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [26] Mem Addr :0x2ffd578 Value :   %3 = bitcast i8* %2 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [27] Mem Addr :0x2ffd600 Value :   store [4 x [4 x i8]]* %3, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [28] Mem Addr :0x2ffd678 Value :   %4 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [29] Mem Addr :0x2ffd700 Value :   store i8* %4, i8** @Key, align 8
+SENSITIVE INSTRUCTION [30] Mem Addr :0x2fff958 Value :   %1 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [31] Mem Addr :0x2fff9c8 Value :   %2 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [32] Mem Addr :0x2fffa68 Value :   call void @BlockCopy(i8* %1, i8* %2)
+SENSITIVE INSTRUCTION [33] Mem Addr :0x2fffae8 Value :   %3 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [34] Mem Addr :0x2fffb58 Value :   %4 = bitcast i8* %3 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [35] Mem Addr :0x2fffbe0 Value :   store [4 x [4 x i8]]* %4, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [36] Mem Addr :0x2fffc58 Value :   %5 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [37] Mem Addr :0x2fffce0 Value :   %cmp = icmp ne i8* null, %5
+SENSITIVE INSTRUCTION [38] Mem Addr :0x2fffd88 Value :   br i1 %cmp, label %if.then, label %if.end
+SENSITIVE INSTRUCTION [39] Mem Addr :0x2fffdf8 Value :   %6 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [40] Mem Addr :0x2fffe80 Value :   store i8* %6, i8** @Key, align 8
+SENSITIVE INSTRUCTION [41] Mem Addr :0x2ffffe8 Value :   %7 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [42] Mem Addr :0x3000070 Value :   %cmp2 = icmp ne i8* %7, null
+SENSITIVE INSTRUCTION [43] Mem Addr :0x3000118 Value :   br i1 %cmp2, label %if.then4, label %if.end5
+SENSITIVE INSTRUCTION [44] Mem Addr :0x3000188 Value :   %8 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [45] Mem Addr :0x3000210 Value :   store i8* %8, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [46] Mem Addr :0x3000678 Value :   %11 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [47] Mem Addr :0x3000700 Value :   call void @XorWithIv(i8* %11)
+SENSITIVE INSTRUCTION [48] Mem Addr :0x3000778 Value :   %12 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [49] Mem Addr :0x30007e8 Value :   %13 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [50] Mem Addr :0x3000888 Value :   call void @BlockCopy(i8* %12, i8* %13)
+SENSITIVE INSTRUCTION [51] Mem Addr :0x3000908 Value :   %14 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [52] Mem Addr :0x3000978 Value :   %15 = bitcast i8* %14 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [53] Mem Addr :0x3000a00 Value :   store [4 x [4 x i8]]* %15, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [54] Mem Addr :0x3000af8 Value :   %16 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [55] Mem Addr :0x3000b80 Value :   store i8* %16, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [56] Mem Addr :0x3000bf8 Value :   %17 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [57] Mem Addr :0x3000c80 Value :   %add.ptr = getelementptr inbounds i8* %17, i64 16
+SENSITIVE INSTRUCTION [58] Mem Addr :0x3000d10 Value :   store i8* %add.ptr, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [59] Mem Addr :0x3000d88 Value :   %18 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [60] Mem Addr :0x3000e10 Value :   %add.ptr9 = getelementptr inbounds i8* %18, i64 16
+SENSITIVE INSTRUCTION [61] Mem Addr :0x3000ea0 Value :   store i8* %add.ptr9, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [62] Mem Addr :0x3001328 Value :   %21 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [63] Mem Addr :0x3001398 Value :   %22 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [64] Mem Addr :0x3001438 Value :   call void @BlockCopy(i8* %21, i8* %22)
+SENSITIVE INSTRUCTION [65] Mem Addr :0x30014b8 Value :   %23 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [66] Mem Addr :0x3001690 Value :   %add.ptr12 = getelementptr inbounds i8* %23, i64 %idx.ext
+SENSITIVE INSTRUCTION [67] Mem Addr :0x3001960 Value :   call void @llvm.memset.p0i8.i64(i8* %add.ptr12, i8 0, i64 %conv14, i32 1, i1 false)
+SENSITIVE INSTRUCTION [68] Mem Addr :0x30019d8 Value :   %26 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [69] Mem Addr :0x3001a48 Value :   %27 = bitcast i8* %26 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [70] Mem Addr :0x3001ad0 Value :   store [4 x [4 x i8]]* %27, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [71] Mem Addr :0x3002820 Value :   store i8* %buf, i8** %buf.addr, align 8
+SENSITIVE INSTRUCTION [72] Mem Addr :0x3002f48 Value :   %5 = load i8** %buf.addr, align 8
+SENSITIVE INSTRUCTION [73] Mem Addr :0x3002fd0 Value :   %arrayidx4 = getelementptr inbounds i8* %5, i64 %idxprom3
+SENSITIVE INSTRUCTION [74] Mem Addr :0x3003048 Value :   %6 = load i8* %arrayidx4, align 1
+SENSITIVE INSTRUCTION [75] Mem Addr :0x30030b8 Value :   %conv5 = zext i8 %6 to i32
+SENSITIVE INSTRUCTION [76] Mem Addr :0x3003140 Value :   %xor = xor i32 %conv5, %conv2
+SENSITIVE INSTRUCTION [77] Mem Addr :0x30031b8 Value :   %conv6 = trunc i32 %xor to i8
+SENSITIVE INSTRUCTION [78] Mem Addr :0x3003240 Value :   store i8 %conv6, i8* %arrayidx4, align 1
+SENSITIVE INSTRUCTION [79] Mem Addr :0x30047e8 Value :   %1 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [80] Mem Addr :0x3004858 Value :   %2 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [81] Mem Addr :0x30048f8 Value :   call void @BlockCopy(i8* %1, i8* %2)
+SENSITIVE INSTRUCTION [82] Mem Addr :0x3004978 Value :   %3 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [83] Mem Addr :0x30049e8 Value :   %4 = bitcast i8* %3 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [84] Mem Addr :0x3004a70 Value :   store [4 x [4 x i8]]* %4, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [85] Mem Addr :0x3004ae8 Value :   %5 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [86] Mem Addr :0x3004b70 Value :   %cmp = icmp ne i8* null, %5
+SENSITIVE INSTRUCTION [87] Mem Addr :0x3004c18 Value :   br i1 %cmp, label %if.then, label %if.end
+SENSITIVE INSTRUCTION [88] Mem Addr :0x3004c88 Value :   %6 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [89] Mem Addr :0x3004d10 Value :   store i8* %6, i8** @Key, align 8
+SENSITIVE INSTRUCTION [90] Mem Addr :0x3004e78 Value :   %7 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [91] Mem Addr :0x3004f00 Value :   %cmp2 = icmp ne i8* %7, null
+SENSITIVE INSTRUCTION [92] Mem Addr :0x3004fa8 Value :   br i1 %cmp2, label %if.then4, label %if.end5
+SENSITIVE INSTRUCTION [93] Mem Addr :0x3005018 Value :   %8 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [94] Mem Addr :0x30050a0 Value :   store i8* %8, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [95] Mem Addr :0x3005508 Value :   %11 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [96] Mem Addr :0x3005578 Value :   %12 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [97] Mem Addr :0x3005618 Value :   call void @BlockCopy(i8* %11, i8* %12)
+SENSITIVE INSTRUCTION [98] Mem Addr :0x3005698 Value :   %13 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [99] Mem Addr :0x3005708 Value :   %14 = bitcast i8* %13 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [100] Mem Addr :0x3005790 Value :   store [4 x [4 x i8]]* %14, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [101] Mem Addr :0x3005888 Value :   %15 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [102] Mem Addr :0x3005910 Value :   call void @XorWithIv(i8* %15)
+SENSITIVE INSTRUCTION [103] Mem Addr :0x3005988 Value :   %16 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [104] Mem Addr :0x3005a10 Value :   store i8* %16, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [105] Mem Addr :0x3005a88 Value :   %17 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [106] Mem Addr :0x3005b10 Value :   %add.ptr = getelementptr inbounds i8* %17, i64 16
+SENSITIVE INSTRUCTION [107] Mem Addr :0x3005ba0 Value :   store i8* %add.ptr, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [108] Mem Addr :0x3005c18 Value :   %18 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [109] Mem Addr :0x3005ca0 Value :   %add.ptr9 = getelementptr inbounds i8* %18, i64 16
+SENSITIVE INSTRUCTION [110] Mem Addr :0x3005d30 Value :   store i8* %add.ptr9, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [111] Mem Addr :0x30061b8 Value :   %21 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [112] Mem Addr :0x3006228 Value :   %22 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [113] Mem Addr :0x30062c8 Value :   call void @BlockCopy(i8* %21, i8* %22)
+SENSITIVE INSTRUCTION [114] Mem Addr :0x3006348 Value :   %23 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [115] Mem Addr :0x3006520 Value :   %add.ptr12 = getelementptr inbounds i8* %23, i64 %idx.ext
+SENSITIVE INSTRUCTION [116] Mem Addr :0x30067f0 Value :   call void @llvm.memset.p0i8.i64(i8* %add.ptr12, i8 0, i64 %conv14, i32 1, i1 false)
+SENSITIVE INSTRUCTION [117] Mem Addr :0x3006868 Value :   %26 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [118] Mem Addr :0x30068d8 Value :   %27 = bitcast i8* %26 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [119] Mem Addr :0x3006960 Value :   store [4 x [4 x i8]]* %27, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [120] Mem Addr :0x3040238 Value :   %key = alloca [16 x i8], align 16
+SENSITIVE INSTRUCTION [121] Mem Addr :0x3040318 Value :   %key1 = bitcast [16 x i8]* %key to i8*
+SENSITIVE INSTRUCTION [122] Mem Addr :0x30403e8 Value :   call void @llvm.var.annotation(i8* %key1, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str1, i32 0, i32 0), i32 50)
+SENSITIVE INSTRUCTION [123] Mem Addr :0x3040468 Value :   %0 = bitcast [16 x i8]* %key to i8*
+SENSITIVE INSTRUCTION [124] Mem Addr :0x3040550 Value :   call void @llvm.memcpy.p0i8.p0i8.i64(i8* %0, i8* getelementptr inbounds ([16 x i8]* @test_encrypt_ecb_verbose.key, i32 0, i32 0), i64 16, i32 16, i1 false)
+SENSITIVE INSTRUCTION [125] Mem Addr :0x3041578 Value :   %arraydecay7 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [126] Mem Addr :0x3041600 Value :   call void @phex(i8* %arraydecay7)
+SENSITIVE INSTRUCTION [127] Mem Addr :0x3041de8 Value :   %arraydecay20 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [128] Mem Addr :0x30421b0 Value :   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+SENSITIVE INSTRUCTION [129] Mem Addr :0x3042fa8 Value :   %arraydecay46 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [130] Mem Addr :0x3043370 Value :   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+Writing 'pdgragh.AES128_ECB_encrypt.dot'...instW 0x0
+
+Writing 'pdgragh.BlockCopy.dot'...instW 0x0
+
+Writing 'pdgragh.KeyExpansion.dot'...instW 0x0
+
+Writing 'pdgragh.Cipher.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_ECB_decrypt.dot'...instW 0x0
+
+Writing 'pdgragh.InvCipher.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_CBC_encrypt_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.XorWithIv.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_CBC_decrypt_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.AddRoundKey.dot'...instW 0x0
+
+Writing 'pdgragh.InvShiftRows.dot'...instW 0x0
+
+Writing 'pdgragh.InvSubBytes.dot'...instW 0x0
+
+Writing 'pdgragh.InvMixColumns.dot'...instW 0x0
+
+Writing 'pdgragh.xtime.dot'...instW 0x0
+
+Writing 'pdgragh.getSBoxInvert.dot'...instW 0x0
+
+Writing 'pdgragh.SubBytes.dot'...instW 0x0
+
+Writing 'pdgragh.ShiftRows.dot'...instW 0x0
+
+Writing 'pdgragh.MixColumns.dot'...instW 0x0
+
+Writing 'pdgragh.getSBoxValue.dot'...instW 0x0
+
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.test_encrypt_ecb_verbose.dot'...instW 0x0
+
+Writing 'pdgragh.phex.dot'...instW 0x0
+
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 1.8640 seconds (1.8735 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   1.5280 ( 82.3%)   0.0080 (100.0%)   1.5360 ( 82.4%)   1.5340 ( 81.9%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.3040 ( 16.4%)   0.0000 (  0.0%)   0.3040 ( 16.3%)   0.3022 ( 16.1%)  Program Dependency Graph
+   0.0080 (  0.4%)   0.0000 (  0.0%)   0.0080 (  0.4%)   0.0142 (  0.8%)  Data Dependency Graph
+   0.0080 (  0.4%)   0.0000 (  0.0%)   0.0080 (  0.4%)   0.0090 (  0.5%)  Local Data Structure Analysis
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0042 (  0.2%)  Top-down Data Structure Analysis
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0035 (  0.2%)  Bottom-up Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0017 (  0.1%)  Compute DSNode equivalence classes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0014 (  0.1%)  Standard Library Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0012 (  0.1%)  Module Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0008 (  0.0%)  Bitcode Writer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0004 (  0.0%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.0%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   1.8560 (100.0%)   0.0080 (100.0%)   1.8640 (100.0%)   1.8735 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0000 seconds (0.0021 wall clock)
+
+   ---Wall Time---  --- Name ---
+   0.0021 (100.0%)  Parse IR
+   0.0021 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

@@ -34,7 +34,7 @@ using namespace cot;
 using namespace llvm;
 
 
-void buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy);
+int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy);
 
 void buildTree(Argument *arg, TreeType treeTy);
 

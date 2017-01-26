@@ -1,0 +1,57 @@
+file parameter: test/SPECCPU2006/429.mcf/mcf.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 39
+======Global List: ======
+PDG 2.564103e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:global_opt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:global_opt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 98 Function: global_opt
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call1 = call i64 @primal_net_simplex(%struct.network* @net)
+Segmentation fault (core dumped)
+mv: cannot stat '*.dot': No such file or directory
+building program dependency graph...
+Done, please enter /visualization and view

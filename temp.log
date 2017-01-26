@@ -1,0 +1,2287 @@
+file parameter: test/SPECCPU2006/456.hmmer/hmmer.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 601
+======Global List: ======
+PDG 1.663894e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9
+PDG 3.327787e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 18
+strcpy is defined outside!
+llvm.memset.p0i8.i64 is defined outside!
+PDG 4.991681e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 21
+strchr is defined outside!
+toupper is defined outside!
+PDG 6.655574e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 31
+PDG 8.319468e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 41
+PDG 9.983361e-01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 82
+PDG 1.164725e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 91
+PDG 1.331115e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 100
+PDG 1.497504e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 166
+strlen is defined outside!
+PDG 1.663894e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 174
+PDG 1.830283e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 237
+PDG 1.996672e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 330
+PDG 2.163062e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 354
+PDG 2.329451e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 364
+free is defined outside!
+PDG 2.495840e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 431
+PDG 2.662230e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 446
+PDG 2.828619e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 449
+PDG 2.995008e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 451
+PDG 3.161398e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 453
+PDG 3.327787e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 634
+PDG 3.494176e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 928
+PDG 3.660566e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1041
+PDG 3.826955e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1332
+PDG 3.993344e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1513
+PDG 4.159734e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1838
+PDG 4.326123e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2205
+PDG 4.492512e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2323
+PDG 4.658902e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2394
+log is defined outside!
+PDG 4.825291e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2899
+PDG 4.991681e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2912
+PDG 5.158070e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2917
+PDG 5.324459e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3005
+fprintf is defined outside!
+tolower is defined outside!
+fputs is defined outside!
+PDG 5.490849e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3025
+PDG 5.657238e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3113
+PDG 5.823627e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3134
+PDG 5.990017e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3149
+PDG 6.156406e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3333
+calloc is defined outside!
+PDG 6.322795e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3403
+PDG 6.489185e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3441
+printf is defined outside!
+PDG 6.655574e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3444
+sprintf is defined outside!
+PDG 6.821963e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3499
+PDG 6.988353e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3560
+PDG 7.154742e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3628
+PDG 7.321131e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3696
+PDG 7.487521e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3903
+PDG 7.653910e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3923
+PDG 7.820300e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3928
+PDG 7.986689e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3934
+PDG 8.153078e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3976
+floor is defined outside!
+llvm.memmove.p0i8.p0i8.i64 is defined outside!
+PDG 8.319468e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4055
+PDG 8.485857e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4077
+PDG 8.652246e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4082
+PDG 8.818636e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4100
+PDG 8.985025e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4119
+PDG 9.151414e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4155
+PDG 9.317804e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4207
+PDG 9.484193e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4252
+PDG 9.650582e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4255
+PDG 9.816972e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4283
+PDG 9.983361e+00% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4309
+PDG 1.014975e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4313
+PDG 1.031614e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4378
+sqrt is defined outside!
+exp is defined outside!
+PDG 1.048253e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4428
+PDG 1.064892e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4431
+PDG 1.081531e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4437
+PDG 1.098170e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4440
+PDG 1.114809e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4467
+PDG 1.131448e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4496
+fabs is defined outside!
+PDG 1.148087e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4599
+fopen is defined outside!
+fread is defined outside!
+PDG 1.164725e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4605
+rewind is defined outside!
+fgets is defined outside!
+strncmp is defined outside!
+PDG 1.181364e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4614
+fclose is defined outside!
+PDG 1.198003e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4617
+PDG 1.214642e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4625
+PDG 1.231281e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4632
+PDG 1.247920e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4698
+PDG 1.264559e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4736
+fwrite is defined outside!
+strtok is defined outside!
+feof is defined outside!
+fseek is defined outside!
+__ctype_b_loc is defined outside!
+atoi is defined outside!
+strcmp is defined outside!
+atof is defined outside!
+strcat is defined outside!
+PDG 1.281198e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4851
+PDG 1.297837e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4868
+PDG 1.314476e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4885
+PDG 1.331115e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4902
+PDG 1.347754e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4919
+PDG 1.364393e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5044
+PDG 1.381032e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5167
+PDG 1.397671e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5183
+PDG 1.414309e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5187
+PDG 1.430948e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5191
+PDG 1.447587e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5202
+PDG 1.464226e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5207
+PDG 1.480865e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5212
+PDG 1.497504e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5221
+PDG 1.514143e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5232
+PDG 1.530782e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5288
+PDG 1.547421e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5292
+PDG 1.564060e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5375
+PDG 1.580699e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5434
+time is defined outside!
+puts is defined outside!
+exit is defined outside!
+remove is defined outside!
+PDG 1.597338e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5462
+PDG 1.613977e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5568
+llvm.var.annotation is defined outside!
+PDG 1.630616e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5585
+PDG 1.647255e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5603
+PDG 1.663894e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5648
+PDG 1.680532e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5651
+PDG 1.697171e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5654
+PDG 1.713810e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5655
+PDG 1.730449e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5663
+PDG 1.747088e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5666
+PDG 1.763727e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5673
+PDG 1.780366e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5687
+PDG 1.797005e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5705
+PDG 1.813644e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5713
+PDG 1.830283e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5720
+pow is defined outside!
+PDG 1.846922e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5728
+PDG 1.863561e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5741
+PDG 1.880200e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5743
+PDG 1.896839e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5776
+PDG 1.913478e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5812
+PDG 1.930116e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5818
+PDG 1.946755e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5822
+PDG 1.963394e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5833
+PDG 1.980033e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5848
+PDG 1.996672e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5877
+PDG 2.013311e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5905
+PDG 2.029950e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 5942
+PDG 2.046589e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6143
+PDG 2.063228e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6196
+PDG 2.079867e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6208
+PDG 2.096506e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6291
+PDG 2.113145e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6465
+PDG 2.129784e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6599
+PDG 2.146423e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6732
+PDG 2.163062e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6735
+PDG 2.179700e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6782
+PDG 2.196339e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6882
+PDG 2.212978e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6947
+PDG 2.229617e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6967
+PDG 2.246256e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6976
+PDG 2.262895e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6986
+PDG 2.279534e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6996
+PDG 2.296173e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7017
+PDG 2.312812e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7025
+ctime is defined outside!
+PDG 2.329451e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7034
+PDG 2.346090e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7197
+PDG 2.362729e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7212
+PDG 2.379368e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7250
+PDG 2.396007e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7261
+PDG 2.412646e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7282
+PDG 2.429285e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7307
+PDG 2.445923e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7334
+PDG 2.462562e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7367
+PDG 2.479201e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7402
+PDG 2.495840e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7461
+PDG 2.512479e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7481
+PDG 2.529118e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7561
+PDG 2.545757e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7580
+PDG 2.562396e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7598
+PDG 2.579035e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7611
+PDG 2.595674e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7620
+PDG 2.612313e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7626
+PDG 2.628952e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7637
+PDG 2.645591e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7821
+PDG 2.662230e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 7992
+PDG 2.678869e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8169
+PDG 2.695507e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8407
+PDG 2.712146e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8445
+PDG 2.728785e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8447
+PDG 2.745424e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8447
+PDG 2.762063e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8449
+PDG 2.778702e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8458
+PDG 2.795341e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8462
+PDG 2.811980e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8497
+PDG 2.828619e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8525
+PDG 2.845258e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8535
+PDG 2.861897e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8551
+PDG 2.878536e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8633
+PDG 2.895175e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8676
+PDG 2.911814e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8707
+PDG 2.928453e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8749
+PDG 2.945092e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8765
+PDG 2.961730e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8775
+PDG 2.978369e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8784
+PDG 2.995008e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8807
+PDG 3.011647e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8823
+PDG 3.028286e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8834
+PDG 3.044925e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 8915
+PDG 3.061564e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9018
+PDG 3.078203e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9026
+PDG 3.094842e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9043
+PDG 3.111481e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9058
+PDG 3.128120e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9117
+PDG 3.144759e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9130
+PDG 3.161398e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9142
+PDG 3.178037e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9147
+PDG 3.194676e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9159
+PDG 3.211314e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9174
+PDG 3.227953e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9207
+PDG 3.244592e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9337
+PDG 3.261231e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9372
+PDG 3.277870e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9413
+PDG 3.294509e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9571
+PDG 3.311148e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9776
+PDG 3.327787e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9811
+strncpy is defined outside!
+fflush is defined outside!
+PDG 3.344426e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9893
+PDG 3.361065e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9900
+PDG 3.377704e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9943
+PDG 3.394343e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 9954
+PDG 3.410982e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10057
+PDG 3.427621e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10070
+PDG 3.444260e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10115
+PDG 3.460899e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10162
+PDG 3.477537e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10195
+PDG 3.494176e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10214
+PDG 3.510815e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10230
+PDG 3.527454e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10248
+PDG 3.544093e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10262
+PDG 3.560732e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10278
+PDG 3.577371e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10300
+PDG 3.594010e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10312
+PDG 3.610649e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10339
+PDG 3.627288e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10372
+PDG 3.643927e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10392
+PDG 3.660566e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10448
+PDG 3.677205e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10470
+PDG 3.693844e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10485
+PDG 3.710483e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10514
+PDG 3.727121e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10554
+PDG 3.743760e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10604
+PDG 3.760399e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10628
+PDG 3.777038e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10650
+PDG 3.793677e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10660
+PDG 3.810316e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10727
+PDG 3.826955e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10773
+PDG 3.843594e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10845
+PDG 3.860233e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10864
+PDG 3.876872e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10891
+strstr is defined outside!
+strpbrk is defined outside!
+PDG 3.893511e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10910
+PDG 3.910150e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11071
+PDG 3.926789e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11087
+malloc is defined outside!
+PDG 3.943428e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11092
+PDG 3.960067e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11109
+PDG 3.976705e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11126
+PDG 3.993344e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11150
+PDG 4.009983e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11176
+PDG 4.026622e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11223
+strrchr is defined outside!
+PDG 4.043261e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11255
+PDG 4.059900e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11266
+PDG 4.076539e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11276
+PDG 4.093178e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11287
+PDG 4.109817e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11294
+PDG 4.126456e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11300
+PDG 4.143095e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11317
+getenv is defined outside!
+PDG 4.159734e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11322
+PDG 4.176373e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11410
+PDG 4.193012e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11412
+PDG 4.209651e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11435
+PDG 4.226290e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11467
+PDG 4.242928e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11481
+PDG 4.259567e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11499
+PDG 4.276206e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11515
+PDG 4.292845e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11527
+PDG 4.309484e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11563
+PDG 4.326123e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11579
+PDG 4.342762e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11598
+PDG 4.359401e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11625
+PDG 4.376040e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11628
+PDG 4.392679e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11638
+PDG 4.409318e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11647
+PDG 4.425957e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11670
+PDG 4.442596e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11693
+PDG 4.459235e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11697
+PDG 4.475874e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11717
+PDG 4.492512e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11723
+PDG 4.509151e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11732
+PDG 4.525790e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11741
+PDG 4.542429e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11749
+PDG 4.559068e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11772
+PDG 4.575707e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11817
+PDG 4.592346e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11842
+PDG 4.608985e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11846
+PDG 4.625624e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11849
+PDG 4.642263e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11889
+strspn is defined outside!
+strcspn is defined outside!
+PDG 4.658902e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11897
+PDG 4.675541e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11935
+PDG 4.692180e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11943
+PDG 4.708819e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11966
+PDG 4.725458e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 11987
+PDG 4.742097e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12006
+PDG 4.758735e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12022
+PDG 4.775374e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12030
+PDG 4.792013e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12112
+PDG 4.808652e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12140
+PDG 4.825291e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12157
+PDG 4.841930e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12218
+PDG 4.858569e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12236
+PDG 4.875208e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12305
+PDG 4.891847e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12435
+PDG 4.908486e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12495
+PDG 4.925125e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12511
+PDG 4.941764e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12527
+PDG 4.958403e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12547
+PDG 4.975042e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12579
+PDG 4.991681e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12641
+PDG 5.008319e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12676
+PDG 5.024958e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12687
+PDG 5.041597e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12739
+PDG 5.058236e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12831
+PDG 5.074875e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12871
+PDG 5.091514e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12876
+PDG 5.108153e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12882
+PDG 5.124792e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12890
+PDG 5.141431e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12897
+PDG 5.158070e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12907
+PDG 5.174709e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12917
+PDG 5.191348e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12926
+PDG 5.207987e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12932
+PDG 5.224626e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 12949
+PDG 5.241265e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13072
+PDG 5.257903e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13099
+PDG 5.274542e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13206
+PDG 5.291181e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13233
+PDG 5.307820e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13334
+PDG 5.324459e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13344
+PDG 5.341098e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13354
+PDG 5.357737e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13364
+PDG 5.374376e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13374
+PDG 5.391015e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13384
+PDG 5.407654e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13476
+PDG 5.424293e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13584
+strftime is defined outside!
+localtime is defined outside!
+fputc is defined outside!
+PDG 5.440932e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13623
+PDG 5.457571e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13639
+PDG 5.474210e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13655
+PDG 5.490849e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13662
+PDG 5.507488e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13673
+PDG 5.524126e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13896
+PDG 5.540765e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13900
+PDG 5.557404e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13905
+PDG 5.574043e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13939
+PDG 5.590682e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13949
+PDG 5.607321e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13978
+PDG 5.623960e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14062
+PDG 5.640599e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14077
+PDG 5.657238e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14093
+PDG 5.673877e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14115
+PDG 5.690516e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14135
+PDG 5.707155e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14150
+PDG 5.723794e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14165
+PDG 5.740433e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14176
+PDG 5.757072e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14250
+PDG 5.773710e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14264
+PDG 5.790349e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14283
+PDG 5.806988e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14297
+PDG 5.823627e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14311
+PDG 5.840266e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14332
+PDG 5.856905e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14347
+PDG 5.873544e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14464
+PDG 5.890183e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14466
+llvm.va_start is defined outside!
+vfprintf is defined outside!
+llvm.va_end is defined outside!
+PDG 5.906822e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14468
+PDG 5.923461e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14471
+perror is defined outside!
+PDG 5.940100e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14476
+PDG 5.956739e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14482
+PDG 5.973378e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14490
+PDG 5.990017e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14495
+PDG 6.006656e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14513
+PDG 6.023295e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14529
+PDG 6.039933e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14537
+PDG 6.056572e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14573
+strncat is defined outside!
+PDG 6.073211e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14606
+PDG 6.089850e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14614
+PDG 6.106489e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14622
+PDG 6.123128e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14638
+PDG 6.139767e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14775
+PDG 6.156406e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14795
+PDG 6.173045e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14814
+PDG 6.189684e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14827
+PDG 6.206323e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14833
+PDG 6.222962e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14840
+PDG 6.239601e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14850
+PDG 6.256240e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14861
+PDG 6.272879e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14920
+PDG 6.289517e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14946
+PDG 6.306156e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14952
+PDG 6.322795e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 14974
+PDG 6.339434e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15006
+realloc is defined outside!
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+PDG 6.356073e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15081
+PDG 6.372712e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15090
+PDG 6.389351e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15107
+PDG 6.405990e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15121
+PDG 6.422629e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15170
+PDG 6.439268e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15188
+PDG 6.455907e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15231
+PDG 6.472546e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15244
+PDG 6.489185e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15278
+PDG 6.505824e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15305
+PDG 6.522463e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15322
+PDG 6.539101e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15327
+PDG 6.555740e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15347
+PDG 6.572379e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15352
+PDG 6.589018e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15357
+PDG 6.605657e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15363
+PDG 6.622296e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15368
+PDG 6.638935e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15374
+PDG 6.655574e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15380
+PDG 6.672213e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15386
+PDG 6.688852e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15458
+PDG 6.705491e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15462
+PDG 6.722130e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15466
+PDG 6.738769e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15470
+PDG 6.755408e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15499
+PDG 6.772047e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15532
+PDG 6.788686e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15540
+PDG 6.805324e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15550
+PDG 6.821963e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15553
+PDG 6.838602e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15563
+PDG 6.855241e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15566
+PDG 6.871880e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15586
+PDG 6.888519e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15597
+PDG 6.905158e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15619
+PDG 6.921797e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15620
+PDG 6.938436e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15621
+PDG 6.955075e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15622
+PDG 6.971714e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15641
+PDG 6.988353e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15649
+PDG 7.004992e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15657
+PDG 7.021631e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15663
+PDG 7.038270e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15670
+PDG 7.054908e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15681
+PDG 7.071547e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15690
+PDG 7.088186e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15696
+PDG 7.104825e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15702
+PDG 7.121464e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15708
+PDG 7.138103e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15716
+PDG 7.154742e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15722
+PDG 7.171381e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15734
+PDG 7.188020e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15746
+PDG 7.204659e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15782
+PDG 7.221298e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15800
+PDG 7.237937e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15823
+PDG 7.254576e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15830
+PDG 7.271215e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15836
+PDG 7.287854e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15844
+PDG 7.304493e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15856
+PDG 7.321131e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15884
+PDG 7.337770e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15905
+PDG 7.354409e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15955
+PDG 7.371048e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15962
+PDG 7.387687e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15978
+PDG 7.404326e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15982
+PDG 7.420965e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 15984
+PDG 7.437604e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16026
+PDG 7.454243e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16060
+PDG 7.470882e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16070
+ftell is defined outside!
+abort is defined outside!
+PDG 7.487521e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16119
+PDG 7.504160e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16130
+PDG 7.520799e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16182
+PDG 7.537438e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16213
+PDG 7.554077e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16334
+system is defined outside!
+PDG 7.570715e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16354
+PDG 7.587354e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16356
+strtoul is defined outside!
+PDG 7.603993e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16430
+PDG 7.620632e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16448
+PDG 7.637271e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16455
+PDG 7.653910e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16463
+PDG 7.670549e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16480
+PDG 7.687188e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16487
+PDG 7.703827e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16505
+PDG 7.720466e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16520
+PDG 7.737105e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16579
+PDG 7.753744e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16589
+PDG 7.770383e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16599
+PDG 7.787022e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16603
+PDG 7.803661e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16607
+PDG 7.820300e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16611
+PDG 7.836938e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16633
+PDG 7.853577e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16642
+PDG 7.870216e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16656
+PDG 7.886855e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16663
+PDG 7.903494e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16667
+PDG 7.920133e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16678
+PDG 7.936772e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16692
+PDG 7.953411e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16707
+PDG 7.970050e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16710
+PDG 7.986689e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16735
+PDG 8.003328e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16739
+PDG 8.019967e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16744
+PDG 8.036606e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16790
+PDG 8.053245e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16815
+PDG 8.069884e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16829
+PDG 8.086522e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16883
+PDG 8.103161e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16895
+PDG 8.119800e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16915
+PDG 8.136439e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17066
+PDG 8.153078e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17086
+PDG 8.169717e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17110
+PDG 8.186356e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17139
+PDG 8.202995e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17148
+PDG 8.219634e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17149
+PDG 8.236273e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17150
+PDG 8.252912e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17151
+PDG 8.269551e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17152
+PDG 8.286190e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17153
+PDG 8.302829e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17154
+PDG 8.319468e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17160
+PDG 8.336106e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17166
+PDG 8.352745e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17172
+PDG 8.369384e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17178
+PDG 8.386023e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17184
+PDG 8.402662e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17190
+PDG 8.419301e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17198
+PDG 8.435940e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17206
+PDG 8.452579e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17214
+PDG 8.469218e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17222
+PDG 8.485857e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17231
+PDG 8.502496e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17240
+PDG 8.519135e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17248
+PDG 8.535774e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17256
+PDG 8.552413e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17264
+PDG 8.569052e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17272
+PDG 8.585691e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17279
+PDG 8.602329e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17286
+PDG 8.618968e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17293
+PDG 8.635607e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17300
+PDG 8.652246e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17307
+PDG 8.668885e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17314
+PDG 8.685524e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17322
+PDG 8.702163e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17330
+PDG 8.718802e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17336
+PDG 8.735441e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17342
+PDG 8.752080e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17350
+PDG 8.768719e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17358
+PDG 8.785358e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17379
+PDG 8.801997e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17455
+PDG 8.818636e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17473
+PDG 8.835275e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17509
+PDG 8.851913e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17539
+PDG 8.868552e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17570
+PDG 8.885191e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17598
+PDG 8.901830e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17618
+PDG 8.918469e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17652
+PDG 8.935108e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17671
+PDG 8.951747e+01% completed
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17692
+Writing 'pdgragh.DetermineAlphabet.dot'...
+Writing 'pdgragh.SetAlphabet.dot'...
+Writing 'pdgragh.SymbolIndex.dot'...
+Writing 'pdgragh.DigitizeSequence.dot'...
+Writing 'pdgragh.DedigitizeSequence.dot'...
+Writing 'pdgragh.DigitizeAlignment.dot'...
+Writing 'pdgragh.P7CountSymbol.dot'...
+Writing 'pdgragh.DefaultGeneticCode.dot'...
+Writing 'pdgragh.DefaultCodonBias.dot'...
+Writing 'pdgragh.set_degenerate.dot'...
+Writing 'pdgragh.CreatePlan7Matrix.dot'...
+Writing 'pdgragh.ResizePlan7Matrix.dot'...
+Writing 'pdgragh.AllocPlan7Matrix.dot'...
+Writing 'pdgragh.FreePlan7Matrix.dot'...
+Writing 'pdgragh.AllocShadowMatrix.dot'...
+Writing 'pdgragh.FreeShadowMatrix.dot'...
+Writing 'pdgragh.P7ViterbiSize.dot'...
+Writing 'pdgragh.P7SmallViterbiSize.dot'...
+Writing 'pdgragh.P7WeeViterbiSize.dot'...
+Writing 'pdgragh.P7Forward.dot'...
+Writing 'pdgragh.P7ViterbiTrace.dot'...
+Writing 'pdgragh.P7SmallViterbi.dot'...
+Writing 'pdgragh.P7ParsingViterbi.dot'...
+Writing 'pdgragh.P7WeeViterbi.dot'...
+Writing 'pdgragh.Plan7ESTViterbi.dot'...
+Writing 'pdgragh.P7ViterbiAlignAlignment.dot'...
+Writing 'pdgragh.ShadowTrace.dot'...
+Writing 'pdgragh.PostprocessSignificantHit.dot'...
+Writing 'pdgragh.get_wee_midpt.dot'...
+Writing 'pdgragh.Statetype.dot'...
+Writing 'pdgragh.AlphabetType2String.dot'...
+Writing 'pdgragh.P7PrintTrace.dot'...
+Writing 'pdgragh.P7PrintPrior.dot'...
+Writing 'pdgragh.TraceVerify.dot'...
+Writing 'pdgragh.TraceCompare.dot'...
+Writing 'pdgragh.DisplayPlan7Posteriors.dot'...
+Writing 'pdgragh.DisplayPlan7PostAlign.dot'...
+Writing 'pdgragh.PrintTransition.dot'...
+Writing 'pdgragh.DisplayPlan7Matrix.dot'...
+Writing 'pdgragh.PrintIscore.dot'...
+Writing 'pdgragh.EmitSequence.dot'...
+Writing 'pdgragh.EmitConsensusSequence.dot'...
+Writing 'pdgragh.StateOccupancy.dot'...
+Writing 'pdgragh.WriteProfile.dot'...
+Writing 'pdgragh.P7Viterbi.dot'...
+Writing 'pdgragh.AllocHistogram.dot'...
+Writing 'pdgragh.FreeHistogram.dot'...
+Writing 'pdgragh.UnfitHistogram.dot'...
+Writing 'pdgragh.AddToHistogram.dot'...
+Writing 'pdgragh.PrintASCIIHistogram.dot'...
+Writing 'pdgragh.PrintXMGRHistogram.dot'...
+Writing 'pdgragh.ExtremeValueP.dot'...
+Writing 'pdgragh.PrintXMGRDistribution.dot'...
+Writing 'pdgragh.PrintXMGRRegressionLine.dot'...
+Writing 'pdgragh.EVDBasicFit.dot'...
+Writing 'pdgragh.ExtremeValueSetHistogram.dot'...
+Writing 'pdgragh.ExtremeValueFitHistogram.dot'...
+Writing 'pdgragh.EVDDistribution.dot'...
+Writing 'pdgragh.EVDCensoredFit.dot'...
+Writing 'pdgragh.EVDMaxLikelyFit.dot'...
+Writing 'pdgragh.ExtremeValueE.dot'...
+Writing 'pdgragh.GaussianFitHistogram.dot'...
+Writing 'pdgragh.GaussianSetHistogram.dot'...
+Writing 'pdgragh.EVDDensity.dot'...
+Writing 'pdgragh.ExtremeValueP2.dot'...
+Writing 'pdgragh.EVDrandom.dot'...
+Writing 'pdgragh.Lawless416.dot'...
+Writing 'pdgragh.Lawless422.dot'...
+Writing 'pdgragh.HMMFileOpen.dot'...
+Writing 'pdgragh.HMMFileClose.dot'...
+Writing 'pdgragh.HMMFileRead.dot'...
+Writing 'pdgragh.HMMFileRewind.dot'...
+Writing 'pdgragh.HMMFilePositionByName.dot'...
+Writing 'pdgragh.HMMFilePositionByIndex.dot'...
+Writing 'pdgragh.WriteAscHMM.dot'...
+Writing 'pdgragh.WriteBinHMM.dot'...
+Writing 'pdgragh.read_bin20hmm.dot'...
+Writing 'pdgragh.read_bin19hmm.dot'...
+Writing 'pdgragh.read_bin17hmm.dot'...
+Writing 'pdgragh.read_bin11hmm.dot'...
+Writing 'pdgragh.read_bin10hmm.dot'...
+Writing 'pdgragh.read_asc20hmm.dot'...
+Writing 'pdgragh.read_asc19hmm.dot'...
+Writing 'pdgragh.read_asc17hmm.dot'...
+Writing 'pdgragh.read_asc11hmm.dot'...
+Writing 'pdgragh.read_asc10hmm.dot'...
+Writing 'pdgragh.multiline.dot'...
+Writing 'pdgragh.prob2ascii.dot'...
+Writing 'pdgragh.write_bin_string.dot'...
+Writing 'pdgragh.byteswap.dot'...
+Writing 'pdgragh.read_bin_string.dot'...
+Writing 'pdgragh.read_plan9_binhmm.dot'...
+Writing 'pdgragh.ascii2prob.dot'...
+Writing 'pdgragh.read_plan9_aschmm.dot'...
+Writing 'pdgragh.hmmcalibrate.dot'...
+Writing 'pdgragh.main_loop_serial.dot'...
+Writing 'pdgragh.main.dot'...
+Writing 'pdgragh.main_loop_pvm.dot'...
+Writing 'pdgragh.main_loop_threaded.dot'...
+Writing 'pdgragh.main_loop_serial315.dot'...
+Writing 'pdgragh.Prob2Score.dot'...
+Writing 'pdgragh.Score2Prob.dot'...
+Writing 'pdgragh.Scorify.dot'...
+Writing 'pdgragh.PValue.dot'...
+Writing 'pdgragh.LogSum.dot'...
+Writing 'pdgragh.ILogsum.dot'...
+Writing 'pdgragh.LogNorm.dot'...
+Writing 'pdgragh.Logp_cvec.dot'...
+Writing 'pdgragh.SampleDirichlet.dot'...
+Writing 'pdgragh.SampleGamma.dot'...
+Writing 'pdgragh.SampleCountvector.dot'...
+Writing 'pdgragh.P_PvecGivenDirichlet.dot'...
+Writing 'pdgragh.init_ilogsum.dot'...
+Writing 'pdgragh.XNU.dot'...
+Writing 'pdgragh.TraceScoreCorrection.dot'...
+Writing 'pdgragh.SantaCruzCorrection.dot'...
+Writing 'pdgragh.HMMERBanner.dot'...
+Writing 'pdgragh.Getword.dot'...
+Writing 'pdgragh.Getline.dot'...
+Writing 'pdgragh.SetAutocuts.dot'...
+Writing 'pdgragh.P7Handmodelmaker.dot'...
+Writing 'pdgragh.P7Fastmodelmaker.dot'...
+Writing 'pdgragh.P7Maxmodelmaker.dot'...
+Writing 'pdgragh.matassign2hmm.dot'...
+Writing 'pdgragh.estimate_model_length.dot'...
+Writing 'pdgragh.build_cij.dot'...
+Writing 'pdgragh.fake_tracebacks.dot'...
+Writing 'pdgragh.annotate_model.dot'...
+Writing 'pdgragh.trace_doctor.dot'...
+Writing 'pdgragh.AllocPlan7.dot'...
+Writing 'pdgragh.AllocPlan7Shell.dot'...
+Writing 'pdgragh.AllocPlan7Body.dot'...
+Writing 'pdgragh.FreePlan7.dot'...
+Writing 'pdgragh.ZeroPlan7.dot'...
+Writing 'pdgragh.Plan7SetName.dot'...
+Writing 'pdgragh.Plan7SetAccession.dot'...
+Writing 'pdgragh.Plan7SetDescription.dot'...
+Writing 'pdgragh.Plan7ComlogAppend.dot'...
+Writing 'pdgragh.Plan7SetCtime.dot'...
+Writing 'pdgragh.Plan7SetNullModel.dot'...
+Writing 'pdgragh.P7Logoddsify.dot'...
+Writing 'pdgragh.DegenerateSymbolScore.dot'...
+Writing 'pdgragh.Plan7Renormalize.dot'...
+Writing 'pdgragh.Plan7RenormalizeExits.dot'...
+Writing 'pdgragh.Plan7NakedConfig.dot'...
+Writing 'pdgragh.Plan7GlobalConfig.dot'...
+Writing 'pdgragh.Plan7LSConfig.dot'...
+Writing 'pdgragh.Plan7SWConfig.dot'...
+Writing 'pdgragh.Plan7FSConfig.dot'...
+Writing 'pdgragh.Plan7ESTConfig.dot'...
+Writing 'pdgragh.PrintPlan7Stats.dot'...
+Writing 'pdgragh.Plan9toPlan7.dot'...
+Writing 'pdgragh.P9AllocHMM.dot'...
+Writing 'pdgragh.P9ZeroHMM.dot'...
+Writing 'pdgragh.P9FreeHMM.dot'...
+Writing 'pdgragh.P9Renormalize.dot'...
+Writing 'pdgragh.P9DefaultNullModel.dot'...
+Writing 'pdgragh.P7OptimalAccuracy.dot'...
+Writing 'pdgragh.P7Backward.dot'...
+Writing 'pdgragh.P7EmitterPosterior.dot'...
+Writing 'pdgragh.P7FillOptimalAccuracy.dot'...
+Writing 'pdgragh.P7OptimalAccuracyTrace.dot'...
+Writing 'pdgragh.PostalCode.dot'...
+Writing 'pdgragh.score2postcode.dot'...
+Writing 'pdgragh.P7AllocPrior.dot'...
+Writing 'pdgragh.P7FreePrior.dot'...
+Writing 'pdgragh.P7LaplacePrior.dot'...
+Writing 'pdgragh.P7DefaultPrior.dot'...
+Writing 'pdgragh.P7ReadPrior.dot'...
+Writing 'pdgragh.PAMPrior.dot'...
+Writing 'pdgragh.P7DefaultNullModel.dot'...
+Writing 'pdgragh.P7ReadNullModel.dot'...
+Writing 'pdgragh.P7PriorifyHMM.dot'...
+Writing 'pdgragh.P7PriorifyTransitionVector.dot'...
+Writing 'pdgragh.P7PriorifyEmissionVector.dot'...
+Writing 'pdgragh.default_amino_prior.dot'...
+Writing 'pdgragh.default_nucleic_prior.dot'...
+Writing 'pdgragh.AllocTophits.dot'...
+Writing 'pdgragh.GrowTophits.dot'...
+Writing 'pdgragh.FreeTophits.dot'...
+Writing 'pdgragh.FreeFancyAli.dot'...
+Writing 'pdgragh.AllocFancyAli.dot'...
+Writing 'pdgragh.RegisterHit.dot'...
+Writing 'pdgragh.GetRankedHit.dot'...
+Writing 'pdgragh.TophitsMaxName.dot'...
+Writing 'pdgragh.hit_comparison.dot'...
+Writing 'pdgragh.FullSortTophits.dot'...
+Writing 'pdgragh.TophitsReport.dot'...
+Writing 'pdgragh.P7AllocTrace.dot'...
+Writing 'pdgragh.P7ReallocTrace.dot'...
+Writing 'pdgragh.P7FreeTrace.dot'...
+Writing 'pdgragh.TraceSet.dot'...
+Writing 'pdgragh.MergeTraceArrays.dot'...
+Writing 'pdgragh.P7ReverseTrace.dot'...
+Writing 'pdgragh.P7TraceCount.dot'...
+Writing 'pdgragh.P7TraceScore.dot'...
+Writing 'pdgragh.TransitionScoreLookup.dot'...
+Writing 'pdgragh.P7Traces2Alignment.dot'...
+Writing 'pdgragh.CreateFancyAli.dot'...
+Writing 'pdgragh.PrintFancyAli.dot'...
+Writing 'pdgragh.TraceDecompose.dot'...
+Writing 'pdgragh.TraceDomainNumber.dot'...
+Writing 'pdgragh.TraceSimpleBounds.dot'...
+Writing 'pdgragh.MasterTraceFromMap.dot'...
+Writing 'pdgragh.ImposeMasterTrace.dot'...
+Writing 'pdgragh.rightjustify.dot'...
+Writing 'pdgragh.specqsort.dot'...
+Writing 'pdgragh.qst.dot'...
+Writing 'pdgragh.ReadA2M.dot'...
+Writing 'pdgragh.WriteA2M.dot'...
+Writing 'pdgragh.ComparePairAlignments.dot'...
+Writing 'pdgragh.CompareRefPairAlignments.dot'...
+Writing 'pdgragh.CompareMultAlignments.dot'...
+Writing 'pdgragh.CompareRefMultAlignments.dot'...
+Writing 'pdgragh.PairwiseIdentity.dot'...
+Writing 'pdgragh.AlignmentIdentityBySampling.dot'...
+Writing 'pdgragh.MajorityRuleConsensus.dot'...
+Writing 'pdgragh.make_alilist.dot'...
+Writing 'pdgragh.compare_lists.dot'...
+Writing 'pdgragh.make_ref_alilist.dot'...
+Writing 'pdgragh.AllocAlignment.dot'...
+Writing 'pdgragh.InitAinfo.dot'...
+Writing 'pdgragh.FreeAlignment.dot'...
+Writing 'pdgragh.SAMizeAlignment.dot'...
+Writing 'pdgragh.SAMizeAlignmentByGapFrac.dot'...
+Writing 'pdgragh.MakeAlignedString.dot'...
+Writing 'pdgragh.MakeDealignedString.dot'...
+Writing 'pdgragh.DealignedLength.dot'...
+Writing 'pdgragh.WritePairwiseAlignment.dot'...
+Writing 'pdgragh.MingapAlignment.dot'...
+Writing 'pdgragh.RandomAlignment.dot'...
+Writing 'pdgragh.AlignmentHomogenousGapsym.dot'...
+Writing 'pdgragh.ReadClustal.dot'...
+Writing 'pdgragh.WriteClustal.dot'...
+Writing 'pdgragh.Cluster.dot'...
+Writing 'pdgragh.AllocPhylo.dot'...
+Writing 'pdgragh.FreePhylo.dot'...
+Writing 'pdgragh.MakeDiffMx.dot'...
+Writing 'pdgragh.MakeIdentityMx.dot'...
+Writing 'pdgragh.PrintNewHampshireTree.dot'...
+Writing 'pdgragh.PrintPhylo.dot'...
+Writing 'pdgragh.ParsePAMFile.dot'...
+Writing 'pdgragh.EPSWriteSmallMSA.dot'...
+Writing 'pdgragh.FileDirname.dot'...
+Writing 'pdgragh.FileTail.dot'...
+Writing 'pdgragh.FileSameDirectory.dot'...
+Writing 'pdgragh.FileConcat.dot'...
+Writing 'pdgragh.FileAddSuffix.dot'...
+Writing 'pdgragh.EnvFileOpen.dot'...
+Writing 'pdgragh.FileExists.dot'...
+Writing 'pdgragh.Getopt.dot'...
+Writing 'pdgragh.GKIInit.dot'...
+Writing 'pdgragh.GKIFree.dot'...
+Writing 'pdgragh.GKIStoreKey.dot'...
+Writing 'pdgragh.GKIKeyIndex.dot'...
+Writing 'pdgragh.GKIStatus.dot'...
+Writing 'pdgragh.gki_alloc.dot'...
+Writing 'pdgragh.gki_hashvalue.dot'...
+Writing 'pdgragh.gki_upsize.dot'...
+Writing 'pdgragh.GSIOpen.dot'...
+Writing 'pdgragh.GSIGetRecord.dot'...
+Writing 'pdgragh.GSIGetOffset.dot'...
+Writing 'pdgragh.GSIClose.dot'...
+Writing 'pdgragh.GSIAllocIndex.dot'...
+Writing 'pdgragh.GSIFreeIndex.dot'...
+Writing 'pdgragh.GSIAddFileToIndex.dot'...
+Writing 'pdgragh.GSIAddKeyToIndex.dot'...
+Writing 'pdgragh.GSISortIndex.dot'...
+Writing 'pdgragh.GSIWriteIndex.dot'...
+Writing 'pdgragh.GSIWriteHeader.dot'...
+Writing 'pdgragh.GSIWriteFileRecord.dot'...
+Writing 'pdgragh.GSIWriteKeyRecord.dot'...
+Writing 'pdgragh.gsi_keysorter.dot'...
+Writing 'pdgragh.Strparse.dot'...
+Writing 'pdgragh.sqd_regcomp.dot'...
+Writing 'pdgragh.sqd_regexec.dot'...
+Writing 'pdgragh.SqdClean.dot'...
+Writing 'pdgragh.sqd_regerror.dot'...
+Writing 'pdgragh.sqd_regsub.dot'...
+Writing 'pdgragh.regc.dot'...
+Writing 'pdgragh.reg.dot'...
+Writing 'pdgragh.regnext.dot'...
+Writing 'pdgragh.regtry.dot'...
+Writing 'pdgragh.regnode.dot'...
+Writing 'pdgragh.regbranch.dot'...
+Writing 'pdgragh.regtail.dot'...
+Writing 'pdgragh.regoptail.dot'...
+Writing 'pdgragh.regmatch.dot'...
+Writing 'pdgragh.regpiece.dot'...
+Writing 'pdgragh.regrepeat.dot'...
+Writing 'pdgragh.regatom.dot'...
+Writing 'pdgragh.reginsert.dot'...
+Writing 'pdgragh.MSAAlloc.dot'...
+Writing 'pdgragh.MSAExpand.dot'...
+Writing 'pdgragh.MSAFree.dot'...
+Writing 'pdgragh.MSASetSeqAccession.dot'...
+Writing 'pdgragh.MSASetSeqDescription.dot'...
+Writing 'pdgragh.MSAAddComment.dot'...
+Writing 'pdgragh.MSAAddGF.dot'...
+Writing 'pdgragh.MSAAddGS.dot'...
+Writing 'pdgragh.MSAAppendGC.dot'...
+Writing 'pdgragh.MSAGetGC.dot'...
+Writing 'pdgragh.MSAAppendGR.dot'...
+Writing 'pdgragh.MSAVerifyParse.dot'...
+Writing 'pdgragh.MSAFileOpen.dot'...
+Writing 'pdgragh.MSAFileFormat.dot'...
+Writing 'pdgragh.MSAFileRewind.dot'...
+Writing 'pdgragh.MSAFilePositionByKey.dot'...
+Writing 'pdgragh.MSAFilePositionByIndex.dot'...
+Writing 'pdgragh.MSAFileRead.dot'...
+Writing 'pdgragh.MSAFileClose.dot'...
+Writing 'pdgragh.MSAFileGetLine.dot'...
+Writing 'pdgragh.MSAFileWrite.dot'...
+Writing 'pdgragh.MSAGetSeqidx.dot'...
+Writing 'pdgragh.MSAFromAINFO.dot'...
+Writing 'pdgragh.MSAMingap.dot'...
+Writing 'pdgragh.MSAShorterAlignment.dot'...
+Writing 'pdgragh.MSANogap.dot'...
+Writing 'pdgragh.MSASmallerAlignment.dot'...
+Writing 'pdgragh.MSAGetSeqAccession.dot'...
+Writing 'pdgragh.MSAGetSeqDescription.dot'...
+Writing 'pdgragh.MSAGetSeqSS.dot'...
+Writing 'pdgragh.MSAGetSeqSA.dot'...
+Writing 'pdgragh.MSAAverageSequenceLength.dot'...
+Writing 'pdgragh.ReadMSF.dot'...
+Writing 'pdgragh.WriteMSF.dot'...
+Writing 'pdgragh.ReadPhylip.dot'...
+Writing 'pdgragh.WritePhylip.dot'...
+Writing 'pdgragh.revcomp.dot'...
+Writing 'pdgragh.rkcomp.dot'...
+Writing 'pdgragh.rkseq.dot'...
+Writing 'pdgragh.ReadSELEX.dot'...
+Writing 'pdgragh.WriteSELEX.dot'...
+Writing 'pdgragh.WriteSELEXOneBlock.dot'...
+Writing 'pdgragh.DealignAseqs.dot'...
+Writing 'pdgragh.IsSELEXFormat.dot'...
+Writing 'pdgragh.copy_alignment_line.dot'...
+Writing 'pdgragh.actually_write_selex.dot'...
+Writing 'pdgragh.seqcmp.dot'...
+Writing 'pdgragh.seqncmp.dot'...
+Writing 'pdgragh.seqencode.dot'...
+Writing 'pdgragh.coded_revcomp.dot'...
+Writing 'pdgragh.seqdecode.dot'...
+Writing 'pdgragh.seqndecode.dot'...
+Writing 'pdgragh.StrShuffle.dot'...
+Writing 'pdgragh.StrDPShuffle.dot'...
+Writing 'pdgragh.StrMarkov0.dot'...
+Writing 'pdgragh.StrMarkov1.dot'...
+Writing 'pdgragh.StrReverse.dot'...
+Writing 'pdgragh.StrRegionalShuffle.dot'...
+Writing 'pdgragh.AlignmentShuffle.dot'...
+Writing 'pdgragh.AlignmentBootstrap.dot'...
+Writing 'pdgragh.QRNAShuffle.dot'...
+Writing 'pdgragh.Die.dot'...
+Writing 'pdgragh.Warn.dot'...
+Writing 'pdgragh.Panic.dot'...
+Writing 'pdgragh.SeqfileOpen.dot'...
+Writing 'pdgragh.SeqfileOpenForIndexing.dot'...
+Writing 'pdgragh.SeqfilePosition.dot'...
+Writing 'pdgragh.SeqfileRewind.dot'...
+Writing 'pdgragh.SeqfileLineParameters.dot'...
+Writing 'pdgragh.SeqfileClose.dot'...
+Writing 'pdgragh.FreeSequence.dot'...
+Writing 'pdgragh.SetSeqinfoString.dot'...
+Writing 'pdgragh.SeqinfoCopy.dot'...
+Writing 'pdgragh.ToDNA.dot'...
+Writing 'pdgragh.ToRNA.dot'...
+Writing 'pdgragh.ToIUPAC.dot'...
+Writing 'pdgragh.ReadSeq.dot'...
+Writing 'pdgragh.SeqfileFormat.dot'...
+Writing 'pdgragh.Seqtype.dot'...
+Writing 'pdgragh.GCGBinaryToSequence.dot'...
+Writing 'pdgragh.GCGchecksum.dot'...
+Writing 'pdgragh.GCGMultchecksum.dot'...
+Writing 'pdgragh.GuessAlignmentSeqtype.dot'...
+Writing 'pdgragh.WriteSimpleFASTA.dot'...
+Writing 'pdgragh.WriteSeq.dot'...
+Writing 'pdgragh.ReadMultipleRseqs.dot'...
+Writing 'pdgragh.String2SeqfileFormat.dot'...
+Writing 'pdgragh.SeqfileFormat2String.dot'...
+Writing 'pdgragh.MSAToSqinfo.dot'...
+Writing 'pdgragh.seqfile_open.dot'...
+Writing 'pdgragh.SeqfileGetLine.dot'...
+Writing 'pdgragh.readIG.dot'...
+Writing 'pdgragh.readStrider.dot'...
+Writing 'pdgragh.readGenBank.dot'...
+Writing 'pdgragh.readPearson.dot'...
+Writing 'pdgragh.readEMBL.dot'...
+Writing 'pdgragh.readZuker.dot'...
+Writing 'pdgragh.readPIR.dot'...
+Writing 'pdgragh.readGCGdata.dot'...
+Writing 'pdgragh.readUWGCG.dot'...
+Writing 'pdgragh.endIG.dot'...
+Writing 'pdgragh.readLoop.dot'...
+Writing 'pdgragh.endStrider.dot'...
+Writing 'pdgragh.endGB.dot'...
+Writing 'pdgragh.endPearson.dot'...
+Writing 'pdgragh.endEMBL.dot'...
+Writing 'pdgragh.endZuker.dot'...
+Writing 'pdgragh.endPIR.dot'...
+Writing 'pdgragh.endGCGdata.dot'...
+Writing 'pdgragh.addseq.dot'...
+Writing 'pdgragh.SqdBanner.dot'...
+Writing 'pdgragh.sre_tolower.dot'...
+Writing 'pdgragh.sre_toupper.dot'...
+Writing 'pdgragh.Linefit.dot'...
+Writing 'pdgragh.WeightedLinefit.dot'...
+Writing 'pdgragh.Gammln.dot'...
+Writing 'pdgragh.FMX2Alloc.dot'...
+Writing 'pdgragh.FMX2Free.dot'...
+Writing 'pdgragh.DMX2Alloc.dot'...
+Writing 'pdgragh.DMX2Free.dot'...
+Writing 'pdgragh.FMX2Multiply.dot'...
+Writing 'pdgragh.IncompleteGamma.dot'...
+Writing 'pdgragh.sre_random.dot'...
+Writing 'pdgragh.sre_srandom.dot'...
+Writing 'pdgragh.sre_random_positive.dot'...
+Writing 'pdgragh.ExponentialRandom.dot'...
+Writing 'pdgragh.Gaussrandom.dot'...
+Writing 'pdgragh.DChoose.dot'...
+Writing 'pdgragh.FChoose.dot'...
+Writing 'pdgragh.Strdup.dot'...
+Writing 'pdgragh.StringChop.dot'...
+Writing 'pdgragh.Strinsert.dot'...
+Writing 'pdgragh.Strdelete.dot'...
+Writing 'pdgragh.s2lower.dot'...
+Writing 'pdgragh.s2upper.dot'...
+Writing 'pdgragh.sre_malloc.dot'...
+Writing 'pdgragh.sre_realloc.dot'...
+Writing 'pdgragh.Free2DArray.dot'...
+Writing 'pdgragh.Free3DArray.dot'...
+Writing 'pdgragh.RandomSequence.dot'...
+Writing 'pdgragh.sre_fgets.dot'...
+Writing 'pdgragh.sre_strcat.dot'...
+Writing 'pdgragh.sre_strtok.dot'...
+Writing 'pdgragh.sre_strdup.dot'...
+Writing 'pdgragh.sre_strncpy.dot'...
+Writing 'pdgragh.IsBlankline.dot'...
+Writing 'pdgragh.SSIOpen.dot'...
+Writing 'pdgragh.SSIGetOffsetByName.dot'...
+Writing 'pdgragh.SSIGetOffsetByNumber.dot'...
+Writing 'pdgragh.SSIGetSubseqOffset.dot'...
+Writing 'pdgragh.SSISetFilePosition.dot'...
+Writing 'pdgragh.SSIFileInfo.dot'...
+Writing 'pdgragh.SSIClose.dot'...
+Writing 'pdgragh.SSIRecommendMode.dot'...
+Writing 'pdgragh.SSICreateIndex.dot'...
+Writing 'pdgragh.SSIFreeIndex.dot'...
+Writing 'pdgragh.SSIGetFilePosition.dot'...
+Writing 'pdgragh.SSIAddFileToIndex.dot'...
+Writing 'pdgragh.SSISetFileForSubseq.dot'...
+Writing 'pdgragh.SSIAddPrimaryKeyToIndex.dot'...
+Writing 'pdgragh.SSIAddSecondaryKeyToIndex.dot'...
+Writing 'pdgragh.SSIWriteIndex.dot'...
+Writing 'pdgragh.SSIErrorString.dot'...
+Writing 'pdgragh.SSIForceExternalSort.dot'...
+Writing 'pdgragh.load_indexfile.dot'...
+Writing 'pdgragh.binary_search.dot'...
+Writing 'pdgragh.read_i16.dot'...
+Writing 'pdgragh.read_offset.dot'...
+Writing 'pdgragh.indexfile_position.dot'...
+Writing 'pdgragh.read_i32.dot'...
+Writing 'pdgragh.clear_ssifile.dot'...
+Writing 'pdgragh.current_index_size.dot'...
+Writing 'pdgragh.activate_external_sort.dot'...
+Writing 'pdgragh.pkeysort.dot'...
+Writing 'pdgragh.skeysort.dot'...
+Writing 'pdgragh.write_i32.dot'...
+Writing 'pdgragh.write_i16.dot'...
+Writing 'pdgragh.write_i64.dot'...
+Writing 'pdgragh.parse_pkey_info.dot'...
+Writing 'pdgragh.write_offset.dot'...
+Writing 'pdgragh.parse_skey_info.dot'...
+Writing 'pdgragh.read_i64.dot'...
+Writing 'pdgragh.InitIntStack.dot'...
+Writing 'pdgragh.PushIntStack.dot'...
+Writing 'pdgragh.PopIntStack.dot'...
+Writing 'pdgragh.ReverseIntStack.dot'...
+Writing 'pdgragh.FreeIntStack.dot'...
+Writing 'pdgragh.ReadStockholm.dot'...
+Writing 'pdgragh.WriteStockholm.dot'...
+Writing 'pdgragh.WriteStockholmOneBlock.dot'...
+Writing 'pdgragh.parse_gf.dot'...
+Writing 'pdgragh.parse_gs.dot'...
+Writing 'pdgragh.parse_gc.dot'...
+Writing 'pdgragh.parse_gr.dot'...
+Writing 'pdgragh.parse_comment.dot'...
+Writing 'pdgragh.parse_sequence.dot'...
+Writing 'pdgragh.actually_write_stockholm.dot'...
+Writing 'pdgragh.Translate.dot'...
+Writing 'pdgragh.IsInt.dot'...
+Writing 'pdgragh.IsReal.dot'...
+Writing 'pdgragh.Byteswap.dot'...
+Writing 'pdgragh.sre_ntoh16.dot'...
+Writing 'pdgragh.sre_ntoh32.dot'...
+Writing 'pdgragh.sre_hton16.dot'...
+Writing 'pdgragh.sre_hton32.dot'...
+Writing 'pdgragh.sre_ntoh64.dot'...
+Writing 'pdgragh.sre_hton64.dot'...
+Writing 'pdgragh.DSet.dot'...
+Writing 'pdgragh.FSet.dot'...
+Writing 'pdgragh.DScale.dot'...
+Writing 'pdgragh.FScale.dot'...
+Writing 'pdgragh.DSum.dot'...
+Writing 'pdgragh.FSum.dot'...
+Writing 'pdgragh.DAdd.dot'...
+Writing 'pdgragh.FAdd.dot'...
+Writing 'pdgragh.DCopy.dot'...
+Writing 'pdgragh.FCopy.dot'...
+Writing 'pdgragh.DDot.dot'...
+Writing 'pdgragh.FDot.dot'...
+Writing 'pdgragh.DMax.dot'...
+Writing 'pdgragh.FMax.dot'...
+Writing 'pdgragh.DMin.dot'...
+Writing 'pdgragh.FMin.dot'...
+Writing 'pdgragh.DArgMax.dot'...
+Writing 'pdgragh.FArgMax.dot'...
+Writing 'pdgragh.DArgMin.dot'...
+Writing 'pdgragh.FArgMin.dot'...
+Writing 'pdgragh.DNorm.dot'...
+Writing 'pdgragh.FNorm.dot'...
+Writing 'pdgragh.DLog.dot'...
+Writing 'pdgragh.FLog.dot'...
+Writing 'pdgragh.DExp.dot'...
+Writing 'pdgragh.FExp.dot'...
+Writing 'pdgragh.DLogSum.dot'...
+Writing 'pdgragh.FLogSum.dot'...
+Writing 'pdgragh.GSCWeights.dot'...
+Writing 'pdgragh.VoronoiWeights.dot'...
+Writing 'pdgragh.BlosumWeights.dot'...
+Writing 'pdgragh.SingleLinkCluster.dot'...
+Writing 'pdgragh.PositionBasedWeights.dot'...
+Writing 'pdgragh.FilterAlignment.dot'...
+Writing 'pdgragh.SampleAlignment.dot'...
+Writing 'pdgragh.upweight.dot'...
+Writing 'pdgragh.downweight.dot'...
+Writing 'pdgragh.simple_diffmx.dot'...
+Writing 'pdgragh.simple_distance.dot'...
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 1.4760 seconds (1.4791 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.5240 ( 36.1%)   0.0000 (  0.0%)   0.5240 ( 35.5%)   0.5263 ( 35.6%)  Compute DSNode equivalence classes
+   0.2920 ( 20.1%)   0.0000 (  0.0%)   0.2920 ( 19.8%)   0.2935 ( 19.8%)  Local Data Structure Analysis
+   0.2160 ( 14.9%)   0.0000 (  0.0%)   0.2160 ( 14.6%)   0.2133 ( 14.4%)  Bottom-up Data Structure Analysis
+   0.2040 ( 14.0%)   0.0000 (  0.0%)   0.2040 ( 13.8%)   0.2044 ( 13.8%)  Top-down Data Structure Analysis
+   0.0800 (  5.5%)   0.0040 ( 16.7%)   0.0840 (  5.7%)   0.0815 (  5.5%)  Standard Library Local Data Structure Analysis
+   0.0600 (  4.1%)   0.0080 ( 33.3%)   0.0680 (  4.6%)   0.0711 (  4.8%)  Program Dependency Graph
+   0.0520 (  3.6%)   0.0000 (  0.0%)   0.0520 (  3.5%)   0.0538 (  3.6%)  Bitcode Writer
+   0.0160 (  1.1%)   0.0080 ( 33.3%)   0.0240 (  1.6%)   0.0172 (  1.2%)  Module Verifier
+   0.0000 (  0.0%)   0.0040 ( 16.7%)   0.0040 (  0.3%)   0.0094 (  0.6%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.0080 (  0.6%)   0.0000 (  0.0%)   0.0080 (  0.5%)   0.0066 (  0.4%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0017 (  0.1%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   1.4520 (100.0%)   0.0240 (100.0%)   1.4760 (100.0%)   1.4791 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0440 seconds (0.0475 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0400 (100.0%)   0.0040 (100.0%)   0.0440 (100.0%)   0.0475 (100.0%)  Parse IR
+   0.0400 (100.0%)   0.0040 (100.0%)   0.0440 (100.0%)   0.0475 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

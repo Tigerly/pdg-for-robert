@@ -1,0 +1,140 @@
+file parameter: test/SPECCPU2006/400.perlbench/perlbench.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 1983
+======Global List: ======
+PDG 5.042864e-02% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_reify
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_reify
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3984 Function: Perl_av_reify
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 32
+PDG 1.008573e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_extend
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_extend
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4688 Function: Perl_av_extend
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call %struct.magic* @Perl_mg_find(%struct.sv* %4, i32 80)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_push_scope()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_save_int(i32* @PL_tmps_floor)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call4 = call %struct.stackinfo* @Perl_new_stackinfo(i32 32, i32 13)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_markstack_grow()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call31 = call %struct.sv** @Perl_stack_grow(%struct.sv** %50, %struct.sv** %51, i32 2)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call37 = call %struct.sv* @Perl_newRV(%struct.sv* %57)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call38 = call %struct.sv* @Perl_sv_2mortal(%struct.sv* %call37)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call43 = call %struct.sv* @Perl_newSViv(i64 %conv42)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call46 = call i32 @Perl_call_method(i8* getelementptr inbounds ([7 x i8]* @.str, i32 0, i32 0), i32 2)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call74 = call %struct._PerlIO** @Perl_PerlIO_stderr()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call77 = call i32 (%struct._PerlIO**, i8*, ...)* @PerlIO_printf(%struct._PerlIO** %cond76, i8* getelementptr inbounds ([17 x i8]* @.str1, i32 0, i32 0))
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_my_exit(i32 1)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_free_tmps()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_pop_scope()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call196 = call i8* @Perl_safesysmalloc(i64 %mul195)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @Perl_safesysfree(i8* %211)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 231
+llvm.memmove.p0i8.p0i8.i64 is defined outside!
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+PDG 1.512859e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_fetch
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Perl_av_fetch
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5226 Function: Perl_av_fetch
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call14 = call %struct.sv** @Perl_hv_fetch(%struct.hv* %21, i8* getelementptr inbounds ([17 x i8]* @.str2, i32 0, i32 0), i32 16, i32 0)
+Segmentation fault (core dumped)
+mv: cannot stat '*.dot': No such file or directory
+building program dependency graph...
+Done, please enter /visualization and view

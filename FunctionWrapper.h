@@ -46,10 +46,16 @@ class ArgumentWrapper{
   tree<InstructionWrapper*> actualOutTree;
   tree<InstructionWrapper*> formalInTree;
   tree<InstructionWrapper*> formalOutTree;
+
+
  public:
+
+  //  std::set<Type*> recursive_types;
+
 
   ArgumentWrapper(Argument* arg){
     this->arg = arg;
+    //    this->recursive_types = {};
   }
 
   Argument* getArg(){
@@ -58,6 +64,15 @@ class ArgumentWrapper{
   /*
     tree<InstructionWrapper*> getActualInTree(){
     return actualInTree;
+    }*/
+
+  /*
+  std::set<Type*>& get_recursive_types(){
+    return recursive_types;
+  }
+
+  int get_recursive_types_size(){
+    return recursive_types.size();
     }*/
 
 
@@ -167,6 +182,46 @@ class FunctionWrapper {
   std::set<llvm::Value*>& getPtrSet(){
     return ptrSet;
   }
+
+  bool hasFuncOrFilePtr(){
+    //check whether a function has a function_ptr or FILE parameter
+    for(Function::arg_iterator argi = Func->arg_begin(), arge = Func->arg_end(); argi != arge; ++argi) {
+      // params.push_back(argi->getType());
+      //function ptr, put func into insensitive_set, not sensitive
+      if(argi->getType()->isPointerTy()){
+
+	if(argi->getType()->getContainedType(0)->isFunctionTy()){
+	  string Str;
+	  raw_string_ostream OS(Str);
+	  OS << *argi->getType();
+	  errs() << "DEBUG LINE 700 FunctionPointerType : " << OS.str() << "\n";
+	  return true;
+	}
+
+	if(argi->getType()->getContainedType(0)->isStructTy()){
+	  string Str;
+	  raw_string_ostream OS(Str);
+	  OS << *argi->getType();
+
+	  //FILE*, bypass, no need to buildTypeTree
+	  if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
+		
+	    errs() << "DEBUG LINE 711 struct._IO_marker*/struct._IO_FILE* \n";
+	    return true;
+	    //continue; 
+	  }
+	}
+      }
+    }// end for Function::arg_iterator argi...
+
+    return false;
+  }
+
+
+
+
+
+
 
 
   static void constructFuncMap(Module &M) {

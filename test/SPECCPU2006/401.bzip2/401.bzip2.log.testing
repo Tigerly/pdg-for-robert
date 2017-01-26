@@ -1,0 +1,2303 @@
+file parameter: test/SPECCPU2006/401.bzip2/bzip2.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 117
+======Global List: ======
+PDG 8.547009e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ran
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ran
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 159 Function: ran
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.160000e-04
+PDG 1.709402e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 235 Function: spec_init
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.222000e-03
+printf is defined outside!
+llvm.memset.p0i8.i64 is defined outside!
+malloc is defined outside!
+exit is defined outside!
+PDG 2.564103e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_random_load
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_random_load
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 324 Function: spec_random_load
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call9 = call double @ran()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.324000e-03
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+PDG 3.418803e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_load
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_load
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 476 Function: spec_load
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.858000e-03
+open is defined outside!
+fprintf is defined outside!
+strerror is defined outside!
+__errno_location is defined outside!
+read is defined outside!
+close is defined outside!
+PDG 4.273504e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_read
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_read
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 586 Function: spec_read
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.341000e-03
+PDG 5.128205e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_fread
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_fread
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 707 Function: spec_fread
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.154000e-03
+PDG 5.982906e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_getc
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_getc
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 774 Function: spec_getc
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.201000e-03
+PDG 6.837607e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_ungetc
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_ungetc
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 844 Function: spec_ungetc
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.243000e-03
+PDG 7.692308e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_rewind
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_rewind
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 853 Function: spec_rewind
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.200000e-05
+PDG 8.547009e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_reset
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_reset
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 879 Function: spec_reset
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.800000e-04
+PDG 9.401709e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_write
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_write
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 942 Function: spec_write
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.189000e-03
+PDG 1.025641e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_fwrite
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_fwrite
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1014 Function: spec_fwrite
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.586000e-03
+PDG 1.111111e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_putc
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_putc
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1061 Function: spec_putc
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.770000e-04
+PDG 1.196581e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1255 Function: main
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call12 = call i32 @spec_init()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call13 = call i32 @debug_time()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call19 = call i32 @spec_load(i32 0, i8* %14, i32 %mul18)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @spec_initbufs()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @spec_compress(i32 0, i32 1, i32 %31)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call55 = call i32 @spec_reset(i32 0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call56 = call i32 @spec_rewind(i32 1)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @spec_uncompress(i32 1, i32 0, i32 %35)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.122000e-02
+atoi is defined outside!
+PDG 1.282051e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_compress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_compress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1312 Function: spec_compress
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @compressStream(i32 %1, i32 %2)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.710000e-04
+PDG 1.367521e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_uncompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_uncompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1332 Function: spec_uncompress
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @uncompressStream(i32 %0, i32 %1)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.280000e-04
+PDG 1.452991e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_initbufs
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:spec_initbufs
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1346 Function: spec_initbufs
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.000000e-06
+PDG 1.538462e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:debug_time
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:debug_time
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1348 Function: debug_time
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.000000e-06
+PDG 1.623932e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_blockSort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_blockSort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1522 Function: BZ2_blockSort
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @fallbackSort(i32* %14, i32* %16, i32* %17, i32 %18, i32 %19)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @mainSort(i32* %31, i8* %32, i16* %33, i32* %34, i32 %35, i32 %36, i32* %budget)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bz__AssertH__fail(i32 1003)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.809200e-02
+PDG 1.709402e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackSort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackSort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2153 Function: fallbackSort
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @fallbackQSort3(i32* %139, i32* %140, i32 %141, i32 %142)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.136940e-01
+PDG 1.794872e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainSort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainSort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3176 Function: mainSort
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @mainQSort3(i32* %218, i8* %219, i16* %220, i32 %221, i32 %222, i32 %223, i32 2, i32* %224)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.895980e-01
+PDG 1.880342e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackQSort3
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackQSort3
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3706 Function: fallbackQSort3
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @fallbackSimpleSort(i32* %14, i32* %15, i32 %16, i32 %17)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.047240e-01
+PDG 1.965812e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainQSort3
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainQSort3
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4428 Function: mainQSort3
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @mainSimpleSort(i32* %19, i8* %20, i16* %21, i32 %22, i32 %23, i32 %24, i32 %25, i32* %26)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @mmed3(i8 zeroext %34, i8 zeroext %40, i8 zeroext %47)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.280650e-01
+PDG 2.051282e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackSimpleSort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fallbackSimpleSort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4637 Function: fallbackSimpleSort
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.223000e-03
+PDG 2.136752e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainSimpleSort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainSimpleSort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4912 Function: mainSimpleSort
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @mainGtU(i32 %add17, i32 %add18, i8* %26, i16* %27, i32 %28, i32* %29)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.732700e-02
+PDG 2.222222e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmed3
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmed3
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4977 Function: mmed3
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.430000e-04
+PDG 2.307692e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainGtU
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mainGtU
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5909 Function: mainGtU
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.910300e-01
+PDG 2.393162e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compressStream
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compressStream
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6058 Function: compressStream
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i8* @BZ2_bzWriteOpen(i32* %bzerr, i32 %0, i32 %1, i32 %2, i32 %3)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call5 = call zeroext i8 @myfeof(i32 %7)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call8 = call i32 @spec_fread(i8* %arraydecay, i32 1, i32 5000, i32 %8)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bzWrite(i32* %bzerr, i8* %10, i8* %arraydecay11, i32 %11)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bzWriteClose64(i32* %bzerr, i8* %13, i32 0, i32* %nbytes_in_lo32, i32* %nbytes_in_hi32, i32* %nbytes_out_lo32, i32* %nbytes_out_hi32)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @uInt64_from_UInt32s(%struct.UInt64* %nbytes_in, i32 %23, i32 %24)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call37 = call double @uInt64_to_double(%struct.UInt64* %nbytes_in)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @uInt64_toAscii(i8* %arraydecay39, %struct.UInt64* %nbytes_in)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @configError()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @outOfMemory()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @ioError()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @panic(i8* getelementptr inbounds ([26 x i8]* @.str352, i32 0, i32 0))
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.566700e-02
+PDG 2.478632e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uncompressStream
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uncompressStream
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6399 Function: uncompressStream
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i8* @BZ2_bzReadOpen(i32* %bzerr, i32 %0, i32 %1, i32 %conv, i8* %arraydecay, i32 %3)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call9 = call i32 @BZ2_bzRead(i32* %bzerr, i8* %8, i8* %arraydecay8, i32 5000)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call23 = call i32 @spec_fwrite(i8* %arraydecay22, i32 1, i32 %13, i32 %14)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bzReadGetUnused(i32* %bzerr, i8* %16, i8** %unusedTmpV, i32* %nUnused)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bzReadClose(i32* %bzerr, i8* %26)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @crcError()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @compressedStreamEOF()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.999200e-02
+perror is defined outside!
+PDG 2.564103e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:myfeof
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:myfeof
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6504 Function: myfeof
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @spec_getc(i32 %0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call1 = call i32 @spec_ungetc(i8 zeroext %conv, i32 %3)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.117000e-03
+PDG 2.649573e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_from_UInt32s
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_from_UInt32s
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6586 Function: uInt64_from_UInt32s
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.446000e-03
+PDG 2.735043e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_to_double
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_to_double
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6621 Function: uInt64_to_double
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.910000e-04
+PDG 2.820513e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_toAscii
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_toAscii
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6683 Function: uInt64_toAscii
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @uInt64_qrm10(%struct.UInt64* %n_copy)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call1 = call zeroext i8 @uInt64_isZero(%struct.UInt64* %n_copy)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.923000e-03
+PDG 2.905983e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:configError
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:configError
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6707 Function: configError
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @setExit(i32 3)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.050000e-04
+PDG 2.991453e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:outOfMemory
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:outOfMemory
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6718 Function: outOfMemory
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @showFileNames()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @cleanUpAndFail(i32 1)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.216000e-03
+PDG 3.076923e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ioError
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ioError
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6731 Function: ioError
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.400000e-05
+PDG 3.162393e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:panic
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:panic
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6741 Function: panic
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.200000e-05
+PDG 3.247863e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:crcError
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:crcError
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6749 Function: crcError
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @cadvise()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.680000e-04
+PDG 3.333333e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compressedStreamEOF
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compressedStreamEOF
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6763 Function: compressedStreamEOF
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.300000e-05
+PDG 3.418803e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_qrm10
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_qrm10
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6805 Function: uInt64_qrm10
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.580000e-04
+PDG 3.504274e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_isZero
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:uInt64_isZero
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6835 Function: uInt64_isZero
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.650000e-04
+PDG 3.589744e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:setExit
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:setExit
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6840 Function: setExit
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.000000e-06
+PDG 3.675214e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:showFileNames
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:showFileNames
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6848 Function: showFileNames
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.600000e-05
+PDG 3.760684e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cleanUpAndFail
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cleanUpAndFail
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6858 Function: cleanUpAndFail
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.090000e-04
+PDG 3.846154e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cadvise
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cadvise
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6866 Function: cadvise
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.500000e-05
+PDG 3.931624e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bz__AssertH__fail
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bz__AssertH__fail
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6882 Function: BZ2_bz__AssertH__fail
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i8* @BZ2_bzlibVersion()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.080000e-04
+PDG 4.017094e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzlibVersion
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzlibVersion
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6884 Function: BZ2_bzlibVersion
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.000000e-06
+PDG 4.102564e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompressInit
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompressInit
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 7172 Function: BZ2_bzCompressInit
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @bz_config_ok()
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+call_func = null:   %call22 = call i8* %13(i8* %15, i32 55768, i32 1)
+call_func = null:   %call31 = call i8* %25(i8* %27, i32 %conv30, i32 1)
+call_func = null:   %call38 = call i8* %32(i8* %34, i32 %conv37, i32 1)
+call_func = null:   %call42 = call i8* %39(i8* %41, i32 262148, i32 1)
+call_func = null:   call void %53(i8* %55, i8* %58)
+call_func = null:   call void %62(i8* %64, i8* %67)
+call_func = null:   call void %71(i8* %73, i8* %76)
+call_func = null:   call void %79(i8* %81, i8* %83)
+DEBUG 411 New call for tree construction:   call void @init_RL(%struct.EState* %115)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @prepare_new_block(%struct.EState* %116)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.324650e-01
+PDG 4.188034e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 7763 Function: BZ2_bzCompress
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @handle_compress(%struct.bz_stream* %11)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call39 = call zeroext i8 @isempty_RL(%struct.EState* %32)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.563750e-01
+PDG 4.273504e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompressEnd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzCompressEnd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8119 Function: BZ2_bzCompressEnd
+computerDependencies DEBUG 1
+call_func = null:   call void %11(i8* %13, i8* %16)
+call_func = null:   call void %20(i8* %22, i8* %25)
+call_func = null:   call void %29(i8* %31, i8* %34)
+call_func = null:   call void %36(i8* %38, i8* %40)
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.949000e-03
+PDG 4.358974e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompressInit
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompressInit
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8244 Function: BZ2_bzDecompressInit
+computerDependencies DEBUG 1
+call_func = null:   %call20 = call i8* %12(i8* %14, i32 64144, i32 1)
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.868000e-03
+PDG 4.444444e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_indexIntoF
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_indexIntoF
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8282 Function: BZ2_indexIntoF
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.370000e-04
+PDG 4.529915e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8473 Function: BZ2_bzDecompress
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @unRLE_obuf_to_output_SMALL(%struct.DState* %14)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call16 = call zeroext i8 @unRLE_obuf_to_output_FAST(%struct.DState* %15)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call51 = call i32 @BZ2_decompress(%struct.DState* %52)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.399520e-01
+PDG 4.615385e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompressEnd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzDecompressEnd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9492 Function: BZ2_bzDecompressEnd
+computerDependencies DEBUG 1
+call_func = null:   call void %11(i8* %13, i8* %16)
+call_func = null:   call void %20(i8* %22, i8* %25)
+call_func = null:   call void %29(i8* %31, i8* %33)
+call_func = null:   call void %35(i8* %37, i8* %39)
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.808000e-03
+PDG 4.700855e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteOpen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteOpen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9663 Function: BZ2_bzWriteOpen
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call48 = call i32 @BZ2_bzCompressInit(%struct.bz_stream* %strm47, i32 %35, i32 %36, i32 %37)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.727900e-02
+free is defined outside!
+PDG 4.786325e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWrite
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWrite
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9922 Function: BZ2_bzWrite
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @BZ2_bzCompress(%struct.bz_stream* %strm40, i32 0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.993700e-02
+PDG 4.871795e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteClose
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteClose
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9996 Function: BZ2_bzWriteClose
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.439000e-03
+PDG 4.957265e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteClose64
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzWriteClose64
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10235 Function: BZ2_bzWriteClose64
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call97 = call i32 @BZ2_bzCompressEnd(%struct.bz_stream* %strm96)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.130530e-01
+PDG 5.042735e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadOpen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadOpen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10499 Function: BZ2_bzReadOpen
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call53 = call i32 @BZ2_bzDecompressInit(%struct.bz_stream* %strm52, i32 %47, i32 %48)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.319100e-02
+PDG 5.128205e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadClose
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadClose
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10631 Function: BZ2_bzReadClose
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @BZ2_bzDecompressEnd(%struct.bz_stream* %strm)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.148200e-02
+PDG 5.213675e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzRead
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzRead
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10937 Function: BZ2_bzRead
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @myfeof112(i32 %31)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call52 = call i32 @BZ2_bzDecompress(%struct.bz_stream* %strm51)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.484700e-02
+PDG 5.299145e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadGetUnused
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzReadGetUnused
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11089 Function: BZ2_bzReadGetUnused
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.168000e-03
+PDG 5.384615e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzBuffToBuffCompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzBuffToBuffCompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11199 Function: BZ2_bzBuffToBuffCompress
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.421690e-01
+PDG 5.470085e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzBuffToBuffDecompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzBuffToBuffDecompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11302 Function: BZ2_bzBuffToBuffDecompress
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.218770e-01
+PDG 5.555556e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzopen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzopen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11311 Function: BZ2_bzopen
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i8* @bzopen_or_bzdopen(i8* %0, i32 -1, i8* %1, i32 0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.696000e-03
+PDG 5.641026e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzdopen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzdopen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11336 Function: BZ2_bzdopen
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.210000e-04
+PDG 5.726496e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzread
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzread
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11372 Function: BZ2_bzread
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.338200e-02
+PDG 5.811966e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzwrite
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzwrite
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11395 Function: BZ2_bzwrite
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.207500e-02
+PDG 5.897436e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzflush
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzflush
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11399 Function: BZ2_bzflush
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.000000e-06
+PDG 5.982906e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzclose
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzclose
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11439 Function: BZ2_bzclose
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @BZ2_bzWriteClose(i32* %bzerr, i8* %7, i32 0, i32* null, i32* null)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.474000e-02
+PDG 6.068376e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzerror
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bzerror
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11484 Function: BZ2_bzerror
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.440000e-04
+__ctype_b_loc is defined outside!
+strcat is defined outside!
+strcmp is defined outside!
+PDG 6.153846e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bz_config_ok
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bz_config_ok
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11486 Function: bz_config_ok
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.000000e-06
+PDG 6.239316e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:default_bzalloc
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:default_bzalloc
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11502 Function: default_bzalloc
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.200000e-05
+PDG 6.324786e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:default_bzfree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:default_bzfree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11514 Function: default_bzfree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.800000e-05
+PDG 6.410256e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_RL
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_RL
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11524 Function: init_RL
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.000000e-05
+PDG 6.495726e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:prepare_new_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:prepare_new_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11562 Function: prepare_new_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.060000e-04
+PDG 6.581197e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_compress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_compress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11711 Function: handle_compress
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call zeroext i8 @copy_output_until_stop(%struct.EState* %5)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   %call35 = call zeroext i8 @copy_input_until_stop(%struct.EState* %25)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @flush_RL(%struct.EState* %31)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_compressBlock(%struct.EState* %32, i8 zeroext %conv51)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.425500e-01
+PDG 6.666667e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:isempty_RL
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:isempty_RL
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 12567 Function: isempty_RL
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.460000e-04
+PDG 6.752137e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unRLE_obuf_to_output_SMALL
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unRLE_obuf_to_output_SMALL
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13675 Function: unRLE_obuf_to_output_SMALL
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   %call = call i32 @BZ2_indexIntoF(i32 %50, i32* %arraydecay)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 8.053690e-01
+PDG 6.837607e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unRLE_obuf_to_output_FAST
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unRLE_obuf_to_output_FAST
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14605 Function: unRLE_obuf_to_output_FAST
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.299940e-01
+PDG 6.923077e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:myfeof112
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:myfeof112
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14626 Function: myfeof112
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 7.945000e-03
+PDG 7.008547e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bzopen_or_bzdopen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bzopen_or_bzdopen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14777 Function: bzopen_or_bzdopen
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.164230e-01
+PDG 7.094017e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_output_until_stop
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_output_until_stop
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14860 Function: copy_output_until_stop
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.840000e-03
+PDG 7.179487e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_input_until_stop
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_input_until_stop
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15209 Function: copy_input_until_stop
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @add_pair_to_block(%struct.EState* %46)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.551600e-01
+PDG 7.264957e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_RL
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_RL
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15431 Function: flush_RL
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.185800e-02
+PDG 7.350427e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_pair_to_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_pair_to_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15667 Function: add_pair_to_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 2.314900e-02
+PDG 7.435897e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bsInitWrite
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_bsInitWrite
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15677 Function: BZ2_bsInitWrite
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 4.000000e-05
+PDG 7.521368e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_compressBlock
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_compressBlock
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15848 Function: BZ2_compressBlock
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @BZ2_blockSort(%struct.EState* %28)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_bsInitWrite(%struct.EState* %37)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @bsPutUChar(%struct.EState* %38, i8 zeroext 66)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @bsPutUInt32(%struct.EState* %52, i32 %54)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @bsW(%struct.EState* %55, i32 1, i32 0)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @generateMTFValues(%struct.EState* %59)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @sendMTFValues(%struct.EState* %60)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @bsFinishWrite(%struct.EState* %76)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.475972e+00
+PDG 7.606838e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsPutUChar
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsPutUChar
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 17538 Function: bsPutUChar
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 5.490000e-04
+PDG 7.692308e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsPutUInt32
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsPutUInt32
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 17571 Function: bsPutUInt32
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.911220e-01
+PDG 7.777778e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsW
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsW
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 17634 Function: bsW
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.685000e-03
+PDG 7.863248e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:generateMTFValues
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:generateMTFValues
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 17948 Function: generateMTFValues
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @makeMaps_e(%struct.EState* %6)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.202400e-01
+PDG 7.948718e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sendMTFValues
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sendMTFValues
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23133 Function: sendMTFValues
+computerDependencies DEBUG 1
+DEBUG 411 New call for tree construction:   call void @BZ2_hbMakeCodeLengths(i8* %arrayidx1694, i32* %arrayidx1698, i32 %1266, i32 17)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_hbAssignCodes(i32* %arrayidx1807, i8* %arrayidx1811, i32 %1326, i32 %1327, i32 %1328)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 9.988136e+02
+PDG 8.034188e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsFinishWrite
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bsFinishWrite
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23209 Function: bsFinishWrite
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.810000e-04
+PDG 8.119658e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:makeMaps_e
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:makeMaps_e
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23251 Function: makeMaps_e
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.670000e-04
+PDG 8.205128e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_decompress
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_decompress
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 29871 Function: BZ2_decompress
+computerDependencies DEBUG 1
+call_func = null:   %call = call i8* %239(i8* %241, i32 %conv238, i32 1)
+call_func = null:   %call248 = call i8* %247(i8* %249, i32 %conv247, i32 1)
+call_func = null:   %call265 = call i8* %258(i8* %260, i32 %conv264, i32 1)
+DEBUG 411 New call for tree construction:   call void @makeMaps_d(%struct.DState* %932)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+DEBUG 411 New call for tree construction:   call void @BZ2_hbCreateDecodeTables(i32* %arrayidx1704, i32* %arrayidx1707, i32* %arrayidx1710, i8* %arrayidx1714, i32 %1241, i32 %1242, i32 %1243)
+DEBUG after buildParameterTrees
+DEBUG 425 drawParameterTree completed!
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.619567e+01
+PDG 8.290598e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:makeMaps_d
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:makeMaps_d
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30249 Function: makeMaps_d
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 6.820000e-04
+PDG 8.376068e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbMakeCodeLengths
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbMakeCodeLengths
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30747 Function: BZ2_hbMakeCodeLengths
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 3.882060e-01
+PDG 8.461538e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbAssignCodes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbAssignCodes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30808 Function: BZ2_hbAssignCodes
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.540000e-03
+PDG 8.547009e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbCreateDecodeTables
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BZ2_hbCreateDecodeTables
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31018 Function: BZ2_hbCreateDecodeTables
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+TIME per iteration in big for loop : 1.785000e-02
+
+
+ PDG construction completed! ^_^
+
+funcs = 100
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 128
+sensitive global found! value = @progName = internal global i8* null, align 8
+sensitive_global: @progName = internal global i8* null, align 8
+sensitive_nodes.size = 1
+queue.size = 1
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+SENSITIVE INSTRUCTION [0] Mem Addr :0x3aca628 Value :   %50 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [1] Mem Addr :0x3aca6f8 Value :   %call107 = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %49, i8* getelementptr inbounds ([45 x i8]* @.str758, i32 0, i32 0), i8* %50, i8* getelementptr inbounds ([1034 x i8]* @inName, i32 0, i32 0))
+SENSITIVE INSTRUCTION [2] Mem Addr :0x3ad56a8 Value :   %1 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [3] Mem Addr :0x3ad5760 Value :   %call = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %0, i8* getelementptr inbounds ([38 x i8]* @.str1364, i32 0, i32 0), i8* %1)
+SENSITIVE INSTRUCTION [4] Mem Addr :0x3ad5c58 Value :   %1 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [5] Mem Addr :0x3ad5d10 Value :   %call = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %0, i8* getelementptr inbounds ([65 x i8]* @.str1566, i32 0, i32 0), i8* %1)
+SENSITIVE INSTRUCTION [6] Mem Addr :0x3ad5d88 Value :   %2 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [7] Mem Addr :0x3ad5e10 Value :   call void @perror(i8* %2)
+SENSITIVE INSTRUCTION [8] Mem Addr :0x3ad6408 Value :   %1 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [9] Mem Addr :0x3ad6548 Value :   %call = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %0, i8* getelementptr inbounds ([148 x i8]* @.str1970, i32 0, i32 0), i8* %1, i8* %2)
+SENSITIVE INSTRUCTION [10] Mem Addr :0x3ad6a88 Value :   %1 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [11] Mem Addr :0x3ad6b40 Value :   %call = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %0, i8* getelementptr inbounds ([47 x i8]* @.str1869, i32 0, i32 0), i8* %1)
+SENSITIVE INSTRUCTION [12] Mem Addr :0x3ad7318 Value :   %2 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [13] Mem Addr :0x3ad73d0 Value :   %call = call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %1, i8* getelementptr inbounds ([95 x i8]* @.str1667, i32 0, i32 0), i8* %2)
+SENSITIVE INSTRUCTION [14] Mem Addr :0x3ad7448 Value :   %3 = load i8** @progName, align 8
+SENSITIVE INSTRUCTION [15] Mem Addr :0x3ad74d0 Value :   call void @perror(i8* %3)
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+spec_init
+spec_initis uncolored
+spec_random_load
+spec_random_loadis uncolored
+spec_load
+spec_loadis uncolored
+BZ2_indexIntoF
+BZ2_indexIntoFis uncolored
+BZ2_bzDecompress
+BZ2_bzDecompressis uncolored
+BZ2_bzDecompressEnd
+BZ2_bzDecompressEndis uncolored
+BZ2_bzWriteOpen
+BZ2_bzWriteOpenis uncolored
+BZ2_bzWrite
+BZ2_bzWriteis uncolored
+BZ2_bzWriteClose
+BZ2_bzWriteCloseis uncolored
+BZ2_bzWriteClose64
+BZ2_bzWriteClose64is uncolored
+BZ2_bzReadOpen
+BZ2_bzReadOpenis uncolored
+BZ2_bzReadClose
+BZ2_bzReadCloseis uncolored
+BZ2_bzRead
+BZ2_bzReadis uncolored
+BZ2_bzReadGetUnused
+BZ2_bzReadGetUnusedis uncolored
+BZ2_bzBuffToBuffCompress
+BZ2_bzBuffToBuffCompressis uncolored
+BZ2_bzBuffToBuffDecompress
+BZ2_bzBuffToBuffDecompressis uncolored
+BZ2_bzopen
+BZ2_bzopenis uncolored
+BZ2_bzwrite
+BZ2_bzwriteis uncolored
+BZ2_bzflush
+BZ2_bzflushis uncolored
+BZ2_bzclose
+BZ2_bzcloseis uncolored
+BZ2_bzerror
+BZ2_bzerroris uncolored
+ran
+ranis uncolored
+spec_read
+spec_readis uncolored
+spec_fread
+spec_freadis uncolored
+spec_getc
+spec_getcis uncolored
+spec_ungetc
+spec_ungetcis uncolored
+spec_rewind
+spec_rewindis uncolored
+spec_reset
+spec_resetis uncolored
+spec_write
+spec_writeis uncolored
+spec_fwrite
+spec_fwriteis uncolored
+spec_putc
+spec_putcis uncolored
+main
+mainis uncolored
+spec_compress
+spec_compressis uncolored
+spec_uncompress
+spec_uncompressis uncolored
+spec_initbufs
+spec_initbufsis uncolored
+configError
+configErroris uncolored
+debug_time
+debug_timeis uncolored
+BZ2_blockSort
+BZ2_blockSortis uncolored
+fallbackSort
+fallbackSortis uncolored
+mainSort
+mainSortis uncolored
+fallbackQSort3
+fallbackQSort3is uncolored
+mainQSort3
+mainQSort3is uncolored
+fallbackSimpleSort
+fallbackSimpleSortis uncolored
+mainSimpleSort
+mainSimpleSortis uncolored
+mmed3
+mmed3is uncolored
+mainGtU
+mainGtUis uncolored
+compressStream
+compressStreamis uncolored
+uncompressStream
+uncompressStream is colored
+myfeof
+myfeofis uncolored
+uInt64_from_UInt32s
+uInt64_from_UInt32sis uncolored
+uInt64_to_double
+uInt64_to_doubleis uncolored
+uInt64_toAscii
+uInt64_toAsciiis uncolored
+BZ2_bzdopen
+BZ2_bzdopenis uncolored
+BZ2_bzread
+BZ2_bzreadis uncolored
+outOfMemory
+outOfMemory is colored
+ioError
+ioError is colored
+panic
+panic is colored
+crcError
+crcError is colored
+compressedStreamEOF
+compressedStreamEOF is colored
+uInt64_qrm10
+uInt64_qrm10is uncolored
+uInt64_isZero
+uInt64_isZerois uncolored
+setExit
+setExitis uncolored
+showFileNames
+showFileNamesis uncolored
+cleanUpAndFail
+cleanUpAndFailis uncolored
+cadvise
+cadviseis uncolored
+BZ2_bz__AssertH__fail
+BZ2_bz__AssertH__failis uncolored
+BZ2_bzlibVersion
+BZ2_bzlibVersionis uncolored
+BZ2_bzCompressInit
+BZ2_bzCompressInitis uncolored
+BZ2_bzCompress
+BZ2_bzCompressis uncolored
+BZ2_bzCompressEnd
+BZ2_bzCompressEndis uncolored
+BZ2_bzDecompressInit
+BZ2_bzDecompressInitis uncolored
+bz_config_ok
+bz_config_okis uncolored
+default_bzalloc
+default_bzallocis uncolored
+default_bzfree
+default_bzfreeis uncolored
+init_RL
+init_RLis uncolored
+prepare_new_block
+prepare_new_blockis uncolored
+handle_compress
+handle_compressis uncolored
+isempty_RL
+isempty_RLis uncolored
+unRLE_obuf_to_output_SMALL
+unRLE_obuf_to_output_SMALLis uncolored
+unRLE_obuf_to_output_FAST
+unRLE_obuf_to_output_FASTis uncolored
+myfeof112
+myfeof112is uncolored
+bzopen_or_bzdopen
+bzopen_or_bzdopenis uncolored
+copy_output_until_stop
+copy_output_until_stopis uncolored
+copy_input_until_stop
+copy_input_until_stopis uncolored
+flush_RL
+flush_RLis uncolored
+add_pair_to_block
+add_pair_to_blockis uncolored
+BZ2_bsInitWrite
+BZ2_bsInitWriteis uncolored
+BZ2_compressBlock
+BZ2_compressBlockis uncolored
+bsPutUChar
+bsPutUCharis uncolored
+bsPutUInt32
+bsPutUInt32is uncolored
+bsW
+bsWis uncolored
+generateMTFValues
+generateMTFValuesis uncolored
+sendMTFValues
+sendMTFValuesis uncolored
+bsFinishWrite
+bsFinishWriteis uncolored
+makeMaps_e
+makeMaps_eis uncolored
+BZ2_decompress
+BZ2_decompressis uncolored
+makeMaps_d
+makeMaps_dis uncolored
+BZ2_hbMakeCodeLengths
+BZ2_hbMakeCodeLengthsis uncolored
+BZ2_hbAssignCodes
+BZ2_hbAssignCodesis uncolored
+BZ2_hbCreateDecodeTables
+BZ2_hbCreateDecodeTablesis uncolored
+non-library functions in total: 100
+sensitive functions count  : 6
+insensitive functions count: 94
+Writing 'pdgragh.ran.dot'...instW 0x0
+
+Writing 'pdgragh.spec_init.dot'...instW 0x0
+
+Writing 'pdgragh.spec_random_load.dot'...instW 0x0
+
+Writing 'pdgragh.spec_load.dot'...instW 0x0
+
+Writing 'pdgragh.spec_read.dot'...instW 0x0
+
+Writing 'pdgragh.spec_fread.dot'...instW 0x0
+
+Writing 'pdgragh.spec_getc.dot'...instW 0x0
+
+Writing 'pdgragh.spec_ungetc.dot'...instW 0x0
+
+Writing 'pdgragh.spec_rewind.dot'...instW 0x0
+
+Writing 'pdgragh.spec_reset.dot'...instW 0x0
+
+Writing 'pdgragh.spec_write.dot'...instW 0x0
+
+Writing 'pdgragh.spec_fwrite.dot'...instW 0x0
+
+Writing 'pdgragh.spec_putc.dot'...instW 0x0
+
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.spec_compress.dot'...instW 0x0
+
+Writing 'pdgragh.spec_uncompress.dot'...instW 0x0
+
+Writing 'pdgragh.spec_initbufs.dot'...instW 0x0
+
+Writing 'pdgragh.debug_time.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_blockSort.dot'...instW 0x0
+
+Writing 'pdgragh.fallbackSort.dot'...instW 0x0
+
+Writing 'pdgragh.mainSort.dot'...instW 0x0
+
+Writing 'pdgragh.fallbackQSort3.dot'...instW 0x0
+
+Writing 'pdgragh.mainQSort3.dot'...instW 0x0
+
+Writing 'pdgragh.fallbackSimpleSort.dot'...instW 0x0
+
+Writing 'pdgragh.mainSimpleSort.dot'...instW 0x0
+
+Writing 'pdgragh.mmed3.dot'...instW 0x0
+
+Writing 'pdgragh.mainGtU.dot'...instW 0x0
+
+Writing 'pdgragh.compressStream.dot'...instW 0x0
+
+Writing 'pdgragh.uncompressStream.dot'...instW 0x0
+
+Writing 'pdgragh.myfeof.dot'...instW 0x0
+
+Writing 'pdgragh.uInt64_from_UInt32s.dot'...instW 0x0
+
+Writing 'pdgragh.uInt64_to_double.dot'...instW 0x0
+
+Writing 'pdgragh.uInt64_toAscii.dot'...instW 0x0
+
+Writing 'pdgragh.configError.dot'...instW 0x0
+
+Writing 'pdgragh.outOfMemory.dot'...instW 0x0
+
+Writing 'pdgragh.ioError.dot'...instW 0x0
+
+Writing 'pdgragh.panic.dot'...instW 0x0
+
+Writing 'pdgragh.crcError.dot'...instW 0x0
+
+Writing 'pdgragh.compressedStreamEOF.dot'...instW 0x0
+
+Writing 'pdgragh.uInt64_qrm10.dot'...instW 0x0
+
+Writing 'pdgragh.uInt64_isZero.dot'...instW 0x0
+
+Writing 'pdgragh.setExit.dot'...instW 0x0
+
+Writing 'pdgragh.showFileNames.dot'...instW 0x0
+
+Writing 'pdgragh.cleanUpAndFail.dot'...instW 0x0
+
+Writing 'pdgragh.cadvise.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bz__AssertH__fail.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzlibVersion.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzCompressInit.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzCompress.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzCompressEnd.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzDecompressInit.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_indexIntoF.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzDecompress.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzDecompressEnd.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzWriteOpen.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzWrite.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzWriteClose.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzWriteClose64.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzReadOpen.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzReadClose.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzRead.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzReadGetUnused.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzBuffToBuffCompress.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzBuffToBuffDecompress.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzopen.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzdopen.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzread.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzwrite.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzflush.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzclose.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bzerror.dot'...instW 0x0
+
+Writing 'pdgragh.bz_config_ok.dot'...instW 0x0
+
+Writing 'pdgragh.default_bzalloc.dot'...instW 0x0
+
+Writing 'pdgragh.default_bzfree.dot'...instW 0x0
+
+Writing 'pdgragh.init_RL.dot'...instW 0x0
+
+Writing 'pdgragh.prepare_new_block.dot'...instW 0x0
+
+Writing 'pdgragh.handle_compress.dot'...instW 0x0
+
+Writing 'pdgragh.isempty_RL.dot'...instW 0x0
+
+Writing 'pdgragh.unRLE_obuf_to_output_SMALL.dot'...instW 0x0
+
+Writing 'pdgragh.unRLE_obuf_to_output_FAST.dot'...instW 0x0
+
+Writing 'pdgragh.myfeof112.dot'...instW 0x0
+
+Writing 'pdgragh.bzopen_or_bzdopen.dot'...instW 0x0
+
+Writing 'pdgragh.copy_output_until_stop.dot'...instW 0x0
+
+Writing 'pdgragh.copy_input_until_stop.dot'...instW 0x0
+
+Writing 'pdgragh.flush_RL.dot'...instW 0x0
+
+Writing 'pdgragh.add_pair_to_block.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_bsInitWrite.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_compressBlock.dot'...instW 0x0
+
+Writing 'pdgragh.bsPutUChar.dot'...instW 0x0
+
+Writing 'pdgragh.bsPutUInt32.dot'...instW 0x0
+
+Writing 'pdgragh.bsW.dot'...instW 0x0
+
+Writing 'pdgragh.generateMTFValues.dot'...instW 0x0
+
+Writing 'pdgragh.sendMTFValues.dot'...instW 0x0
+
+Writing 'pdgragh.bsFinishWrite.dot'...instW 0x0
+
+Writing 'pdgragh.makeMaps_e.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_decompress.dot'...instW 0x0
+
+Writing 'pdgragh.makeMaps_d.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_hbMakeCodeLengths.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_hbAssignCodes.dot'...instW 0x0
+
+Writing 'pdgragh.BZ2_hbCreateDecodeTables.dot'...instW 0x0
+
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 2667.4480 seconds (2668.3760 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+  1566.5000 ( 58.8%)   4.2800 ( 97.8%)  1570.7800 ( 58.9%)  1571.6238 ( 58.9%)  Print instruction-level program dependency graph of function to 'dot' file
+  1087.0080 ( 40.8%)   0.0680 (  1.6%)  1087.0760 ( 40.8%)  1087.1687 ( 40.7%)  Program Dependency Graph
+   9.2160 (  0.3%)   0.0240 (  0.5%)   9.2400 (  0.3%)   9.2338 (  0.3%)  Data Dependency Graph
+   0.1400 (  0.0%)   0.0000 (  0.0%)   0.1400 (  0.0%)   0.1406 (  0.0%)  Bottom-up Data Structure Analysis
+   0.1160 (  0.0%)   0.0000 (  0.0%)   0.1160 (  0.0%)   0.1191 (  0.0%)  Local Data Structure Analysis
+   0.0320 (  0.0%)   0.0000 (  0.0%)   0.0320 (  0.0%)   0.0313 (  0.0%)  Top-down Data Structure Analysis
+   0.0200 (  0.0%)   0.0000 (  0.0%)   0.0200 (  0.0%)   0.0199 (  0.0%)  Compute DSNode equivalence classes
+   0.0120 (  0.0%)   0.0000 (  0.0%)   0.0120 (  0.0%)   0.0127 (  0.0%)  Standard Library Local Data Structure Analysis
+   0.0120 (  0.0%)   0.0000 (  0.0%)   0.0120 (  0.0%)   0.0106 (  0.0%)  Bitcode Writer
+   0.0120 (  0.0%)   0.0000 (  0.0%)   0.0120 (  0.0%)   0.0063 (  0.0%)  Module Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0032 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0040 (  0.1%)   0.0040 (  0.0%)   0.0027 (  0.0%)  Post-Dominator Tree Construction
+   0.0040 (  0.0%)   0.0000 (  0.0%)   0.0040 (  0.0%)   0.0015 (  0.0%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0015 (  0.0%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+  2663.0720 (100.0%)   4.3760 (100.0%)  2667.4480 (100.0%)  2668.3760 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0160 seconds (0.0274 wall clock)
+
+   ---User Time---   --User+System--   ---Wall Time---  --- Name ---
+   0.0160 (100.0%)   0.0160 (100.0%)   0.0274 (100.0%)  Parse IR
+   0.0160 (100.0%)   0.0160 (100.0%)   0.0274 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

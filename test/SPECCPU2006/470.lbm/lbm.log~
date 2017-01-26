@@ -1,0 +1,42 @@
+loadValue
+loadValueis uncolored
+LBM_initializeSpecialCellsForLDC
+LBM_initializeSpecialCellsForLDC is colored
+LBM_initializeSpecialCellsForChannel
+LBM_initializeSpecialCellsForChannel is colored
+LBM_allocateGrid
+LBM_allocateGridis uncolored
+LBM_freeGrid
+LBM_freeGridis uncolored
+LBM_initializeGrid
+LBM_initializeGrid is colored
+LBM_swapGrids
+LBM_swapGridsis uncolored
+LBM_loadObstacleFile
+LBM_loadObstacleFile is colored
+LBM_performStreamCollide
+LBM_performStreamCollide is colored
+LBM_handleInOutFlow
+LBM_handleInOutFlow is colored
+LBM_showGridStatistics
+LBM_showGridStatistics is colored
+LBM_storeVelocityField
+LBM_storeVelocityField is colored
+LBM_compareVelocityField
+LBM_compareVelocityField is colored
+storeValue
+storeValueis uncolored
+MAIN_finalize
+MAIN_finalize is colored
+main
+main is colored
+MAIN_parseCommandLine
+MAIN_parseCommandLineis uncolored
+MAIN_printInfo
+MAIN_printInfois uncolored
+MAIN_initialize
+MAIN_initialize is colored
+non-library functions in total: 19
+sensitive functions count  : 12
+insensitive functions count: 7
+

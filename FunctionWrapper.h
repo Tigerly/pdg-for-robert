@@ -42,16 +42,15 @@ class ArgumentWrapper{
 
  private:
   Argument *arg;
-  tree<InstructionWrapper*> actualInTree;
-  tree<InstructionWrapper*> actualOutTree;
+
+  //formal in/out trees should be together with each function body
   tree<InstructionWrapper*> formalInTree;
   tree<InstructionWrapper*> formalOutTree;
-
+  //actual in/out trees should be together with each call wrapper
+  tree<InstructionWrapper*> actualInTree;
+  tree<InstructionWrapper*> actualOutTree;
 
  public:
-
-  //  std::set<Type*> recursive_types;
-
 
   ArgumentWrapper(Argument* arg){
     this->arg = arg;
@@ -61,33 +60,19 @@ class ArgumentWrapper{
   Argument* getArg(){
     return arg;
   }
-  /*
-    tree<InstructionWrapper*> getActualInTree(){
-    return actualInTree;
-    }*/
-
-  /*
-  std::set<Type*>& get_recursive_types(){
-    return recursive_types;
-  }
-
-  int get_recursive_types_size(){
-    return recursive_types.size();
-    }*/
-
-
 
   //TreeType: 0-ACTUAL_IN 1-ACTUAL_OUT 2-FORMAL_IN 3-FORMAL_OUT
   tree<InstructionWrapper*>& getTree(TreeType treeTy){
     switch(treeTy){
-    case ACTUAL_IN_TREE:
-      return actualInTree;
-    case ACTUAL_OUT_TREE:
-      return actualOutTree;
+
     case FORMAL_IN_TREE:
       return formalInTree;
     case FORMAL_OUT_TREE:
       return formalOutTree;
+    case ACTUAL_IN_TREE:
+      return actualInTree;
+    case ACTUAL_OUT_TREE:
+      return actualOutTree;
       
       break;
     }
@@ -95,25 +80,53 @@ class ArgumentWrapper{
 
 };
 
+class CallWrapper{
+ private:
+  CallInst *CI;
+  std::list<ArgumentWrapper*> argWList;
+  
+ public:
+
+  CallWrapper(CallInst *CI) {
+    
+    this->CI = CI;
+    //  Function::ArgumentListType& callee_args = Func->getArgumentList();
+    for(Function::arg_iterator argIt = CI->getCalledFunction()->getArgumentList().begin(), 
+	  argE = CI->getCalledFunction()->getArgumentList().end(); argIt != argE; ++argIt){
+
+      ArgumentWrapper *argW = new ArgumentWrapper(&*argIt);
+      argWList.push_back(argW);
+    }
+  }
+
+  CallInst* getCallInstruction(){
+    return CI;
+  }
+
+  std::list<ArgumentWrapper*>& getArgWList(){
+    return argWList;
+  }
+
+  static std::map<const CallInst *,CallWrapper *> callMap;
+
+};
+
+
 //FunctionWrapper
 class FunctionWrapper {
 
  private:
   Function *Func;    
   InstructionWrapper * entryW;
-  //  std::set<llvm::Value*> args;
   std::list<llvm::StoreInst*> storeInstList;
   std::list<llvm::LoadInst*> loadInstList;
   std::list<llvm::Instruction*> returnInstList;
   std::list<llvm::CallInst*> callInstList;
-
   std::list<ArgumentWrapper*> argWList;
-
   std::set<llvm::Value*> ptrSet;
 
   bool treeFlag = false;
   bool visited = false;
-
 
  public:
 
@@ -216,13 +229,6 @@ class FunctionWrapper {
 
     return false;
   }
-
-
-
-
-
-
-
 
   static void constructFuncMap(Module &M) {
     for (Module::iterator F = M.begin(), E = M.end(); F != E; ++F){

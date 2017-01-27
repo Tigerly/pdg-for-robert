@@ -44,20 +44,24 @@ namespace cot {
     ProgramDepGraph *PDG;
     static llvm::AliasAnalysis *Global_AA;
 
-    ProgramDependencyGraph() : llvm::ModulePass(ID)
-    {
+    ProgramDependencyGraph() : llvm::ModulePass(ID){
       PDG = new ProgramDepGraph();
     }
 
-    ~ProgramDependencyGraph()
-    {
+    ~ProgramDependencyGraph(){
       InstructionWrapper::releaseMemory();
       delete PDG;
     }
+    void drawFormalParameterTree(Function* func, TreeType treeTy);
 
-    void drawParameterTree(llvm::Function* call_func, TreeType treeTy);
+    void drawActualParameterTree(CallInst* CI, TreeType treeTy);
 
-    int connectCallerAndCallee(InstructionWrapper *InstW, llvm::Function *call_func);
+    //    void drawParameterTree(llvm::Function* call_func, TreeType treeTy);
+
+
+    void connectFunctionAndFormalTrees(Function *callee);
+    int connectCallerAndCallee(InstructionWrapper *CInstW, llvm::Function *callee);
+    //    int connectCallerAndCallee(CallInst *CI, llvm::Function *callee);
 
     bool runOnModule(llvm::Module &M);
 

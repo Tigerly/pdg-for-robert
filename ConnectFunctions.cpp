@@ -29,7 +29,7 @@ ArgumentWrapper* getArgWrapper(FunctionWrapper *funcW, Argument *arg){
 int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
   
   
-  // errs() << "\n" << "buildTypeTree in TIME: " << "\n";
+  errs() << "\n" << "buildTypeTree in TIME: " << "\n";
 
   if(arg == nullptr){
     // errs() << "In buildTypeTree, incomming arg is a nullptr\n";
@@ -55,7 +55,7 @@ int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
 	//check historic record of recursive types to avoid redundant processing tree node
 	if(recursive_types.find(tyW->getType()) != recursive_types.end() ){
 	  //	  errs() << *tyW->getType() << " is a recursive type found in historic record!\n ";
-	    return RECURSIVE_TYPE;
+	  return RECURSIVE_TYPE;
 	}
 
 
@@ -160,20 +160,13 @@ int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
   return SUCCEED;
 }
 
-
-void buildTree(Argument *arg, TreeType treeTy){
+//build formal in/out tree for each argument in function body(funcMap)
+void buildFormalTree(Argument *arg, TreeType treeTy){
 
   InstructionWrapper *treeTyW = nullptr;
 
   switch(treeTy){
-  case ACTUAL_IN_TREE:{
-    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_IN);
-    break;
-  }
-  case ACTUAL_OUT_TREE:{
-    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_OUT);
-    break;
-  }
+
   case FORMAL_IN_TREE:{
     treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, FORMAL_IN);
     break;
@@ -194,33 +187,20 @@ void buildTree(Argument *arg, TreeType treeTy){
     exit(1);
   }
 
-  //  errs() << " DEBUG ConnectFunctions.cpp in buildTree TEST" << "\n";
-  //  errs() << "treeTyW->getArg() = " << *treeTyW->getArgument() << "\n";
-
-
   //find the right arg, and set tree root
   list<ArgumentWrapper*>::iterator argWLoc;
+
+  //find root node for formal trees(funcMap)
+ 
   for(list<ArgumentWrapper*>::iterator argWI = FunctionWrapper::funcMap[arg->getParent()]->getArgWList().begin(),
 	argWE = FunctionWrapper::funcMap[arg->getParent()]->getArgWList().end(); argWI != argWE; ++argWI){
     if((*argWI)->getArg() == arg)
       argWLoc = argWI;
-  }
-
-  //  errs() << "DEBUG ConnectFunctions.cpp in buildTree TEST middle\n";
-
-  //  errs() << "*argWLoc->getArg() : " << *(*argWLoc)->getArg() << "\n";
-
-
-  //  errs() << "tree size = " << (*argWLoc)->getTree(treeTy).size() << "tree type = " << treeTy << "\n";
-
+  }  
 
   tree<InstructionWrapper*>::iterator treeRoot = (*argWLoc)->getTree(treeTy).set_head(treeTyW);  
-  //  (*argWI)->getTree(treeTy).insert(treeRoot, treeTyW);
-
-  //  errs() << "in buildTree TEST 2" << "\n";
 
   TypeWrapper *tyW = new TypeWrapper(arg->getType(),id++);
-
 
   //TODO: function ptr case...
   //avoid FILE* 
@@ -235,43 +215,96 @@ void buildTree(Argument *arg, TreeType treeTy){
     buildTypeTree(arg, tyW, treeTy);
 
   id = 0;
-  // errs() << *arg << " ##########After buildTypeTree " << (*argWLoc)->getTree(treeTy).size() << "Tree Type = " << treeTy << "\n";
 }
 
-void buildParameterTrees(InstructionWrapper *InstW, Function* calleeFunc){
+
+
+void buildActualTree(CallInst* CI, Argument *arg, TreeType treeTy){
+
+  InstructionWrapper *treeTyW = nullptr;
+
+  switch(treeTy){
+  case ACTUAL_IN_TREE:{
+    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_IN);
+    break;
+  }
+  case ACTUAL_OUT_TREE:{
+    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_OUT);
+    break;
+  }
+  default:
+    errs() << "Wrong TreeType input! \n";
+    exit(1);
+  }
+
+  if(treeTyW != nullptr)
+    InstructionWrapper::nodes.insert(treeTyW);
+  else{
+    errs() << "treeTyW is a null pointer!" <<"\n";
+    exit(1);
+  }
+
+  //find the right arg, and set tree root
+  list<ArgumentWrapper*>::iterator argWLoc;
+
+  //find root node for actual trees(callMap)
+  for(list<ArgumentWrapper*>::iterator argWI = CallWrapper::callMap[CI]->getArgWList().begin(),
+	argWE = CallWrapper::callMap[CI]->getArgWList().end(); argWI != argWE; ++argWI){
+    if((*argWI)->getArg() == arg)
+      argWLoc = argWI;
+  }
+
+  tree<InstructionWrapper*>::iterator treeRoot = (*argWLoc)->getTree(treeTy).set_head(treeTyW);  
+  //  (*argWI)->getTree(treeTy).insert(treeRoot, treeTyW);
+
+  TypeWrapper *tyW = new TypeWrapper(arg->getType(),id++);
+
+  //TODO: function ptr case...
+  //avoid FILE* 
+  string Str;
+  raw_string_ostream OS(Str);
+  OS << *tyW->getType();
+  //FILE*, bypass, no need to buildTypeTree
+  if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
+    errs() << "OS.str() = " << OS.str() << " FILE* appears, stop buildTypeTree\n";      
+  }
+  else
+    buildTypeTree(arg, tyW, treeTy);
+
+  id = 0;
+}
+
+
+//build formal trees for each function
+void buildFormalParameterTrees(Function* callee){
 
   // sequentially set up parameter trees for the each argument 		  
   std::list<ArgumentWrapper*>::iterator argI = 
-    FunctionWrapper::funcMap[calleeFunc]->getArgWList().begin();
+    FunctionWrapper::funcMap[callee]->getArgWList().begin();
   std::list<ArgumentWrapper*>::iterator argE = 
-    FunctionWrapper::funcMap[calleeFunc]->getArgWList().end();
-  
-  //  errs() << "buildParameterTrees getArgWList size = " <<  FunctionWrapper::funcMap[calleeFunc]->getArgWList().size() << "\n";
-  //TODO for not executed!
-  /*
-    for(int i = 0; i < FunctionWrapper::funcMap[calleeFunc]->getArgWList().size(); i++){
-    errs() << "i = " << i << "\n";
-    buildTree((*FunctionWrapper::funcMap[calleeFunc]->getArgWList())->getArg(), ACTUAL_IN_TREE);
-    buildTree((*argI)->getArg(), ACTUAL_OUT_TREE); 
-    buildTree((*argI)->getArg(), FORMAL_IN_TREE);
-    buildTree((*argI)->getArg(), FORMAL_OUT_TREE); 
-    errs() << "After FORMAL_OUT_TREE construction!\n";
-
-    }*/
-
-  
+    FunctionWrapper::funcMap[callee]->getArgWList().end();
+    
   for(; argI != argE; ++argI){
-
-    errs() << "inside buildParameterTrees Time = " << debug_id++ << "\n";
-     
-    buildTree((*argI)->getArg(), ACTUAL_IN_TREE);
-    errs() << "After ACTUAL_IN_TREE construction!\n"; 
-    buildTree((*argI)->getArg(), ACTUAL_OUT_TREE); 
-    buildTree((*argI)->getArg(), FORMAL_IN_TREE);
-    buildTree((*argI)->getArg(), FORMAL_OUT_TREE); 
+    buildFormalTree((*argI)->getArg(), FORMAL_IN_TREE);
+    buildFormalTree((*argI)->getArg(), FORMAL_OUT_TREE); 
   }
 
-  FunctionWrapper::funcMap[calleeFunc]->setTreeFlag(true);
+  FunctionWrapper::funcMap[callee]->setTreeFlag(true);
+}
 
-  //  errs() << " end of buildParameterTrees ! \n";
+
+//build actual trees for each call instruction
+void buildActualParameterTrees(CallInst *CI){
+
+  Function *callee = CI->getCalledFunction();
+
+  std::list<ArgumentWrapper*>::iterator argI = 
+    CallWrapper::callMap[CI]->getArgWList().begin();
+  std::list<ArgumentWrapper*>::iterator argE = 
+    CallWrapper::callMap[CI]->getArgWList().end();
+   
+  for(; argI != argE; ++argI){
+    buildActualTree(CI, (*argI)->getArg(), ACTUAL_IN_TREE);
+    buildActualTree(CI, (*argI)->getArg(), ACTUAL_OUT_TREE); 
+  }
 }

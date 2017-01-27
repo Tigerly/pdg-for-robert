@@ -36,9 +36,12 @@ using namespace llvm;
 
 int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy);
 
-void buildTree(Argument *arg, TreeType treeTy);
+void buildFormalTree(Argument *arg, TreeType treeTy);
 
-void buildParameterTrees(InstructionWrapper *InstW, Function* Func);
+void buildActualTree(CallInst* CI, Argument *arg, TreeType treeTy);
 
+void buildFormalParameterTrees(Function* Func);
+
+void buildActualParameterTrees(CallInst *CI);
 
 #endif

@@ -34,7 +34,9 @@ using namespace cot;
 using namespace llvm;
 
 
-int buildTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy);
+int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy);
+
+int buildActualTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy, CallInst *CI);
 
 void buildFormalTree(Argument *arg, TreeType treeTy);
 

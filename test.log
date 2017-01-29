@@ -1,0 +1,264 @@
+file parameter: test/naive-annotation/function_annotation/test.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 7
+======Global List: ======
+PDG 1.428571e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:foo
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:foo
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14 Function: foo
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 0
+printf is defined outside!
+PDG 2.857143e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23 Function: add
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2
+PDG 4.285714e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sub
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sub
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 32 Function: sub
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 4
+PDG 5.714286e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mult
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mult
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 41 Function: mult
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6
+PDG 7.142857e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 77 Function: main
+computerDependencies DEBUG 1
+Intrinsic var_annotation:   %var1 = bitcast i32* %var to i8*
+******** BitInst opcode:   %var1 = bitcast i32* %var to i8*BitCast 
+DEBUG 456 New call for tree construction:   call void @foo()
+foo has parameter trees already! Just build actual counterparts
+CI =   call void @foo()
+before connectCallerAndCallee :  call void @foo() func :foo
+DEBUG 459 connectCallerAndCallee callInst:   call void @foo()
+DEBUG 456 New call for tree construction:   %call3 = call i32 @mult(i32 3, i32 5)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+LI   %0 = load i32* %a.addr, align 4
+LI ptr typei32
+LI   %1 = load i32* %b.addr, align 4
+LI ptr typei32
+LI   %0 = load i32* %a.addr, align 4
+LI ptr typei32
+LI   %1 = load i32* %b.addr, align 4
+LI ptr typei32
+mult has parameter trees already! Just build actual counterparts
+CI =   %call3 = call i32 @mult(i32 3, i32 5)
+before connectCallerAndCallee :  %call3 = call i32 @mult(i32 3, i32 5) func :mult
+DEBUG 459 connectCallerAndCallee callInst:   %call3 = call i32 @mult(i32 3, i32 5)
+mult has parameter trees already! Just build actual counterparts
+CI =   %call5 = call i32 @mult(i32 4, i32 5)
+before connectCallerAndCallee :  %call5 = call i32 @mult(i32 4, i32 5) func :mult
+DEBUG 459 connectCallerAndCallee callInst:   %call5 = call i32 @mult(i32 4, i32 5)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16
+llvm.var.annotation is defined outside!
+
+
+ PDG construction completed! ^_^
+
+funcs = 5
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 11
+sensitive global found! value = @gv_s = global i32 2017, align 4
+sensitive global found! value = @pi = global float 0x40091EB860000000, align 4
+sensitive global found! value = 
+; Function Attrs: nounwind uwtable
+define void @foo() #0 {
+entry:
+  %call = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([22 x i8]* @.str2, i32 0, i32 0))
+  ret void
+}
+
+async_funcs ++ sensitive foo
+sensitive global found! value = 
+; Function Attrs: nounwind uwtable
+define i32 @mult(i32 %a, i32 %b) #0 {
+entry:
+  %a.addr = alloca i32, align 4
+  %b.addr = alloca i32, align 4
+  store i32 %a, i32* %a.addr, align 4
+  store i32 %b, i32* %b.addr, align 4
+  %0 = load i32* %a.addr, align 4
+  %1 = load i32* %b.addr, align 4
+  %mul = mul nsw i32 %0, %1
+  ret i32 %mul
+}
+
+async_funcs ++ sensitive mult
+sensitive global found! value = @gtest_1 = common global i32* null, align 8
+sensitive_global: @gv_s = global i32 2017, align 4
+sensitive_global: @pi = global float 0x40091EB860000000, align 4
+sensitive_global: @gtest_1 = common global i32* null, align 8
+sensitive_values 0 ==   %var = alloca i32, align 4
+sensitive_nodes.size = 4
+queue.size = 4
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+SENSITIVE INSTRUCTION [0] Mem Addr :0x2be3b68 Value :   %var = alloca i32, align 4
+SENSITIVE INSTRUCTION [1] Mem Addr :0x2be3e48 Value :   %var1 = bitcast i32* %var to i8*
+SENSITIVE INSTRUCTION [2] Mem Addr :0x2be3f18 Value :   call void @llvm.var.annotation(i8* %var1, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str1, i32 0, i32 0), i32 38)
+SENSITIVE INSTRUCTION [3] Mem Addr :0x2be3f98 Value :   %1 = load i32* @gv_s, align 4
+SENSITIVE INSTRUCTION [4] Mem Addr :0x2be4020 Value :   store i32 %1, i32* %var, align 4
+SENSITIVE INSTRUCTION [5] Mem Addr :0x2be4098 Value :   %2 = load i32* %var, align 4
+SENSITIVE INSTRUCTION [6] Mem Addr :0x2be4108 Value :   %conv = sitofp i32 %2 to float
+SENSITIVE INSTRUCTION [7] Mem Addr :0x2be4178 Value :   %3 = load float* @pi, align 4
+SENSITIVE INSTRUCTION [8] Mem Addr :0x2be4200 Value :   %add = fadd float %conv, %3
+SENSITIVE INSTRUCTION [9] Mem Addr :0x2bd4a88 Value :   %conv2 = fptosi float %add to i32
+SENSITIVE INSTRUCTION [10] Mem Addr :0x2bcf2b0 Value :   store i32 %conv2, i32* %var, align 4
+SENSITIVE INSTRUCTION [11] Mem Addr :0x2bcf3b8 Value :   %4 = load i32** @gtest_1, align 8
+SENSITIVE INSTRUCTION [12] Mem Addr :0x2bcf428 Value :   %5 = load i32* %4, align 4
+SENSITIVE INSTRUCTION [13] Mem Addr :0x2bcf4c8 Value :   %call = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([4 x i8]* @.str3, i32 0, i32 0), i32 %5)
+SENSITIVE INSTRUCTION [14] Mem Addr :0x2be5198 Value :   %8 = load i32* %var, align 4
+SENSITIVE INSTRUCTION [15] Mem Addr :0x2be5208 Value :   ret i32 %8
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+multis uncolored
+main is colored(sensitive)
+func name = main
+foois uncolored
+addis uncolored
+subis uncolored
+non-library functions in total: 5
+sen_FuncSet  : 1
+ins_FuncSet  : 4
+functions count = 5
+Writing 'pdgragh.foo.dot'...
+Writing 'pdgragh.add.dot'...
+Writing 'pdgragh.sub.dot'...
+Writing 'pdgragh.mult.dot'...
+Writing 'pdgragh.main.dot'...
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0080 seconds (0.0081 wall clock)
+
+   ---User Time---   --User+System--   ---Wall Time---  --- Name ---
+   0.0040 ( 50.0%)   0.0040 ( 50.0%)   0.0021 ( 25.6%)  Program Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0020 ( 24.8%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.0040 ( 50.0%)   0.0040 ( 50.0%)   0.0016 ( 19.7%)  Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0006 (  7.5%)  Top-down Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0005 (  5.9%)  Standard Library Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0005 (  5.7%)  Bottom-up Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  4.2%)  Data Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  1.6%)  Compute DSNode equivalence classes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  1.4%)  Bitcode Writer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.9%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.8%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.7%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.4%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.4%)  Module Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.1%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   0.0080 (100.0%)   0.0080 (100.0%)   0.0081 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0000 seconds (0.0002 wall clock)
+
+   ---Wall Time---  --- Name ---
+   0.0002 (100.0%)  Parse IR
+   0.0002 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

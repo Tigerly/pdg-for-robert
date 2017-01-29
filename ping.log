@@ -1,0 +1,386 @@
+file parameter: test/ping.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 34
+======Global List: ======
+PDG 2.941176e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 408 Function: main
+computerDependencies DEBUG 1
+domNode is null!
+call_func = null:   %call25 = call i32 (i8*, ...)* bitcast (i32 (...)* @inet_addr to i32 (i8*, ...)*)(i8* %25)
+indirect call, called Type t = i32 (i8*, ...)*
+call_func = null:   %call41 = call i32 (i8*, i8*, i32, ...)* bitcast (i32 (...)* @bcopy to i32 (i8*, i8*, i32, ...)*)(i8* %39, i8* %41, i32 %43)
+indirect call, called Type t = i32 (i8*, i8*, i32, ...)*
+call_func = null:   %call52 = call i32 (i8*, ...)* bitcast (i32 (...)* @atoi to i32 (i8*, ...)*)(i8* %52)
+indirect call, called Type t = i32 (i8*, ...)*
+call_func = null:   %call69 = call i32 (i8*, ...)* bitcast (i32 (...)* @atoi to i32 (i8*, ...)*)(i8* %58)
+indirect call, called Type t = i32 (i8*, ...)*
+call_func = null:   %call75 = call i32 (i8*, ...)* bitcast (i32 (...)* @atoi to i32 (i8*, ...)*)(i8* %61)
+indirect call, called Type t = i32 (i8*, ...)*
+call_func = null:   %call115 = call i8* (i32, ...)* bitcast (i8* (...)* @inet_ntoa to i8* (i32, ...)*)(i32 %77)
+indirect call, called Type t = i8* (i32, ...)*
+DEBUG 456 New call for tree construction:   %call124 = call i32 @pinger()
+pinger has parameter trees already! Just build actual counterparts
+CI =   %call124 = call i32 @pinger()
+before connectCallerAndCallee :  %call124 = call i32 @pinger() func :pinger
+DEBUG 459 connectCallerAndCallee callInst:   %call124 = call i32 @pinger()
+DEBUG 456 New call for tree construction:   %call128 = call i32 @catcher()
+catcher has parameter trees already! Just build actual counterparts
+CI =   %call128 = call i32 @catcher()
+before connectCallerAndCallee :  %call128 = call i32 @catcher() func :catcher
+DEBUG 459 connectCallerAndCallee callInst:   %call128 = call i32 @catcher()
+pinger has parameter trees already! Just build actual counterparts
+CI =   %call134 = call i32 @pinger()
+before connectCallerAndCallee :  %call134 = call i32 @pinger() func :pinger
+DEBUG 459 connectCallerAndCallee callInst:   %call134 = call i32 @pinger()
+DEBUG 456 New call for tree construction:   %call153 = call i32 @pr_pack(i8* getelementptr inbounds ([4096 x i8]* @packet, i32 0, i32 0), i32 %93, %struct.sockaddr_in* %from)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+pr_pack has parameter trees already! Just build actual counterparts
+CI =   %call153 = call i32 @pr_pack(i8* getelementptr inbounds ([4096 x i8]* @packet, i32 0, i32 0), i32 %93, %struct.sockaddr_in* %from)
+before connectCallerAndCallee :  %call153 = call i32 @pr_pack(i8* getelementptr inbounds ([4096 x i8]* @packet, i32 0, i32 0), i32 %93, %struct.sockaddr_in* %from) func :pr_pack
+DEBUG 459 connectCallerAndCallee callInst:   %call153 = call i32 @pr_pack(i8* getelementptr inbounds ([4096 x i8]* @packet, i32 0, i32 0), i32 %93, %struct.sockaddr_in* %from)
+DEBUG 456 New call for tree construction:   %call158 = call i32 @finish()
+finish has parameter trees already! Just build actual counterparts
+CI =   %call158 = call i32 @finish()
+before connectCallerAndCallee :  %call158 = call i32 @finish() func :finish
+DEBUG 459 connectCallerAndCallee callInst:   %call158 = call i32 @finish()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 63
+printf is defined outside!
+exit is defined outside!
+llvm.memset.p0i8.i64 is defined outside!
+inet_addr is defined outside!
+strcpy is defined outside!
+gethostbyname is defined outside!
+bcopy is defined outside!
+atoi is defined outside!
+fprintf is defined outside!
+getpid is defined outside!
+getprotobyname is defined outside!
+socket is defined outside!
+perror is defined outside!
+setsockopt is defined outside!
+inet_ntoa is defined outside!
+setlinebuf is defined outside!
+signal is defined outside!
+select is defined outside!
+recvfrom is defined outside!
+__errno_location is defined outside!
+PDG 5.882353e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:catcher
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:catcher
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 470 Function: catcher
+computerDependencies DEBUG 1
+pinger has parameter trees already! Just build actual counterparts
+CI =   %call = call i32 @pinger()
+before connectCallerAndCallee :  %call = call i32 @pinger() func :pinger
+DEBUG 459 connectCallerAndCallee callInst:   %call = call i32 @pinger()
+call_func = null:   %call2 = call i32 (i32, ...)* bitcast (i32 (...)* @alarm to i32 (i32, ...)*)(i32 1)
+indirect call, called Type t = i32 (i32, ...)*
+call_func = null:   %call9 = call i32 (i32, ...)* bitcast (i32 (...)* @alarm to i32 (i32, ...)*)(i32 %6)
+indirect call, called Type t = i32 (i32, ...)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 67
+alarm is defined outside!
+PDG 8.823529e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pinger
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pinger
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 572 Function: pinger
+computerDependencies DEBUG 1
+call_func = null:   %call7 = call i32 (%struct.icmp*, i32, ...)* bitcast (i32 (i16*, i32)* @in_cksum to i32 (%struct.icmp*, i32, ...)*)(%struct.icmp* %15, i32 %16)
+indirect call, called Type t = i32 (%struct.icmp*, i32, ...)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 84
+gettimeofday is defined outside!
+sendto is defined outside!
+fflush is defined outside!
+putchar is defined outside!
+PDG 1.176471e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pr_type
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pr_type
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 592 Function: pr_type
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 89
+PDG 1.470588e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pr_pack
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pr_pack
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 805 Function: pr_pack
+computerDependencies DEBUG 1
+call_func = null:   %call8 = call i8* (i32, ...)* bitcast (i8* (...)* @inet_ntoa to i8* (i32, ...)*)(i32 %call7)
+indirect call, called Type t = i8* (i32, ...)*
+call_func = null:   %call19 = call i8* (i32, ...)* bitcast (i8* (...)* @inet_ntoa to i8* (i32, ...)*)(i32 %call18)
+indirect call, called Type t = i8* (i32, ...)*
+DEBUG 456 New call for tree construction:   %call24 = call i8* @pr_type(i32 %conv23)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+pr_type has parameter trees already! Just build actual counterparts
+CI =   %call24 = call i8* @pr_type(i32 %conv23)
+before connectCallerAndCallee :  %call24 = call i8* @pr_type(i32 %conv23) func :pr_type
+DEBUG 459 connectCallerAndCallee callInst:   %call24 = call i8* @pr_type(i32 %conv23)
+DEBUG 456 New call for tree construction:   %call43 = call i32 @tvsub(%struct.timeval* %tv, %struct.timeval* %42)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+tvsub has parameter trees already! Just build actual counterparts
+CI =   %call43 = call i32 @tvsub(%struct.timeval* %tv, %struct.timeval* %42)
+before connectCallerAndCallee :  %call43 = call i32 @tvsub(%struct.timeval* %tv, %struct.timeval* %42) func :tvsub
+DEBUG 459 connectCallerAndCallee callInst:   %call43 = call i32 @tvsub(%struct.timeval* %tv, %struct.timeval* %42)
+call_func = null:   %call64 = call i8* (i32, ...)* bitcast (i8* (...)* @inet_ntoa to i8* (i32, ...)*)(i32 %57)
+indirect call, called Type t = i8* (i32, ...)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 124
+ntohl is defined outside!
+PDG 1.764706e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:in_cksum
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:in_cksum
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 897 Function: in_cksum
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 137
+PDG 2.058824e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tvsub
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tvsub
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 934 Function: tvsub
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 148
+PDG 2.352941e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 983 Function: finish
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 149
+
+
+ PDG construction completed! ^_^
+
+funcs = 8
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 67
+sensitive_nodes.size = 0
+queue.size = 0
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+mainis uncolored
+catcheris uncolored
+pingeris uncolored
+pr_typeis uncolored
+pr_packis uncolored
+in_cksumis uncolored
+tvsubis uncolored
+finishis uncolored
+non-library functions in total: 8
+sen_FuncSet  : 0
+ins_FuncSet  : 8
+functions count = 8
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.catcher.dot'...instW 0x0
+
+Writing 'pdgragh.pinger.dot'...instW 0x0
+
+Writing 'pdgragh.pr_type.dot'...instW 0x0
+
+Writing 'pdgragh.pr_pack.dot'...instW 0x0
+
+Writing 'pdgragh.in_cksum.dot'...instW 0x0
+
+Writing 'pdgragh.tvsub.dot'...instW 0x0
+
+Writing 'pdgragh.finish.dot'...instW 0x0
+
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.3160 seconds (0.3151 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.2320 ( 74.4%)   0.0040 (100.0%)   0.2360 ( 74.7%)   0.2365 ( 75.0%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.0480 ( 15.4%)   0.0000 (  0.0%)   0.0480 ( 15.2%)   0.0491 ( 15.6%)  Program Dependency Graph
+   0.0160 (  5.1%)   0.0000 (  0.0%)   0.0160 (  5.1%)   0.0133 (  4.2%)  Data Dependency Graph
+   0.0040 (  1.3%)   0.0000 (  0.0%)   0.0040 (  1.3%)   0.0062 (  2.0%)  Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0030 (  0.9%)  Top-down Data Structure Analysis
+   0.0040 (  1.3%)   0.0000 (  0.0%)   0.0040 (  1.3%)   0.0027 (  0.8%)  Bottom-up Data Structure Analysis
+   0.0040 (  1.3%)   0.0000 (  0.0%)   0.0040 (  1.3%)   0.0021 (  0.7%)  Standard Library Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0009 (  0.3%)  Compute DSNode equivalence classes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0005 (  0.2%)  Bitcode Writer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.1%)  Module Verifier
+   0.0040 (  1.3%)   0.0000 (  0.0%)   0.0040 (  1.3%)   0.0002 (  0.0%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   0.3120 (100.0%)   0.0040 (100.0%)   0.3160 (100.0%)   0.3151 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0000 seconds (0.0008 wall clock)
+
+   ---Wall Time---  --- Name ---
+   0.0008 (100.0%)  Parse IR
+   0.0008 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

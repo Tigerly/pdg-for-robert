@@ -123,9 +123,74 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
     PDG->addDependency(FunctionWrapper::funcMap[callee]->getEntry(), *InstructionWrapper::nodes.find(formal_outW), PARAMETER);
 
     //TODO: connect corresponding instructions with internal formal tree nodes
-  }
+  
+    //two things: (1) formal-in --> callee's Store; (2) callee's Load --> formal-out
+    for(tree<InstructionWrapper*>::iterator formal_in_TI= (*argI)->getTree(FORMAL_IN_TREE).begin(),
+	  formal_in_TE  = (*argI)->getTree(FORMAL_IN_TREE).end(), 
+	  formal_out_TI = (*argI)->getTree(FORMAL_OUT_TREE).begin();
+	  formal_in_TI != formal_in_TE; ++formal_in_TI, ++formal_out_TI){
 
+      //connect formal-in and formal-out nodes formal-in --> formal-out
+      PDG->addDependency(*InstructionWrapper::nodes.find(*formal_in_TI), *InstructionWrapper::nodes.find(*formal_out_TI), PARAMETER);
+    
+      //must handle nullptr case first
+      if(nullptr == (*formal_in_TI)->getFieldType() ){
+	errs() << "connectFunctionAndFormalTrees: formal_in_TI->getFieldType() == nullptr !\n";
+	break;
+      }
+
+      //connect formal-in-tree type nodes with storeinst in call_func, approximation used here
+      if(nullptr != (*formal_in_TI)->getFieldType()){
+
+	std::list<StoreInst*>::iterator SI = FunctionWrapper::funcMap[callee]->getStoreInstList().begin();
+	std::list<StoreInst*>::iterator SE = FunctionWrapper::funcMap[callee]->getStoreInstList().end();
+
+	for(;SI != SE; ++SI){
+	  if((*formal_in_TI)->getFieldType() == (*SI)->getValueOperand()->getType()){
+
+	    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
+		nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
+	
+	      if((*nodeIt)->getInstruction() == dyn_cast<Instruction>(*SI))
+		PDG->addDependency(*InstructionWrapper::nodes.find(*formal_in_TI), *InstructionWrapper::nodes.find(*nodeIt), DATA_GENERAL);	      
+	    }
+	  }
+	}//end for(;SI != SE; ++SI)
+      }//end if nullptr == (*formal_in_TI)->getFieldType()
+
+      //2. Callee's LoadInsts --> FORMAL_OUT in Callee function
+      //must handle nullptr case first
+      if(nullptr == (*formal_out_TI)->getFieldType() ){
+	errs() << "connectFunctionAndFormalTrees: LoadInst->FORMAL_OUT: formal_out_TI->getFieldType() == nullptr!\n";
+	break;
+      }
+
+      if(nullptr != (*formal_out_TI)->getFieldType()){
+
+	std::list<LoadInst*>::iterator LI = FunctionWrapper::funcMap[callee]->getLoadInstList().begin();
+	std::list<LoadInst*>::iterator LE = FunctionWrapper::funcMap[callee]->getLoadInstList().end();
+      
+	for(;LI != LE; ++LI){
+	  //	  errs() << "LI " << *(*LI) << "\n";
+	  // errs() << "LI ptr type" << *(*LI)->getPointerOperand()->getType()->getContainedType(0) << "\n";
+
+	  if((*formal_out_TI)->getFieldType() == (*LI)->getPointerOperand()->getType()->getContainedType(0)){
+	    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
+		nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
+	
+	      if((*nodeIt)->getInstruction() == dyn_cast<Instruction>(*LI)){		
+		PDG->addDependency(*InstructionWrapper::nodes.find(*nodeIt), *InstructionWrapper::nodes.find(*formal_out_TI), DATA_GENERAL);
+	      }
+	    }
+	  }
+	}//end for(; LI != LE; ++LI)
+      }//end if(nullptr != (*formal_out_TI)->...)
+
+    }//end for (tree formal_in_TI...)
+  }//end for arg iteration...
 }
+
+
 
 
 int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, llvm::Function *callee){
@@ -155,7 +220,6 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
   }
 
   //TODO: consider all kinds of connecting cases
-
   //connect caller InstW with ACTUAL IN/OUT parameter trees
   CallInst *CI = dyn_cast<CallInst>(InstW->getInstruction());
 
@@ -165,131 +229,69 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
     InstructionWrapper *actual_inW = *(*argI)->getTree(ACTUAL_IN_TREE).begin();
     InstructionWrapper *actual_outW = *(*argI)->getTree(ACTUAL_OUT_TREE).begin();
 
-    if(nullptr == *InstructionWrapper::nodes.find(actual_inW)) errs() << "DEBUG LINE 141 InstW NULL\n";
-    if(nullptr == *InstructionWrapper::nodes.find(actual_outW)) errs() << "DEBUG LINE 142 InstW NULL\n";
+    if(nullptr == *InstructionWrapper::nodes.find(actual_inW)) errs() << "DEBUG LINE 168 InstW NULL\n";
+    if(nullptr == *InstructionWrapper::nodes.find(actual_outW)) errs() << "DEBUG LINE 169 InstW NULL\n";
 
     PDG->addDependency(InstW, *InstructionWrapper::nodes.find(actual_inW), PARAMETER);
-    PDG->addDependency(InstW, *InstructionWrapper::nodes.find(actual_outW), PARAMETER);
-    
+    PDG->addDependency(InstW, *InstructionWrapper::nodes.find(actual_outW), PARAMETER);    
   }
 
-
-  
-
-  /*
   //old way, process four trees at the same time, remove soon
-  for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
-	argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
+  list<ArgumentWrapper*>::iterator formal_argI = FunctionWrapper::funcMap[callee]->getArgWList().begin();
+  list<ArgumentWrapper*>::iterator formal_argE = FunctionWrapper::funcMap[callee]->getArgWList().end();
+
+  list<ArgumentWrapper*>::iterator actual_argI = CallWrapper::callMap[CI]->getArgWList().begin();
+  list<ArgumentWrapper*>::iterator actual_argE = CallWrapper::callMap[CI]->getArgWList().end();
+
+  //increase formal/actual tree iterator simutaneously
+  for(; formal_argI != formal_argE; ++formal_argI, ++actual_argI){
 
     //intra-connection between ACTUAL/FORMAL IN/OUT trees
-    for(tree<InstructionWrapper*>::iterator TI= (*argI)->getTree(ACTUAL_IN_TREE).begin(),
-	  TE = (*argI)->getTree(ACTUAL_IN_TREE).end(), 
-	  TI2 = (*argI)->getTree(FORMAL_IN_TREE).begin(),
-	  TI3 = (*argI)->getTree(FORMAL_OUT_TREE).begin(),
-	  TI4 = (*argI)->getTree(ACTUAL_OUT_TREE).begin(); 
-	TI != TE; ++TI, ++TI2, ++TI3, ++TI4){
-      //connect trees: antual-in --> formal-in, formal-in --> formal-out, formal-out --> actual-out
+    for(tree<InstructionWrapper*>::iterator actual_in_TI= (*actual_argI)->getTree(ACTUAL_IN_TREE).begin(),
+	  actual_in_TE  = (*actual_argI)->getTree(ACTUAL_IN_TREE).end(), 
+	  formal_in_TI  = (*formal_argI)->getTree(FORMAL_IN_TREE).begin(), //TI2
+	  formal_out_TI = (*formal_argI)->getTree(FORMAL_OUT_TREE).begin(), //TI3
+	  actual_out_TI = (*actual_argI)->getTree(ACTUAL_OUT_TREE).begin();  //TI4
+	actual_in_TI != actual_in_TE; ++actual_in_TI, ++formal_in_TI, ++formal_out_TI, ++actual_out_TI){
 
-      //      if(nullptr == *InstructionWrapper::nodes.find(*TI)) errs() << "DEBUG LINE 152 InstW NULL\n";
-      PDG->addDependency(*InstructionWrapper::nodes.find(*TI), *InstructionWrapper::nodes.find(*TI2), PARAMETER);
-      PDG->addDependency(*InstructionWrapper::nodes.find(*TI2), *InstructionWrapper::nodes.find(*TI3), PARAMETER);
-      PDG->addDependency(*InstructionWrapper::nodes.find(*TI3), *InstructionWrapper::nodes.find(*TI4), PARAMETER);
+      //connect trees: antual-in --> formal-in, formal-out --> actual-out
+      PDG->addDependency(*InstructionWrapper::nodes.find(*actual_in_TI), *InstructionWrapper::nodes.find(*formal_in_TI), PARAMETER);
+      PDG->addDependency(*InstructionWrapper::nodes.find(*formal_out_TI), *InstructionWrapper::nodes.find(*actual_out_TI), PARAMETER);
        
-      //errs() << "call_func : " << call_func->getName() << "\n";
-      //errs() <<"\n%%%%%%%%%%############ StoreVec size = " <<  StoreVec.size() <<"\n";      
-      //errs() << "DEBUG 179 TI2->getType() = " << (*TI2)->getFieldType() << "address = " << *((*TI2)->getFieldType()) <<"\n";
-
-      //must handle nullptr case first
-      if(nullptr == (*TI2)->getFieldType() ){
-	errs() << "TI2->getFieldType() is empty!\n";
-	break;
-      }
-
-      //connect formal-in-tree type nodes with storeinst in call_func, approximation used here
-      if(nullptr != (*TI2)->getFieldType()){
-
-	std::list<StoreInst*>::iterator SI = FunctionWrapper::funcMap[callee_func]->getStoreInstList().begin();
-	std::list<StoreInst*>::iterator SE = FunctionWrapper::funcMap[callee_func]->getStoreInstList().end();
-
-	for(;SI != SE; ++SI){
-	  if((*TI2)->getFieldType() == (*SI)->getValueOperand()->getType()){
-
-	    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
-		nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
-	
-	      if((*nodeIt)->getInstruction() == dyn_cast<Instruction>(*SI))
-		PDG->addDependency(*InstructionWrapper::nodes.find(*TI2), *InstructionWrapper::nodes.find(*nodeIt), DATA_GENERAL);	      
-	    }
-	  }
-	}//end for(;SI != SE; ++SI)
-      }//end if nullptr == (*TI2)->getFieldType()
     }//end for(tree...) intra-connection between actual/formal
 
     //TODO: why removing this debugging infor will cause segmentation fault?
-    errs() << "DEBUG 221" << "\n";
+    //    errs() << "DEBUG 226" << "\n";
 
-    //2. loadInsts --> FORMAL_OUT in Callee function
-    for(tree<InstructionWrapper*>::iterator TI = (*argI)->getTree(FORMAL_OUT_TREE).begin(),
-	  TE = (*argI)->getTree(FORMAL_OUT_TREE).end(); TI != TE; ++TI){
+    //3. ACTUAL_OUT --> LoadInsts in #Caller# function
+    for(tree<InstructionWrapper*>::iterator actual_out_TI = (*actual_argI)->getTree(ACTUAL_OUT_TREE).begin(),
+	  actual_out_TE = (*actual_argI)->getTree(ACTUAL_OUT_TREE).end(); actual_out_TI != actual_out_TE; ++actual_out_TI){
 
       //must handle nullptr case first
-      if(nullptr == (*TI)->getFieldType() ){
-	errs() << "DEBUG LoadInst->FORMAL_OUT: TI->getFieldType() is empty!\n";
+      if(nullptr == (*actual_out_TI)->getFieldType() ){
+	errs() << "DEBUG ACTUAL_OUT->LoadInst: actual_out_TI->getFieldType() is empty!\n";
 	break;
       }
 
-      if(nullptr != (*TI)->getFieldType()){
+      if(nullptr != (*actual_out_TI)->getFieldType()){
 
-	std::list<StoreInst*>::iterator SI = FunctionWrapper::funcMap[callee_func]->getStoreInstList().begin();
-	std::list<StoreInst*>::iterator SE = FunctionWrapper::funcMap[callee_func]->getStoreInstList().end();
-      
-	for(;SI != SE; ++SI){
-	  if((*TI)->getFieldType() == (*SI)->getValueOperand()->getType()){
-	    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
-		nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
-	
-	      if((*nodeIt)->getInstruction() == dyn_cast<Instruction>(*SI)){
-		
-		PDG->addDependency(*InstructionWrapper::nodes.find(*nodeIt), *InstructionWrapper::nodes.find(*TI), DATA_GENERAL);
-	      }
-	    }
-	  }
-	}//end for(; LI != LE; ++LI)
-      }//end if(nullptr != (*TI3)->...)
-    }// end for(tree TI = getTree FORMAL_OUT_TREE)
- 
-
-    //3. ACTUAL_OUT --> LoadInsts in Caller function
-    for(tree<InstructionWrapper*>::iterator TI = (*argI)->getTree(ACTUAL_OUT_TREE).begin(),
-	  TE = (*argI)->getTree(ACTUAL_OUT_TREE).end(); TI != TE; ++TI){
-
-      //must handle nullptr case first
-      if(nullptr == (*TI)->getFieldType() ){
-	errs() << "DEBUG ACTUAL_OUT->LoadInst: TI->getFieldType() is empty!\n";
-	break;
-      }
-
-      if(nullptr != (*TI)->getFieldType()){
-
-	std::list<LoadInst*>::iterator LI = FunctionWrapper::funcMap[callerInstW->getFunction()]->getLoadInstList().begin();
-	std::list<LoadInst*>::iterator LE = FunctionWrapper::funcMap[callerInstW->getFunction()]->getLoadInstList().end();
+	std::list<LoadInst*>::iterator LI = FunctionWrapper::funcMap[InstW->getFunction()]->getLoadInstList().begin();
+	std::list<LoadInst*>::iterator LE = FunctionWrapper::funcMap[InstW->getFunction()]->getLoadInstList().end();
       
 	for(;LI != LE; ++LI){
-	  // errs() << "TI->getFieldType()" << *(*TI)->getFieldType() << "  LI->type = " << *(*LI)->getType()<<"\n";
-
-	  if((*TI)->getFieldType() == (*LI)->getType()){
+	  if((*actual_out_TI)->getFieldType() == (*LI)->getType()){
 	    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
 		nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
 	
 	      if((*nodeIt)->getInstruction() == dyn_cast<Instruction>(*LI))
-		PDG->addDependency(*InstructionWrapper::nodes.find(*TI), *InstructionWrapper::nodes.find(*nodeIt), DATA_GENERAL);
+		PDG->addDependency(*InstructionWrapper::nodes.find(*actual_out_TI), *InstructionWrapper::nodes.find(*nodeIt), DATA_GENERAL);
 	    }
 	  }
 	}//end for(; LI != LE; ++LI)
       }//end if(nullptr != (*TI3)->...)
-    }// end for(tree TI = getTree FORMAL_OUT_TREE)     
+    }// end for(tree actual_out_TI = getTree FORMAL_OUT_TREE)     
   }//end for argI iteration
-  */
+  
   return 0;
 }
 
@@ -487,13 +489,11 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 		  errs() << callee->getName() << " has parameter trees already! Just build actual counterparts\n";
 		}
 
-
 		errs() << "CI = " << *CI << "\n";
 		buildActualParameterTrees(CI);
 
 		drawActualParameterTree(CI, ACTUAL_IN_TREE);
 		drawActualParameterTree(CI, ACTUAL_OUT_TREE);
-
 
 		errs() << "before connectCallerAndCallee :" << *InstW->getInstruction() << " func :" << callee->getName() << "\n";
 		//take recursive callInst as common callInst

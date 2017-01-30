@@ -9,7 +9,6 @@
 #define NULLPTR 1
 #define RECURSIVE_TYPE 2
 
-
 static int id = 0;
 static int debug_id = 0;
 //static int debug_id = 0
@@ -37,8 +36,6 @@ ArgumentWrapper* getArgWrapperFromCallInst(CallWrapper *callW, Argument *arg){
 
 
 int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
-  
-    errs() << "\n" << "buildFormalTypeTree in TIME: " << "\n";
 
   if(arg == nullptr){
     errs() << "In buildTypeTree, incomming arg is a nullptr\n";
@@ -80,14 +77,8 @@ int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
 
 	  pArgW->getTree(treeTy).append_child(insert_loc,typeFieldW);
 
-	  //recursion, e.g. linked list
-	  //    	  if(tempTyW->getType() == tyW->getType())
-	  //  continue;
-	  //do backtracking along the path until reaching the root, if we can find an type that appears before, 
-	  //use 1-limit to break the tree construction
-	  //	  errs() << "do backtracking along the path from current type to the root\n";
-	  //	  errs() << "insert_loc depth = " << pArgW->getTree(treeTy).depth(insert_loc) << "\n";
-	  //when insert_loc is not the root, it means we need to do backtracking the check recursion
+	  //recursion, e.g. linked list, do backtracking along the path until reaching the root, if we can find an type that appears before, 
+	  //use 1-limit to break the tree construction when insert_loc is not the root, it means we need to do backtracking the check recursion
 
 	  if(pArgW->getTree(treeTy).depth(insert_loc) != 0){
 	    
@@ -192,14 +183,8 @@ int buildActualTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy, CallIn
 
 	  pArgW->getTree(treeTy).append_child(insert_loc,typeFieldW);
 
-	  //recursion, e.g. linked list
-	  //    	  if(tempTyW->getType() == tyW->getType())
-	  //  continue;
-	  //do backtracking along the path until reaching the root, if we can find an type that appears before, 
-	  //use 1-limit to break the tree construction
-	  //	  errs() << "do backtracking along the path from current type to the root\n";
-	  //	  errs() << "insert_loc depth = " << pArgW->getTree(treeTy).depth(insert_loc) << "\n";
-	  //when insert_loc is not the root, it means we need to do backtracking the check recursion
+	  //recursion, e.g. linked list, do backtracking along the path until reaching the root, if we can find an type that appears before, 
+	  //use 1-limit to break the tree construction when insert_loc is not the root, it means we need to do backtracking the check recursion
 
 	  if(pArgW->getTree(treeTy).depth(insert_loc) != 0){
 	    

@@ -58,6 +58,7 @@ namespace cot {
 
     //    void drawParameterTree(llvm::Function* call_func, TreeType treeTy);
 
+    void connectAllPossibleFunctions(InstructionWrapper* CInstW, FunctionType* funcTy);
 
     void connectFunctionAndFormalTrees(Function *callee);
     int connectCallerAndCallee(InstructionWrapper *CInstW, llvm::Function *callee);

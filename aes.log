@@ -1,0 +1,1547 @@
+file parameter: test/AES128/final.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 26
+======Global List: ======
+PDG 3.846154e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_encrypt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_encrypt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 36 Function: AES128_ECB_encrypt
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @BlockCopy(i8* %0, i8* %1)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %0, i8* %1)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %0, i8* %1) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %0, i8* %1)
+DEBUG 456 New call for tree construction:   call void @KeyExpansion()
+KeyExpansion has parameter trees already! Just build actual counterparts
+CI =   call void @KeyExpansion()
+before connectCallerAndCallee :  call void @KeyExpansion() func :KeyExpansion
+DEBUG 459 connectCallerAndCallee callInst:   call void @KeyExpansion()
+DEBUG 456 New call for tree construction:   call void @Cipher()
+Cipher has parameter trees already! Just build actual counterparts
+CI =   call void @Cipher()
+before connectCallerAndCallee :  call void @Cipher() func :Cipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @Cipher()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 10
+PDG 7.692308e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BlockCopy
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:BlockCopy
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 72 Function: BlockCopy
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 17
+PDG 1.153846e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:KeyExpansion
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:KeyExpansion
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 306 Function: KeyExpansion
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call zeroext i8 @getSBoxValue(i8 zeroext %31)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+getSBoxValue has parameter trees already! Just build actual counterparts
+CI =   %call = call zeroext i8 @getSBoxValue(i8 zeroext %31)
+before connectCallerAndCallee :  %call = call zeroext i8 @getSBoxValue(i8 zeroext %31) func :getSBoxValue
+DEBUG 459 connectCallerAndCallee callInst:   %call = call zeroext i8 @getSBoxValue(i8 zeroext %31)
+getSBoxValue has parameter trees already! Just build actual counterparts
+CI =   %call57 = call zeroext i8 @getSBoxValue(i8 zeroext %32)
+before connectCallerAndCallee :  %call57 = call zeroext i8 @getSBoxValue(i8 zeroext %32) func :getSBoxValue
+DEBUG 459 connectCallerAndCallee callInst:   %call57 = call zeroext i8 @getSBoxValue(i8 zeroext %32)
+getSBoxValue has parameter trees already! Just build actual counterparts
+CI =   %call60 = call zeroext i8 @getSBoxValue(i8 zeroext %33)
+before connectCallerAndCallee :  %call60 = call zeroext i8 @getSBoxValue(i8 zeroext %33) func :getSBoxValue
+DEBUG 459 connectCallerAndCallee callInst:   %call60 = call zeroext i8 @getSBoxValue(i8 zeroext %33)
+getSBoxValue has parameter trees already! Just build actual counterparts
+CI =   %call63 = call zeroext i8 @getSBoxValue(i8 zeroext %34)
+before connectCallerAndCallee :  %call63 = call zeroext i8 @getSBoxValue(i8 zeroext %34) func :getSBoxValue
+DEBUG 459 connectCallerAndCallee callInst:   %call63 = call zeroext i8 @getSBoxValue(i8 zeroext %34)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 61
+PDG 1.538462e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Cipher
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:Cipher
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 340 Function: Cipher
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @AddRoundKey(i8 zeroext 0)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext 0)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext 0) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext 0)
+DEBUG 456 New call for tree construction:   call void @SubBytes()
+SubBytes has parameter trees already! Just build actual counterparts
+CI =   call void @SubBytes()
+before connectCallerAndCallee :  call void @SubBytes() func :SubBytes
+DEBUG 459 connectCallerAndCallee callInst:   call void @SubBytes()
+DEBUG 456 New call for tree construction:   call void @ShiftRows()
+ShiftRows has parameter trees already! Just build actual counterparts
+CI =   call void @ShiftRows()
+before connectCallerAndCallee :  call void @ShiftRows() func :ShiftRows
+DEBUG 459 connectCallerAndCallee callInst:   call void @ShiftRows()
+DEBUG 456 New call for tree construction:   call void @MixColumns()
+MixColumns has parameter trees already! Just build actual counterparts
+CI =   call void @MixColumns()
+before connectCallerAndCallee :  call void @MixColumns() func :MixColumns
+DEBUG 459 connectCallerAndCallee callInst:   call void @MixColumns()
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext %1)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext %1) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext %1)
+SubBytes has parameter trees already! Just build actual counterparts
+CI =   call void @SubBytes()
+before connectCallerAndCallee :  call void @SubBytes() func :SubBytes
+DEBUG 459 connectCallerAndCallee callInst:   call void @SubBytes()
+ShiftRows has parameter trees already! Just build actual counterparts
+CI =   call void @ShiftRows()
+before connectCallerAndCallee :  call void @ShiftRows() func :ShiftRows
+DEBUG 459 connectCallerAndCallee callInst:   call void @ShiftRows()
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext 10)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext 10) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext 10)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 62
+PDG 1.923077e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_decrypt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_ECB_decrypt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 366 Function: AES128_ECB_decrypt
+computerDependencies DEBUG 1
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %0, i8* %1)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %0, i8* %1) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %0, i8* %1)
+KeyExpansion has parameter trees already! Just build actual counterparts
+CI =   call void @KeyExpansion()
+before connectCallerAndCallee :  call void @KeyExpansion() func :KeyExpansion
+DEBUG 459 connectCallerAndCallee callInst:   call void @KeyExpansion()
+DEBUG 456 New call for tree construction:   call void @InvCipher()
+InvCipher has parameter trees already! Just build actual counterparts
+CI =   call void @InvCipher()
+before connectCallerAndCallee :  call void @InvCipher() func :InvCipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvCipher()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 70
+PDG 2.307692e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvCipher
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvCipher
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 394 Function: InvCipher
+computerDependencies DEBUG 1
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext 10)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext 10) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext 10)
+DEBUG 456 New call for tree construction:   call void @InvShiftRows()
+InvShiftRows has parameter trees already! Just build actual counterparts
+CI =   call void @InvShiftRows()
+before connectCallerAndCallee :  call void @InvShiftRows() func :InvShiftRows
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvShiftRows()
+DEBUG 456 New call for tree construction:   call void @InvSubBytes()
+InvSubBytes has parameter trees already! Just build actual counterparts
+CI =   call void @InvSubBytes()
+before connectCallerAndCallee :  call void @InvSubBytes() func :InvSubBytes
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvSubBytes()
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext %1)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext %1) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext %1)
+DEBUG 456 New call for tree construction:   call void @InvMixColumns()
+InvMixColumns has parameter trees already! Just build actual counterparts
+CI =   call void @InvMixColumns()
+before connectCallerAndCallee :  call void @InvMixColumns() func :InvMixColumns
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvMixColumns()
+InvShiftRows has parameter trees already! Just build actual counterparts
+CI =   call void @InvShiftRows()
+before connectCallerAndCallee :  call void @InvShiftRows() func :InvShiftRows
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvShiftRows()
+InvSubBytes has parameter trees already! Just build actual counterparts
+CI =   call void @InvSubBytes()
+before connectCallerAndCallee :  call void @InvSubBytes() func :InvSubBytes
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvSubBytes()
+AddRoundKey has parameter trees already! Just build actual counterparts
+CI =   call void @AddRoundKey(i8 zeroext 0)
+before connectCallerAndCallee :  call void @AddRoundKey(i8 zeroext 0) func :AddRoundKey
+DEBUG 459 connectCallerAndCallee callInst:   call void @AddRoundKey(i8 zeroext 0)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 71
+PDG 2.692308e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_encrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_encrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 487 Function: AES128_CBC_encrypt_buffer
+computerDependencies DEBUG 1
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %1, i8* %2)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %1, i8* %2) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %1, i8* %2)
+KeyExpansion has parameter trees already! Just build actual counterparts
+CI =   call void @KeyExpansion()
+before connectCallerAndCallee :  call void @KeyExpansion() func :KeyExpansion
+DEBUG 459 connectCallerAndCallee callInst:   call void @KeyExpansion()
+DEBUG 456 New call for tree construction:   call void @XorWithIv(i8* %11)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+XorWithIv has parameter trees already! Just build actual counterparts
+CI =   call void @XorWithIv(i8* %11)
+before connectCallerAndCallee :  call void @XorWithIv(i8* %11) func :XorWithIv
+DEBUG 459 connectCallerAndCallee callInst:   call void @XorWithIv(i8* %11)
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %12, i8* %13)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %12, i8* %13) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %12, i8* %13)
+Cipher has parameter trees already! Just build actual counterparts
+CI =   call void @Cipher()
+before connectCallerAndCallee :  call void @Cipher() func :Cipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @Cipher()
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %21, i8* %22)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %21, i8* %22) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %21, i8* %22)
+Cipher has parameter trees already! Just build actual counterparts
+CI =   call void @Cipher()
+before connectCallerAndCallee :  call void @Cipher() func :Cipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @Cipher()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 91
+PDG 3.076923e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:XorWithIv
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:XorWithIv
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 534 Function: XorWithIv
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 96
+llvm.memset.p0i8.i64 is defined outside!
+PDG 3.461538e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_decrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AES128_CBC_decrypt_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 621 Function: AES128_CBC_decrypt_buffer
+computerDependencies DEBUG 1
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %1, i8* %2)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %1, i8* %2) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %1, i8* %2)
+KeyExpansion has parameter trees already! Just build actual counterparts
+CI =   call void @KeyExpansion()
+before connectCallerAndCallee :  call void @KeyExpansion() func :KeyExpansion
+DEBUG 459 connectCallerAndCallee callInst:   call void @KeyExpansion()
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %11, i8* %12)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %11, i8* %12) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %11, i8* %12)
+InvCipher has parameter trees already! Just build actual counterparts
+CI =   call void @InvCipher()
+before connectCallerAndCallee :  call void @InvCipher() func :InvCipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvCipher()
+XorWithIv has parameter trees already! Just build actual counterparts
+CI =   call void @XorWithIv(i8* %15)
+before connectCallerAndCallee :  call void @XorWithIv(i8* %15) func :XorWithIv
+DEBUG 459 connectCallerAndCallee callInst:   call void @XorWithIv(i8* %15)
+BlockCopy has parameter trees already! Just build actual counterparts
+CI =   call void @BlockCopy(i8* %21, i8* %22)
+before connectCallerAndCallee :  call void @BlockCopy(i8* %21, i8* %22) func :BlockCopy
+DEBUG 459 connectCallerAndCallee callInst:   call void @BlockCopy(i8* %21, i8* %22)
+InvCipher has parameter trees already! Just build actual counterparts
+CI =   call void @InvCipher()
+before connectCallerAndCallee :  call void @InvCipher() func :InvCipher
+DEBUG 459 connectCallerAndCallee callInst:   call void @InvCipher()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 115
+PDG 3.846154e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AddRoundKey
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:AddRoundKey
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 690 Function: AddRoundKey
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 120
+PDG 4.230769e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 797 Function: InvShiftRows
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 145
+PDG 4.615385e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvSubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvSubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 840 Function: InvSubBytes
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call zeroext i8 @getSBoxInvert(i8 zeroext %5)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+getSBoxInvert has parameter trees already! Just build actual counterparts
+CI =   %call = call zeroext i8 @getSBoxInvert(i8 zeroext %5)
+before connectCallerAndCallee :  %call = call zeroext i8 @getSBoxInvert(i8 zeroext %5) func :getSBoxInvert
+DEBUG 459 connectCallerAndCallee callInst:   %call = call zeroext i8 @getSBoxInvert(i8 zeroext %5)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 149
+PDG 5.000000e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvMixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:InvMixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1393 Function: InvMixColumns
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call zeroext i8 @xtime(i8 zeroext %14)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call = call zeroext i8 @xtime(i8 zeroext %14)
+before connectCallerAndCallee :  %call = call zeroext i8 @xtime(i8 zeroext %14) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call = call zeroext i8 @xtime(i8 zeroext %14)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call13 = call zeroext i8 @xtime(i8 zeroext %15)
+before connectCallerAndCallee :  %call13 = call zeroext i8 @xtime(i8 zeroext %15) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call13 = call zeroext i8 @xtime(i8 zeroext %15)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call14 = call zeroext i8 @xtime(i8 zeroext %call13)
+before connectCallerAndCallee :  %call14 = call zeroext i8 @xtime(i8 zeroext %call13) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call14 = call zeroext i8 @xtime(i8 zeroext %call13)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call18 = call zeroext i8 @xtime(i8 zeroext %16)
+before connectCallerAndCallee :  %call18 = call zeroext i8 @xtime(i8 zeroext %16) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call18 = call zeroext i8 @xtime(i8 zeroext %16)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call19 = call zeroext i8 @xtime(i8 zeroext %call18)
+before connectCallerAndCallee :  %call19 = call zeroext i8 @xtime(i8 zeroext %call18) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call19 = call zeroext i8 @xtime(i8 zeroext %call18)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call20 = call zeroext i8 @xtime(i8 zeroext %call19)
+before connectCallerAndCallee :  %call20 = call zeroext i8 @xtime(i8 zeroext %call19) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call20 = call zeroext i8 @xtime(i8 zeroext %call19)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call24 = call zeroext i8 @xtime(i8 zeroext %17)
+before connectCallerAndCallee :  %call24 = call zeroext i8 @xtime(i8 zeroext %17) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call24 = call zeroext i8 @xtime(i8 zeroext %17)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call25 = call zeroext i8 @xtime(i8 zeroext %call24)
+before connectCallerAndCallee :  %call25 = call zeroext i8 @xtime(i8 zeroext %call24) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call25 = call zeroext i8 @xtime(i8 zeroext %call24)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call26 = call zeroext i8 @xtime(i8 zeroext %call25)
+before connectCallerAndCallee :  %call26 = call zeroext i8 @xtime(i8 zeroext %call25) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call26 = call zeroext i8 @xtime(i8 zeroext %call25)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call27 = call zeroext i8 @xtime(i8 zeroext %call26)
+before connectCallerAndCallee :  %call27 = call zeroext i8 @xtime(i8 zeroext %call26) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call27 = call zeroext i8 @xtime(i8 zeroext %call26)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call33 = call zeroext i8 @xtime(i8 zeroext %19)
+before connectCallerAndCallee :  %call33 = call zeroext i8 @xtime(i8 zeroext %19) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call33 = call zeroext i8 @xtime(i8 zeroext %19)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call37 = call zeroext i8 @xtime(i8 zeroext %20)
+before connectCallerAndCallee :  %call37 = call zeroext i8 @xtime(i8 zeroext %20) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call37 = call zeroext i8 @xtime(i8 zeroext %20)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call38 = call zeroext i8 @xtime(i8 zeroext %call37)
+before connectCallerAndCallee :  %call38 = call zeroext i8 @xtime(i8 zeroext %call37) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call38 = call zeroext i8 @xtime(i8 zeroext %call37)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call42 = call zeroext i8 @xtime(i8 zeroext %21)
+before connectCallerAndCallee :  %call42 = call zeroext i8 @xtime(i8 zeroext %21) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call42 = call zeroext i8 @xtime(i8 zeroext %21)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call43 = call zeroext i8 @xtime(i8 zeroext %call42)
+before connectCallerAndCallee :  %call43 = call zeroext i8 @xtime(i8 zeroext %call42) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call43 = call zeroext i8 @xtime(i8 zeroext %call42)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call44 = call zeroext i8 @xtime(i8 zeroext %call43)
+before connectCallerAndCallee :  %call44 = call zeroext i8 @xtime(i8 zeroext %call43) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call44 = call zeroext i8 @xtime(i8 zeroext %call43)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call48 = call zeroext i8 @xtime(i8 zeroext %22)
+before connectCallerAndCallee :  %call48 = call zeroext i8 @xtime(i8 zeroext %22) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call48 = call zeroext i8 @xtime(i8 zeroext %22)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call49 = call zeroext i8 @xtime(i8 zeroext %call48)
+before connectCallerAndCallee :  %call49 = call zeroext i8 @xtime(i8 zeroext %call48) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call49 = call zeroext i8 @xtime(i8 zeroext %call48)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call50 = call zeroext i8 @xtime(i8 zeroext %call49)
+before connectCallerAndCallee :  %call50 = call zeroext i8 @xtime(i8 zeroext %call49) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call50 = call zeroext i8 @xtime(i8 zeroext %call49)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call51 = call zeroext i8 @xtime(i8 zeroext %call50)
+before connectCallerAndCallee :  %call51 = call zeroext i8 @xtime(i8 zeroext %call50) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call51 = call zeroext i8 @xtime(i8 zeroext %call50)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call58 = call zeroext i8 @xtime(i8 zeroext %24)
+before connectCallerAndCallee :  %call58 = call zeroext i8 @xtime(i8 zeroext %24) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call58 = call zeroext i8 @xtime(i8 zeroext %24)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call62 = call zeroext i8 @xtime(i8 zeroext %25)
+before connectCallerAndCallee :  %call62 = call zeroext i8 @xtime(i8 zeroext %25) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call62 = call zeroext i8 @xtime(i8 zeroext %25)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call63 = call zeroext i8 @xtime(i8 zeroext %call62)
+before connectCallerAndCallee :  %call63 = call zeroext i8 @xtime(i8 zeroext %call62) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call63 = call zeroext i8 @xtime(i8 zeroext %call62)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call67 = call zeroext i8 @xtime(i8 zeroext %26)
+before connectCallerAndCallee :  %call67 = call zeroext i8 @xtime(i8 zeroext %26) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call67 = call zeroext i8 @xtime(i8 zeroext %26)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call68 = call zeroext i8 @xtime(i8 zeroext %call67)
+before connectCallerAndCallee :  %call68 = call zeroext i8 @xtime(i8 zeroext %call67) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call68 = call zeroext i8 @xtime(i8 zeroext %call67)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call69 = call zeroext i8 @xtime(i8 zeroext %call68)
+before connectCallerAndCallee :  %call69 = call zeroext i8 @xtime(i8 zeroext %call68) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call69 = call zeroext i8 @xtime(i8 zeroext %call68)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call73 = call zeroext i8 @xtime(i8 zeroext %27)
+before connectCallerAndCallee :  %call73 = call zeroext i8 @xtime(i8 zeroext %27) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call73 = call zeroext i8 @xtime(i8 zeroext %27)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call74 = call zeroext i8 @xtime(i8 zeroext %call73)
+before connectCallerAndCallee :  %call74 = call zeroext i8 @xtime(i8 zeroext %call73) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call74 = call zeroext i8 @xtime(i8 zeroext %call73)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call75 = call zeroext i8 @xtime(i8 zeroext %call74)
+before connectCallerAndCallee :  %call75 = call zeroext i8 @xtime(i8 zeroext %call74) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call75 = call zeroext i8 @xtime(i8 zeroext %call74)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call76 = call zeroext i8 @xtime(i8 zeroext %call75)
+before connectCallerAndCallee :  %call76 = call zeroext i8 @xtime(i8 zeroext %call75) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call76 = call zeroext i8 @xtime(i8 zeroext %call75)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call83 = call zeroext i8 @xtime(i8 zeroext %29)
+before connectCallerAndCallee :  %call83 = call zeroext i8 @xtime(i8 zeroext %29) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call83 = call zeroext i8 @xtime(i8 zeroext %29)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call87 = call zeroext i8 @xtime(i8 zeroext %30)
+before connectCallerAndCallee :  %call87 = call zeroext i8 @xtime(i8 zeroext %30) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call87 = call zeroext i8 @xtime(i8 zeroext %30)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call88 = call zeroext i8 @xtime(i8 zeroext %call87)
+before connectCallerAndCallee :  %call88 = call zeroext i8 @xtime(i8 zeroext %call87) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call88 = call zeroext i8 @xtime(i8 zeroext %call87)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call92 = call zeroext i8 @xtime(i8 zeroext %31)
+before connectCallerAndCallee :  %call92 = call zeroext i8 @xtime(i8 zeroext %31) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call92 = call zeroext i8 @xtime(i8 zeroext %31)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call93 = call zeroext i8 @xtime(i8 zeroext %call92)
+before connectCallerAndCallee :  %call93 = call zeroext i8 @xtime(i8 zeroext %call92) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call93 = call zeroext i8 @xtime(i8 zeroext %call92)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call94 = call zeroext i8 @xtime(i8 zeroext %call93)
+before connectCallerAndCallee :  %call94 = call zeroext i8 @xtime(i8 zeroext %call93) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call94 = call zeroext i8 @xtime(i8 zeroext %call93)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call98 = call zeroext i8 @xtime(i8 zeroext %32)
+before connectCallerAndCallee :  %call98 = call zeroext i8 @xtime(i8 zeroext %32) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call98 = call zeroext i8 @xtime(i8 zeroext %32)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call99 = call zeroext i8 @xtime(i8 zeroext %call98)
+before connectCallerAndCallee :  %call99 = call zeroext i8 @xtime(i8 zeroext %call98) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call99 = call zeroext i8 @xtime(i8 zeroext %call98)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call100 = call zeroext i8 @xtime(i8 zeroext %call99)
+before connectCallerAndCallee :  %call100 = call zeroext i8 @xtime(i8 zeroext %call99) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call100 = call zeroext i8 @xtime(i8 zeroext %call99)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call101 = call zeroext i8 @xtime(i8 zeroext %call100)
+before connectCallerAndCallee :  %call101 = call zeroext i8 @xtime(i8 zeroext %call100) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call101 = call zeroext i8 @xtime(i8 zeroext %call100)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call112 = call zeroext i8 @xtime(i8 zeroext %36)
+before connectCallerAndCallee :  %call112 = call zeroext i8 @xtime(i8 zeroext %36) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call112 = call zeroext i8 @xtime(i8 zeroext %36)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call116 = call zeroext i8 @xtime(i8 zeroext %37)
+before connectCallerAndCallee :  %call116 = call zeroext i8 @xtime(i8 zeroext %37) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call116 = call zeroext i8 @xtime(i8 zeroext %37)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call117 = call zeroext i8 @xtime(i8 zeroext %call116)
+before connectCallerAndCallee :  %call117 = call zeroext i8 @xtime(i8 zeroext %call116) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call117 = call zeroext i8 @xtime(i8 zeroext %call116)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call121 = call zeroext i8 @xtime(i8 zeroext %38)
+before connectCallerAndCallee :  %call121 = call zeroext i8 @xtime(i8 zeroext %38) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call121 = call zeroext i8 @xtime(i8 zeroext %38)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call122 = call zeroext i8 @xtime(i8 zeroext %call121)
+before connectCallerAndCallee :  %call122 = call zeroext i8 @xtime(i8 zeroext %call121) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call122 = call zeroext i8 @xtime(i8 zeroext %call121)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call123 = call zeroext i8 @xtime(i8 zeroext %call122)
+before connectCallerAndCallee :  %call123 = call zeroext i8 @xtime(i8 zeroext %call122) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call123 = call zeroext i8 @xtime(i8 zeroext %call122)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call127 = call zeroext i8 @xtime(i8 zeroext %39)
+before connectCallerAndCallee :  %call127 = call zeroext i8 @xtime(i8 zeroext %39) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call127 = call zeroext i8 @xtime(i8 zeroext %39)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call128 = call zeroext i8 @xtime(i8 zeroext %call127)
+before connectCallerAndCallee :  %call128 = call zeroext i8 @xtime(i8 zeroext %call127) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call128 = call zeroext i8 @xtime(i8 zeroext %call127)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call129 = call zeroext i8 @xtime(i8 zeroext %call128)
+before connectCallerAndCallee :  %call129 = call zeroext i8 @xtime(i8 zeroext %call128) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call129 = call zeroext i8 @xtime(i8 zeroext %call128)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call130 = call zeroext i8 @xtime(i8 zeroext %call129)
+before connectCallerAndCallee :  %call130 = call zeroext i8 @xtime(i8 zeroext %call129) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call130 = call zeroext i8 @xtime(i8 zeroext %call129)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call136 = call zeroext i8 @xtime(i8 zeroext %41)
+before connectCallerAndCallee :  %call136 = call zeroext i8 @xtime(i8 zeroext %41) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call136 = call zeroext i8 @xtime(i8 zeroext %41)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call140 = call zeroext i8 @xtime(i8 zeroext %42)
+before connectCallerAndCallee :  %call140 = call zeroext i8 @xtime(i8 zeroext %42) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call140 = call zeroext i8 @xtime(i8 zeroext %42)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call141 = call zeroext i8 @xtime(i8 zeroext %call140)
+before connectCallerAndCallee :  %call141 = call zeroext i8 @xtime(i8 zeroext %call140) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call141 = call zeroext i8 @xtime(i8 zeroext %call140)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call145 = call zeroext i8 @xtime(i8 zeroext %43)
+before connectCallerAndCallee :  %call145 = call zeroext i8 @xtime(i8 zeroext %43) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call145 = call zeroext i8 @xtime(i8 zeroext %43)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call146 = call zeroext i8 @xtime(i8 zeroext %call145)
+before connectCallerAndCallee :  %call146 = call zeroext i8 @xtime(i8 zeroext %call145) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call146 = call zeroext i8 @xtime(i8 zeroext %call145)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call147 = call zeroext i8 @xtime(i8 zeroext %call146)
+before connectCallerAndCallee :  %call147 = call zeroext i8 @xtime(i8 zeroext %call146) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call147 = call zeroext i8 @xtime(i8 zeroext %call146)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call151 = call zeroext i8 @xtime(i8 zeroext %44)
+before connectCallerAndCallee :  %call151 = call zeroext i8 @xtime(i8 zeroext %44) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call151 = call zeroext i8 @xtime(i8 zeroext %44)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call152 = call zeroext i8 @xtime(i8 zeroext %call151)
+before connectCallerAndCallee :  %call152 = call zeroext i8 @xtime(i8 zeroext %call151) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call152 = call zeroext i8 @xtime(i8 zeroext %call151)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call153 = call zeroext i8 @xtime(i8 zeroext %call152)
+before connectCallerAndCallee :  %call153 = call zeroext i8 @xtime(i8 zeroext %call152) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call153 = call zeroext i8 @xtime(i8 zeroext %call152)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call154 = call zeroext i8 @xtime(i8 zeroext %call153)
+before connectCallerAndCallee :  %call154 = call zeroext i8 @xtime(i8 zeroext %call153) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call154 = call zeroext i8 @xtime(i8 zeroext %call153)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call161 = call zeroext i8 @xtime(i8 zeroext %46)
+before connectCallerAndCallee :  %call161 = call zeroext i8 @xtime(i8 zeroext %46) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call161 = call zeroext i8 @xtime(i8 zeroext %46)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call165 = call zeroext i8 @xtime(i8 zeroext %47)
+before connectCallerAndCallee :  %call165 = call zeroext i8 @xtime(i8 zeroext %47) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call165 = call zeroext i8 @xtime(i8 zeroext %47)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call166 = call zeroext i8 @xtime(i8 zeroext %call165)
+before connectCallerAndCallee :  %call166 = call zeroext i8 @xtime(i8 zeroext %call165) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call166 = call zeroext i8 @xtime(i8 zeroext %call165)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call170 = call zeroext i8 @xtime(i8 zeroext %48)
+before connectCallerAndCallee :  %call170 = call zeroext i8 @xtime(i8 zeroext %48) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call170 = call zeroext i8 @xtime(i8 zeroext %48)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call171 = call zeroext i8 @xtime(i8 zeroext %call170)
+before connectCallerAndCallee :  %call171 = call zeroext i8 @xtime(i8 zeroext %call170) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call171 = call zeroext i8 @xtime(i8 zeroext %call170)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call172 = call zeroext i8 @xtime(i8 zeroext %call171)
+before connectCallerAndCallee :  %call172 = call zeroext i8 @xtime(i8 zeroext %call171) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call172 = call zeroext i8 @xtime(i8 zeroext %call171)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call176 = call zeroext i8 @xtime(i8 zeroext %49)
+before connectCallerAndCallee :  %call176 = call zeroext i8 @xtime(i8 zeroext %49) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call176 = call zeroext i8 @xtime(i8 zeroext %49)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call177 = call zeroext i8 @xtime(i8 zeroext %call176)
+before connectCallerAndCallee :  %call177 = call zeroext i8 @xtime(i8 zeroext %call176) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call177 = call zeroext i8 @xtime(i8 zeroext %call176)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call178 = call zeroext i8 @xtime(i8 zeroext %call177)
+before connectCallerAndCallee :  %call178 = call zeroext i8 @xtime(i8 zeroext %call177) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call178 = call zeroext i8 @xtime(i8 zeroext %call177)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call179 = call zeroext i8 @xtime(i8 zeroext %call178)
+before connectCallerAndCallee :  %call179 = call zeroext i8 @xtime(i8 zeroext %call178) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call179 = call zeroext i8 @xtime(i8 zeroext %call178)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call186 = call zeroext i8 @xtime(i8 zeroext %51)
+before connectCallerAndCallee :  %call186 = call zeroext i8 @xtime(i8 zeroext %51) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call186 = call zeroext i8 @xtime(i8 zeroext %51)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call190 = call zeroext i8 @xtime(i8 zeroext %52)
+before connectCallerAndCallee :  %call190 = call zeroext i8 @xtime(i8 zeroext %52) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call190 = call zeroext i8 @xtime(i8 zeroext %52)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call191 = call zeroext i8 @xtime(i8 zeroext %call190)
+before connectCallerAndCallee :  %call191 = call zeroext i8 @xtime(i8 zeroext %call190) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call191 = call zeroext i8 @xtime(i8 zeroext %call190)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call195 = call zeroext i8 @xtime(i8 zeroext %53)
+before connectCallerAndCallee :  %call195 = call zeroext i8 @xtime(i8 zeroext %53) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call195 = call zeroext i8 @xtime(i8 zeroext %53)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call196 = call zeroext i8 @xtime(i8 zeroext %call195)
+before connectCallerAndCallee :  %call196 = call zeroext i8 @xtime(i8 zeroext %call195) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call196 = call zeroext i8 @xtime(i8 zeroext %call195)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call197 = call zeroext i8 @xtime(i8 zeroext %call196)
+before connectCallerAndCallee :  %call197 = call zeroext i8 @xtime(i8 zeroext %call196) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call197 = call zeroext i8 @xtime(i8 zeroext %call196)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call201 = call zeroext i8 @xtime(i8 zeroext %54)
+before connectCallerAndCallee :  %call201 = call zeroext i8 @xtime(i8 zeroext %54) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call201 = call zeroext i8 @xtime(i8 zeroext %54)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call202 = call zeroext i8 @xtime(i8 zeroext %call201)
+before connectCallerAndCallee :  %call202 = call zeroext i8 @xtime(i8 zeroext %call201) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call202 = call zeroext i8 @xtime(i8 zeroext %call201)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call203 = call zeroext i8 @xtime(i8 zeroext %call202)
+before connectCallerAndCallee :  %call203 = call zeroext i8 @xtime(i8 zeroext %call202) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call203 = call zeroext i8 @xtime(i8 zeroext %call202)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call204 = call zeroext i8 @xtime(i8 zeroext %call203)
+before connectCallerAndCallee :  %call204 = call zeroext i8 @xtime(i8 zeroext %call203) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call204 = call zeroext i8 @xtime(i8 zeroext %call203)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call215 = call zeroext i8 @xtime(i8 zeroext %58)
+before connectCallerAndCallee :  %call215 = call zeroext i8 @xtime(i8 zeroext %58) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call215 = call zeroext i8 @xtime(i8 zeroext %58)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call219 = call zeroext i8 @xtime(i8 zeroext %59)
+before connectCallerAndCallee :  %call219 = call zeroext i8 @xtime(i8 zeroext %59) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call219 = call zeroext i8 @xtime(i8 zeroext %59)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call220 = call zeroext i8 @xtime(i8 zeroext %call219)
+before connectCallerAndCallee :  %call220 = call zeroext i8 @xtime(i8 zeroext %call219) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call220 = call zeroext i8 @xtime(i8 zeroext %call219)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call224 = call zeroext i8 @xtime(i8 zeroext %60)
+before connectCallerAndCallee :  %call224 = call zeroext i8 @xtime(i8 zeroext %60) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call224 = call zeroext i8 @xtime(i8 zeroext %60)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call225 = call zeroext i8 @xtime(i8 zeroext %call224)
+before connectCallerAndCallee :  %call225 = call zeroext i8 @xtime(i8 zeroext %call224) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call225 = call zeroext i8 @xtime(i8 zeroext %call224)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call226 = call zeroext i8 @xtime(i8 zeroext %call225)
+before connectCallerAndCallee :  %call226 = call zeroext i8 @xtime(i8 zeroext %call225) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call226 = call zeroext i8 @xtime(i8 zeroext %call225)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call230 = call zeroext i8 @xtime(i8 zeroext %61)
+before connectCallerAndCallee :  %call230 = call zeroext i8 @xtime(i8 zeroext %61) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call230 = call zeroext i8 @xtime(i8 zeroext %61)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call231 = call zeroext i8 @xtime(i8 zeroext %call230)
+before connectCallerAndCallee :  %call231 = call zeroext i8 @xtime(i8 zeroext %call230) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call231 = call zeroext i8 @xtime(i8 zeroext %call230)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call232 = call zeroext i8 @xtime(i8 zeroext %call231)
+before connectCallerAndCallee :  %call232 = call zeroext i8 @xtime(i8 zeroext %call231) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call232 = call zeroext i8 @xtime(i8 zeroext %call231)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call233 = call zeroext i8 @xtime(i8 zeroext %call232)
+before connectCallerAndCallee :  %call233 = call zeroext i8 @xtime(i8 zeroext %call232) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call233 = call zeroext i8 @xtime(i8 zeroext %call232)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call239 = call zeroext i8 @xtime(i8 zeroext %63)
+before connectCallerAndCallee :  %call239 = call zeroext i8 @xtime(i8 zeroext %63) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call239 = call zeroext i8 @xtime(i8 zeroext %63)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call243 = call zeroext i8 @xtime(i8 zeroext %64)
+before connectCallerAndCallee :  %call243 = call zeroext i8 @xtime(i8 zeroext %64) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call243 = call zeroext i8 @xtime(i8 zeroext %64)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call244 = call zeroext i8 @xtime(i8 zeroext %call243)
+before connectCallerAndCallee :  %call244 = call zeroext i8 @xtime(i8 zeroext %call243) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call244 = call zeroext i8 @xtime(i8 zeroext %call243)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call248 = call zeroext i8 @xtime(i8 zeroext %65)
+before connectCallerAndCallee :  %call248 = call zeroext i8 @xtime(i8 zeroext %65) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call248 = call zeroext i8 @xtime(i8 zeroext %65)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call249 = call zeroext i8 @xtime(i8 zeroext %call248)
+before connectCallerAndCallee :  %call249 = call zeroext i8 @xtime(i8 zeroext %call248) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call249 = call zeroext i8 @xtime(i8 zeroext %call248)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call250 = call zeroext i8 @xtime(i8 zeroext %call249)
+before connectCallerAndCallee :  %call250 = call zeroext i8 @xtime(i8 zeroext %call249) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call250 = call zeroext i8 @xtime(i8 zeroext %call249)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call254 = call zeroext i8 @xtime(i8 zeroext %66)
+before connectCallerAndCallee :  %call254 = call zeroext i8 @xtime(i8 zeroext %66) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call254 = call zeroext i8 @xtime(i8 zeroext %66)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call255 = call zeroext i8 @xtime(i8 zeroext %call254)
+before connectCallerAndCallee :  %call255 = call zeroext i8 @xtime(i8 zeroext %call254) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call255 = call zeroext i8 @xtime(i8 zeroext %call254)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call256 = call zeroext i8 @xtime(i8 zeroext %call255)
+before connectCallerAndCallee :  %call256 = call zeroext i8 @xtime(i8 zeroext %call255) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call256 = call zeroext i8 @xtime(i8 zeroext %call255)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call257 = call zeroext i8 @xtime(i8 zeroext %call256)
+before connectCallerAndCallee :  %call257 = call zeroext i8 @xtime(i8 zeroext %call256) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call257 = call zeroext i8 @xtime(i8 zeroext %call256)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call264 = call zeroext i8 @xtime(i8 zeroext %68)
+before connectCallerAndCallee :  %call264 = call zeroext i8 @xtime(i8 zeroext %68) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call264 = call zeroext i8 @xtime(i8 zeroext %68)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call268 = call zeroext i8 @xtime(i8 zeroext %69)
+before connectCallerAndCallee :  %call268 = call zeroext i8 @xtime(i8 zeroext %69) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call268 = call zeroext i8 @xtime(i8 zeroext %69)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call269 = call zeroext i8 @xtime(i8 zeroext %call268)
+before connectCallerAndCallee :  %call269 = call zeroext i8 @xtime(i8 zeroext %call268) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call269 = call zeroext i8 @xtime(i8 zeroext %call268)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call273 = call zeroext i8 @xtime(i8 zeroext %70)
+before connectCallerAndCallee :  %call273 = call zeroext i8 @xtime(i8 zeroext %70) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call273 = call zeroext i8 @xtime(i8 zeroext %70)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call274 = call zeroext i8 @xtime(i8 zeroext %call273)
+before connectCallerAndCallee :  %call274 = call zeroext i8 @xtime(i8 zeroext %call273) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call274 = call zeroext i8 @xtime(i8 zeroext %call273)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call275 = call zeroext i8 @xtime(i8 zeroext %call274)
+before connectCallerAndCallee :  %call275 = call zeroext i8 @xtime(i8 zeroext %call274) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call275 = call zeroext i8 @xtime(i8 zeroext %call274)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call279 = call zeroext i8 @xtime(i8 zeroext %71)
+before connectCallerAndCallee :  %call279 = call zeroext i8 @xtime(i8 zeroext %71) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call279 = call zeroext i8 @xtime(i8 zeroext %71)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call280 = call zeroext i8 @xtime(i8 zeroext %call279)
+before connectCallerAndCallee :  %call280 = call zeroext i8 @xtime(i8 zeroext %call279) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call280 = call zeroext i8 @xtime(i8 zeroext %call279)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call281 = call zeroext i8 @xtime(i8 zeroext %call280)
+before connectCallerAndCallee :  %call281 = call zeroext i8 @xtime(i8 zeroext %call280) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call281 = call zeroext i8 @xtime(i8 zeroext %call280)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call282 = call zeroext i8 @xtime(i8 zeroext %call281)
+before connectCallerAndCallee :  %call282 = call zeroext i8 @xtime(i8 zeroext %call281) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call282 = call zeroext i8 @xtime(i8 zeroext %call281)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call289 = call zeroext i8 @xtime(i8 zeroext %73)
+before connectCallerAndCallee :  %call289 = call zeroext i8 @xtime(i8 zeroext %73) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call289 = call zeroext i8 @xtime(i8 zeroext %73)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call293 = call zeroext i8 @xtime(i8 zeroext %74)
+before connectCallerAndCallee :  %call293 = call zeroext i8 @xtime(i8 zeroext %74) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call293 = call zeroext i8 @xtime(i8 zeroext %74)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call294 = call zeroext i8 @xtime(i8 zeroext %call293)
+before connectCallerAndCallee :  %call294 = call zeroext i8 @xtime(i8 zeroext %call293) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call294 = call zeroext i8 @xtime(i8 zeroext %call293)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call298 = call zeroext i8 @xtime(i8 zeroext %75)
+before connectCallerAndCallee :  %call298 = call zeroext i8 @xtime(i8 zeroext %75) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call298 = call zeroext i8 @xtime(i8 zeroext %75)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call299 = call zeroext i8 @xtime(i8 zeroext %call298)
+before connectCallerAndCallee :  %call299 = call zeroext i8 @xtime(i8 zeroext %call298) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call299 = call zeroext i8 @xtime(i8 zeroext %call298)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call300 = call zeroext i8 @xtime(i8 zeroext %call299)
+before connectCallerAndCallee :  %call300 = call zeroext i8 @xtime(i8 zeroext %call299) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call300 = call zeroext i8 @xtime(i8 zeroext %call299)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call304 = call zeroext i8 @xtime(i8 zeroext %76)
+before connectCallerAndCallee :  %call304 = call zeroext i8 @xtime(i8 zeroext %76) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call304 = call zeroext i8 @xtime(i8 zeroext %76)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call305 = call zeroext i8 @xtime(i8 zeroext %call304)
+before connectCallerAndCallee :  %call305 = call zeroext i8 @xtime(i8 zeroext %call304) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call305 = call zeroext i8 @xtime(i8 zeroext %call304)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call306 = call zeroext i8 @xtime(i8 zeroext %call305)
+before connectCallerAndCallee :  %call306 = call zeroext i8 @xtime(i8 zeroext %call305) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call306 = call zeroext i8 @xtime(i8 zeroext %call305)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call307 = call zeroext i8 @xtime(i8 zeroext %call306)
+before connectCallerAndCallee :  %call307 = call zeroext i8 @xtime(i8 zeroext %call306) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call307 = call zeroext i8 @xtime(i8 zeroext %call306)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call318 = call zeroext i8 @xtime(i8 zeroext %80)
+before connectCallerAndCallee :  %call318 = call zeroext i8 @xtime(i8 zeroext %80) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call318 = call zeroext i8 @xtime(i8 zeroext %80)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call322 = call zeroext i8 @xtime(i8 zeroext %81)
+before connectCallerAndCallee :  %call322 = call zeroext i8 @xtime(i8 zeroext %81) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call322 = call zeroext i8 @xtime(i8 zeroext %81)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call323 = call zeroext i8 @xtime(i8 zeroext %call322)
+before connectCallerAndCallee :  %call323 = call zeroext i8 @xtime(i8 zeroext %call322) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call323 = call zeroext i8 @xtime(i8 zeroext %call322)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call327 = call zeroext i8 @xtime(i8 zeroext %82)
+before connectCallerAndCallee :  %call327 = call zeroext i8 @xtime(i8 zeroext %82) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call327 = call zeroext i8 @xtime(i8 zeroext %82)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call328 = call zeroext i8 @xtime(i8 zeroext %call327)
+before connectCallerAndCallee :  %call328 = call zeroext i8 @xtime(i8 zeroext %call327) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call328 = call zeroext i8 @xtime(i8 zeroext %call327)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call329 = call zeroext i8 @xtime(i8 zeroext %call328)
+before connectCallerAndCallee :  %call329 = call zeroext i8 @xtime(i8 zeroext %call328) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call329 = call zeroext i8 @xtime(i8 zeroext %call328)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call333 = call zeroext i8 @xtime(i8 zeroext %83)
+before connectCallerAndCallee :  %call333 = call zeroext i8 @xtime(i8 zeroext %83) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call333 = call zeroext i8 @xtime(i8 zeroext %83)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call334 = call zeroext i8 @xtime(i8 zeroext %call333)
+before connectCallerAndCallee :  %call334 = call zeroext i8 @xtime(i8 zeroext %call333) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call334 = call zeroext i8 @xtime(i8 zeroext %call333)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call335 = call zeroext i8 @xtime(i8 zeroext %call334)
+before connectCallerAndCallee :  %call335 = call zeroext i8 @xtime(i8 zeroext %call334) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call335 = call zeroext i8 @xtime(i8 zeroext %call334)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call336 = call zeroext i8 @xtime(i8 zeroext %call335)
+before connectCallerAndCallee :  %call336 = call zeroext i8 @xtime(i8 zeroext %call335) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call336 = call zeroext i8 @xtime(i8 zeroext %call335)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call342 = call zeroext i8 @xtime(i8 zeroext %85)
+before connectCallerAndCallee :  %call342 = call zeroext i8 @xtime(i8 zeroext %85) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call342 = call zeroext i8 @xtime(i8 zeroext %85)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call346 = call zeroext i8 @xtime(i8 zeroext %86)
+before connectCallerAndCallee :  %call346 = call zeroext i8 @xtime(i8 zeroext %86) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call346 = call zeroext i8 @xtime(i8 zeroext %86)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call347 = call zeroext i8 @xtime(i8 zeroext %call346)
+before connectCallerAndCallee :  %call347 = call zeroext i8 @xtime(i8 zeroext %call346) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call347 = call zeroext i8 @xtime(i8 zeroext %call346)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call351 = call zeroext i8 @xtime(i8 zeroext %87)
+before connectCallerAndCallee :  %call351 = call zeroext i8 @xtime(i8 zeroext %87) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call351 = call zeroext i8 @xtime(i8 zeroext %87)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call352 = call zeroext i8 @xtime(i8 zeroext %call351)
+before connectCallerAndCallee :  %call352 = call zeroext i8 @xtime(i8 zeroext %call351) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call352 = call zeroext i8 @xtime(i8 zeroext %call351)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call353 = call zeroext i8 @xtime(i8 zeroext %call352)
+before connectCallerAndCallee :  %call353 = call zeroext i8 @xtime(i8 zeroext %call352) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call353 = call zeroext i8 @xtime(i8 zeroext %call352)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call357 = call zeroext i8 @xtime(i8 zeroext %88)
+before connectCallerAndCallee :  %call357 = call zeroext i8 @xtime(i8 zeroext %88) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call357 = call zeroext i8 @xtime(i8 zeroext %88)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call358 = call zeroext i8 @xtime(i8 zeroext %call357)
+before connectCallerAndCallee :  %call358 = call zeroext i8 @xtime(i8 zeroext %call357) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call358 = call zeroext i8 @xtime(i8 zeroext %call357)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call359 = call zeroext i8 @xtime(i8 zeroext %call358)
+before connectCallerAndCallee :  %call359 = call zeroext i8 @xtime(i8 zeroext %call358) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call359 = call zeroext i8 @xtime(i8 zeroext %call358)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call360 = call zeroext i8 @xtime(i8 zeroext %call359)
+before connectCallerAndCallee :  %call360 = call zeroext i8 @xtime(i8 zeroext %call359) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call360 = call zeroext i8 @xtime(i8 zeroext %call359)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call367 = call zeroext i8 @xtime(i8 zeroext %90)
+before connectCallerAndCallee :  %call367 = call zeroext i8 @xtime(i8 zeroext %90) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call367 = call zeroext i8 @xtime(i8 zeroext %90)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call371 = call zeroext i8 @xtime(i8 zeroext %91)
+before connectCallerAndCallee :  %call371 = call zeroext i8 @xtime(i8 zeroext %91) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call371 = call zeroext i8 @xtime(i8 zeroext %91)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call372 = call zeroext i8 @xtime(i8 zeroext %call371)
+before connectCallerAndCallee :  %call372 = call zeroext i8 @xtime(i8 zeroext %call371) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call372 = call zeroext i8 @xtime(i8 zeroext %call371)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call376 = call zeroext i8 @xtime(i8 zeroext %92)
+before connectCallerAndCallee :  %call376 = call zeroext i8 @xtime(i8 zeroext %92) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call376 = call zeroext i8 @xtime(i8 zeroext %92)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call377 = call zeroext i8 @xtime(i8 zeroext %call376)
+before connectCallerAndCallee :  %call377 = call zeroext i8 @xtime(i8 zeroext %call376) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call377 = call zeroext i8 @xtime(i8 zeroext %call376)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call378 = call zeroext i8 @xtime(i8 zeroext %call377)
+before connectCallerAndCallee :  %call378 = call zeroext i8 @xtime(i8 zeroext %call377) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call378 = call zeroext i8 @xtime(i8 zeroext %call377)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call382 = call zeroext i8 @xtime(i8 zeroext %93)
+before connectCallerAndCallee :  %call382 = call zeroext i8 @xtime(i8 zeroext %93) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call382 = call zeroext i8 @xtime(i8 zeroext %93)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call383 = call zeroext i8 @xtime(i8 zeroext %call382)
+before connectCallerAndCallee :  %call383 = call zeroext i8 @xtime(i8 zeroext %call382) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call383 = call zeroext i8 @xtime(i8 zeroext %call382)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call384 = call zeroext i8 @xtime(i8 zeroext %call383)
+before connectCallerAndCallee :  %call384 = call zeroext i8 @xtime(i8 zeroext %call383) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call384 = call zeroext i8 @xtime(i8 zeroext %call383)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call385 = call zeroext i8 @xtime(i8 zeroext %call384)
+before connectCallerAndCallee :  %call385 = call zeroext i8 @xtime(i8 zeroext %call384) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call385 = call zeroext i8 @xtime(i8 zeroext %call384)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call392 = call zeroext i8 @xtime(i8 zeroext %95)
+before connectCallerAndCallee :  %call392 = call zeroext i8 @xtime(i8 zeroext %95) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call392 = call zeroext i8 @xtime(i8 zeroext %95)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call396 = call zeroext i8 @xtime(i8 zeroext %96)
+before connectCallerAndCallee :  %call396 = call zeroext i8 @xtime(i8 zeroext %96) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call396 = call zeroext i8 @xtime(i8 zeroext %96)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call397 = call zeroext i8 @xtime(i8 zeroext %call396)
+before connectCallerAndCallee :  %call397 = call zeroext i8 @xtime(i8 zeroext %call396) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call397 = call zeroext i8 @xtime(i8 zeroext %call396)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call401 = call zeroext i8 @xtime(i8 zeroext %97)
+before connectCallerAndCallee :  %call401 = call zeroext i8 @xtime(i8 zeroext %97) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call401 = call zeroext i8 @xtime(i8 zeroext %97)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call402 = call zeroext i8 @xtime(i8 zeroext %call401)
+before connectCallerAndCallee :  %call402 = call zeroext i8 @xtime(i8 zeroext %call401) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call402 = call zeroext i8 @xtime(i8 zeroext %call401)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call403 = call zeroext i8 @xtime(i8 zeroext %call402)
+before connectCallerAndCallee :  %call403 = call zeroext i8 @xtime(i8 zeroext %call402) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call403 = call zeroext i8 @xtime(i8 zeroext %call402)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call407 = call zeroext i8 @xtime(i8 zeroext %98)
+before connectCallerAndCallee :  %call407 = call zeroext i8 @xtime(i8 zeroext %98) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call407 = call zeroext i8 @xtime(i8 zeroext %98)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call408 = call zeroext i8 @xtime(i8 zeroext %call407)
+before connectCallerAndCallee :  %call408 = call zeroext i8 @xtime(i8 zeroext %call407) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call408 = call zeroext i8 @xtime(i8 zeroext %call407)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call409 = call zeroext i8 @xtime(i8 zeroext %call408)
+before connectCallerAndCallee :  %call409 = call zeroext i8 @xtime(i8 zeroext %call408) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call409 = call zeroext i8 @xtime(i8 zeroext %call408)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call410 = call zeroext i8 @xtime(i8 zeroext %call409)
+before connectCallerAndCallee :  %call410 = call zeroext i8 @xtime(i8 zeroext %call409) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call410 = call zeroext i8 @xtime(i8 zeroext %call409)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 162
+PDG 5.384615e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xtime
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xtime
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1729 Function: xtime
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 163
+PDG 5.769231e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxInvert
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxInvert
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1737 Function: getSBoxInvert
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 165
+PDG 6.153846e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:SubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:SubBytes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1780 Function: SubBytes
+computerDependencies DEBUG 1
+getSBoxValue has parameter trees already! Just build actual counterparts
+CI =   %call = call zeroext i8 @getSBoxValue(i8 zeroext %5)
+before connectCallerAndCallee :  %call = call zeroext i8 @getSBoxValue(i8 zeroext %5) func :getSBoxValue
+DEBUG 459 connectCallerAndCallee callInst:   %call = call zeroext i8 @getSBoxValue(i8 zeroext %5)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 169
+PDG 6.538462e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ShiftRows
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1889 Function: ShiftRows
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 194
+PDG 6.923077e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:MixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:MixColumns
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2081 Function: MixColumns
+computerDependencies DEBUG 1
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call = call zeroext i8 @xtime(i8 zeroext %22)
+before connectCallerAndCallee :  %call = call zeroext i8 @xtime(i8 zeroext %22) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call = call zeroext i8 @xtime(i8 zeroext %22)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call51 = call zeroext i8 @xtime(i8 zeroext %34)
+before connectCallerAndCallee :  %call51 = call zeroext i8 @xtime(i8 zeroext %34) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call51 = call zeroext i8 @xtime(i8 zeroext %34)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call71 = call zeroext i8 @xtime(i8 zeroext %46)
+before connectCallerAndCallee :  %call71 = call zeroext i8 @xtime(i8 zeroext %46) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call71 = call zeroext i8 @xtime(i8 zeroext %46)
+xtime has parameter trees already! Just build actual counterparts
+CI =   %call88 = call zeroext i8 @xtime(i8 zeroext %56)
+before connectCallerAndCallee :  %call88 = call zeroext i8 @xtime(i8 zeroext %56) func :xtime
+DEBUG 459 connectCallerAndCallee callInst:   %call88 = call zeroext i8 @xtime(i8 zeroext %56)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 214
+PDG 7.307692e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxValue
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getSBoxValue
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2097 Function: getSBoxValue
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 216
+PDG 7.692308e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2102 Function: main
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @test_encrypt_ecb_verbose()
+test_encrypt_ecb_verbose has parameter trees already! Just build actual counterparts
+CI =   call void @test_encrypt_ecb_verbose()
+before connectCallerAndCallee :  call void @test_encrypt_ecb_verbose() func :test_encrypt_ecb_verbose
+DEBUG 459 connectCallerAndCallee callInst:   call void @test_encrypt_ecb_verbose()
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 217
+llvm.var.annotation is defined outside!
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+printf is defined outside!
+PDG 8.076923e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:test_encrypt_ecb_verbose
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:test_encrypt_ecb_verbose
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2211 Function: test_encrypt_ecb_verbose
+computerDependencies DEBUG 1
+Intrinsic var_annotation:   %key1 = bitcast [16 x i8]* %key to i8*
+******** BitInst opcode:   %key1 = bitcast [16 x i8]* %key to i8*BitCast 
+DEBUG 456 New call for tree construction:   call void @phex(i8* %add.ptr)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+phex has parameter trees already! Just build actual counterparts
+CI =   call void @phex(i8* %add.ptr)
+before connectCallerAndCallee :  call void @phex(i8* %add.ptr) func :phex
+DEBUG 459 connectCallerAndCallee callInst:   call void @phex(i8* %add.ptr)
+phex has parameter trees already! Just build actual counterparts
+CI =   call void @phex(i8* %arraydecay7)
+before connectCallerAndCallee :  call void @phex(i8* %arraydecay7) func :phex
+DEBUG 459 connectCallerAndCallee callInst:   call void @phex(i8* %arraydecay7)
+DEBUG 456 New call for tree construction:   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+AES128_ECB_encrypt has parameter trees already! Just build actual counterparts
+CI =   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+before connectCallerAndCallee :  call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25) func :AES128_ECB_encrypt
+DEBUG 459 connectCallerAndCallee callInst:   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+phex has parameter trees already! Just build actual counterparts
+CI =   call void @phex(i8* %add.ptr30)
+before connectCallerAndCallee :  call void @phex(i8* %add.ptr30) func :phex
+DEBUG 459 connectCallerAndCallee callInst:   call void @phex(i8* %add.ptr30)
+DEBUG 456 New call for tree construction:   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+
+buildFormalTypeTree in TIME: 
+AES128_ECB_decrypt has parameter trees already! Just build actual counterparts
+CI =   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+before connectCallerAndCallee :  call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51) func :AES128_ECB_decrypt
+DEBUG 459 connectCallerAndCallee callInst:   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+phex has parameter trees already! Just build actual counterparts
+CI =   call void @phex(i8* %add.ptr56)
+before connectCallerAndCallee :  call void @phex(i8* %add.ptr56) func :phex
+DEBUG 459 connectCallerAndCallee callInst:   call void @phex(i8* %add.ptr56)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 218
+PDG 8.461538e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:phex
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:phex
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2269 Function: phex
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 222
+
+
+ PDG construction completed! ^_^
+
+funcs = 22
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 18
+sensitive_values 0 ==   %key = alloca [16 x i8], align 16
+sensitive_nodes.size = 1
+queue.size = 1
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+SENSITIVE INSTRUCTION [0] Mem Addr :0x3a112a0 Value :   store i8* %input, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [1] Mem Addr :0x3a11330 Value :   store i8* %key, i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [2] Mem Addr :0x3a113c0 Value :   store i8* %output, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [3] Mem Addr :0x39ff428 Value :   %0 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [4] Mem Addr :0x39ff498 Value :   %1 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [5] Mem Addr :0x39ff538 Value :   call void @BlockCopy(i8* %0, i8* %1)
+SENSITIVE INSTRUCTION [6] Mem Addr :0x39ff5b8 Value :   %2 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [7] Mem Addr :0x39ff628 Value :   %3 = bitcast i8* %2 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [8] Mem Addr :0x39ff6b0 Value :   store [4 x [4 x i8]]* %3, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [9] Mem Addr :0x39ff728 Value :   %4 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [10] Mem Addr :0x39ff7b0 Value :   store i8* %4, i8** @Key, align 8
+SENSITIVE INSTRUCTION [11] Mem Addr :0x3a261e0 Value :   store i8* %input, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [12] Mem Addr :0x3a26270 Value :   store i8* %key, i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [13] Mem Addr :0x3a26300 Value :   store i8* %output, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [14] Mem Addr :0x3a26378 Value :   %0 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [15] Mem Addr :0x3a263e8 Value :   %1 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [16] Mem Addr :0x3a26488 Value :   call void @BlockCopy(i8* %0, i8* %1)
+SENSITIVE INSTRUCTION [17] Mem Addr :0x3a26508 Value :   %2 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [18] Mem Addr :0x3a26578 Value :   %3 = bitcast i8* %2 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [19] Mem Addr :0x3a26600 Value :   store [4 x [4 x i8]]* %3, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [20] Mem Addr :0x3a26678 Value :   %4 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [21] Mem Addr :0x3a26700 Value :   store i8* %4, i8** @Key, align 8
+SENSITIVE INSTRUCTION [22] Mem Addr :0x3a28958 Value :   %1 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [23] Mem Addr :0x3a289c8 Value :   %2 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [24] Mem Addr :0x3a28a68 Value :   call void @BlockCopy(i8* %1, i8* %2)
+SENSITIVE INSTRUCTION [25] Mem Addr :0x3a28ae8 Value :   %3 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [26] Mem Addr :0x3a28b58 Value :   %4 = bitcast i8* %3 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [27] Mem Addr :0x3a28be0 Value :   store [4 x [4 x i8]]* %4, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [28] Mem Addr :0x3a28c58 Value :   %5 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [29] Mem Addr :0x3a28ce0 Value :   %cmp = icmp ne i8* null, %5
+SENSITIVE INSTRUCTION [30] Mem Addr :0x3a28d88 Value :   br i1 %cmp, label %if.then, label %if.end
+SENSITIVE INSTRUCTION [31] Mem Addr :0x3a28df8 Value :   %6 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [32] Mem Addr :0x3a28e80 Value :   store i8* %6, i8** @Key, align 8
+SENSITIVE INSTRUCTION [33] Mem Addr :0x3a28fe8 Value :   %7 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [34] Mem Addr :0x3a29070 Value :   %cmp2 = icmp ne i8* %7, null
+SENSITIVE INSTRUCTION [35] Mem Addr :0x3a29118 Value :   br i1 %cmp2, label %if.then4, label %if.end5
+SENSITIVE INSTRUCTION [36] Mem Addr :0x3a29188 Value :   %8 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [37] Mem Addr :0x3a29210 Value :   store i8* %8, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [38] Mem Addr :0x3a29678 Value :   %11 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [39] Mem Addr :0x3a29700 Value :   call void @XorWithIv(i8* %11)
+SENSITIVE INSTRUCTION [40] Mem Addr :0x3a29778 Value :   %12 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [41] Mem Addr :0x3a297e8 Value :   %13 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [42] Mem Addr :0x3a29888 Value :   call void @BlockCopy(i8* %12, i8* %13)
+SENSITIVE INSTRUCTION [43] Mem Addr :0x3a29908 Value :   %14 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [44] Mem Addr :0x3a29978 Value :   %15 = bitcast i8* %14 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [45] Mem Addr :0x3a29a00 Value :   store [4 x [4 x i8]]* %15, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [46] Mem Addr :0x3a29af8 Value :   %16 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [47] Mem Addr :0x3a29b80 Value :   store i8* %16, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [48] Mem Addr :0x3a29bf8 Value :   %17 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [49] Mem Addr :0x3a29c80 Value :   %add.ptr = getelementptr inbounds i8* %17, i64 16
+SENSITIVE INSTRUCTION [50] Mem Addr :0x3a29d10 Value :   store i8* %add.ptr, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [51] Mem Addr :0x3a29d88 Value :   %18 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [52] Mem Addr :0x3a29e10 Value :   %add.ptr9 = getelementptr inbounds i8* %18, i64 16
+SENSITIVE INSTRUCTION [53] Mem Addr :0x3a29ea0 Value :   store i8* %add.ptr9, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [54] Mem Addr :0x3a2a328 Value :   %21 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [55] Mem Addr :0x3a2a398 Value :   %22 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [56] Mem Addr :0x3a2a438 Value :   call void @BlockCopy(i8* %21, i8* %22)
+SENSITIVE INSTRUCTION [57] Mem Addr :0x3a2a4b8 Value :   %23 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [58] Mem Addr :0x3a2a690 Value :   %add.ptr12 = getelementptr inbounds i8* %23, i64 %idx.ext
+SENSITIVE INSTRUCTION [59] Mem Addr :0x3a2a960 Value :   call void @llvm.memset.p0i8.i64(i8* %add.ptr12, i8 0, i64 %conv14, i32 1, i1 false)
+SENSITIVE INSTRUCTION [60] Mem Addr :0x3a2a9d8 Value :   %26 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [61] Mem Addr :0x3a2aa48 Value :   %27 = bitcast i8* %26 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [62] Mem Addr :0x3a2aad0 Value :   store [4 x [4 x i8]]* %27, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [63] Mem Addr :0x3a2d7e8 Value :   %1 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [64] Mem Addr :0x3a2d858 Value :   %2 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [65] Mem Addr :0x3a2d8f8 Value :   call void @BlockCopy(i8* %1, i8* %2)
+SENSITIVE INSTRUCTION [66] Mem Addr :0x3a2d978 Value :   %3 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [67] Mem Addr :0x3a2d9e8 Value :   %4 = bitcast i8* %3 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [68] Mem Addr :0x3a2da70 Value :   store [4 x [4 x i8]]* %4, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [69] Mem Addr :0x3a2dae8 Value :   %5 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [70] Mem Addr :0x3a2db70 Value :   %cmp = icmp ne i8* null, %5
+SENSITIVE INSTRUCTION [71] Mem Addr :0x3a2dc18 Value :   br i1 %cmp, label %if.then, label %if.end
+SENSITIVE INSTRUCTION [72] Mem Addr :0x3a2dc88 Value :   %6 = load i8** %key.addr, align 8
+SENSITIVE INSTRUCTION [73] Mem Addr :0x3a2dd10 Value :   store i8* %6, i8** @Key, align 8
+SENSITIVE INSTRUCTION [74] Mem Addr :0x3a2de78 Value :   %7 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [75] Mem Addr :0x3a2df00 Value :   %cmp2 = icmp ne i8* %7, null
+SENSITIVE INSTRUCTION [76] Mem Addr :0x3a2dfa8 Value :   br i1 %cmp2, label %if.then4, label %if.end5
+SENSITIVE INSTRUCTION [77] Mem Addr :0x3a2e018 Value :   %8 = load i8** %iv.addr, align 8
+SENSITIVE INSTRUCTION [78] Mem Addr :0x3a2e0a0 Value :   store i8* %8, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [79] Mem Addr :0x3a2e508 Value :   %11 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [80] Mem Addr :0x3a2e578 Value :   %12 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [81] Mem Addr :0x3a2e618 Value :   call void @BlockCopy(i8* %11, i8* %12)
+SENSITIVE INSTRUCTION [82] Mem Addr :0x3a2e698 Value :   %13 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [83] Mem Addr :0x3a2e708 Value :   %14 = bitcast i8* %13 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [84] Mem Addr :0x3a2e790 Value :   store [4 x [4 x i8]]* %14, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [85] Mem Addr :0x3a2e888 Value :   %15 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [86] Mem Addr :0x3a2e910 Value :   call void @XorWithIv(i8* %15)
+SENSITIVE INSTRUCTION [87] Mem Addr :0x3a2e988 Value :   %16 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [88] Mem Addr :0x3a2ea10 Value :   store i8* %16, i8** @Iv, align 8
+SENSITIVE INSTRUCTION [89] Mem Addr :0x3a2ea88 Value :   %17 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [90] Mem Addr :0x3a2eb10 Value :   %add.ptr = getelementptr inbounds i8* %17, i64 16
+SENSITIVE INSTRUCTION [91] Mem Addr :0x3a2eba0 Value :   store i8* %add.ptr, i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [92] Mem Addr :0x3a2ec18 Value :   %18 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [93] Mem Addr :0x3a2eca0 Value :   %add.ptr9 = getelementptr inbounds i8* %18, i64 16
+SENSITIVE INSTRUCTION [94] Mem Addr :0x3a2ed30 Value :   store i8* %add.ptr9, i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [95] Mem Addr :0x3a2f1b8 Value :   %21 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [96] Mem Addr :0x3a2f228 Value :   %22 = load i8** %input.addr, align 8
+SENSITIVE INSTRUCTION [97] Mem Addr :0x3a2f2c8 Value :   call void @BlockCopy(i8* %21, i8* %22)
+SENSITIVE INSTRUCTION [98] Mem Addr :0x3a2f348 Value :   %23 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [99] Mem Addr :0x3a2f520 Value :   %add.ptr12 = getelementptr inbounds i8* %23, i64 %idx.ext
+SENSITIVE INSTRUCTION [100] Mem Addr :0x3a2f7f0 Value :   call void @llvm.memset.p0i8.i64(i8* %add.ptr12, i8 0, i64 %conv14, i32 1, i1 false)
+SENSITIVE INSTRUCTION [101] Mem Addr :0x3a2f868 Value :   %26 = load i8** %output.addr, align 8
+SENSITIVE INSTRUCTION [102] Mem Addr :0x3a2f8d8 Value :   %27 = bitcast i8* %26 to [4 x [4 x i8]]*
+SENSITIVE INSTRUCTION [103] Mem Addr :0x3a2f960 Value :   store [4 x [4 x i8]]* %27, [4 x [4 x i8]]** @state, align 8
+SENSITIVE INSTRUCTION [104] Mem Addr :0x3a69248 Value :   %key = alloca [16 x i8], align 16
+SENSITIVE INSTRUCTION [105] Mem Addr :0x3a69328 Value :   %key1 = bitcast [16 x i8]* %key to i8*
+SENSITIVE INSTRUCTION [106] Mem Addr :0x3a693f8 Value :   call void @llvm.var.annotation(i8* %key1, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str1, i32 0, i32 0), i32 50)
+SENSITIVE INSTRUCTION [107] Mem Addr :0x3a69478 Value :   %0 = bitcast [16 x i8]* %key to i8*
+SENSITIVE INSTRUCTION [108] Mem Addr :0x3a69560 Value :   call void @llvm.memcpy.p0i8.p0i8.i64(i8* %0, i8* getelementptr inbounds ([16 x i8]* @test_encrypt_ecb_verbose.key, i32 0, i32 0), i64 16, i32 16, i1 false)
+SENSITIVE INSTRUCTION [109] Mem Addr :0x3a6a588 Value :   %arraydecay7 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [110] Mem Addr :0x3a6a610 Value :   call void @phex(i8* %arraydecay7)
+SENSITIVE INSTRUCTION [111] Mem Addr :0x3a6adf8 Value :   %arraydecay20 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [112] Mem Addr :0x3a6b1c0 Value :   call void @AES128_ECB_encrypt(i8* %add.ptr19, i8* %arraydecay20, i8* %add.ptr25)
+SENSITIVE INSTRUCTION [113] Mem Addr :0x3a6bfb8 Value :   %arraydecay46 = getelementptr inbounds [16 x i8]* %key, i32 0, i32 0
+SENSITIVE INSTRUCTION [114] Mem Addr :0x3a6c380 Value :   call void @AES128_ECB_decrypt(i8* %add.ptr45, i8* %arraydecay46, i8* %add.ptr51)
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+SubBytesis uncolored
+ShiftRowsis uncolored
+Cipheris uncolored
+AES128_ECB_decrypt is colored(sensitive)
+func name = AES128_ECB_decrypt
+InvCipheris uncolored
+AES128_CBC_encrypt_buffer is colored(sensitive)
+func name = AES128_CBC_encrypt_buffer
+XorWithIvis uncolored
+AES128_CBC_decrypt_buffer is colored(sensitive)
+func name = AES128_CBC_decrypt_buffer
+AddRoundKeyis uncolored
+InvShiftRowsis uncolored
+InvSubBytesis uncolored
+InvMixColumnsis uncolored
+xtimeis uncolored
+MixColumnsis uncolored
+getSBoxValueis uncolored
+mainis uncolored
+test_encrypt_ecb_verbose is colored(sensitive)
+func name = test_encrypt_ecb_verbose
+getSBoxInvertis uncolored
+AES128_ECB_encrypt is colored(sensitive)
+func name = AES128_ECB_encrypt
+BlockCopyis uncolored
+KeyExpansionis uncolored
+phexis uncolored
+non-library functions in total: 22
+sen_FuncSet  : 5
+ins_FuncSet  : 17
+functions count = 22
+Writing 'pdgragh.AES128_ECB_encrypt.dot'...instW 0x0
+
+Writing 'pdgragh.BlockCopy.dot'...instW 0x0
+
+Writing 'pdgragh.KeyExpansion.dot'...instW 0x0
+
+Writing 'pdgragh.Cipher.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_ECB_decrypt.dot'...instW 0x0
+
+Writing 'pdgragh.InvCipher.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_CBC_encrypt_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.XorWithIv.dot'...instW 0x0
+
+Writing 'pdgragh.AES128_CBC_decrypt_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.AddRoundKey.dot'...instW 0x0
+
+Writing 'pdgragh.InvShiftRows.dot'...instW 0x0
+
+Writing 'pdgragh.InvSubBytes.dot'...instW 0x0
+
+Writing 'pdgragh.InvMixColumns.dot'...instW 0x0
+
+Writing 'pdgragh.xtime.dot'...instW 0x0
+
+Writing 'pdgragh.getSBoxInvert.dot'...instW 0x0
+
+Writing 'pdgragh.SubBytes.dot'...instW 0x0
+
+Writing 'pdgragh.ShiftRows.dot'...instW 0x0
+
+Writing 'pdgragh.MixColumns.dot'...instW 0x0
+
+Writing 'pdgragh.getSBoxValue.dot'...instW 0x0
+
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.test_encrypt_ecb_verbose.dot'...instW 0x0
+
+Writing 'pdgragh.phex.dot'...instW 0x0
+
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 1.9680 seconds (1.9763 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   1.5000 ( 78.1%)   0.0320 ( 66.7%)   1.5320 ( 77.8%)   1.5395 ( 77.9%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.3800 ( 19.8%)   0.0160 ( 33.3%)   0.3960 ( 20.1%)   0.3988 ( 20.2%)  Program Dependency Graph
+   0.0160 (  0.8%)   0.0000 (  0.0%)   0.0160 (  0.8%)   0.0145 (  0.7%)  Data Dependency Graph
+   0.0080 (  0.4%)   0.0000 (  0.0%)   0.0080 (  0.4%)   0.0096 (  0.5%)  Local Data Structure Analysis
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0038 (  0.2%)  Top-down Data Structure Analysis
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0034 (  0.2%)  Bottom-up Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0022 (  0.1%)  Standard Library Local Data Structure Analysis
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0013 (  0.1%)  Module Verifier
+   0.0040 (  0.2%)   0.0000 (  0.0%)   0.0040 (  0.2%)   0.0013 (  0.1%)  Compute DSNode equivalence classes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0008 (  0.0%)  Bitcode Writer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.0%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0002 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   1.9200 (100.0%)   0.0480 (100.0%)   1.9680 (100.0%)   1.9763 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0000 seconds (0.0019 wall clock)
+
+   ---Wall Time---  --- Name ---
+   0.0019 (100.0%)  Parse IR
+   0.0019 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

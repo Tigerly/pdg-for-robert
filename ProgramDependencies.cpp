@@ -73,6 +73,43 @@ std::set<llvm::Value*> allPtrSet;
 std::vector<llvm::Value*> sensitive_values;
 std::vector<InstructionWrapper*> sensitive_nodes;
 
+
+void ProgramDependencyGraph::connectAllPossibleFunctions(InstructionWrapper* CInstW, FunctionType* funcTy){
+
+  /*
+  for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
+	argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
+
+    InstructionWrapper *formal_inW = *(*argI)->getTree(FORMAL_IN_TREE).begin();
+    InstructionWrapper *formal_outW = *(*argI)->getTree(FORMAL_OUT_TREE).begin();
+
+    //connect Function's EntryNode with formal in/out tree roots 
+    PDG->addDependency(FunctionWrapper::funcMap[callee]->getEntry(), *InstructionWrapper::nodes.find(formal_inW), PARAMETER);
+    PDG->addDependency(FunctionWrapper::funcMap[callee]->getEntry(), *InstructionWrapper::nodes.find(formal_outW), PARAMETER);
+
+    }*/
+
+    std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
+    std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
+
+    for(; FI != FE; ++FI){
+      if((*FI).first->getFunctionType() == funcTy && (*FI).first->getName() != "main"){
+       	errs() << (*FI).first->getName() << " function pointer! \n";
+
+	//TODO:
+	//color a ret node in callee(func ptr)randomly as long as we can combine them together with caller
+
+
+
+      }
+    }
+}
+
+
+
+
+
+
 void ProgramDependencyGraph::drawFormalParameterTree(Function* func, TreeType treeTy)
 {
   for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[func]->getArgWList().begin(),
@@ -398,10 +435,10 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 	  InstructionWrapper *InstW = *nodeIt;
 	  if(InstW->getType() == ENTRY){
 
-	    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = 
+	    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator FI = 
 	      FunctionWrapper::funcMap.find(InstW->getFunction()); 
  
-	    if(itF != FunctionWrapper::funcMap.end()){
+	    if(FI != FunctionWrapper::funcMap.end()){
 	      //   errs() << "find successful!" << "\n";
 	      FunctionWrapper::funcMap[InstW->getFunction()]->setEntry(InstW);
 	    }   
@@ -433,8 +470,11 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 		  Type* t = CI->getCalledValue()->getType();
 		  errs() << "indirect call, called Type t = " << *t << "\n";
 
-		  FunctionType* ft = cast<FunctionType>(cast<PointerType>(t)->getElementType());
-		  //errs() << "afte cast<FunctionType>, ft = " << *ft <<"\n";
+		  FunctionType* funcTy = cast<FunctionType>(cast<PointerType>(t)->getElementType());
+		  errs() << "afte cast<FunctionType>, ft = " << *funcTy <<"\n";
+
+		  connectAllPossibleFunctions(InstW, funcTy);
+
 		  continue;
 		}
 
@@ -583,7 +623,7 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
     errs() << "funcs = " << funcs << "\n";
     errs() << "+++++++++++++++++++++++++++++++++++++++++++++\n";
 
-    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = FunctionWrapper::funcMap.begin(); 
+    //    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = FunctionWrapper::funcMap.begin(); 
 
     std::set<llvm::GlobalValue*> senGlobalSet;
     std::set<llvm::Instruction*> senInstSet;

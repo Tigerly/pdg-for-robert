@@ -149,11 +149,19 @@ void ProgramDependencyGraph::drawActualParameterTree(CallInst* CI, TreeType tree
 
 void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *callee){
 
+  errs() << "DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : " << callee->getName() << "\n";
+
   for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
 	argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
 
+
+    //    errs() << "arg : " << *(*argI)->getArg() << " " << (*argI)->getArg() << "\n";
+
     InstructionWrapper *formal_inW = *(*argI)->getTree(FORMAL_IN_TREE).begin();
     InstructionWrapper *formal_outW = *(*argI)->getTree(FORMAL_OUT_TREE).begin();
+
+    //   errs() << "formal_in_tree.size = " << (*argI)->getTree(FORMAL_IN_TREE).size() << "\n";
+    // errs() << "formal_out_tree.size = " << (*argI)->getTree(FORMAL_OUT_TREE).size() << "\n";
 
     //connect Function's EntryNode with formal in/out tree roots 
     PDG->addDependency(FunctionWrapper::funcMap[callee]->getEntry(), *InstructionWrapper::nodes.find(formal_inW), PARAMETER);
@@ -179,6 +187,8 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
       //connect formal-in-tree type nodes with storeinst in call_func, approximation used here
       if(nullptr != (*formal_in_TI)->getFieldType()){
 
+	//	errs() << "formal_in_TI = " << *(*formal_in_TI)->getFieldType() << " " << (*formal_in_TI)->getFieldType() << "\n";
+
 	std::list<StoreInst*>::iterator SI = FunctionWrapper::funcMap[callee]->getStoreInstList().begin();
 	std::list<StoreInst*>::iterator SE = FunctionWrapper::funcMap[callee]->getStoreInstList().end();
 
@@ -195,6 +205,7 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
 	}//end for(;SI != SE; ++SI)
       }//end if nullptr == (*formal_in_TI)->getFieldType()
 
+      //errs() << "DEBUG 207: (*formal_out_TI)->getFieldType() = " << *(*formal_out_TI)->getFieldType() << " " << (*formal_out_TI)->getFieldType() << "\n";
       //2. Callee's LoadInsts --> FORMAL_OUT in Callee function
       //must handle nullptr case first
       if(nullptr == (*formal_out_TI)->getFieldType() ){
@@ -202,6 +213,7 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
 	break;
       }
 
+      //      errs() << "DEBUG 214\n";
       if(nullptr != (*formal_out_TI)->getFieldType()){
 
 	std::list<LoadInst*>::iterator LI = FunctionWrapper::funcMap[callee]->getLoadInstList().begin();
@@ -223,8 +235,14 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
 	}//end for(; LI != LE; ++LI)
       }//end if(nullptr != (*formal_out_TI)->...)
 
+      //      errs() << "DEBUG 236\n";
     }//end for (tree formal_in_TI...)
+    
+    //    errs() << "DEBUG 240 arg: END\n"; 
+
   }//end for arg iteration...
+
+  //  errs() << "DEBUG 243 connectFunctionAndFormalTrees END\n";
 }
 
 
@@ -419,7 +437,8 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 	  	      
       }
       //print PtrSet only
-      //#if 0
+
+      //  #if 0
 
 
 	DataDependencyGraph &ddgGraph = getAnalysis<DataDependencyGraph>(*F);
@@ -525,23 +544,24 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 		//TODO: We temporarily use this logic since we process F one by one, use a better logic later
 		//if callee has parameter trees already, just build actual trees
 		
+		/*
 		if(FunctionWrapper::funcMap[callee]->hasTrees()){
 		  errs() << callee->getName() << " has parameter trees already! Just build actual counterparts\n";
-		}
+		  }*/
+		//		errs() << "CI = " << *CI << "\n";
 
-		errs() << "CI = " << *CI << "\n";
 		buildActualParameterTrees(CI);
 
 		drawActualParameterTree(CI, ACTUAL_IN_TREE);
 		drawActualParameterTree(CI, ACTUAL_OUT_TREE);
 
-		errs() << "before connectCallerAndCallee :" << *InstW->getInstruction() << " func :" << callee->getName() << "\n";
+		//		errs() << "before connectCallerAndCallee :" << *InstW->getInstruction() << " func :" << callee->getName() << "\n";
 		//take recursive callInst as common callInst
 		if(0 == connectCallerAndCallee(InstW, callee)){
 		  InstW->setAccess(true);
-		  errs () << "DEBUG 459 connectCallerAndCallee callInst: " << *InstW->getInstruction() << "\n";
+		  	  errs () << "DEBUG 459 connectCallerAndCallee callInst: " << *InstW->getInstruction() << "\n";
 		  //		errs () << "callee_Func: " << call_func->getName() << "\n";
-		  //		errs() << "---------------------------------------------------\n";
+		  		errs() << "---------------------------------------------------\n";
 		}
 	      }//end callnode
 
@@ -617,7 +637,7 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
     }//end for(Module...
 
   //print PtrSet only
-  //#if 0
+    //  #if 0
 
     errs() << "\n\n PDG construction completed! ^_^\n\n";
     errs() << "funcs = " << funcs << "\n";
@@ -816,20 +836,10 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
       }
       }*/
 
-
-
-
-    /*
-      std::set<FunctionWrapper*>::iterator INS_FI = ins_FuncSet.begin();
-      std::set<FunctionWrapper*>::iterator INS_FE = ins_FuncSet.end();
-
-      for(; INS_FI != INS_FE; ++INS_FI){
-    
-      }*/
   
-
-
-
+    //  std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
+    // std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
+    
 
     errs() << "non-library functions in total: " << funcs_count << "\n";
     //  errs() << "sensitive functions count  : " << sen_funcs_count << "\n";
@@ -838,9 +848,26 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
     errs() << "ins_FuncSet  : " << ins_FuncSet.size() << "\n";
 
     //print PtrSet only 2
-    //#endif
+ 
+    //   #endif
     errs() << "functions count = " << funcs <<"\n";
 
+    
+
+
+
+    //TODO:uncomment later
+    /*
+    //print all sensitive functions
+    std::set<FunctionWrapper*>::iterator S_FI =  sen_FuncSet.begin();
+    std::set<FunctionWrapper*>::iterator S_FE =  sen_FuncSet.end();
+
+    errs() << "============== SENSITIVE FUNCTION LIST =================\n ";
+    for(; S_FI != S_FE; ++S_FI){
+      errs() << (*S_FI)->getFunction()->getName() << "  FunctionType: " << *(*S_FI)->getFunction()->getFunctionType() << "\n";
+    }
+    errs() << "============== SENSITIVE FUNCTION END ==================\n ";
+    */
 
 
 

@@ -13,7 +13,9 @@ static int id = 0;
 static int debug_id = 0;
 //static int debug_id = 0
 
+
 static std::set<Type*> recursive_types;
+static std::set<Type*> unseparated_types;
 
 
 ArgumentWrapper* getArgWrapperFromFunction(FunctionWrapper *funcW, Argument *arg){
@@ -54,11 +56,13 @@ int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
     }
     else{
       if(pArgW->getArg() == arg){	
-	//check historic record of recursive types to avoid redundant processing tree node
+
+	//TODO: find a better way to do optimization, this way sucks, check historic record of recursive types to avoid redundant processing tree node
+	/*
 	if(recursive_types.find(tyW->getType()) != recursive_types.end() ){
 	  //	  errs() << *tyW->getType() << " is a recursive type found in historic record!\n ";
 	  return RECURSIVE_TYPE;
-	}
+	  }*/
 
 	for(tree<InstructionWrapper*>::iterator treeIt = pArgW->getTree(treeTy).begin(), 
 	      treeE = pArgW->getTree(treeTy).end(); treeIt != treeE; ++treeIt){
@@ -91,7 +95,7 @@ int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
 
 	      if((*insert_loc)->getFieldType() == (*backTreeIt)->getFieldType()){
 		recursion_flag = true;
-		recursive_types.insert((*insert_loc)->getFieldType());
+		//		recursive_types.insert((*insert_loc)->getFieldType());
 		break;
 	      }
 	    }
@@ -107,7 +111,12 @@ int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
 	      string Str;
 	      raw_string_ostream OS(Str);
 	      OS << *tempTyW->getType();
-	      //  errs() << "DEBUG LINE 74 FunctionType : " << OS.str() << "\n";
+
+	      //if not in the unseparated_types yet, add this type into the record 
+	      if(unseparated_types.find(tempTyW->getType()) == unseparated_types.end()){
+		unseparated_types.insert(tempTyW->getType());
+	      }
+
 	      continue;
 	    }
 
@@ -116,7 +125,10 @@ int buildFormalTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy){
 	      raw_string_ostream OS(Str);
 	      OS << *tempTyW->getType();
 	      //FILE*, bypass, no need to buildTypeTree
-	      if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
+	      if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){	
+		if(unseparated_types.find(tempTyW->getType()) == unseparated_types.end()){
+		  unseparated_types.insert(tempTyW->getType());
+		}
 		continue;
 	      }
 	    }
@@ -160,11 +172,12 @@ int buildActualTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy, CallIn
     }
     else{
       if(pArgW->getArg() == arg){	
+
 	//check historic record of recursive types to avoid redundant processing tree node
-	if(recursive_types.find(tyW->getType()) != recursive_types.end() ){
+	/*	if(recursive_types.find(tyW->getType()) != recursive_types.end() ){
 	  //	  errs() << *tyW->getType() << " is a recursive type found in historic record!\n ";
 	  return RECURSIVE_TYPE;
-	}
+	  }*/
 
 	for(tree<InstructionWrapper*>::iterator treeIt = pArgW->getTree(treeTy).begin(), 
 	      treeE = pArgW->getTree(treeTy).end(); treeIt != treeE; ++treeIt){
@@ -197,7 +210,7 @@ int buildActualTypeTree(Argument *arg, TypeWrapper *tyW, TreeType treeTy, CallIn
 
 	      if((*insert_loc)->getFieldType() == (*backTreeIt)->getFieldType()){
 		recursion_flag = true;
-		recursive_types.insert((*insert_loc)->getFieldType());
+		//	recursive_types.insert((*insert_loc)->getFieldType());
 		break;
 	      }
 	    }
@@ -298,6 +311,9 @@ void buildFormalTree(Argument *arg, TreeType treeTy){
   if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
     errs() << "OS.str() = " << OS.str() << " FILE* appears, stop buildTypeTree\n";      
   }
+  else if(tyW->getType()->isPointerTy() && tyW->getType()->getContainedType(0)->isFunctionTy()){
+    errs() << "DEBUG 312: buildFormalTree: function pointer arg = " << *tyW->getType() << "\n";
+  }
   else
     buildFormalTypeTree(arg, tyW, treeTy);
 
@@ -354,6 +370,9 @@ void buildActualTree(CallInst* CI, Argument *arg, TreeType treeTy){
   //FILE*, bypass, no need to buildTypeTree
   if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
     errs() << "OS.str() = " << OS.str() << " FILE* appears, stop buildTypeTree\n";      
+  }
+  else if(tyW->getType()->isPointerTy() && tyW->getType()->getContainedType(0)->isFunctionTy()){
+    errs() << "DEBUG 312: buildActualTree: function pointer arg = " << *tyW->getType() << "\n";
   }
   else
     buildActualTypeTree(arg, tyW, treeTy, CI);

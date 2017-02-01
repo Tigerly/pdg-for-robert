@@ -27,15 +27,21 @@ class TypeWrapper{
  private:
   llvm::Type *ty;
   int id;
+  //this flag is true means this type contains a field(or grandfield) that is function pointer or FILE*
+  // bool flag;
 
  public:
   TypeWrapper(llvm::Type* ty, int id){
     this->ty = ty;
     this->id = id;
+    // this->flag = false;
   }
 
   llvm::Type* getType(){ return ty;}
   int getId(){return id;}
+  // bool getUnseparatedFlag(){return flag;}
+  //void setUnseparatedFlag(){this->flag = true;}
+
 };
 
 class ArgumentWrapper{

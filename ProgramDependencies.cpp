@@ -77,8 +77,8 @@ std::vector<InstructionWrapper*> sensitive_nodes;
 void ProgramDependencyGraph::connectAllPossibleFunctions(InstructionWrapper* CInstW, FunctionType* funcTy){
 
   /*
-  for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
-	argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
+    for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
+    argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
 
     InstructionWrapper *formal_inW = *(*argI)->getTree(FORMAL_IN_TREE).begin();
     InstructionWrapper *formal_outW = *(*argI)->getTree(FORMAL_OUT_TREE).begin();
@@ -89,20 +89,20 @@ void ProgramDependencyGraph::connectAllPossibleFunctions(InstructionWrapper* CIn
 
     }*/
 
-    std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
-    std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
+  std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
+  std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
 
-    for(; FI != FE; ++FI){
-      if((*FI).first->getFunctionType() == funcTy && (*FI).first->getName() != "main"){
-       	errs() << (*FI).first->getName() << " function pointer! \n";
+  for(; FI != FE; ++FI){
+    if((*FI).first->getFunctionType() == funcTy && (*FI).first->getName() != "main"){
+      errs() << (*FI).first->getName() << " function pointer! \n";
 
-	//TODO:
-	//color a ret node in callee(func ptr)randomly as long as we can combine them together with caller
+      //TODO:
+      //color a ret node in callee(func ptr)randomly as long as we can combine them together with caller
 
 
 
-      }
     }
+  }
 }
 
 
@@ -149,7 +149,7 @@ void ProgramDependencyGraph::drawActualParameterTree(CallInst* CI, TreeType tree
 
 void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *callee){
 
-  errs() << "DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : " << callee->getName() << "\n";
+  //  errs() << "DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : " << callee->getName() << "\n";
 
   for(list<ArgumentWrapper*>::iterator argI = FunctionWrapper::funcMap[callee]->getArgWList().begin(),
 	argE = FunctionWrapper::funcMap[callee]->getArgWList().end(); argI != argE; ++argI){
@@ -173,7 +173,7 @@ void ProgramDependencyGraph::connectFunctionAndFormalTrees(llvm::Function *calle
     for(tree<InstructionWrapper*>::iterator formal_in_TI= (*argI)->getTree(FORMAL_IN_TREE).begin(),
 	  formal_in_TE  = (*argI)->getTree(FORMAL_IN_TREE).end(), 
 	  formal_out_TI = (*argI)->getTree(FORMAL_OUT_TREE).begin();
-	  formal_in_TI != formal_in_TE; ++formal_in_TI, ++formal_out_TI){
+	formal_in_TI != formal_in_TE; ++formal_in_TI, ++formal_out_TI){
 
       //connect formal-in and formal-out nodes formal-in --> formal-out
       PDG->addDependency(*InstructionWrapper::nodes.find(*formal_in_TI), *InstructionWrapper::nodes.find(*formal_out_TI), PARAMETER);
@@ -253,7 +253,7 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
   if(InstW == nullptr || callee == nullptr){
     return 1;
   }
-
+  
   //callInst in caller --> Entry Node in callee
   PDG->addDependency(InstW, FunctionWrapper::funcMap[callee]->getEntry(), CONTROL);
 
@@ -300,6 +300,31 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
 
   //increase formal/actual tree iterator simutaneously
   for(; formal_argI != formal_argE; ++formal_argI, ++actual_argI){
+    /*    
+    errs() << "CI : " << *CI << "\n"; 
+    errs() << " formal_arg = " << *(*formal_argI)->getArg() << "\n";
+    errs() << " actual_arg = " << *(*actual_argI)->getArg() << "\n";
+    errs() << "actual_in_tree.size = " << (*actual_argI)->getTree(ACTUAL_IN_TREE).size() << " " << (*actual_argI)->getArg()->getParent()->getName() << "\n";
+    errs() << "formal_in_tree.size = " << (*formal_argI)->getTree(FORMAL_OUT_TREE).size() << "\n";
+
+    errs() << "actual_in_tree : ";
+    for(tree<InstructionWrapper*>::iterator I = (*actual_argI)->getTree(ACTUAL_IN_TREE).begin(),
+	  E = (*actual_argI)->getTree(ACTUAL_IN_TREE).end(); I != E; ++I){
+      errs() << *(*I)->getFieldType() << " ";
+    }
+    errs() << "---\n";
+
+
+    errs() << "formal_in_tree : ";
+    for(tree<InstructionWrapper*>::iterator I = (*formal_argI)->getTree(FORMAL_IN_TREE).begin(),
+	  E = (*formal_argI)->getTree(FORMAL_IN_TREE).end(); I != E; ++I){
+      errs() << *(*I)->getFieldType() << " ";
+    }
+    errs() << "---\n";
+    */
+
+
+
 
     //intra-connection between ACTUAL/FORMAL IN/OUT trees
     for(tree<InstructionWrapper*>::iterator actual_in_TI= (*actual_argI)->getTree(ACTUAL_IN_TREE).begin(),
@@ -309,6 +334,7 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
 	  actual_out_TI = (*actual_argI)->getTree(ACTUAL_OUT_TREE).begin();  //TI4
 	actual_in_TI != actual_in_TE; ++actual_in_TI, ++formal_in_TI, ++formal_out_TI, ++actual_out_TI){
 
+
       //connect trees: antual-in --> formal-in, formal-out --> actual-out
       PDG->addDependency(*InstructionWrapper::nodes.find(*actual_in_TI), *InstructionWrapper::nodes.find(*formal_in_TI), PARAMETER);
       PDG->addDependency(*InstructionWrapper::nodes.find(*formal_out_TI), *InstructionWrapper::nodes.find(*actual_out_TI), PARAMETER);
@@ -316,7 +342,7 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
     }//end for(tree...) intra-connection between actual/formal
 
     //TODO: why removing this debugging infor will cause segmentation fault?
-    //    errs() << "DEBUG 226" << "\n";
+ 
 
     //3. ACTUAL_OUT --> LoadInsts in #Caller# function
     for(tree<InstructionWrapper*>::iterator actual_out_TI = (*actual_argI)->getTree(ACTUAL_OUT_TREE).begin(),
@@ -345,8 +371,10 @@ int ProgramDependencyGraph::connectCallerAndCallee(InstructionWrapper *InstW, ll
 	}//end for(; LI != LE; ++LI)
       }//end if(nullptr != (*TI3)->...)
     }// end for(tree actual_out_TI = getTree FORMAL_OUT_TREE)     
+
   }//end for argI iteration
-  
+
+
   return 0;
 }
 
@@ -441,100 +469,105 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
       //  #if 0
 
 
-	DataDependencyGraph &ddgGraph = getAnalysis<DataDependencyGraph>(*F);
+      DataDependencyGraph &ddgGraph = getAnalysis<DataDependencyGraph>(*F);
      
-	ControlDependencyGraph &cdgGraph = getAnalysis<ControlDependencyGraph>(*F);
+      ControlDependencyGraph &cdgGraph = getAnalysis<ControlDependencyGraph>(*F);
   
-	cdgGraph.computeDependencies(*F, cdgGraph.PDT);
+      cdgGraph.computeDependencies(*F, cdgGraph.PDT);
 
-	//set Entries for Function, set up links between dummy entry nodes and their func*
-	for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::funcInstWList[&*F].begin();
-	    nodeIt != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt){
+      //set Entries for Function, set up links between dummy entry nodes and their func*
+      for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::funcInstWList[&*F].begin();
+	  nodeIt != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt){
 	
-	  InstructionWrapper *InstW = *nodeIt;
-	  if(InstW->getType() == ENTRY){
+	InstructionWrapper *InstW = *nodeIt;
+	if(InstW->getType() == ENTRY){
 
-	    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator FI = 
-	      FunctionWrapper::funcMap.find(InstW->getFunction()); 
+	  std::map<const llvm::Function *,FunctionWrapper *>::const_iterator FI = 
+	    FunctionWrapper::funcMap.find(InstW->getFunction()); 
  
-	    if(FI != FunctionWrapper::funcMap.end()){
-	      //   errs() << "find successful!" << "\n";
-	      FunctionWrapper::funcMap[InstW->getFunction()]->setEntry(InstW);
-	    }   
-	  }
-	}//end for set Entries...
+	  if(FI != FunctionWrapper::funcMap.end()){
+	    //   errs() << "find successful!" << "\n";
+	    FunctionWrapper::funcMap[InstW->getFunction()]->setEntry(InstW);
+	  }   
+	}
+      }//end for set Entries...
 
-	clock_t begin2 = clock();
+      clock_t begin2 = clock();
 
-	//the iteration should be done for the instMap, not original F
-	for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::funcInstWList[&*F].begin();
-	    nodeIt != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt)
-	  {
-	    InstructionWrapper *InstW = *nodeIt;
-	    Instruction *pInstruction = InstW->getInstruction();
+      //the iteration should be done for the instMap, not original F
+      for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::funcInstWList[&*F].begin();
+	  nodeIt != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt)
+	{
+	  InstructionWrapper *InstW = *nodeIt;
+	  Instruction *pInstruction = InstW->getInstruction();
 
-	    //process call nodes, one call node will only be touched once(!InstW->getAccess)
-	    if(pInstruction != nullptr && InstW->getType() == INST && isa<CallInst>(pInstruction) && !InstW->getAccess())
-	      {
-		InstructionWrapper *CallInstW = InstW;
-		CallInst *CI = dyn_cast<CallInst>(pInstruction);
-		Function *callee = CI->getCalledFunction();
+	  //process call nodes, one call node will only be touched once(!InstW->getAccess)
+	  if(pInstruction != nullptr && InstW->getType() == INST && isa<CallInst>(pInstruction) && !InstW->getAccess())
+	    {
+	      InstructionWrapper *CallInstW = InstW;
+	      CallInst *CI = dyn_cast<CallInst>(pInstruction);
+	      Function *callee = CI->getCalledFunction();
 
-		//if this is an indirect function invocation(function pointer, member function...)
-		// e.g.   %1 = load i32 (i32)** %p, align 8
-		//	%call = call i32 %1(i32 2))
-		if(callee == nullptr){
-		  errs() << "call_func = null: " << *CI << "\n";
+	      //if this is an indirect function invocation(function pointer, member function...)
+	      // e.g.   %1 = load i32 (i32)** %p, align 8
+	      //	%call = call i32 %1(i32 2))
+	      if(callee == nullptr){
+		errs() << "call_func = null: " << *CI << "\n";
 		
-		  Type* t = CI->getCalledValue()->getType();
-		  errs() << "indirect call, called Type t = " << *t << "\n";
+		Type* t = CI->getCalledValue()->getType();
+		errs() << "indirect call, called Type t = " << *t << "\n";
 
-		  FunctionType* funcTy = cast<FunctionType>(cast<PointerType>(t)->getElementType());
-		  errs() << "afte cast<FunctionType>, ft = " << *funcTy <<"\n";
+		FunctionType* funcTy = cast<FunctionType>(cast<PointerType>(t)->getElementType());
+		errs() << "afte cast<FunctionType>, ft = " << *funcTy <<"\n";
 
-		  connectAllPossibleFunctions(InstW, funcTy);
+		connectAllPossibleFunctions(InstW, funcTy);
 
-		  continue;
-		}
+		continue;
+	      }
 
-		//TODO: isIntrinsic or not? Consider intrinsics as common instructions for now, continue directly  
-		if(callee->isIntrinsic() || callee->isDeclaration()){
+	      //TODO: isIntrinsic or not? Consider intrinsics as common instructions for now, continue directly  
+	      if(callee->isIntrinsic() || callee->isDeclaration()){
 
-		  //if it is a var_annotation, save the sensitive value by the way
-		  if(callee->getIntrinsicID() == Intrinsic::var_annotation){
-		    Value* v = CI->getArgOperand(0);
-		    errs() << "Intrinsic var_annotation: " << *v << "\n";
+		//if it is a var_annotation, save the sensitive value by the way
+		if(callee->getIntrinsicID() == Intrinsic::var_annotation){
+		  Value* v = CI->getArgOperand(0);
+		  errs() << "Intrinsic var_annotation: " << *v << "\n";
 
-		    if(isa<BitCastInst>(v)){
-		      Instruction *tempI = dyn_cast<Instruction>(v);
-		      errs() << "******** BitInst opcode: " << *tempI << "BitCast \n";
+		  if(isa<BitCastInst>(v)){
+		    Instruction *tempI = dyn_cast<Instruction>(v);
+		    errs() << "******** BitInst opcode: " << *tempI << "BitCast \n";
 
-		      for(llvm::Use &U : tempI->operands()){
-			Value *v_for_cast = U.get();
-			sensitive_values.push_back(v_for_cast);
-		      }
+		    for(llvm::Use &U : tempI->operands()){
+		      Value *v_for_cast = U.get();
+		      sensitive_values.push_back(v_for_cast);
 		    }
-		    else
-		      sensitive_values.push_back(v);
-		  }		  
-		  continue;
-		}
+		  }
+		  else
+		    sensitive_values.push_back(v);
+		}		  
+		continue;
+	      }
 
-		//TODO: tail call processing
-		if(CI->isTailCall()){continue;}
+	      //TODO: tail call processing
+	      if(CI->isTailCall()){continue;}
 	      
-		//special cases done, common function
-		CallWrapper *callW = new CallWrapper(CI);
-		CallWrapper::callMap[CI] = callW;
+	      //special cases done, common function
+	      CallWrapper *callW = new CallWrapper(CI);
+	      CallWrapper::callMap[CI] = callW;
 
-		
-		//if callee has no parameter trees in funcMap yet, build parameter trees first, and draw
+	      //		errs() << callee->getName() << " callee->getArgumentList().size =  " << callee->getArgumentList().size() << "\n"; 
+	
+	      //if callee has no parameter trees in funcMap yet, build parameter trees first, and draw
+
+	      if(!callee->getArgumentList().empty()){
+
 		if(true != FunctionWrapper::funcMap[callee]->hasTrees()){
 
-		  errs() << "DEBUG 456 New call for tree construction: " << *InstW->getInstruction() << "\n";
+		  //	  errs() << "DEBUG 456 New call for tree construction: " << *InstW->getInstruction() << "\n";
 		  //build formal trees in memory
 		  buildFormalParameterTrees(callee);
 		  
+
 		  //add tree edges in PDG
 		  drawFormalParameterTree(callee, FORMAL_IN_TREE);
 		  drawFormalParameterTree(callee, FORMAL_OUT_TREE);
@@ -544,92 +577,89 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
 		//TODO: We temporarily use this logic since we process F one by one, use a better logic later
 		//if callee has parameter trees already, just build actual trees
 		
-		/*
-		if(FunctionWrapper::funcMap[callee]->hasTrees()){
-		  errs() << callee->getName() << " has parameter trees already! Just build actual counterparts\n";
-		  }*/
-		//		errs() << "CI = " << *CI << "\n";
-
 		buildActualParameterTrees(CI);
-
 		drawActualParameterTree(CI, ACTUAL_IN_TREE);
 		drawActualParameterTree(CI, ACTUAL_OUT_TREE);
-
-		//		errs() << "before connectCallerAndCallee :" << *InstW->getInstruction() << " func :" << callee->getName() << "\n";
-		//take recursive callInst as common callInst
-		if(0 == connectCallerAndCallee(InstW, callee)){
-		  InstW->setAccess(true);
-		  	  errs () << "DEBUG 459 connectCallerAndCallee callInst: " << *InstW->getInstruction() << "\n";
-		  //		errs () << "callee_Func: " << call_func->getName() << "\n";
-		  		errs() << "---------------------------------------------------\n";
-		}
-	      }//end callnode
+	      }//end if !callee
 
 
-	    //second iteration on nodes to add both control and data Dependency
-	    for(std::set<InstructionWrapper*>::iterator nodeIt2 = InstructionWrapper::funcInstWList[&*F].begin();
-		nodeIt2 != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt2){
-	      InstructionWrapper *InstW2 = *nodeIt2;
+
+
+	      //		errs() << "before connectCallerAndCallee :" << *InstW->getInstruction() << " func :" << callee->getName() << "\n";
+	      //take recursive callInst as common callInst
+	      if(0 == connectCallerAndCallee(InstW, callee)){
+		InstW->setAccess(true);
+		//		  	  errs () << "DEBUG 459 connectCallerAndCallee callInst: " << *InstW->getInstruction() << "\n";
+		//		errs () << "callee_Func: " << call_func->getName() << "\n";
+		//		errs() << "---------------------------------------------------\n";
+	      }
+	    }//end callnode
+
+
+	  //second iteration on nodes to add both control and data Dependency
+	  for(std::set<InstructionWrapper*>::iterator nodeIt2 = InstructionWrapper::funcInstWList[&*F].begin();
+	      nodeIt2 != InstructionWrapper::funcInstWList[&*F].end(); ++nodeIt2){
+	    InstructionWrapper *InstW2 = *nodeIt2;
   
-	      //process all globals see whether dependency exists
-	      if(InstW2->getType() == INST && isa<LoadInst>(InstW2->getInstruction())){
+	    //process all globals see whether dependency exists
+	    if(InstW2->getType() == INST && isa<LoadInst>(InstW2->getInstruction())){
 
-		LoadInst* LI2 = dyn_cast<LoadInst>(InstW2->getInstruction());
+	      LoadInst* LI2 = dyn_cast<LoadInst>(InstW2->getInstruction());
 	      
-		for(std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin(); 
-		    gi != InstructionWrapper::globalList.end(); ++gi){	   
-		  //		errs() << "global v = " << *(*gi)->getValue() << "\n";  
-		  if(LI2->getPointerOperand() == (*gi)->getValue()){
-		    //	  errs() << *(*gi)->getValue() << " used in " << *LI2 << "\n";
-		    PDG->addDependency(*gi, InstW2, GLOBAL_VALUE);
-		  }		
-		}// end searching globalList
-	      }//end procesing load for global
+	      for(std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin(); 
+		  gi != InstructionWrapper::globalList.end(); ++gi){	   
+		//		errs() << "global v = " << *(*gi)->getValue() << "\n";  
+		if(LI2->getPointerOperand() == (*gi)->getValue()){
+		  //	  errs() << *(*gi)->getValue() << " used in " << *LI2 << "\n";
+		  PDG->addDependency(*gi, InstW2, GLOBAL_VALUE);
+		}		
+	      }// end searching globalList
+	    }//end procesing load for global
 
-	      if(InstW->getType() == INST){	       
-		if (ddgGraph.DDG->depends(InstW, InstW2)) {
-		  //only StoreInst->LoadInst edge can be annotated
-		  if(InstW2->getType() == INST 
-		     && isa<StoreInst>(InstW->getInstruction())
-		     && isa<LoadInst>(InstW2->getInstruction())){
-		    PDG->addDependency(InstW, InstW2, DATA_RAW);
-		  }
-		  else
-		    PDG->addDependency(InstW, InstW2, DATA_DEF_USE);
+	    if(InstW->getType() == INST){	       
+	      if (ddgGraph.DDG->depends(InstW, InstW2)) {
+		//only StoreInst->LoadInst edge can be annotated
+		if(InstW2->getType() == INST 
+		   && isa<StoreInst>(InstW->getInstruction())
+		   && isa<LoadInst>(InstW2->getInstruction())){
+		  PDG->addDependency(InstW, InstW2, DATA_RAW);
 		}
+		else
+		  PDG->addDependency(InstW, InstW2, DATA_DEF_USE);
+	      }
 	    
-		if(nullptr != InstW2->getInstruction()){		  
-		  if (cdgGraph.CDG->depends(InstW, InstW2)) {
-		    PDG->addDependency(InstW, InstW2, CONTROL);
-		  }
-		}
-	      }//end if(InstW->getType()== INST)
-
-	      if(InstW->getType() == ENTRY){
-		if (nullptr != InstW2->getInstruction() && cdgGraph.CDG->depends(InstW, InstW2))
+	      if(nullptr != InstW2->getInstruction()){		  
+		if (cdgGraph.CDG->depends(InstW, InstW2)) {
 		  PDG->addDependency(InstW, InstW2, CONTROL);
-	      }	    
-	    }//end second iteration for PDG->addDependency...
-	  } //end the iteration for finding CallInst     	
+		}
+	      }
+	    }//end if(InstW->getType()== INST)
 
-	//print PtrSet only
-	//#endif
+	    if(InstW->getType() == ENTRY){
+	      if (nullptr != InstW2->getInstruction() && cdgGraph.CDG->depends(InstW, InstW2))
+		PDG->addDependency(InstW, InstW2, CONTROL);
+	    }	    
+	  }//end second iteration for PDG->addDependency...
+	} //end the iteration for finding CallInst     	
 
-	  errs() << "------------------------DEBUG finding CallInst---------------------------\n";
+      //print PtrSet only
+      //#endif
 
-	  // connect globals and instructions
-	  //      clock_t end2 = clock();
-	  //  double time_spent2 = (double)(end2 - begin2) / CLOCKS_PER_SEC;
-	  //      errs() << "TIME per iteration in big for loop : " << time_spent2 << "\n";
+      errs() << "------------------------DEBUG finding CallInst---------------------------\n";
+
+      // connect globals and instructions
+      //      clock_t end2 = clock();
+      //  double time_spent2 = (double)(end2 - begin2) / CLOCKS_PER_SEC;
+      //      errs() << "TIME per iteration in big for loop : " << time_spent2 << "\n";
 
 
-	  //compute PtrSet
+      //compute PtrSet
 
-	  for(std::set<llvm::Value*>::iterator it = FunctionWrapper::funcMap[&*F]->getPtrSet().begin(), 
-		ie = FunctionWrapper::funcMap[&*F]->getPtrSet().end(); it != ie; ++it){
-	    allPtrSet.insert(*it);
-	  }
-	  errs() << "allPtrSet.size = " << allPtrSet.size() << "\n";
+      for(std::set<llvm::Value*>::iterator it = FunctionWrapper::funcMap[&*F]->getPtrSet().begin(), 
+	    ie = FunctionWrapper::funcMap[&*F]->getPtrSet().end(); it != ie; ++it){
+	allPtrSet.insert(*it);
+      }
+      errs() << "allPtrSet.size = " << allPtrSet.size() << "\n";
 
 
 
@@ -637,249 +667,249 @@ bool ProgramDependencyGraph::runOnModule(Module &M)
     }//end for(Module...
 
   //print PtrSet only
-    //  #if 0
+  //  #if 0
 
-    errs() << "\n\n PDG construction completed! ^_^\n\n";
-    errs() << "funcs = " << funcs << "\n";
-    errs() << "+++++++++++++++++++++++++++++++++++++++++++++\n";
+  errs() << "\n\n PDG construction completed! ^_^\n\n";
+  errs() << "funcs = " << funcs << "\n";
+  errs() << "+++++++++++++++++++++++++++++++++++++++++++++\n";
 
-    //    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = FunctionWrapper::funcMap.begin(); 
+  //    std::map<const llvm::Function *,FunctionWrapper *>::const_iterator itF = FunctionWrapper::funcMap.begin(); 
 
-    std::set<llvm::GlobalValue*> senGlobalSet;
-    std::set<llvm::Instruction*> senInstSet;
+  std::set<llvm::GlobalValue*> senGlobalSet;
+  std::set<llvm::Instruction*> senInstSet;
   
-    std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin();
-    std::set<InstructionWrapper *>::const_iterator ge = InstructionWrapper::globalList.end();
+  std::set<InstructionWrapper *>::const_iterator gi = InstructionWrapper::globalList.begin();
+  std::set<InstructionWrapper *>::const_iterator ge = InstructionWrapper::globalList.end();
 
-    errs() << "globalList.size = " << InstructionWrapper::globalList.size() << "\n";
+  errs() << "globalList.size = " << InstructionWrapper::globalList.size() << "\n";
   
 
-    std::set<Function*> async_funcs;
+  std::set<Function*> async_funcs;
 
-    //sensitive global values(with annotations) can be directly get through Module.getNamedGlobal(GetNameGlobal in 3.9)
-    auto global_annos = M.getNamedGlobal("llvm.global.annotations");
-    if (global_annos){
-      auto casted_array = cast<ConstantArray>(global_annos->getOperand(0));
-      for (int i = 0; i < casted_array->getNumOperands(); i++) {
-	auto casted_struct = cast<ConstantStruct>(casted_array->getOperand(i));
+  //sensitive global values(with annotations) can be directly get through Module.getNamedGlobal(GetNameGlobal in 3.9)
+  auto global_annos = M.getNamedGlobal("llvm.global.annotations");
+  if (global_annos){
+    auto casted_array = cast<ConstantArray>(global_annos->getOperand(0));
+    for (int i = 0; i < casted_array->getNumOperands(); i++) {
+      auto casted_struct = cast<ConstantStruct>(casted_array->getOperand(i));
 
-	if (auto sen_gv = dyn_cast<GlobalValue>(casted_struct->getOperand(0)->getOperand(0))) {
-	  auto anno = cast<ConstantDataArray>(cast<GlobalVariable>(casted_struct->getOperand(1)->getOperand(0))->getOperand(0))->getAsCString();
-	  if (anno == "sensitive") { 
-	    errs() << "sensitive global found! value = " << *sen_gv << "\n";
-	    senGlobalSet.insert(sen_gv);
-	  }
-	}
-
-	//TODO: rewrite these code to make it work for our function annotation
-	if (auto fn = dyn_cast<Function>(casted_struct->getOperand(0)->getOperand(0))) {
-	  auto anno = cast<ConstantDataArray>(cast<GlobalVariable>(casted_struct->getOperand(1)->getOperand(0))->getOperand(0))->getAsCString();
-
-	  if (anno == "sensitive") { 
-	    async_funcs.insert(fn);
-	    errs() << "async_funcs ++ sensitive " << fn->getName() << "\n";
-	  }
-	}
-
-
-      }
-    }//end if (global_annos)
-
-    //process all sensitive instructions in functions and all global values, color their corresponding nodes in set "nodes"    
-    for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
-	nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
-
-      InstructionWrapper *InstW = *nodeIt;
-      Instruction *pInstruction = InstW->getInstruction();
-
-      //process annoatated sensitive values(actually are instructionWrappers) in functions
-      for(int i = 0; i < sensitive_values.size(); i++){
-	if(sensitive_values[i] == pInstruction){
-	  errs() << "sensitive_values " << i << " == "<< *pInstruction << "\n";
-	  sensitive_nodes.push_back(InstW); 
+      if (auto sen_gv = dyn_cast<GlobalValue>(casted_struct->getOperand(0)->getOperand(0))) {
+	auto anno = cast<ConstantDataArray>(cast<GlobalVariable>(casted_struct->getOperand(1)->getOperand(0))->getOperand(0))->getAsCString();
+	if (anno == "sensitive") { 
+	  errs() << "sensitive global found! value = " << *sen_gv << "\n";
+	  senGlobalSet.insert(sen_gv);
 	}
       }
 
-      //based on senGloabalSet, find annotated global InstructionWrappers
-      if(InstW->getType() == GLOBAL_VALUE){
-	GlobalValue *gv = dyn_cast<GlobalValue>(InstW->getValue());
+      //TODO: rewrite these code to make it work for our function annotation
+      if (auto fn = dyn_cast<Function>(casted_struct->getOperand(0)->getOperand(0))) {
+	auto anno = cast<ConstantDataArray>(cast<GlobalVariable>(casted_struct->getOperand(1)->getOperand(0))->getOperand(0))->getAsCString();
+
+	if (anno == "sensitive") { 
+	  async_funcs.insert(fn);
+	  errs() << "async_funcs ++ sensitive " << fn->getName() << "\n";
+	}
+      }
+
+
+    }
+  }//end if (global_annos)
+
+  //process all sensitive instructions in functions and all global values, color their corresponding nodes in set "nodes"    
+  for(std::set<InstructionWrapper*>::iterator nodeIt = InstructionWrapper::nodes.begin();
+      nodeIt != InstructionWrapper::nodes.end(); ++nodeIt){
+
+    InstructionWrapper *InstW = *nodeIt;
+    Instruction *pInstruction = InstW->getInstruction();
+
+    //process annoatated sensitive values(actually are instructionWrappers) in functions
+    for(int i = 0; i < sensitive_values.size(); i++){
+      if(sensitive_values[i] == pInstruction){
+	errs() << "sensitive_values " << i << " == "<< *pInstruction << "\n";
+	sensitive_nodes.push_back(InstW); 
+      }
+    }
+
+    //based on senGloabalSet, find annotated global InstructionWrappers
+    if(InstW->getType() == GLOBAL_VALUE){
+      GlobalValue *gv = dyn_cast<GlobalValue>(InstW->getValue());
 	
-	//if gv is sensitive(inside senGlobalSet)
-	if(senGlobalSet.end() != senGlobalSet.find(gv)){
-	  errs() << "sensitive_global: " << *gv <<"\n";
-	  sensitive_nodes.push_back(InstW);
+      //if gv is sensitive(inside senGlobalSet)
+      if(senGlobalSet.end() != senGlobalSet.find(gv)){
+	errs() << "sensitive_global: " << *gv <<"\n";
+	sensitive_nodes.push_back(InstW);
 
-	}//end judging gv's sensitivity
-      }//end global value
-    }
+      }//end judging gv's sensitivity
+    }//end global value
+  }
 
-    errs() << "sensitive_nodes.size = " << sensitive_nodes.size() << "\n";
+  errs() << "sensitive_nodes.size = " << sensitive_nodes.size() << "\n";
   
-    std::deque<const InstructionWrapper*> queue;
-    for(int i = 0; i < sensitive_nodes.size(); i++){
-      queue.push_back(sensitive_nodes[i]);
-    }
+  std::deque<const InstructionWrapper*> queue;
+  for(int i = 0; i < sensitive_nodes.size(); i++){
+    queue.push_back(sensitive_nodes[i]);
+  }
 
-    errs() << "queue.size = " << queue.size() << "\n";
+  errs() << "queue.size = " << queue.size() << "\n";
 
-    /*
-      for(int i = 0; i < queue.size(); i++){
-      errs() << queue[i] << "\n";
-      }*/
+  /*
+    for(int i = 0; i < queue.size(); i++){
+    errs() << queue[i] << "\n";
+    }*/
 
-    /*
-    //  std::string Str;
-    //raw_fd_ostream os_InstFile("./test/sensitive_llvm_instructions.txt", true, sys::fs::F_None);
-    llvm::LLVMContext& context = llvm::getGlobalContext();
-    llvm::Module *mod_Bob = new llvm::Module("sensitive_llvm_instruction", context);
-    llvm::IRBuilder<> builder(context); 
-    mod_Bob->dump();*/
+  /*
+  //  std::string Str;
+  //raw_fd_ostream os_InstFile("./test/sensitive_llvm_instructions.txt", true, sys::fs::F_None);
+  llvm::LLVMContext& context = llvm::getGlobalContext();
+  llvm::Module *mod_Bob = new llvm::Module("sensitive_llvm_instruction", context);
+  llvm::IRBuilder<> builder(context); 
+  mod_Bob->dump();*/
 
-    std::set<InstructionWrapper* > coloredInstSet;
+  std::set<InstructionWrapper* > coloredInstSet;
 
-    //worklist algorithm for propagation
-    while(!queue.empty()){
+  //worklist algorithm for propagation
+  while(!queue.empty()){
     
-      InstructionWrapper *InstW = const_cast<InstructionWrapper*>(queue.front());
-      if(InstW->getType() == INST)
-	FunctionWrapper::funcMap[InstW->getFunction()]->setVisited(true);
+    InstructionWrapper *InstW = const_cast<InstructionWrapper*>(queue.front());
+    if(InstW->getType() == INST)
+      FunctionWrapper::funcMap[InstW->getFunction()]->setVisited(true);
 
-      queue.pop_front();
-      //TODO: getInstruction should be removed  later, only for testing here temporarily
+    queue.pop_front();
+    //TODO: getInstruction should be removed  later, only for testing here temporarily
 
-      //    errs() << "DEBUG: queue.size = " << queue.size() << "\n";
-      if(InstW->getValue() == nullptr){
-	//      errs() << "*** DEBUG ***: queue.front = nullptr\n";
-	;
-      }else {
-	//  errs() << "SENSITIVE INSTRUCTION: " << *InstW->getValue() << "\n";
-	coloredInstSet.insert(InstW);
+    //    errs() << "DEBUG: queue.size = " << queue.size() << "\n";
+    if(InstW->getValue() == nullptr){
+      //      errs() << "*** DEBUG ***: queue.front = nullptr\n";
+      ;
+    }else {
+      //  errs() << "SENSITIVE INSTRUCTION: " << *InstW->getValue() << "\n";
+      coloredInstSet.insert(InstW);
+    }
+    
+    DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
+    //    errs() << "DEBUG, DNode->getDependencyList.size = " << DNode->getDependencyList().size() << "\n";
+
+    for(int i = 0; i < DNode->getDependencyList().size(); i++){
+      //skip CONTROL_DEPENDENCY
+      if(DNode->getDependencyList()[i].second == CONTROL || DNode->getDependencyList()[i].second == CALL){
+	continue;
       }
-    
-      DependencyNode<InstructionWrapper>* DNode = PDG->getNodeByData(InstW);
-      //    errs() << "DEBUG, DNode->getDependencyList.size = " << DNode->getDependencyList().size() << "\n";
-
-      for(int i = 0; i < DNode->getDependencyList().size(); i++){
-	//skip CONTROL_DEPENDENCY
-	if(DNode->getDependencyList()[i].second == CONTROL || DNode->getDependencyList()[i].second == CALL){
-	  continue;
-	}
       
-	if(nullptr != DNode->getDependencyList()[i].first->getData()){
-	  InstructionWrapper *adjacent_InstW = 
-	    *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
-	  if(true != adjacent_InstW->getFlag()){
-	    //branchInst only generates control dependencies later, so no need to remove branch
-	    queue.push_back(DNode->getDependencyList()[i].first->getData());
-	    adjacent_InstW->setFlag(true); //label the adjacent node visited
-	  }
+      if(nullptr != DNode->getDependencyList()[i].first->getData()){
+	InstructionWrapper *adjacent_InstW = 
+	  *InstructionWrapper::nodes.find(const_cast<InstructionWrapper*>(DNode->getDependencyList()[i].first->getData())); 
+	if(true != adjacent_InstW->getFlag()){
+	  //branchInst only generates control dependencies later, so no need to remove branch
+	  queue.push_back(DNode->getDependencyList()[i].first->getData());
+	  adjacent_InstW->setFlag(true); //label the adjacent node visited
 	}
-	//      else errs() << "*DNode->getDependencyList()[" << i << "].first->getData = NULL << " << "\n";
-      }//end for int i = 0; i < DNode...
-      //    errs() << "DEBUG 525" << "\n";
-    }//end while(!queue...)
+      }
+      //      else errs() << "*DNode->getDependencyList()[" << i << "].first->getData = NULL << " << "\n";
+    }//end for int i = 0; i < DNode...
+    //    errs() << "DEBUG 525" << "\n";
+  }//end while(!queue...)
 
-    errs() << "\n\n++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++\n\n";
-    int index = 0;
-    for(std::set<InstructionWrapper*>::iterator senI = coloredInstSet.begin(); senI != coloredInstSet.end(); ++senI){
-      if((*senI)->getType() == INST)
-	errs() << "SENSITIVE INSTRUCTION [" << index++ << "] Mem Addr :" << (*senI)->getInstruction() << " Value : " << *(*senI)->getInstruction() << "\n";
-    }
+  errs() << "\n\n++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++\n\n";
+  int index = 0;
+  for(std::set<InstructionWrapper*>::iterator senI = coloredInstSet.begin(); senI != coloredInstSet.end(); ++senI){
+    if((*senI)->getType() == INST)
+      errs() << "SENSITIVE INSTRUCTION [" << index++ << "] Mem Addr :" << (*senI)->getInstruction() << " Value : " << *(*senI)->getInstruction() << "\n";
+  }
 
 
-    errs() << "\n\n++++++++++The FUNCTION List is as follows:++++++++++\n\n";
+  errs() << "\n\n++++++++++The FUNCTION List is as follows:++++++++++\n\n";
 
-    unsigned int funcs_count = 0;
-    unsigned int sen_funcs_count = 0;
-    unsigned int ins_funcs_count = 0;
+  unsigned int funcs_count = 0;
+  unsigned int sen_funcs_count = 0;
+  unsigned int ins_funcs_count = 0;
 
-    std::set<FunctionWrapper*> sen_FuncSet;
-    std::set<FunctionWrapper*> ins_FuncSet;
+  std::set<FunctionWrapper*> sen_FuncSet;
+  std::set<FunctionWrapper*> ins_FuncSet;
 
-    std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
-    std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
-    for(; FI != FE; ++FI){
-      if(!(*FI).first->isDeclaration()){
-	funcs_count++;
+  std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
+  std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
+  for(; FI != FE; ++FI){
+    if(!(*FI).first->isDeclaration()){
+      funcs_count++;
 
-	if((*FI).second->hasFuncOrFilePtr()){
-	  errs() << (*FI).first->getName() << " hasFuncOrFilePtr()\n";
-	}
+      if((*FI).second->hasFuncOrFilePtr()){
+	errs() << (*FI).first->getName() << " hasFuncOrFilePtr()\n";
+      }
       
-	if((*FI).second->isVisited()){
-	  errs() << (*FI).first->getName() << " is colored(sensitive)\n";
+      if((*FI).second->isVisited()){
+	errs() << (*FI).first->getName() << " is colored(sensitive)\n";
 
-	  Function* func = (*FI).second->getFunction();
-	  errs() << "func name = " << func->getName() << "\n";
+	Function* func = (*FI).second->getFunction();
+	errs() << "func name = " << func->getName() << "\n";
 	
 
-	  sen_FuncSet.insert((*FI).second );
-	}
-	else{
-	  errs() << (*FI).first->getName() << "is uncolored\n";
-	  ins_FuncSet.insert((*FI).second );
-	}
+	sen_FuncSet.insert((*FI).second );
+      }
+      else{
+	errs() << (*FI).first->getName() << "is uncolored\n";
+	ins_FuncSet.insert((*FI).second );
       }
     }
+  }
 
 
-    //TODO idea , for each insensitive_func, check its callinstSet and if there is a CallInst in sen_func but has FuncOrFilePtr, put it back to ins_
-    /*
-      for(std::set<FunctionWrapper*>::iterator si = ins_FuncSet.begin(), se = ins_FuncSet.end(); si != se; ++si){
-      errs() << (*si)->getFunction()->getName() << " getCallinstList.size = "<< (*si)->getCallInstList().size() << "\n";
-      for(std::list<CallInst*>::iterator li = (*si)->getCallInstList().begin(), le = (*si)->getCallInstList().end(); li != le; ++li){
-      errs() << "callinst = " << *(*li) << "\n";
-      errs() << "getCalledFunction: " << (*li)->getCalledFunction()->getName() << "\n";
-      if(!(*li)->getCalledFunction()->isDeclaration()){
-      errs() << "real function :" << (*li)->getCalledFunction()->getName() << (*li)->getCalledFunction() << "\n"; 
-      }
-      }
-      }*/
+  //TODO idea , for each insensitive_func, check its callinstSet and if there is a CallInst in sen_func but has FuncOrFilePtr, put it back to ins_
+  /*
+    for(std::set<FunctionWrapper*>::iterator si = ins_FuncSet.begin(), se = ins_FuncSet.end(); si != se; ++si){
+    errs() << (*si)->getFunction()->getName() << " getCallinstList.size = "<< (*si)->getCallInstList().size() << "\n";
+    for(std::list<CallInst*>::iterator li = (*si)->getCallInstList().begin(), le = (*si)->getCallInstList().end(); li != le; ++li){
+    errs() << "callinst = " << *(*li) << "\n";
+    errs() << "getCalledFunction: " << (*li)->getCalledFunction()->getName() << "\n";
+    if(!(*li)->getCalledFunction()->isDeclaration()){
+    errs() << "real function :" << (*li)->getCalledFunction()->getName() << (*li)->getCalledFunction() << "\n"; 
+    }
+    }
+    }*/
 
   
-    //  std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
-    // std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
+  //  std::map<const llvm::Function *,FunctionWrapper *>::iterator FI =  FunctionWrapper::funcMap.begin();
+  // std::map<const llvm::Function *,FunctionWrapper *>::iterator FE =  FunctionWrapper::funcMap.end();
     
 
-    errs() << "non-library functions in total: " << funcs_count << "\n";
-    //  errs() << "sensitive functions count  : " << sen_funcs_count << "\n";
-    // errs() << "insensitive functions count: " << ins_funcs_count << "\n";
-    errs() << "sen_FuncSet  : " << sen_FuncSet.size() << "\n";
-    errs() << "ins_FuncSet  : " << ins_FuncSet.size() << "\n";
+  errs() << "non-library functions in total: " << funcs_count << "\n";
+  //  errs() << "sensitive functions count  : " << sen_funcs_count << "\n";
+  // errs() << "insensitive functions count: " << ins_funcs_count << "\n";
+  errs() << "sen_FuncSet  : " << sen_FuncSet.size() << "\n";
+  errs() << "ins_FuncSet  : " << ins_FuncSet.size() << "\n";
 
-    //print PtrSet only 2
+  //print PtrSet only 2
  
-    //   #endif
-    errs() << "functions count = " << funcs <<"\n";
+  //   #endif
+  errs() << "functions count = " << funcs <<"\n";
 
     
 
 
 
-    //TODO:uncomment later
-    /*
-    //print all sensitive functions
-    std::set<FunctionWrapper*>::iterator S_FI =  sen_FuncSet.begin();
-    std::set<FunctionWrapper*>::iterator S_FE =  sen_FuncSet.end();
+  //TODO:uncomment later
+  /*
+  //print all sensitive functions
+  std::set<FunctionWrapper*>::iterator S_FI =  sen_FuncSet.begin();
+  std::set<FunctionWrapper*>::iterator S_FE =  sen_FuncSet.end();
 
-    errs() << "============== SENSITIVE FUNCTION LIST =================\n ";
-    for(; S_FI != S_FE; ++S_FI){
-      errs() << (*S_FI)->getFunction()->getName() << "  FunctionType: " << *(*S_FI)->getFunction()->getFunctionType() << "\n";
-    }
-    errs() << "============== SENSITIVE FUNCTION END ==================\n ";
-    */
-
-
+  errs() << "============== SENSITIVE FUNCTION LIST =================\n ";
+  for(; S_FI != S_FE; ++S_FI){
+  errs() << (*S_FI)->getFunction()->getName() << "  FunctionType: " << *(*S_FI)->getFunction()->getFunctionType() << "\n";
+  }
+  errs() << "============== SENSITIVE FUNCTION END ==================\n ";
+  */
 
 
-    FunctionWrapper::funcMap.clear();
-    CallWrapper::callMap.clear();
-    InstructionWrapper::nodes.clear();
-    InstructionWrapper::globalList.clear();
-    InstructionWrapper::instMap.clear();
-    InstructionWrapper::funcInstWList.clear();	
 
-    return false;
+
+  FunctionWrapper::funcMap.clear();
+  CallWrapper::callMap.clear();
+  InstructionWrapper::nodes.clear();
+  InstructionWrapper::globalList.clear();
+  InstructionWrapper::instMap.clear();
+  InstructionWrapper::funcInstWList.clear();	
+
+  return false;
 
 }
 

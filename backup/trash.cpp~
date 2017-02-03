@@ -1,0 +1,58 @@
+
+void buildActualTree(CallInst* CI, Argument *arg, TreeType treeTy){
+
+  InstructionWrapper *treeTyW = nullptr;
+
+  switch(treeTy){
+  case ACTUAL_IN_TREE:{
+    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_IN);
+    break;
+  }
+  case ACTUAL_OUT_TREE:{
+    treeTyW = new InstructionWrapper(arg->getParent(), arg, arg->getType(), id, ACTUAL_OUT);
+    break;
+  }
+  default:
+    errs() << "Wrong TreeType input! \n";
+    exit(1);
+  }
+
+  if(treeTyW != nullptr)
+    InstructionWrapper::nodes.insert(treeTyW);
+  else{
+    errs() << "treeTyW is a null pointer!" <<"\n";
+    exit(1);
+  }
+
+  //find the right arg, and set tree root
+  list<ArgumentWrapper*>::iterator argWLoc;
+
+  //find root node for actual trees(callMap)
+  for(list<ArgumentWrapper*>::iterator argWI = CallWrapper::callMap[CI]->getArgWList().begin(),
+	argWE = CallWrapper::callMap[CI]->getArgWList().end(); argWI != argWE; ++argWI){
+    if((*argWI)->getArg() == arg)
+      argWLoc = argWI;
+  }
+
+  tree<InstructionWrapper*>::iterator treeRoot = (*argWLoc)->getTree(treeTy).set_head(treeTyW);  
+  //  (*argWI)->getTree(treeTy).insert(treeRoot, treeTyW);
+
+  TypeWrapper *tyW = new TypeWrapper(arg->getType(),id++);
+
+  //TODO: function ptr case...
+  //avoid FILE* 
+  string Str;
+  raw_string_ostream OS(Str);
+  OS << *tyW->getType();
+  //FILE*, bypass, no need to buildTypeTree
+  if("%struct._IO_FILE*" == OS.str() || "%struct._IO_marker*" == OS.str()){
+    errs() << "OS.str() = " << OS.str() << " FILE* appears, stop buildTypeTree\n";      
+  }
+  else if(tyW->getType()->isPointerTy() && tyW->getType()->getContainedType(0)->isFunctionTy()){
+    errs() << "DEBUG 312: buildActualTree: function pointer arg = " << *tyW->getType() << "\n";
+  }
+  else
+    buildActualTypeTree(arg, tyW, treeTy, CI);
+
+  id = 0;
+}

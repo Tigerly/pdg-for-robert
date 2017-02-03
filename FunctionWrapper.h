@@ -23,6 +23,9 @@ enum TreeType{
 };
 
 
+static int id = 0;
+
+
 class TypeWrapper{
  private:
   llvm::Type *ty;
@@ -56,6 +59,8 @@ class ArgumentWrapper{
   tree<InstructionWrapper*> actualInTree;
   tree<InstructionWrapper*> actualOutTree;
 
+  //  tree<InstructionWrapper*> testTree;
+
  public:
 
   ArgumentWrapper(Argument* arg){
@@ -84,7 +89,53 @@ class ArgumentWrapper{
     }
   }
 
+  void copyTree(const tree<InstructionWrapper*>& srcTree, TreeType treeTy){
+
+    if(srcTree.empty()){
+      
+      errs() << *arg->getParent() << " arg : " << *arg << " srcTree is empty!\n";
+      exit(1);
+    }
+
+    InstWrapperType instWTy;//formal_out actual_in/out
+
+    switch(treeTy){
+    case FORMAL_IN_TREE:
+      errs() << "FORMAL_IN_TREE can't be copied\n";
+      break;
+    case FORMAL_OUT_TREE:
+      formalOutTree = srcTree;
+      instWTy = FORMAL_OUT;
+      break;
+    case ACTUAL_IN_TREE:
+      actualInTree = srcTree;
+      instWTy = ACTUAL_IN;
+      break;
+    case ACTUAL_OUT_TREE:
+      actualOutTree = srcTree;
+      instWTy = ACTUAL_OUT;
+      break;
+    }
+
+    //    formalOutTree = formalInTree;
+    tree<InstructionWrapper*>::iterator SI = srcTree.begin(), SE = srcTree.end();
+    tree<InstructionWrapper*>::iterator TI = this->getTree(treeTy).begin(), TE = this->getTree(treeTy).end();
+
+    //    InstructionWrapper(Function *Func, Argument *arg, Type* field_type, int field_id, InstWrapperType type) ;
+    for(;SI != SE && TI != TE; ++SI, ++TI){
+      InstructionWrapper * typeFieldW = new InstructionWrapper((*SI)->getFunction(), (*SI)->getArgument(), 
+							       (*SI)->getFieldType(), id++, instWTy);
+      *TI = typeFieldW;
+      InstructionWrapper::nodes.insert(typeFieldW);
+    }
+
+  }//end copyTree
+
+
+
 };
+
+
 
 class CallWrapper{
  private:

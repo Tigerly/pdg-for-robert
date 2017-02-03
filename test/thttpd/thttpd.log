@@ -1,0 +1,2908 @@
+file parameter: test/thttpd/thttpd.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 258
+======Global List: ======
+PDG 3.875969e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1562 Function: main
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @parse_args(i32 %7, i8** %8)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : parse_args
+DEBUG 456 New call for tree construction:   call void @lookup_hostname(%union.httpd_sockaddr* %sa4, i64 128, i32* %gotv4, %union.httpd_sockaddr* %sa6, i64 128, i32* %gotv6)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : lookup_hostname
+DEBUG 456 New call for tree construction:   call void @read_throttlefile(i8* %14)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : read_throttlefile
+DEBUG 456 New call for tree construction:   %call103 = call i32 @fdwatch_get_nfiles()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_get_nfiles
+call_func = null:   %call161 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 15, void (i32)* @handle_term)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call162 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 2, void (i32)* @handle_term)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call163 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 17, void (i32)* @handle_chld)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call164 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 13, void (i32)* inttoptr (i64 1 to void (i32)*))
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call165 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 1, void (i32)* @handle_hup)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call166 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 10, void (i32)* @handle_usr1)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call167 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 12, void (i32)* @handle_usr2)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+call_func = null:   %call168 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 14, void (i32)* @handle_alrm)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+DEBUG 456 New call for tree construction:   call void @tmr_init()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_init
+DEBUG 456 New call for tree construction:   %call177 = call %struct.httpd_server* @httpd_initialize(i8* %69, %union.httpd_sockaddr* %cond, %union.httpd_sockaddr* %cond175, i16 zeroext %72, i8* %73, i32 %74, i8* %75, i8* %76, i32 %77, i8* %arraydecay176, i32 %78, %struct._IO_FILE* %79, i32 %80, i32 %81, i32 %82, i8* %83, i8* %84, i32 %85)
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_initialize
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+DEBUG 456 New call for tree construction:   %call182 = call %struct.TimerStruct* @tmr_create(%struct.timeval* null, void (i8*, %struct.timeval*)* @occasional, i8* %87, i64 120000, i32 1)
+DEBUG 312: buildFormalTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildFormalTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_create
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 456 New call for tree construction:   call void @fdwatch_add_fd(i32 %116, i8* null, i32 0)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_add_fd
+DEBUG 456 New call for tree construction:   call void @re_open_logfile()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : re_open_logfile
+DEBUG 456 New call for tree construction:   %call275 = call i64 @tmr_mstimeout(%struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_mstimeout
+DEBUG 456 New call for tree construction:   %call276 = call i32 @fdwatch(i64 %call275)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch
+DEBUG 456 New call for tree construction:   call void @tmr_run(%struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_run
+DEBUG 456 New call for tree construction:   %call303 = call i32 @fdwatch_check_fd(i32 %133)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_check_fd
+DEBUG 456 New call for tree construction:   %call307 = call i32 @handle_newconnect(%struct.timeval* %tv, i32 %135)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : handle_newconnect
+DEBUG 456 New call for tree construction:   %call330 = call i8* @fdwatch_get_next_client_data()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_get_next_client_data
+DEBUG 456 New call for tree construction:   call void @clear_connection(%struct.connecttab* %149, %struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : clear_connection
+DEBUG 456 New call for tree construction:   call void @handle_read(%struct.connecttab* %152, %struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : handle_read
+DEBUG 456 New call for tree construction:   call void @handle_send(%struct.connecttab* %153, %struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : handle_send
+DEBUG 456 New call for tree construction:   call void @handle_linger(%struct.connecttab* %154, %struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : handle_linger
+DEBUG 456 New call for tree construction:   call void @fdwatch_del_fd(i32 %161)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_del_fd
+DEBUG 456 New call for tree construction:   call void @httpd_unlisten(%struct.httpd_server* %166)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_unlisten
+DEBUG 456 New call for tree construction:   call void @shut_down()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : shut_down
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 104
+strrchr is defined outside!
+openlog is defined outside!
+tzset is defined outside!
+syslog is defined outside!
+fprintf is defined outside!
+exit is defined outside!
+getuid is defined outside!
+getpwnam is defined outside!
+strcmp is defined outside!
+fopen is defined outside!
+perror is defined outside!
+fcntl is defined outside!
+fileno is defined outside!
+fchown is defined outside!
+chdir is defined outside!
+getcwd is defined outside!
+strlen is defined outside!
+strcat is defined outside!
+fclose is defined outside!
+daemon is defined outside!
+setsid is defined outside!
+getpid is defined outside!
+chroot is defined outside!
+strncmp is defined outside!
+llvm.memmove.p0i8.p0i8.i64 is defined outside!
+strcpy is defined outside!
+sigset is defined outside!
+alarm is defined outside!
+time is defined outside!
+setgroups is defined outside!
+setgid is defined outside!
+initgroups is defined outside!
+setuid is defined outside!
+malloc is defined outside!
+gettimeofday is defined outside!
+__errno_location is defined outside!
+closelog is defined outside!
+shutdown is defined outside!
+read is defined outside!
+write is defined outside!
+writev is defined outside!
+free is defined outside!
+fgets is defined outside!
+strchr is defined outside!
+__isoc99_sscanf is defined outside!
+strstr is defined outside!
+realloc is defined outside!
+strdup is defined outside!
+llvm.memset.p0i8.i64 is defined outside!
+snprintf is defined outside!
+getaddrinfo is defined outside!
+gai_strerror is defined outside!
+freeaddrinfo is defined outside!
+printf is defined outside!
+atoi is defined outside!
+strspn is defined outside!
+strcspn is defined outside!
+strcasecmp is defined outside!
+abort is defined outside!
+waitpid is defined outside!
+PDG 7.751938e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:parse_args
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:parse_args
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5829 Function: parse_args
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @read_config(i8* %19)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : read_config
+DEBUG 456 New call for tree construction:   call void @usage()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : usage
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 160
+PDG 1.162791e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lookup_hostname
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lookup_hostname
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5998 Function: lookup_hostname
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 197
+PDG 1.550388e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_throttlefile
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_throttlefile
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6227 Function: read_throttlefile
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call102 = call i8* @e_strdup(i8* %arraydecay101)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : e_strdup
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 223
+PDG 1.937984e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_term
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_term
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6241 Function: handle_term
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 224
+PDG 2.325581e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_chld
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_chld
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6299 Function: handle_chld
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 235
+PDG 2.713178e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_hup
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_hup
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6311 Function: handle_hup
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 239
+PDG 3.100775e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_usr1
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_usr1
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6324 Function: handle_usr1
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 240
+PDG 3.488372e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_usr2
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_usr2
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6336 Function: handle_usr2
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @logstats(%struct.timeval* null)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : logstats
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 244
+PDG 3.875969e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_alrm
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_alrm
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6367 Function: handle_alrm
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 248
+PDG 4.263566e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:occasional
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:occasional
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6378 Function: occasional
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @mmc_cleanup(%struct.timeval* %0)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : mmc_cleanup
+DEBUG 456 New call for tree construction:   call void @tmr_cleanup()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_cleanup
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 252
+PDG 4.651163e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:idle
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:idle
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6465 Function: idle
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i8* @httpd_ntoa(%union.httpd_sockaddr* %client_addr)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_ntoa
+DEBUG 456 New call for tree construction:   call void @httpd_send_err(%struct.httpd_conn* %13, i32 408, i8* %14, i8* getelementptr inbounds ([1 x i8]* @.str42, i32 0, i32 0), i8* %15, i8* getelementptr inbounds ([1 x i8]* @.str42, i32 0, i32 0))
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_send_err
+DEBUG 456 New call for tree construction:   call void @finish_connection(%struct.connecttab* %16, %struct.timeval* %17)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : finish_connection
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 269
+PDG 5.038760e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:update_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:update_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8391 Function: update_throttles
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 315
+PDG 5.426357e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:show_stats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:show_stats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8400 Function: show_stats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 319
+PDG 5.813953e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:re_open_logfile
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:re_open_logfile
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8440 Function: re_open_logfile
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @httpd_set_logfp(%struct.httpd_server* %8, %struct._IO_FILE* %9)
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_set_logfp
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 321
+PDG 6.201550e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_newconnect
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_newconnect
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8667 Function: handle_newconnect
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call17 = call i32 @httpd_get_conn(%struct.httpd_server* %18, i32 %19, %struct.httpd_conn* %21)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_get_conn
+DEBUG 456 New call for tree construction:   call void @httpd_set_ndelay(i32 %39)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_set_ndelay
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 351
+PDG 6.589147e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9214 Function: clear_connection
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @tmr_cancel(%struct.TimerStruct* %3)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_cancel
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 456 New call for tree construction:   call void @really_clear_connection(%struct.connecttab* %38, %struct.timeval* %39)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : really_clear_connection
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 380
+PDG 6.976744e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_read
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_read
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10706 Function: handle_read
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @httpd_realloc_str(i8** %read_buf, i64* %read_size5, i64 %add)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_realloc_str
+DEBUG 456 New call for tree construction:   %call35 = call i32 @httpd_got_request(%struct.httpd_conn* %48)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_got_request
+DEBUG 456 New call for tree construction:   %call37 = call i32 @httpd_parse_request(%struct.httpd_conn* %54)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_parse_request
+DEBUG 456 New call for tree construction:   %call42 = call i32 @check_throttles(%struct.connecttab* %57)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : check_throttles
+DEBUG 456 New call for tree construction:   %call45 = call i32 @httpd_start_request(%struct.httpd_conn* %65, %struct.timeval* %66)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_start_request
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 435
+PDG 7.364341e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_send
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_send
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 17718 Function: handle_send
+computerDependencies DEBUG 1
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 529
+PDG 7.751938e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_linger
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:handle_linger
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 18638 Function: handle_linger
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 538
+PDG 8.139535e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:shut_down
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:shut_down
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 19172 Function: shut_down
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @httpd_close_conn(%struct.httpd_conn* %7, %struct.timeval* %tv)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_close_conn
+DEBUG 456 New call for tree construction:   call void @httpd_destroy_conn(%struct.httpd_conn* %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_destroy_conn
+DEBUG 456 New call for tree construction:   call void @httpd_terminate(%struct.httpd_server* %32)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_terminate
+DEBUG 456 New call for tree construction:   call void @mmc_term()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : mmc_term
+DEBUG 456 New call for tree construction:   call void @tmr_term()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_term
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 552
+PDG 8.527132e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_config
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_config
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 20338 Function: read_config
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @no_value_required(i8* %26, i8* %27)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : no_value_required
+DEBUG 456 New call for tree construction:   call void @value_required(i8* %29, i8* %30)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : value_required
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 590
+PDG 8.914729e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:usage
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:usage
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 20477 Function: usage
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 590
+PDG 9.302326e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:e_strdup
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:e_strdup
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 20495 Function: e_strdup
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 594
+PDG 9.689922e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 20541 Function: logstats
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @thttpd_logstats(i64 %11)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : thttpd_logstats
+DEBUG 456 New call for tree construction:   call void @httpd_logstats(i64 %12)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_logstats
+DEBUG 456 New call for tree construction:   call void @mmc_logstats(i64 %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : mmc_logstats
+DEBUG 456 New call for tree construction:   call void @fdwatch_logstats(i64 %14)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : fdwatch_logstats
+DEBUG 456 New call for tree construction:   call void @tmr_logstats(i64 %15)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tmr_logstats
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 601
+PDG 1.007752e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish_connection
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish_connection
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 20574 Function: finish_connection
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @httpd_write_response(%struct.httpd_conn* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_write_response
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 606
+PDG 1.046512e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:linger_clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:linger_clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 21350 Function: linger_clear_connection
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 614
+PDG 1.085271e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_clear_connection
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 21841 Function: really_clear_connection
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @clear_throttles(%struct.connecttab* %12, %struct.timeval* %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : clear_throttles
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 629
+PDG 1.124031e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23177 Function: check_throttles
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @match(i8* %10, i8* %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : match
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 663
+PDG 1.162791e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:wakeup_connection
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:wakeup_connection
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23217 Function: wakeup_connection
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 675
+PDG 1.201550e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:no_value_required
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:no_value_required
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23238 Function: no_value_required
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 679
+PDG 1.240310e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:value_required
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:value_required
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23253 Function: value_required
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 683
+PDG 1.279070e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:thttpd_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:thttpd_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23281 Function: thttpd_logstats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 684
+PDG 1.317829e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_throttles
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23314 Function: clear_throttles
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 692
+PDG 1.356589e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_initialize
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_initialize
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23642 Function: httpd_initialize
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @check_options()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : check_options
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+DEBUG 456 New call for tree construction:   %call100 = call i32 @initialize_listen_socket(%union.httpd_sockaddr* %72)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : initialize_listen_socket
+DEBUG 456 New call for tree construction:   call void @free_httpd_server(%struct.httpd_server* %82)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : free_httpd_server
+DEBUG 456 New call for tree construction:   call void @init_mime()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : init_mime
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 780
+gethostname is defined outside!
+PDG 1.395349e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_set_logfp
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_set_logfp
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23806 Function: httpd_set_logfp
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 788
+PDG 1.434109e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_ntoa
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_ntoa
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23863 Function: httpd_ntoa
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i64 @sockaddr_len(%union.httpd_sockaddr* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : sockaddr_len
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 798
+PDG 1.472868e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_terminate
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_terminate
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 23889 Function: httpd_terminate
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 802
+PDG 1.511628e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_unlisten
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_unlisten
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24003 Function: httpd_unlisten
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 810
+close is defined outside!
+PDG 1.550388e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_write_response
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_write_response
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24034 Function: httpd_write_response
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @httpd_clear_ndelay(i32 %2)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_clear_ndelay
+DEBUG 456 New call for tree construction:   %call = call i32 @httpd_write_fully(i32 %6, i8* %8, i64 %10)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_write_fully
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 819
+PDG 1.589147e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_clear_ndelay
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_clear_ndelay
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24074 Function: httpd_clear_ndelay
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 822
+PDG 1.627907e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_write_fully
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_write_fully
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24136 Function: httpd_write_fully
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 831
+PDG 1.666667e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_set_ndelay
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_set_ndelay
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24160 Function: httpd_set_ndelay
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 834
+PDG 1.705426e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_realloc_str
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_realloc_str
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24254 Function: httpd_realloc_str
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 859
+PDG 1.744186e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_send_err
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_send_err
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 24320 Function: httpd_send_err
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 (i8*, i64, i8*, ...)* @my_snprintf(i8* %arraydecay, i64 1000, i8* getelementptr inbounds ([17 x i8]* @.str17161, i32 0, i32 0), i8* %7, i8* getelementptr inbounds ([7 x i8]* @.str18162, i32 0, i32 0), i32 %8)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : my_snprintf
+DEBUG 456 New call for tree construction:   %call4 = call i32 @send_err_file(%struct.httpd_conn* %9, i32 %10, i8* %11, i8* %12, i8* %arraydecay3)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_err_file
+DEBUG 456 New call for tree construction:   call void @send_response(%struct.httpd_conn* %18, i32 %19, i8* %20, i8* %21, i8* %22, i8* %23)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_response
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 875
+PDG 1.782946e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_method_str
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_method_str
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 25228 Function: httpd_method_str
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 881
+PDG 1.821705e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_get_conn
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_get_conn
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 25565 Function: httpd_get_conn
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call27 = call i32 @sockaddr_check(%union.httpd_sockaddr* %sa)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : sockaddr_check
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 968
+accept is defined outside!
+PDG 1.860465e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_got_request
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_got_request
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 25870 Function: httpd_got_request
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1001
+PDG 1.899225e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_parse_request
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_parse_request
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 26938 Function: httpd_parse_request
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i8* @bufgets(%struct.httpd_conn* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : bufgets
+DEBUG 456 New call for tree construction:   %call56 = call i8* @httpd_method_str(i32 1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : httpd_method_str
+DEBUG 456 New call for tree construction:   call void @strdecode(i8* %73, i8* %75)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : strdecode
+DEBUG 456 New call for tree construction:   call void @de_dotdot(i8* %104)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : de_dotdot
+DEBUG 456 New call for tree construction:   %call291 = call i64 @tdate_parse(i8* %218)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tdate_parse
+DEBUG 456 New call for tree construction:   %call457 = call i32 @vhost_map(%struct.httpd_conn* %311)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : vhost_map
+DEBUG 456 New call for tree construction:   %call465 = call i8* @expand_symlinks(i8* %318, i8** %pi, i32 %321, i32 %323)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : expand_symlinks
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1205
+strpbrk is defined outside!
+strncasecmp is defined outside!
+atoll is defined outside!
+__ctype_b_loc is defined outside!
+atol is defined outside!
+PDG 1.937984e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_close_conn
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_close_conn
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30064 Function: httpd_close_conn
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @make_log_entry(%struct.httpd_conn* %0, %struct.timeval* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : make_log_entry
+DEBUG 456 New call for tree construction:   call void @mmc_unmap(i8* %5, %struct.stat* %sb, %struct.timeval* %7)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : mmc_unmap
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1215
+PDG 1.976744e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_destroy_conn
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_destroy_conn
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30553 Function: httpd_destroy_conn
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1232
+PDG 2.015504e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_start_request
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_start_request
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30565 Function: httpd_start_request
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @really_start_request(%struct.httpd_conn* %0, %struct.timeval* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : really_start_request
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1237
+getnameinfo is defined outside!
+htonl is defined outside!
+PDG 2.054264e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_read_fully
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_read_fully
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30971 Function: httpd_read_fully
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1246
+sleep is defined outside!
+PDG 2.093023e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:httpd_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30988 Function: httpd_logstats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1247
+llvm.va_start is defined outside!
+vsnprintf is defined outside!
+llvm.va_end is defined outside!
+localtime is defined outside!
+strftime is defined outside!
+fflush is defined outside!
+stat is defined outside!
+gmtime is defined outside!
+fork is defined outside!
+kill is defined outside!
+dup2 is defined outside!
+pipe is defined outside!
+nice is defined outside!
+execve is defined outside!
+_exit is defined outside!
+getenv is defined outside!
+opendir is defined outside!
+closedir is defined outside!
+fdopen is defined outside!
+readdir is defined outside!
+strncpy is defined outside!
+qsort is defined outside!
+lstat is defined outside!
+readlink is defined outside!
+ctime is defined outside!
+sprintf is defined outside!
+tolower is defined outside!
+crypt is defined outside!
+getsockname is defined outside!
+fread is defined outside!
+socket is defined outside!
+setsockopt is defined outside!
+bind is defined outside!
+listen is defined outside!
+PDG 2.131783e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_options
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_options
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 30990 Function: check_options
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1247
+PDG 2.170543e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:initialize_listen_socket
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:initialize_listen_socket
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31081 Function: initialize_listen_socket
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1254
+PDG 2.209302e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:free_httpd_server
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:free_httpd_server
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31174 Function: free_httpd_server
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1270
+PDG 2.248062e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_mime
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_mime
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31243 Function: init_mime
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1279
+PDG 2.286822e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sockaddr_len
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sockaddr_len
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31261 Function: sockaddr_len
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1283
+PDG 2.325581e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:my_snprintf
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:my_snprintf
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31284 Function: my_snprintf
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1289
+PDG 2.364341e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_err_file
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_err_file
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 31336 Function: send_err_file
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @send_mime(%struct.httpd_conn* %2, i32 %3, i8* %4, i8* getelementptr inbounds ([1 x i8]* @.str26170, i32 0, i32 0), i8* %5, i8* getelementptr inbounds ([22 x i8]* @.str183, i32 0, i32 0), i64 -1, i64 0)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_mime
+DEBUG 456 New call for tree construction:   call void @add_response(%struct.httpd_conn* %9, i8* %arraydecay5)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : add_response
+DEBUG 456 New call for tree construction:   call void @send_response_tail(%struct.httpd_conn* %11)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_response_tail
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1303
+PDG 2.403101e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_response
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_response
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 32430 Function: send_response
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @defang(i8* %9, i8* %arraydecay2, i32 1000)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : defang
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1316
+PDG 2.441860e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sockaddr_check
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:sockaddr_check
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 33662 Function: sockaddr_check
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1320
+PDG 2.480620e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bufgets
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bufgets
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 33768 Function: bufgets
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1347
+PDG 2.519380e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strdecode
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strdecode
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 33844 Function: strdecode
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call19 = call i32 @hexit(i8 signext %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : hexit
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1368
+PDG 2.558140e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:de_dotdot
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:de_dotdot
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 34012 Function: de_dotdot
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1387
+PDG 2.596899e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:vhost_map
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:vhost_map
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 34172 Function: vhost_map
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1427
+PDG 2.635659e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:expand_symlinks
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:expand_symlinks
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 34707 Function: expand_symlinks
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1492
+PDG 2.674419e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_log_entry
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_log_entry
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 34986 Function: make_log_entry
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1540
+PDG 2.713178e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_start_request
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_start_request
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 35627 Function: really_start_request
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @send_dirredirect(%struct.httpd_conn* %49)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_dirredirect
+DEBUG 456 New call for tree construction:   %call92 = call i32 @auth_check(%struct.httpd_conn* %80, i8* %82)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : auth_check
+DEBUG 456 New call for tree construction:   %call97 = call i32 @check_referrer(%struct.httpd_conn* %83)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : check_referrer
+DEBUG 456 New call for tree construction:   %call101 = call i32 @ls(%struct.httpd_conn* %84)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : ls
+DEBUG 456 New call for tree construction:   %call198 = call i32 @cgi(%struct.httpd_conn* %161)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : cgi
+DEBUG 456 New call for tree construction:   call void @figure_mime(%struct.httpd_conn* %192)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : figure_mime
+DEBUG 456 New call for tree construction:   %call262 = call i8* @mmc_map(i8* %220, %struct.stat* %sb261, %struct.timeval* %222)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : mmc_map
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1644
+PDG 2.751938e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ext_compare
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ext_compare
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 40778 Function: ext_compare
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1654
+PDG 2.790698e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_mime
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_mime
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 41042 Function: send_mime
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1708
+PDG 2.829457e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_response
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_response
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 42638 Function: add_response
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1717
+PDG 2.868217e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_response_tail
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_response_tail
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 42656 Function: send_response_tail
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1719
+PDG 2.906977e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:defang
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:defang
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 42911 Function: defang
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1749
+PDG 2.945736e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hexit
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hexit
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 42960 Function: hexit
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1751
+PDG 2.984496e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_dirredirect
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_dirredirect
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 43032 Function: send_dirredirect
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1771
+PDG 3.023256e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth_check
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth_check
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 43302 Function: auth_check
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @auth_check2(%struct.httpd_conn* %11, i8* %12)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : auth_check2
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1786
+PDG 3.062016e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_referrer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_referrer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 43879 Function: check_referrer
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @really_check_referrer(%struct.httpd_conn* %3)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : really_check_referrer
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1804
+PDG 3.100775e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ls
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ls
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 45065 Function: ls
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @strencode(i8* %152, i32 %conv147, i8* %154)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : strencode
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1946
+PDG 3.139535e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 46870 Function: cgi
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @cgi_child(%struct.httpd_conn* %32)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : cgi_child
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1971
+PDG 3.178295e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:figure_mime
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:figure_mime
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 48062 Function: figure_mime
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2021
+PDG 3.217054e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth_check2
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth_check2
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 48321 Function: auth_check2
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @send_authenticate(%struct.httpd_conn* %10, i8* %11)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : send_authenticate
+DEBUG 456 New call for tree construction:   %call14 = call i32 @b64_decode(i8* %arrayidx13, i8* %arraydecay, i32 499)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : b64_decode
+call_func = null:   %call41 = call i32 (i8*, i8*, ...)* bitcast (i32 (...)* @crypt to i32 (i8*, i8*, ...)*)(i8* %28, i8* %29)
+indirect call, called Type t = i32 (i8*, i8*, ...)*
+afte cast<FunctionType>, ft = i32 (i8*, i8*, ...)
+sprintf function pointer! 
+__isoc99_sscanf function pointer! 
+call_func = null:   %call90 = call i32 (i8*, i8*, ...)* bitcast (i32 (...)* @crypt to i32 (i8*, i8*, ...)*)(i8* %53, i8* %54)
+indirect call, called Type t = i32 (i8*, i8*, ...)*
+afte cast<FunctionType>, ft = i32 (i8*, i8*, ...)
+sprintf function pointer! 
+__isoc99_sscanf function pointer! 
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2059
+PDG 3.255814e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_check_referrer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_check_referrer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 49758 Function: really_check_referrer
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2105
+PDG 3.294574e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:name_compare
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:name_compare
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 49797 Function: name_compare
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2115
+PDG 3.333333e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strencode
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strencode
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 49869 Function: strencode
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2133
+PDG 3.372093e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_kill
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_kill
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 49896 Function: cgi_kill
+computerDependencies DEBUG 1
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+DEBUG 312: buildActualTree: function pointer arg = void (i8*, %struct.timeval*)*
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2140
+PDG 3.410853e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_child
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_child
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 50210 Function: cgi_child
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call13 = call i8** @make_envp(%struct.httpd_conn* %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : make_envp
+DEBUG 456 New call for tree construction:   %call14 = call i8** @make_argp(%struct.httpd_conn* %14)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : make_argp
+DEBUG 456 New call for tree construction:   call void @cgi_interpose_input(%struct.httpd_conn* %36, i32 %37)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : cgi_interpose_input
+DEBUG 456 New call for tree construction:   call void @cgi_interpose_output(%struct.httpd_conn* %65, i32 %66)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : cgi_interpose_output
+call_func = null:   %call123 = call i32 (i32, void (i32)*, ...)* bitcast (i32 (...)* @sigset to i32 (i32, void (i32)*, ...)*)(i32 13, void (i32)* null)
+indirect call, called Type t = i32 (i32, void (i32)*, ...)*
+afte cast<FunctionType>, ft = i32 (i32, void (i32)*, ...)
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2198
+PDG 3.449612e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_authenticate
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_authenticate
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 53288 Function: send_authenticate
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2209
+PDG 3.488372e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:b64_decode
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:b64_decode
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 53601 Function: b64_decode
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2228
+PDG 3.527132e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_kill2
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_kill2
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 53619 Function: cgi_kill2
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2234
+PDG 3.565891e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_envp
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_envp
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 54119 Function: make_envp
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i8* @build_env(i8* getelementptr inbounds ([8 x i8]* @.str455, i32 0, i32 0), i8* getelementptr inbounds ([38 x i8]* @.str456, i32 0, i32 0))
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : build_env
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2366
+PDG 3.604651e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_argp
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_argp
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 54366 Function: make_argp
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2399
+PDG 3.643411e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_interpose_input
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_interpose_input
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 54472 Function: cgi_interpose_input
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @post_post_garbage_hack(%struct.httpd_conn* %32)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : post_post_garbage_hack
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2414
+PDG 3.682171e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_interpose_output
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:cgi_interpose_output
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55070 Function: cgi_interpose_output
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2461
+PDG 3.720930e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_env
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_env
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55148 Function: build_env
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2470
+PDG 3.759690e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:post_post_garbage_hack
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:post_post_garbage_hack
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55180 Function: post_post_garbage_hack
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2474
+PDG 3.798450e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_get_nfiles
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_get_nfiles
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55271 Function: fdwatch_get_nfiles
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call35 = call i32 @poll_init(i32 %17)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_init
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2491
+getdtablesize is defined outside!
+getrlimit is defined outside!
+setrlimit is defined outside!
+PDG 3.837209e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_add_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_add_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55316 Function: fdwatch_add_fd
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @poll_add_fd(i32 %7, i32 %8)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_add_fd
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2499
+PDG 3.875969e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_del_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_del_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55358 Function: fdwatch_del_fd
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @poll_del_fd(i32 %7)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_del_fd
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2503
+PDG 3.914729e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55374 Function: fdwatch
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @poll_watch(i64 %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_watch
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2506
+PDG 3.953488e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_check_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_check_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55406 Function: fdwatch_check_fd
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @poll_check_fd(i32 %7)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_check_fd
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2509
+PDG 3.992248e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_get_next_client_data
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_get_next_client_data
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55442 Function: fdwatch_get_next_client_data
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @poll_get_fd(i32 %2)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : poll_get_fd
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2514
+PDG 4.031008e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fdwatch_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55463 Function: fdwatch_logstats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2515
+poll is defined outside!
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+PDG 4.069767e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55523 Function: poll_init
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2526
+PDG 4.108527e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_add_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_add_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55569 Function: poll_add_fd
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2533
+PDG 4.147287e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_del_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_del_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55627 Function: poll_del_fd
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2540
+PDG 4.186047e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_watch
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_watch
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55693 Function: poll_watch
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2548
+PDG 4.224806e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_check_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_check_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55757 Function: poll_check_fd
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2556
+PDG 4.263566e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_get_fd
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:poll_get_fd
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 55781 Function: poll_get_fd
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2559
+PDG 4.302326e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_map
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_map
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56010 Function: mmc_map
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call9 = call i32 @check_hash_size()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : check_hash_size
+DEBUG 456 New call for tree construction:   %call14 = call %struct.MapStruct* @find_hash(i64 %8, i64 %9, i64 %10, i64 %11)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : find_hash
+DEBUG 456 New call for tree construction:   call void @panic()
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : panic
+DEBUG 456 New call for tree construction:   %call63 = call i32 @add_hash(%struct.MapStruct* %62)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : add_hash
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2617
+open is defined outside!
+mmap is defined outside!
+PDG 4.341085e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_unmap
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_unmap
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56247 Function: mmc_unmap
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2640
+PDG 4.379845e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_cleanup
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_cleanup
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56374 Function: mmc_cleanup
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @really_unmap(%struct.MapStruct** %13)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : really_unmap
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2657
+PDG 4.418605e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_term
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_term
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56411 Function: mmc_term
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2661
+PDG 4.457364e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:mmc_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56434 Function: mmc_logstats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2663
+munmap is defined outside!
+PDG 4.496124e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_hash_size
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_hash_size
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56520 Function: check_hash_size
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2673
+PDG 4.534884e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:find_hash
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:find_hash
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56671 Function: find_hash
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @hash(i64 %0, i64 %1, i64 %2, i64 %3)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : hash
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2690
+PDG 4.573643e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:panic
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:panic
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56715 Function: panic
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2698
+PDG 4.612403e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_hash
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_hash
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56789 Function: add_hash
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2713
+PDG 4.651163e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_unmap
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:really_unmap
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56852 Function: really_unmap
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2730
+PDG 4.689922e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hash
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hash
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56906 Function: hash
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2735
+PDG 4.728682e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 56927 Function: tmr_init
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2741
+PDG 4.767442e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_create
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_create
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 57053 Function: tmr_create
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call31 = call i32 @hash613(%struct.TimerStruct* %37)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : hash613
+DEBUG 456 New call for tree construction:   call void @l_add(%struct.TimerStruct* %39)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : l_add
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2767
+PDG 4.806202e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_timeout
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_timeout
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 57533 Function: tmr_timeout
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2775
+PDG 4.844961e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_mstimeout
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_mstimeout
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 57619 Function: tmr_mstimeout
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2789
+PDG 4.883721e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_run
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_run
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 57746 Function: tmr_run
+computerDependencies DEBUG 1
+call_func = null:   call void %19(i8* %22, %struct.timeval* %21)
+indirect call, called Type t = void (i8*, %struct.timeval*)*
+afte cast<FunctionType>, ft = void (i8*, %struct.timeval*)
+cgi_kill function pointer! 
+cgi_kill2 function pointer! 
+occasional function pointer! 
+idle function pointer! 
+update_throttles function pointer! 
+show_stats function pointer! 
+linger_clear_connection function pointer! 
+wakeup_connection function pointer! 
+DEBUG 456 New call for tree construction:   call void @l_resort(%struct.TimerStruct* %41)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : l_resort
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2816
+PDG 4.922481e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_cancel
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_cancel
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58109 Function: tmr_cancel
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @l_remove(%struct.TimerStruct* %0)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : l_remove
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2822
+PDG 4.961240e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_reset
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_reset
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58396 Function: tmr_reset
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2834
+PDG 5.000000e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_cleanup
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_cleanup
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58533 Function: tmr_cleanup
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2838
+PDG 5.038760e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_term
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_term
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58560 Function: tmr_term
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2841
+PDG 5.077519e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tmr_logstats
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58690 Function: tmr_logstats
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2842
+PDG 5.116279e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hash613
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:hash613
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58706 Function: hash613
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2846
+PDG 5.155039e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_add
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_add
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58862 Function: l_add
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2896
+PDG 5.193798e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_resort
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_resort
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 58875 Function: l_resort
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2899
+PDG 5.232558e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_remove
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:l_remove
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59262 Function: l_remove
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2916
+PDG 5.271318e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:match
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:match
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59303 Function: match
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call2 = call i32 @match_one(i8* %2, i32 %conv, i8* %4)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : match_one
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2924
+PDG 5.310078e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:match_one
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:match_one
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59442 Function: match_one
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 2945
+PDG 5.348837e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tdate_parse
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tdate_parse
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59750 Function: tdate_parse
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call8 = call i32 @scan_mon(i8* %arraydecay7, i64* %tm_mon)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : scan_mon
+DEBUG 456 New call for tree construction:   %call74 = call i32 @scan_wday(i8* %arraydecay73, i64* %tm_wday)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : scan_wday
+DEBUG 456 New call for tree construction:   %call158 = call i64 @tm_to_time(%struct.tm* %tm)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : tm_to_time
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3010
+PDG 5.387597e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_mon
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_mon
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59863 Function: scan_mon
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   call void @pound_case(i8* %1)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : pound_case
+DEBUG 456 New call for tree construction:   %call = call i32 @strlong_search(i8* %2, %struct.strlong* getelementptr inbounds ([23 x %struct.strlong]* @scan_mon.mon_tab, i32 0, i32 0), i32 23, i64* %3)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : strlong_search
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3015
+PDG 5.426357e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_wday
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_wday
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 59908 Function: scan_wday
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3020
+PDG 5.465116e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tm_to_time
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:tm_to_time
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 60002 Function: tm_to_time
+computerDependencies DEBUG 1
+DEBUG 456 New call for tree construction:   %call = call i32 @is_leap(i32 %add9)
+DEBUG 152: In connectFunctionAndFormalTrees, callee->getName() : is_leap
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3033
+PDG 5.503876e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlong_compare
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlong_compare
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 60027 Function: strlong_compare
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3043
+PDG 5.542636e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pound_case
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pound_case
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 60062 Function: pound_case
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3052
+PDG 5.581395e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlong_search
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlong_search
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 60129 Function: strlong_search
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3067
+PDG 5.620155e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:is_leap
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:is_leap
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 60151 Function: is_leap
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 3068
+
+
+ PDG construction completed! ^_^
+
+funcs = 145
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 893
+sensitive_nodes.size = 0
+queue.size = 0
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+check_optionsis uncolored
+initialize_listen_socketis uncolored
+free_httpd_serveris uncolored
+init_mimeis uncolored
+sockaddr_lenis uncolored
+my_snprintfis uncolored
+send_err_fileis uncolored
+send_responseis uncolored
+sockaddr_checkis uncolored
+bufgetsis uncolored
+strdecodeis uncolored
+tmr_termis uncolored
+tmr_logstatsis uncolored
+hash613is uncolored
+l_addis uncolored
+l_resortis uncolored
+expand_symlinksis uncolored
+make_log_entryis uncolored
+really_start_requestis uncolored
+ext_compareis uncolored
+send_mimeis uncolored
+add_responseis uncolored
+send_response_tailis uncolored
+defangis uncolored
+hexitis uncolored
+send_dirredirectis uncolored
+auth_checkis uncolored
+check_referreris uncolored
+lsis uncolored
+cgiis uncolored
+figure_mimeis uncolored
+auth_check2is uncolored
+really_check_referreris uncolored
+name_compareis uncolored
+strencodeis uncolored
+cgi_killis uncolored
+cgi_childis uncolored
+send_authenticateis uncolored
+b64_decodeis uncolored
+cgi_kill2is uncolored
+make_envpis uncolored
+make_argpis uncolored
+cgi_interpose_inputis uncolored
+cgi_interpose_outputis uncolored
+build_envis uncolored
+post_post_garbage_hackis uncolored
+fdwatch_get_nfilesis uncolored
+fdwatch_add_fdis uncolored
+fdwatch_del_fdis uncolored
+fdwatchis uncolored
+fdwatch_check_fdis uncolored
+fdwatch_get_next_client_datais uncolored
+fdwatch_logstatsis uncolored
+poll_initis uncolored
+poll_add_fdis uncolored
+poll_del_fdis uncolored
+poll_watchis uncolored
+poll_check_fdis uncolored
+poll_get_fdis uncolored
+mmc_mapis uncolored
+mmc_unmapis uncolored
+mmc_cleanupis uncolored
+mmc_termis uncolored
+mmc_logstatsis uncolored
+check_hash_sizeis uncolored
+find_hashis uncolored
+panicis uncolored
+add_hashis uncolored
+really_unmapis uncolored
+hashis uncolored
+tmr_initis uncolored
+DEBUG LINE 700 FunctionPointerType : void (i8*, %struct.timeval*)*
+tmr_create hasFuncOrFilePtr()
+tmr_createis uncolored
+tmr_timeoutis uncolored
+tmr_mstimeoutis uncolored
+tmr_runis uncolored
+tmr_cancelis uncolored
+tmr_resetis uncolored
+tmr_cleanupis uncolored
+l_removeis uncolored
+matchis uncolored
+match_oneis uncolored
+tdate_parseis uncolored
+scan_monis uncolored
+mainis uncolored
+parse_argsis uncolored
+lookup_hostnameis uncolored
+read_throttlefileis uncolored
+handle_termis uncolored
+handle_chldis uncolored
+handle_hupis uncolored
+handle_usr1is uncolored
+handle_usr2is uncolored
+handle_alrmis uncolored
+occasionalis uncolored
+idleis uncolored
+update_throttlesis uncolored
+show_statsis uncolored
+re_open_logfileis uncolored
+handle_newconnectis uncolored
+clear_connectionis uncolored
+clear_throttlesis uncolored
+handle_readis uncolored
+handle_sendis uncolored
+handle_lingeris uncolored
+shut_downis uncolored
+read_configis uncolored
+usageis uncolored
+e_strdupis uncolored
+logstatsis uncolored
+finish_connectionis uncolored
+linger_clear_connectionis uncolored
+really_clear_connectionis uncolored
+check_throttlesis uncolored
+wakeup_connectionis uncolored
+no_value_requiredis uncolored
+value_requiredis uncolored
+thttpd_logstatsis uncolored
+de_dotdotis uncolored
+vhost_mapis uncolored
+DEBUG LINE 711 struct._IO_marker*/struct._IO_FILE* 
+httpd_initialize hasFuncOrFilePtr()
+httpd_initializeis uncolored
+DEBUG LINE 711 struct._IO_marker*/struct._IO_FILE* 
+httpd_set_logfp hasFuncOrFilePtr()
+httpd_set_logfpis uncolored
+httpd_ntoais uncolored
+httpd_terminateis uncolored
+httpd_unlistenis uncolored
+httpd_write_responseis uncolored
+httpd_clear_ndelayis uncolored
+httpd_write_fullyis uncolored
+httpd_set_ndelayis uncolored
+httpd_realloc_stris uncolored
+httpd_send_erris uncolored
+httpd_method_stris uncolored
+httpd_get_connis uncolored
+httpd_got_requestis uncolored
+httpd_parse_requestis uncolored
+httpd_close_connis uncolored
+httpd_destroy_connis uncolored
+httpd_start_requestis uncolored
+httpd_read_fullyis uncolored
+httpd_logstatsis uncolored
+scan_wdayis uncolored
+tm_to_timeis uncolored
+strlong_compareis uncolored
+pound_caseis uncolored
+strlong_searchis uncolored
+is_leapis uncolored
+non-library functions in total: 145
+sen_FuncSet  : 0
+ins_FuncSet  : 145
+functions count = 145
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.parse_args.dot'...instW 0x0
+
+Writing 'pdgragh.lookup_hostname.dot'...instW 0x0
+
+Writing 'pdgragh.read_throttlefile.dot'...instW 0x0
+
+Writing 'pdgragh.handle_term.dot'...instW 0x0
+
+Writing 'pdgragh.handle_chld.dot'...instW 0x0
+
+Writing 'pdgragh.handle_hup.dot'...instW 0x0
+
+Writing 'pdgragh.handle_usr1.dot'...instW 0x0
+
+Writing 'pdgragh.handle_usr2.dot'...instW 0x0
+
+Writing 'pdgragh.handle_alrm.dot'...instW 0x0
+
+Writing 'pdgragh.occasional.dot'...instW 0x0
+
+Writing 'pdgragh.idle.dot'...instW 0x0
+
+Writing 'pdgragh.update_throttles.dot'...instW 0x0
+
+Writing 'pdgragh.show_stats.dot'...instW 0x0
+
+Writing 'pdgragh.re_open_logfile.dot'...instW 0x0
+
+Writing 'pdgragh.handle_newconnect.dot'...instW 0x0
+
+Writing 'pdgragh.clear_connection.dot'...instW 0x0
+
+Writing 'pdgragh.handle_read.dot'...instW 0x0
+
+Writing 'pdgragh.handle_send.dot'...instW 0x0
+
+Writing 'pdgragh.handle_linger.dot'...instW 0x0
+
+Writing 'pdgragh.shut_down.dot'...instW 0x0
+
+Writing 'pdgragh.read_config.dot'...instW 0x0
+
+Writing 'pdgragh.usage.dot'...instW 0x0
+
+Writing 'pdgragh.e_strdup.dot'...instW 0x0
+
+Writing 'pdgragh.logstats.dot'...instW 0x0
+
+Writing 'pdgragh.finish_connection.dot'...instW 0x0
+
+Writing 'pdgragh.linger_clear_connection.dot'...instW 0x0
+
+Writing 'pdgragh.really_clear_connection.dot'...instW 0x0
+
+Writing 'pdgragh.check_throttles.dot'...instW 0x0
+
+Writing 'pdgragh.wakeup_connection.dot'...instW 0x0
+
+Writing 'pdgragh.no_value_required.dot'...instW 0x0
+
+Writing 'pdgragh.value_required.dot'...instW 0x0
+
+Writing 'pdgragh.thttpd_logstats.dot'...instW 0x0
+
+Writing 'pdgragh.clear_throttles.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_initialize.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_set_logfp.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_ntoa.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_terminate.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_unlisten.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_write_response.dot'...instW 0x0
+
+Writing 'pdgragh.httpd_clear_ndelay.dot'...instW 0x0

@@ -1,0 +1,118 @@
+In this section, we evaluate PtrSplit with two groups of programs. The first group consists several benchmark programs in the SPEC CPU2006 test suit that are completely written in C. We select these benchmarks and randomly choose some contents for protection to demonstrate our basic framework works. The second group consists of 4 real security-related programs, we select some sensitive data for separation to demonstrate that PtrSplit can be really used for slicing a piece of sensitive source code and protecting the corresponding sensitive module.
+
+We implement PtrSplit with C++ and LLVM(version: 3.5.0). All the experiments were conducted on a system running x86-64 Ubuntu 14.04 with the Linux Kernel version 3.19.0, an Intel Core i5-4590 at 3.3GHz and 16GB physical memory.
+
+\subsection {SPEC CPU2006 benchmarks}
+
+The SPEC CPU2006 test suite consists of 12 benchmarks that are completely written in C. We select 9 benchmarks that can be instrumented by selective softbound for evaluation. For each benchmark, we lists its lines of souce code in column SLOC, and then lists how many functions it has in total. 
+
+
+
+We randomly choose a global variable(Annotation in Table 1) in the source code for annotation and do separation(shen \todo: do we need to mention that we process these benchmarks in advance and comment some system calls as implicit data flow here? ). A summary of the statistics and results are listed in Table 1. Considering that our performance overhead mainly comes from two sources: bounds-tracking and RPC calls. We specially calculate the overhead caused by bounds-tracking and list the results in Table 2, which means we only do instrumentation for the metadata-required pointers and run this instrumented benchmark without separation. In Table 2, we list the number of all pointers in LLVM-IR for each benchmark, the number of BR pointers that need metadata information and the ultimate corresponding overhead caused by bounds-tracking only.
+
+In some situations, all functions will be promoted to sensitive ones by a sensitive variable(e.g. mcf), which means by this separation criteria we cannot do any meaningful separation. Accordingly, the extra overhead in this case is zero. Sometimes, we cannot collect any pointers that need to be transferred between the two domains(a typical example is we need to remotely call a function of type \texttt{void f(void)})(e.g. mcf), and in this case selective softbound will not be used anymore because the set of BR pointers is empty.
+
+We can clearly see that libquantum has a significant overhead that is much higher than all other benchmarks. The reason is if we use \texttt{lambda} for separation, a time-consuming quantum\_decohere() will be put into the sensitive module and frequently called by another module(frequency: 94.33 Hz).
+
+\begin{table*}[ht]
+\centering
+\resizebox{\textwidth}{!}{\begin{tabular}{llllllllll}
+  \hline
+  & Benchmark      & SLOC  & Functions & Annotation     & Annotation's type    &Sensitive functions  & Total overhead \\ 
+  \hline
+  & 470.lbm        & 1156  & 19        & srcGrid        & LBM\_Grid*           & 5                      & 24\%\\
+  & 429.mcf        & 2686  & 24        & net            & struct network\_t*   & 0                      & 0 \\ 
+  & 462.libquantum & 4358  & 115       & lambda         & struct quantum\_reg* & 3                      & 179\% \\ 
+  & 401.bzip2      & 8393  & 100       & progName       & char*                & 6                      & 5\% \\ 
+  & 458.sjeng      & 13547 & 144       & realholdings   & char*                & 5                      & 15\% \\ 
+  & 433.milc       & 15042 & 235       & path\_coeff    & double[]             & 2                      & 2\% \\ 
+  & 482.spihnx3    & 25090 & 369       & liveargs       & char**               & 3                      & 7\% \\ 
+  & 456.hmmer      & 35992 & 538       & ser\_randseed  & int                  & 7                      & 27\% \\ 
+  & 464.h264ref    & 51578 & 590       & FirstMBInSlice & int[]                & 5                      & 16\%  \\ 
+   \hline
+\end{tabular}}
+\caption{The separation results of SPECCPU2006 benchmarks} 
+\end{table*} 
+
+\begin{table*}[ht]
+\centering
+\resizebox{\textwidth}{!}{\begin{tabular}{lllllll}
+  \hline
+  & Benchmark      & Pointers  & Metadata-required Pointers & Bounds-tracking overhead & Annotation    & Annotation Type\\ 
+  \hline
+  & 470.lbm        & 695       & 131      & 17\%                & srcGrid        & LBM\_Grid*\\        
+  & 429.mcf        & 1052      & 0        & 0                   & net            & struct network\_t*  \\ 
+  & 462.libquantum & 1690      & 128      & 11\%                & lambda         & struct quantum\_reg* \\ 
+  & 401.bzip2      & 4356      & 8        & 3\%                 & progName       & char*                \\ 
+  & 458.sjeng      & 3415      & 81       & 9\%                 & realholdings   & char*                                  \\ 
+  & 433.milc       & 5001      & 0        & 0                   & loop\_char     & double[]                                  \\ 
+  & 482.spihnx3    & 9491      & 37       & 4\%                 & liveargs       & char**                                   \\ 
+  & 456.hmmer      & 17692     & 175      & 6\%                 & ser\_randseed  & int                                      \\ 
+  & 464.h264ref    & 32212     & 461      & 7\%                 & FirstMBInSlice & int[]                                  \\ 
+   \hline
+\end{tabular}}
+\caption{The bounds-tracking overhead of SPECCPU2006 benchmarks} 
+\end{table*}
+
+
+
+
+
+
+
+
+
+
+\subsection {sensitive programs}
+
+We also evaluate our separation framework with some security-related programs. We select four real programs that contain sensitive data: chfn, ping, thttpd and wget. For each program, we analyze its functionality and reasonably select the sensitive data for annotation. A summary of the statistics and results are listed in Table 3.
+
+\paragraph{chfn}
+The simplest real program we use is a simplified version of Linux chfn which is a privileged program used in {shen \todo: cite upro paper here} for changing a user's finger information stored in the file \texttt{/etc/passwd}. We annotate the file pointer that points to \texttt{/etc/passwd} in the source code as the sensitive data because that file contains the real passwords that need better protection. After separation only the function that updates the sensitive file is colored as sensitive and should be put into the private domain. We run the original chfn and the separated chfn respectively for 100 times and calculate the average extra overhead. 
+
+\paragraph{ping}
+The second real program we use is the original version of ping program, which sends ICMP echo packets to a server to measure the round-trip delays and packet loss across the network paths. We annotate the buffer for composing the echo request packet as the sensitive data because that packet may contain some malicious content. By doing this functions \texttt{pinger} and \texttt{in\_cksum} will be be put into the private module. We use our separated ping to send 500 echo packets to the local server and then calculate the average overhead.
+
+
+\paragraph{thttpd}
+thttpd(version: 2.27) is an open source http server program. We choose the password file for authentication as the sensitive data, and annotate the corresponding file pointer in the source code. After separation 5 functions are separated as the sensitive slice ultimately. To measure the average overhead, we setup a local server using our separated thttpd program and then download a 10MB file through a local client for 100 times. The overall time
+
+\paragraph{wget}
+wget(version: 1.18) is a command-line program for retrieving files from a remote HTTP or FTP server. We choose the password entered by the user for logging into an FTP server as the sensitive data and annotate the corresponding \texttt{char*} pointer to that password input in the source code. Finally, 7 functions are separated as the sensitive slice. To measure the performance, we download a 10MB file 100 times from a local FTP server.
+
+
+
+\begin{table*}[ht]
+\centering
+\resizebox{\textwidth}{!}{\begin{tabular}{lllllllll}
+  \hline
+ & Benchmark  & SLOC    & Functions & Sensitive functions & Annotation       & RPC frequency/Hz  & RPC throughput bytes/s & Total overhead \\ 
+  \hline
+ & chfn    & 146     & 5         & 1                   & password file       & 0.46             &           & 37\%  \\ 
+ & ping    & 502     & 8         & 2                   & request packet      & 1.01             &           & 41\%   \\ 
+ & thttpd  & 21925   & 145       & 5                   & AUTH\_FILE          & 2.38             &           & 14\% \\ 
+ & wget    & 61216   & 797       & 7                   & opt.ftp\_passwd     & 2.64             &           & 22\%   \\ 
+   \hline
+\end{tabular}}
+\caption{The separation results of security programs} 
+\end{table*} 
+
+%chfn 0.8
+%ping 100 packets 140s/197s 22.33
+
+
+\begin{table*}[ht]
+\centering
+\resizebox{\textwidth}{!}{\begin{tabular}{llllll}
+  \hline
+ & Benchmark  & Pointers & Metadata-required pointers & Overhead \\ 
+  \hline
+ & chfn       & 53       &  3                         & 15\%    \\ 
+ & ping       & 149      &  5                         & 9\%     \\ 
+ & thttpd     & 3068     &  119                       & 12\%    \\ 
+ & wget       & 14939    &  371                       & 18\%    \\ 
+   \hline
+\end{tabular}}
+\caption{The bounds-tracking overhead of security programs} 
+\end{table*} 
+

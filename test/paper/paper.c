@@ -13,7 +13,7 @@ void initkey (char *username, int sz) {
   key = (char *) (malloc (sz));
   // initialize the key randomly using 
   // username as the seed; code omitted
-  for (i=0; i<sz; i++) key[i]= 'p';
+  for (i=0; i<sz; i++) key[i]= 'a';
 }
 
 void encrypt (char *plaintext, int sz) {
@@ -24,15 +24,15 @@ void encrypt (char *plaintext, int sz) {
 
 void main (){
   char username[20];
-  char plaintext[1024];
+  char text[1024];
 
   printf("Enter username: ");
   scanf("%19s",username);
   greeter(username);
 
-  printf("Enter plaintext: ");
-  scanf("%1023s",plaintext);
+  printf("Enter text: ");
+  scanf("%1023s",text);
 
-  initkey(username, strlen(plaintext));
-  encrypt(plaintext, strlen(plaintext));
+  initkey(username, strlen(text));
+  encrypt(text, strlen(text));
 }

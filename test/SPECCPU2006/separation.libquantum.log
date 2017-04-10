@@ -1,0 +1,50 @@
+float
+quantum_get_decoherence()
+{
+  return lambda;
+}
+
+void 
+quantum_set_decoherence(float l)
+{
+  if(l)
+    {
+      status = 1;
+      lambda = l;
+    }
+  else
+    status = 0;
+}
+
+
+quantum_decohere(quantum_reg *reg)
+
+------------------------
+
+
+quantum_exp_mod_n
+
+
+quantum_exp_mod_n(N, x, width, swidth, &qr);
+
+
+
+
+
+  for(i=0; i<reg->size; i++)
+    {
+      if(!(reg->node[i].state & pos2))
+	pa += quantum_prob_inline(reg->node[i].amplitude);
+    }
+
+  /* Compare the probability for 0 with a random number and determine
+     the result of the measurement */
+
+  r = quantum_frand();
+  
+  if (r > pa)
+    result = 1;
+
+  out = quantum_state_collapse(pos, result, *reg);
+
+  quantum_delete_qureg_hashpreserve(reg);

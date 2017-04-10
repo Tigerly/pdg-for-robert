@@ -1,0 +1,50 @@
+#ifdef AUTH_FILE
+static void send_authenticate( httpd_conn* hc, char* realm );
+static int b64_decode( const char* str, unsigned char* space, int size );
+static int auth_check( httpd_conn* hc, char* dirname  );
+static int auth_check2( httpd_conn* hc, char* dirname  );
+
+
+    /* Construct auth filename. */
+    httpd_realloc_str(
+	&authpath, &maxauthpath, strlen( dirname ) + 1 + sizeof(AUTH_FILE) );
+    (void) my_snprintf( authpath, maxauthpath, "%s/%s", dirname, AUTH_FILE );
+
+libhttpd.c:3726
+#ifdef AUTH_FILE
+	/* Check authorization for this directory. */
+	if ( auth_check( hc, hc->expnfilename ) == -1 )
+	    return -1;
+#endif /* AUTH_FILE */
+
+
+#ifdef AUTH_FILE
+    /* Check authorization for this directory. */
+    httpd_realloc_str( &dirname, &maxdirname, expnlen );
+    (void) strcpy( dirname, hc->expnfilename );
+    cp = strrchr( dirname, '/' );
+    if ( cp == (char*) 0 )
+	(void) strcpy( dirname, "." );
+    else
+	*cp = '\0';
+    if ( auth_check( hc, dirname ) == -1 )
+	return -1;
+
+
+
+int
+httpd_start_request( httpd_conn* hc, struct timeval* nowP )
+    {
+    int r;
+
+    /* Really start the request. */
+    r = really_start_request( hc, nowP );
+
+    /* And return the status. */
+    return r;
+    }
+
+
+BASIC AUTHENTICATION
+
+Basic Authentication is available as an option at compile time. If enabled, it uses a password file in the directory to be protected, called .htpasswd by default. This file is formatted as the familiar colon-separated username/encrypted-password pair, records delimited by newlines. The protection does not carry over to subdirectories. The utility program htpasswd(1) is included to help create and modify .htpasswd files.

@@ -199,6 +199,8 @@ void buildFormalParameterTrees(Function* callee){
     FunctionWrapper::funcMap[callee]->getArgWList().begin();
   std::list<ArgumentWrapper*>::iterator argE = 
     FunctionWrapper::funcMap[callee]->getArgWList().end();
+
+  errs() << "Function: " << callee->getName() << " " << *callee->getFunctionType() << "\n";
     
   int i ;
   for(; argI != argE; ++argI){

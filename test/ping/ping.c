@@ -46,6 +46,9 @@
 #define MAXHOSTNAMELEN	64
 #endif
 
+
+static int shen_count = 0;
+
 u_char	packet[MAXPACKET];
 int	i, pingflags, options;
 extern	int errno;
@@ -258,6 +261,8 @@ catcher()
  */
 pinger()
 {
+
+	printf("shen_count ---------------------------------------> %d\n\n", shen_count++); 
 	static u_char outpack[MAXPACKET];
 	register struct icmp *icp = (struct icmp *) outpack;
 	int i, cc;

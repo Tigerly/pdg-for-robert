@@ -1,0 +1,39 @@
+1. main.c : static void _Noreturn print_version (void)
+
+2. main.c : format_and_print_line
+static int
+format_and_print_line (const char *prefix, const char *line,
+                       int line_length)
+
+3. main.c : static char *
+no_prefix (const char *s)
+{
+  return cp;
+}
+
+4. static void
+init_switches (void)
+{
+}
+
+5.static int
+print_usage (int error)
+{}
+
+6. static void _Noreturn
+print_help (void)
+{}
+
+7. static char *
+secs_to_human_time (double interval)
+{}
+
+
+8. convert.c  declassification
+match_except_index (const char *s1, const char *s2)
+
+9. hash.c static unsigned long
+hash_string (const void *key)
+{
+
+}

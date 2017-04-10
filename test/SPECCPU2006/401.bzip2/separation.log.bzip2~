@@ -1,3 +1,11 @@
+sensitive var: char* progName
+
 non-library functions in total: 100
 sensitive functions count  : 6
 insensitive functions count: 94
+
+401.bzip2.log.testing:1975:ioError is colored
+401.bzip2.log.testing:1977:panic is colored
+401.bzip2.log.testing:1979:crcError is colored
+401.bzip2.log.testing:1981:compressedStreamEOF is colored
+

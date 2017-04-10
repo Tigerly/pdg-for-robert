@@ -8,7 +8,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @ciphertext = common global i8* null, align 8
 @.str1 = private unnamed_addr constant [17 x i8] c"Enter username: \00", align 1
 @.str2 = private unnamed_addr constant [5 x i8] c"%19s\00", align 1
-@.str3 = private unnamed_addr constant [18 x i8] c"Enter plaintext: \00", align 1
+@.str3 = private unnamed_addr constant [13 x i8] c"Enter text: \00", align 1
 @.str4 = private unnamed_addr constant [7 x i8] c"%1023s\00", align 1
 @.str5 = private unnamed_addr constant [10 x i8] c"sensitive\00", section "llvm.metadata"
 @.str6 = private unnamed_addr constant [8 x i8] c"paper.c\00", section "llvm.metadata"
@@ -51,7 +51,7 @@ for.body:                                         ; preds = %for.cond
   %idxprom = zext i32 %3 to i64
   %4 = load i8** @key, align 8
   %arrayidx = getelementptr inbounds i8* %4, i64 %idxprom
-  store i8 112, i8* %arrayidx, align 1
+  store i8 97, i8* %arrayidx, align 1
   br label %for.inc
 
 for.inc:                                          ; preds = %for.body
@@ -123,22 +123,22 @@ for.end:                                          ; preds = %for.cond
 define void @main() #0 {
 entry:
   %username = alloca [20 x i8], align 16
-  %plaintext = alloca [1024 x i8], align 16
+  %text = alloca [1024 x i8], align 16
   %call = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([17 x i8]* @.str1, i32 0, i32 0))
   %arraydecay = getelementptr inbounds [20 x i8]* %username, i32 0, i32 0
   %call1 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([5 x i8]* @.str2, i32 0, i32 0), i8* %arraydecay)
   %arraydecay2 = getelementptr inbounds [20 x i8]* %username, i32 0, i32 0
   call void @greeter(i8* %arraydecay2)
-  %call3 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([18 x i8]* @.str3, i32 0, i32 0))
-  %arraydecay4 = getelementptr inbounds [1024 x i8]* %plaintext, i32 0, i32 0
+  %call3 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([13 x i8]* @.str3, i32 0, i32 0))
+  %arraydecay4 = getelementptr inbounds [1024 x i8]* %text, i32 0, i32 0
   %call5 = call i32 (i8*, ...)* @__isoc99_scanf(i8* getelementptr inbounds ([7 x i8]* @.str4, i32 0, i32 0), i8* %arraydecay4)
   %arraydecay6 = getelementptr inbounds [20 x i8]* %username, i32 0, i32 0
-  %arraydecay7 = getelementptr inbounds [1024 x i8]* %plaintext, i32 0, i32 0
+  %arraydecay7 = getelementptr inbounds [1024 x i8]* %text, i32 0, i32 0
   %call8 = call i64 @strlen(i8* %arraydecay7)
   %conv = trunc i64 %call8 to i32
   call void @initkey(i8* %arraydecay6, i32 %conv)
-  %arraydecay9 = getelementptr inbounds [1024 x i8]* %plaintext, i32 0, i32 0
-  %arraydecay10 = getelementptr inbounds [1024 x i8]* %plaintext, i32 0, i32 0
+  %arraydecay9 = getelementptr inbounds [1024 x i8]* %text, i32 0, i32 0
+  %arraydecay10 = getelementptr inbounds [1024 x i8]* %text, i32 0, i32 0
   %call11 = call i64 @strlen(i8* %arraydecay10)
   %conv12 = trunc i64 %call11 to i32
   call void @encrypt(i8* %arraydecay9, i32 %conv12)

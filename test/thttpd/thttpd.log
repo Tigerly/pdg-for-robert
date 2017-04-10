@@ -2680,6 +2680,7 @@ send_err_fileis uncolored
 send_responseis uncolored
 sockaddr_checkis uncolored
 bufgetsis uncolored
+
 strdecodeis uncolored
 tmr_termis uncolored
 tmr_logstatsis uncolored
@@ -2690,6 +2691,7 @@ expand_symlinksis uncolored
 make_log_entryis uncolored
 really_start_requestis uncolored
 ext_compareis uncolored
+
 send_mimeis uncolored
 add_responseis uncolored
 send_response_tailis uncolored
@@ -2700,6 +2702,7 @@ auth_checkis uncolored
 check_referreris uncolored
 lsis uncolored
 cgiis uncolored
+
 figure_mimeis uncolored
 auth_check2is uncolored
 really_check_referreris uncolored
@@ -2710,6 +2713,7 @@ cgi_childis uncolored
 send_authenticateis uncolored
 b64_decodeis uncolored
 cgi_kill2is uncolored
+
 make_envpis uncolored
 make_argpis uncolored
 cgi_interpose_inputis uncolored
@@ -2720,6 +2724,7 @@ fdwatch_get_nfilesis uncolored
 fdwatch_add_fdis uncolored
 fdwatch_del_fdis uncolored
 fdwatchis uncolored
+
 fdwatch_check_fdis uncolored
 fdwatch_get_next_client_datais uncolored
 fdwatch_logstatsis uncolored
@@ -2729,6 +2734,7 @@ poll_del_fdis uncolored
 poll_watchis uncolored
 poll_check_fdis uncolored
 poll_get_fdis uncolored
+
 mmc_mapis uncolored
 mmc_unmapis uncolored
 mmc_cleanupis uncolored
@@ -2738,6 +2744,7 @@ check_hash_sizeis uncolored
 find_hashis uncolored
 panicis uncolored
 add_hashis uncolored
+
 really_unmapis uncolored
 hashis uncolored
 tmr_initis uncolored
@@ -2747,6 +2754,7 @@ tmr_createis uncolored
 tmr_timeoutis uncolored
 tmr_mstimeoutis uncolored
 tmr_runis uncolored
+
 tmr_cancelis uncolored
 tmr_resetis uncolored
 tmr_cleanupis uncolored
@@ -2757,6 +2765,7 @@ tdate_parseis uncolored
 scan_monis uncolored
 mainis uncolored
 parse_argsis uncolored
+
 lookup_hostnameis uncolored
 read_throttlefileis uncolored
 handle_termis uncolored
@@ -2767,6 +2776,7 @@ handle_usr2is uncolored
 handle_alrmis uncolored
 occasionalis uncolored
 idleis uncolored
+
 update_throttlesis uncolored
 show_statsis uncolored
 re_open_logfileis uncolored
@@ -2777,6 +2787,7 @@ handle_readis uncolored
 handle_sendis uncolored
 handle_lingeris uncolored
 shut_downis uncolored
+
 read_configis uncolored
 usageis uncolored
 e_strdupis uncolored
@@ -2787,6 +2798,7 @@ really_clear_connectionis uncolored
 check_throttlesis uncolored
 wakeup_connectionis uncolored
 no_value_requiredis uncolored
+
 value_requiredis uncolored
 thttpd_logstatsis uncolored
 de_dotdotis uncolored

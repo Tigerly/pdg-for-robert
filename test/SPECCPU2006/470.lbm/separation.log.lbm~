@@ -56,10 +56,15 @@ LBM_compareVelocityField
 
 7 insensitive functions:
 
-MAIN_parseCommandLine
+MAIN_parseCommandLine   call void @MAIN_parseCommandLine(i32 %0, i8** %1, %struct.MAIN_Param* %param)
 storeValue
 loadValue
 LBM_allocateGrid
+
+  call void @LBM_allocateGrid(double** bitcast ([26000000 x double]** @srcGrid to double**))
+  call void @LBM_allocateGrid(double** bitcast ([26000000 x double]** @dstGrid to double**))
+
+
 LBM_freeGrid
 LBM_swapGrids
 MAIN_printInfo

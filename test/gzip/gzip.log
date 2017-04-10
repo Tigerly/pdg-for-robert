@@ -1,0 +1,2106 @@
+file parameter: test/gzip.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 167
+======Global List: ======
+PDG 5.988024e-01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 359 Function: bi_init
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 6
+PDG 1.197605e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_bits
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_bits
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 465 Function: send_bits
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 13
+PDG 1.796407e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_reverse
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_reverse
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 493 Function: bi_reverse
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 16
+PDG 2.395210e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_windup
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:bi_windup
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 574 Function: bi_windup
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 21
+PDG 2.994012e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 731 Function: copy_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 36
+PDG 3.592814e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lm_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lm_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 848 Function: lm_init
+computerDependencies DEBUG 1
+call_func = null:   %call = call i32 %17(i8* getelementptr inbounds ([65536 x i8]* @window, i32 0, i32 0), i32 65536)
+indirect call, called Type t = i32 (i8*, i32)*
+afte cast<FunctionType>, ft = i32 (i8*, i32)
+file_read function pointer! 
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 59
+llvm.memset.p0i8.i64 is defined outside!
+PDG 4.191617e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:deflate
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:deflate
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1216 Function: deflate
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 79
+llvm.memcpy.p0i8.p0i8.i64 is defined outside!
+PDG 4.790419e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fill_window
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fill_window
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1430 Function: fill_window
+computerDependencies DEBUG 1
+call_func = null:   %call = call i32 %27(i8* %add.ptr48, i32 %30)
+indirect call, called Type t = i32 (i8*, i32)*
+afte cast<FunctionType>, ft = i32 (i8*, i32)
+file_read function pointer! 
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 86
+PDG 5.389222e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:deflate_fast
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:deflate_fast
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1682 Function: deflate_fast
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 100
+PDG 5.988024e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:longest_match
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:longest_match
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 1985 Function: longest_match
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 143
+PDG 6.586826e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:rsync_roll
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:rsync_roll
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2070 Function: rsync_roll
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 149
+PDG 7.185629e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2479 Function: main
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 210
+strlen is defined outside!
+strcmp is defined outside!
+getopt_long is defined outside!
+rpl_fprintf is defined outside!
+free is defined outside!
+atoi is defined outside!
+close is defined outside!
+strcpy is defined outside!
+rpl_fflush is defined outside!
+fdatasync is defined outside!
+__errno_location is defined outside!
+PDG 7.784431e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:abort_gzip
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:abort_gzip
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2522 Function: abort_gzip
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 210
+sigprocmask is defined outside!
+rpl_fclose is defined outside!
+exit is defined outside!
+sigemptyset is defined outside!
+sigaction is defined outside!
+sigaddset is defined outside!
+sigismember is defined outside!
+_exit is defined outside!
+signal is defined outside!
+raise is defined outside!
+rpl_printf is defined outside!
+lseek is defined outside!
+read is defined outside!
+localtime is defined outside!
+get_stat_mtime is defined outside!
+fsync is defined outside!
+last_component is defined outside!
+unlinkat is defined outside!
+perror is defined outside!
+memcmp is defined outside!
+get_stat_atime is defined outside!
+fdutimens is defined outside!
+fchmod is defined outside!
+fchown is defined outside!
+openat_safer is defined outside!
+isatty is defined outside!
+yesno is defined outside!
+strrchr is defined outside!
+strcspn is defined outside!
+open_safer is defined outside!
+llvm.memmove.p0i8.p0i8.i64 is defined outside!
+strcat is defined outside!
+fdopendir is defined outside!
+streamsavedir is defined outside!
+closedir is defined outside!
+fstat is defined outside!
+gettime is defined outside!
+PDG 8.383234e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:try_help
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:try_help
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2531 Function: try_help
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 210
+PDG 8.982036e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:help
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:help
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2550 Function: help
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 215
+PDG 9.580838e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish_out
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:finish_out
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2560 Function: finish_out
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 215
+PDG 1.017964e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:license
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:license
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2580 Function: license
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 221
+PDG 1.077844e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:version
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:version
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2585 Function: version
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 221
+PDG 1.137725e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_exit
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_exit
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2602 Function: do_exit
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 224
+PDG 1.197605e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:install_signal_handlers
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:install_signal_handlers
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 2673 Function: install_signal_handlers
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 235
+PDG 1.257485e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_file
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_file
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3127 Function: treat_file
+computerDependencies DEBUG 1
+call_func = null:   %call145 = call i32 %81(i32 %82, i32 %83)
+indirect call, called Type t = i32 (i32, i32)*
+afte cast<FunctionType>, ft = i32 (i32, i32)
+fchmod function pointer! 
+bi_reverse function pointer! 
+lzw function pointer! 
+ct_tally function pointer! 
+unlzh function pointer! 
+unlzw function pointer! 
+unpack function pointer! 
+unzip function pointer! 
+copy function pointer! 
+zip function pointer! 
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 264
+PDG 1.317365e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_stdin
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_stdin
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3472 Function: treat_stdin
+computerDependencies DEBUG 1
+call_func = null:   %call55 = call i32 %34(i32 0, i32 1)
+indirect call, called Type t = i32 (i32, i32)*
+afte cast<FunctionType>, ft = i32 (i32, i32)
+fchmod function pointer! 
+bi_reverse function pointer! 
+lzw function pointer! 
+ct_tally function pointer! 
+unlzh function pointer! 
+unlzw function pointer! 
+unpack function pointer! 
+unzip function pointer! 
+copy function pointer! 
+zip function pointer! 
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 266
+PDG 1.377246e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_list
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_list
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3766 Function: do_list
+computerDependencies DEBUG 1
+OS.str() = %struct._IO_FILE* FILE* appears, stop buildTypeTree
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 290
+PDG 1.437126e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:remove_output_file
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:remove_output_file
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3824 Function: remove_output_file
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 291
+PDG 1.497006e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:abort_gzip_signal
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:abort_gzip_signal
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3841 Function: abort_gzip_signal
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 292
+PDG 1.556886e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:open_input_file
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:open_input_file
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 3985 Function: open_input_file
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 316
+PDG 1.616766e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_dir
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:treat_dir
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4212 Function: treat_dir
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 330
+PDG 1.676647e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_ofname
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_ofname
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 4335 Function: make_ofname
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 334
+PDG 1.736527e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:get_method
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:get_method
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5115 Function: get_method
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 396
+PDG 1.796407e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:create_outfile
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:create_outfile
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5317 Function: create_outfile
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 408
+PDG 1.856287e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:input_eof
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:input_eof
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5359 Function: input_eof
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 409
+PDG 1.916168e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_stat
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy_stat
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5501 Function: copy_stat
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 428
+PDG 1.976048e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:atdir_eq
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:atdir_eq
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5549 Function: atdir_eq
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 433
+PDG 2.035928e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:progerror
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:progerror
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5566 Function: progerror
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 438
+PDG 2.095808e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:open_and_stat
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:open_and_stat
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5644 Function: open_and_stat
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 455
+PDG 2.155689e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:get_suffix
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:get_suffix
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5784 Function: get_suffix
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 477
+PDG 2.215569e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:discard_input_bytes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:discard_input_bytes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5833 Function: discard_input_bytes
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 481
+PDG 2.275449e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:atdir_set
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:atdir_set
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 5871 Function: atdir_set
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 485
+PDG 2.335329e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:shorten_name
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:shorten_name
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6030 Function: shorten_name
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 511
+PDG 2.395210e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_ofname
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_ofname
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6088 Function: check_ofname
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 513
+PDG 2.455090e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_chown
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:do_chown
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6109 Function: do_chown
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 519
+PDG 2.514970e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6157 Function: inflate
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 526
+malloc is defined outside!
+PDG 2.574850e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6288 Function: inflate_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 536
+PDG 2.634731e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_dynamic
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_dynamic
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 6915 Function: inflate_dynamic
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 575
+PDG 2.694611e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_stored
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_stored
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 7286 Function: inflate_stored
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 584
+PDG 2.754491e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_fixed
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_fixed
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 7404 Function: inflate_fixed
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 595
+PDG 2.814371e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huft_build
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huft_build
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8087 Function: huft_build
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 693
+PDG 2.874251e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huft_free
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huft_free
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8120 Function: huft_free
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 702
+PDG 2.934132e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_codes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:inflate_codes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8695 Function: inflate_codes
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 754
+PDG 2.994012e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lzw
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:lzw
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8731 Function: lzw
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 758
+PDG 3.053892e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ct_init
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ct_init
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 8988 Function: ct_init
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 794
+PDG 3.113772e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9178 Function: flush_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 811
+PDG 3.173653e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ct_tally
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:ct_tally
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9521 Function: ct_tally
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 831
+PDG 3.233533e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gen_codes
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gen_codes
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9600 Function: gen_codes
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 843
+PDG 3.293413e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9663 Function: init_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 848
+PDG 3.353293e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:set_file_type
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:set_file_type
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 9738 Function: set_file_type
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 856
+PDG 3.413174e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_tree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_tree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10004 Function: build_tree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 897
+PDG 3.473054e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_bl_tree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_bl_tree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10134 Function: build_bl_tree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 900
+PDG 3.532934e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compress_block
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:compress_block
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10381 Function: compress_block
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 930
+PDG 3.592814e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_all_trees
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_all_trees
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10451 Function: send_all_trees
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 936
+PDG 3.652695e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pqdownheap
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:pqdownheap
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10666 Function: pqdownheap
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 966
+PDG 3.712575e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gen_bitlen
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gen_bitlen
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 10977 Function: gen_bitlen
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1011
+PDG 3.772455e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_tree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:scan_tree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11119 Function: scan_tree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1029
+PDG 3.832335e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_tree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:send_tree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11289 Function: send_tree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1048
+PDG 3.892216e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unlzh
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unlzh
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11351 Function: unlzh
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1052
+PDG 3.952096e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_start
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_start
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11370 Function: decode_start
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1053
+PDG 4.011976e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11482 Function: decode
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1065
+PDG 4.071856e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huf_decode_start
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:huf_decode_start
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11486 Function: huf_decode_start
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1066
+PDG 4.131737e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_c
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_c
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11559 Function: decode_c
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1074
+PDG 4.191617e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_p
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:decode_p
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11649 Function: decode_p
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1080
+PDG 4.251497e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_getbits
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:init_getbits
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11659 Function: init_getbits
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1082
+PDG 4.311377e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getbits
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:getbits
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11677 Function: getbits
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1084
+PDG 4.371257e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_pt_len
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_pt_len
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 11819 Function: read_pt_len
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1096
+PDG 4.431138e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_c_len
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_c_len
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 12000 Function: read_c_len
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1109
+PDG 4.491018e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fillbuf
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fillbuf
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 12078 Function: fillbuf
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1111
+PDG 4.550898e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_table
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_table
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 12404 Function: make_table
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1156
+PDG 4.610778e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unlzw
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unlzw
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 12933 Function: unlzw
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1198
+PDG 4.670659e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unpack
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unpack
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13132 Function: unpack
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1216
+PDG 4.730539e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_tree
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_tree
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13275 Function: read_tree
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1229
+PDG 4.790419e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_tree175
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:build_tree175
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13376 Function: build_tree175
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1240
+PDG 4.850299e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_byte
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_byte
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13402 Function: read_byte
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1242
+PDG 4.910180e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_zipfile
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:check_zipfile
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 13536 Function: check_zipfile
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1260
+PDG 4.970060e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unzip
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:unzip
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14055 Function: unzip
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1308
+PDG 5.029940e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:copy
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14121 Function: copy
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1312
+PDG 5.089820e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_buf
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_buf
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14166 Function: write_buf
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1318
+PDG 5.149701e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14238 Function: read_buffer
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1326
+PDG 5.209581e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_error
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:read_error
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14260 Function: read_error
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1329
+PDG 5.269461e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:updcrc
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:updcrc
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14306 Function: updcrc
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1337
+PDG 5.329341e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_bufs
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:clear_bufs
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14313 Function: clear_bufs
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1337
+PDG 5.389222e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fill_inbuf
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fill_inbuf
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14370 Function: fill_inbuf
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1342
+PDG 5.449102e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_window
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_window
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14398 Function: flush_window
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1342
+rpl_fcntl is defined outside!
+PDG 5.508982e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_outbuf
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:flush_outbuf
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14424 Function: flush_outbuf
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1342
+PDG 5.568862e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_error
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_error
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14445 Function: write_error
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1345
+PDG 5.628743e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlwr
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:strlwr
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14488 Function: strlwr
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1357
+__ctype_b_loc is defined outside!
+tolower is defined outside!
+PDG 5.688623e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gzip_base_name
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gzip_base_name
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14503 Function: gzip_base_name
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1362
+PDG 5.748503e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xunlink
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xunlink
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14512 Function: xunlink
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1365
+unlink is defined outside!
+PDG 5.808383e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_simple_name
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:make_simple_name
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14548 Function: make_simple_name
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1372
+PDG 5.868263e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_envopt
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:add_envopt
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14676 Function: add_envopt
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1414
+getenv is defined outside!
+xstrdup is defined outside!
+strspn is defined outside!
+xcalloc is defined outside!
+PDG 5.928144e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gzip_error
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:gzip_error
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14686 Function: gzip_error
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1416
+PDG 5.988024e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xalloc_die
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:xalloc_die
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14693 Function: xalloc_die
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1416
+PDG 6.047904e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:warning
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:warning
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14710 Function: warning
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1418
+PDG 6.107784e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:display_ratio
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:display_ratio
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14732 Function: display_ratio
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1422
+PDG 6.167665e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fprint_off
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:fprint_off
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14820 Function: fprint_off
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1433
+_IO_putc is defined outside!
+write is defined outside!
+PDG 6.227545e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:write_buffer
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 14839 Function: write_buffer
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1437
+PDG 6.287425e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:zip
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:zip
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15357 Function: zip
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1482
+PDG 6.347305e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:file_read
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:file_read
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 15420 Function: file_read
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 1487
+
+
+ PDG construction completed! ^_^
+
+funcs = 106
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 346
+sensitive_nodes.size = 0
+queue.size = 0
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+try_helpis uncolored
+helpis uncolored
+finish_outis uncolored
+licenseis uncolored
+progerroris uncolored
+versionis uncolored
+do_exitis uncolored
+install_signal_handlersis uncolored
+treat_fileis uncolored
+treat_stdinis uncolored
+do_listis uncolored
+remove_output_fileis uncolored
+abort_gzip_signalis uncolored
+open_input_fileis uncolored
+bi_initis uncolored
+send_bitsis uncolored
+bi_reverseis uncolored
+bi_windupis uncolored
+copy_blockis uncolored
+lm_initis uncolored
+deflateis uncolored
+fill_windowis uncolored
+deflate_fastis uncolored
+longest_matchis uncolored
+rsync_rollis uncolored
+mainis uncolored
+abort_gzipis uncolored
+treat_diris uncolored
+make_ofnameis uncolored
+get_methodis uncolored
+create_outfileis uncolored
+input_eofis uncolored
+copy_statis uncolored
+atdir_eqis uncolored
+decode_startis uncolored
+decodeis uncolored
+open_and_statis uncolored
+get_suffixis uncolored
+discard_input_bytesis uncolored
+atdir_setis uncolored
+shorten_nameis uncolored
+check_ofnameis uncolored
+do_chownis uncolored
+inflateis uncolored
+inflate_blockis uncolored
+inflate_dynamicis uncolored
+inflate_storedis uncolored
+inflate_fixedis uncolored
+huft_buildis uncolored
+huft_freeis uncolored
+inflate_codesis uncolored
+lzwis uncolored
+ct_initis uncolored
+flush_blockis uncolored
+ct_tallyis uncolored
+gen_codesis uncolored
+init_blockis uncolored
+set_file_typeis uncolored
+build_treeis uncolored
+build_bl_treeis uncolored
+compress_blockis uncolored
+send_all_treesis uncolored
+pqdownheapis uncolored
+gen_bitlenis uncolored
+scan_treeis uncolored
+send_treeis uncolored
+unlzhis uncolored
+huf_decode_startis uncolored
+decode_cis uncolored
+decode_pis uncolored
+init_getbitsis uncolored
+getbitsis uncolored
+read_pt_lenis uncolored
+read_c_lenis uncolored
+fillbufis uncolored
+make_tableis uncolored
+unlzwis uncolored
+unpackis uncolored
+read_treeis uncolored
+build_tree175is uncolored
+read_byteis uncolored
+check_zipfileis uncolored
+unzipis uncolored
+copyis uncolored
+write_bufis uncolored
+read_bufferis uncolored
+read_erroris uncolored
+updcrcis uncolored
+clear_bufsis uncolored
+fill_inbufis uncolored
+flush_windowis uncolored
+flush_outbufis uncolored
+write_erroris uncolored
+strlwris uncolored
+gzip_base_nameis uncolored
+xunlinkis uncolored
+make_simple_nameis uncolored
+add_envoptis uncolored
+gzip_erroris uncolored
+xalloc_dieis uncolored
+warningis uncolored
+DEBUG LINE 711 struct._IO_marker*/struct._IO_FILE* 
+display_ratio hasFuncOrFilePtr()
+display_ratiois uncolored
+DEBUG LINE 711 struct._IO_marker*/struct._IO_FILE* 
+fprint_off hasFuncOrFilePtr()
+fprint_offis uncolored
+write_bufferis uncolored
+zipis uncolored
+file_readis uncolored
+non-library functions in total: 106
+sen_FuncSet  : 0
+ins_FuncSet  : 106
+functions count = 106
+Writing 'pdgragh.bi_init.dot'...instW 0x0
+
+Writing 'pdgragh.send_bits.dot'...instW 0x0
+
+Writing 'pdgragh.bi_reverse.dot'...instW 0x0
+
+Writing 'pdgragh.bi_windup.dot'...instW 0x0
+
+Writing 'pdgragh.copy_block.dot'...instW 0x0
+
+Writing 'pdgragh.lm_init.dot'...instW 0x0
+
+Writing 'pdgragh.deflate.dot'...instW 0x0
+
+Writing 'pdgragh.fill_window.dot'...instW 0x0
+
+Writing 'pdgragh.deflate_fast.dot'...instW 0x0
+
+Writing 'pdgragh.longest_match.dot'...instW 0x0
+
+Writing 'pdgragh.rsync_roll.dot'...instW 0x0
+
+Writing 'pdgragh.main.dot'...instW 0x0
+
+Writing 'pdgragh.abort_gzip.dot'...instW 0x0
+
+Writing 'pdgragh.try_help.dot'...instW 0x0
+
+Writing 'pdgragh.help.dot'...instW 0x0
+
+Writing 'pdgragh.finish_out.dot'...instW 0x0
+
+Writing 'pdgragh.license.dot'...instW 0x0
+
+Writing 'pdgragh.version.dot'...instW 0x0
+
+Writing 'pdgragh.do_exit.dot'...instW 0x0
+
+Writing 'pdgragh.install_signal_handlers.dot'...instW 0x0
+
+Writing 'pdgragh.treat_file.dot'...instW 0x0
+
+Writing 'pdgragh.treat_stdin.dot'...instW 0x0
+
+Writing 'pdgragh.do_list.dot'...instW 0x0
+
+Writing 'pdgragh.remove_output_file.dot'...instW 0x0
+
+Writing 'pdgragh.abort_gzip_signal.dot'...instW 0x0
+
+Writing 'pdgragh.open_input_file.dot'...instW 0x0
+
+Writing 'pdgragh.treat_dir.dot'...instW 0x0
+
+Writing 'pdgragh.make_ofname.dot'...instW 0x0
+
+Writing 'pdgragh.get_method.dot'...instW 0x0
+
+Writing 'pdgragh.create_outfile.dot'...instW 0x0
+
+Writing 'pdgragh.input_eof.dot'...instW 0x0
+
+Writing 'pdgragh.copy_stat.dot'...instW 0x0
+
+Writing 'pdgragh.atdir_eq.dot'...instW 0x0
+
+Writing 'pdgragh.progerror.dot'...instW 0x0
+
+Writing 'pdgragh.open_and_stat.dot'...instW 0x0
+
+Writing 'pdgragh.get_suffix.dot'...instW 0x0
+
+Writing 'pdgragh.discard_input_bytes.dot'...instW 0x0
+
+Writing 'pdgragh.atdir_set.dot'...instW 0x0
+
+Writing 'pdgragh.shorten_name.dot'...instW 0x0
+
+Writing 'pdgragh.check_ofname.dot'...instW 0x0
+
+Writing 'pdgragh.do_chown.dot'...instW 0x0
+
+Writing 'pdgragh.inflate.dot'...instW 0x0
+
+Writing 'pdgragh.inflate_block.dot'...instW 0x0
+
+Writing 'pdgragh.inflate_dynamic.dot'...instW 0x0
+
+Writing 'pdgragh.inflate_stored.dot'...instW 0x0
+
+Writing 'pdgragh.inflate_fixed.dot'...instW 0x0
+
+Writing 'pdgragh.huft_build.dot'...instW 0x0
+
+Writing 'pdgragh.huft_free.dot'...instW 0x0
+
+Writing 'pdgragh.inflate_codes.dot'...instW 0x0
+
+Writing 'pdgragh.lzw.dot'...instW 0x0
+
+Writing 'pdgragh.ct_init.dot'...instW 0x0
+
+Writing 'pdgragh.flush_block.dot'...instW 0x0
+
+Writing 'pdgragh.ct_tally.dot'...instW 0x0
+
+Writing 'pdgragh.gen_codes.dot'...instW 0x0
+
+Writing 'pdgragh.init_block.dot'...instW 0x0
+
+Writing 'pdgragh.set_file_type.dot'...instW 0x0
+
+Writing 'pdgragh.build_tree.dot'...instW 0x0
+
+Writing 'pdgragh.build_bl_tree.dot'...instW 0x0
+
+Writing 'pdgragh.compress_block.dot'...instW 0x0
+
+Writing 'pdgragh.send_all_trees.dot'...instW 0x0
+
+Writing 'pdgragh.pqdownheap.dot'...instW 0x0
+
+Writing 'pdgragh.gen_bitlen.dot'...instW 0x0
+
+Writing 'pdgragh.scan_tree.dot'...instW 0x0
+
+Writing 'pdgragh.send_tree.dot'...instW 0x0
+
+Writing 'pdgragh.unlzh.dot'...instW 0x0
+
+Writing 'pdgragh.decode_start.dot'...instW 0x0
+
+Writing 'pdgragh.decode.dot'...instW 0x0
+
+Writing 'pdgragh.huf_decode_start.dot'...instW 0x0
+
+Writing 'pdgragh.decode_c.dot'...instW 0x0
+
+Writing 'pdgragh.decode_p.dot'...instW 0x0
+
+Writing 'pdgragh.init_getbits.dot'...instW 0x0
+
+Writing 'pdgragh.getbits.dot'...instW 0x0
+
+Writing 'pdgragh.read_pt_len.dot'...instW 0x0
+
+Writing 'pdgragh.read_c_len.dot'...instW 0x0
+
+Writing 'pdgragh.fillbuf.dot'...instW 0x0
+
+Writing 'pdgragh.make_table.dot'...instW 0x0
+
+Writing 'pdgragh.unlzw.dot'...instW 0x0
+
+Writing 'pdgragh.unpack.dot'...instW 0x0
+
+Writing 'pdgragh.read_tree.dot'...instW 0x0
+
+Writing 'pdgragh.build_tree175.dot'...instW 0x0
+
+Writing 'pdgragh.read_byte.dot'...instW 0x0
+
+Writing 'pdgragh.check_zipfile.dot'...instW 0x0
+
+Writing 'pdgragh.unzip.dot'...instW 0x0
+
+Writing 'pdgragh.copy.dot'...instW 0x0
+
+Writing 'pdgragh.write_buf.dot'...instW 0x0
+
+Writing 'pdgragh.read_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.read_error.dot'...instW 0x0
+
+Writing 'pdgragh.updcrc.dot'...instW 0x0
+
+Writing 'pdgragh.clear_bufs.dot'...instW 0x0
+
+Writing 'pdgragh.fill_inbuf.dot'...instW 0x0
+
+Writing 'pdgragh.flush_window.dot'...instW 0x0
+
+Writing 'pdgragh.flush_outbuf.dot'...instW 0x0
+
+Writing 'pdgragh.write_error.dot'...instW 0x0
+
+Writing 'pdgragh.strlwr.dot'...instW 0x0
+
+Writing 'pdgragh.gzip_base_name.dot'...instW 0x0
+
+Writing 'pdgragh.xunlink.dot'...instW 0x0
+
+Writing 'pdgragh.make_simple_name.dot'...instW 0x0
+
+Writing 'pdgragh.add_envopt.dot'...instW 0x0
+
+Writing 'pdgragh.gzip_error.dot'...instW 0x0
+
+Writing 'pdgragh.xalloc_die.dot'...instW 0x0
+
+Writing 'pdgragh.warning.dot'...instW 0x0
+
+Writing 'pdgragh.display_ratio.dot'...instW 0x0
+
+Writing 'pdgragh.fprint_off.dot'...instW 0x0
+
+Writing 'pdgragh.write_buffer.dot'...instW 0x0
+
+Writing 'pdgragh.zip.dot'...instW 0x0
+
+Writing 'pdgragh.file_read.dot'...instW 0x0
+
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 610.2440 seconds (611.2533 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+  603.4680 ( 99.1%)   1.2600 ( 96.9%)  604.7280 ( 99.1%)  605.5988 ( 99.1%)  Print instruction-level program dependency graph of function to 'dot' file
+   4.9360 (  0.8%)   0.0320 (  2.5%)   4.9680 (  0.8%)   4.9993 (  0.8%)  Program Dependency Graph
+   0.3640 (  0.1%)   0.0000 (  0.0%)   0.3640 (  0.1%)   0.3599 (  0.1%)  Data Dependency Graph
+   0.0080 (  0.0%)   0.0000 (  0.0%)   0.0080 (  0.0%)   0.0834 (  0.0%)  Bitcode Writer
+   0.0480 (  0.0%)   0.0080 (  0.6%)   0.0560 (  0.0%)   0.0829 (  0.0%)  Local Data Structure Analysis
+   0.0440 (  0.0%)   0.0000 (  0.0%)   0.0440 (  0.0%)   0.0425 (  0.0%)  Compute DSNode equivalence classes
+   0.0320 (  0.0%)   0.0000 (  0.0%)   0.0320 (  0.0%)   0.0322 (  0.0%)  Top-down Data Structure Analysis
+   0.0280 (  0.0%)   0.0000 (  0.0%)   0.0280 (  0.0%)   0.0294 (  0.0%)  Bottom-up Data Structure Analysis
+   0.0120 (  0.0%)   0.0000 (  0.0%)   0.0120 (  0.0%)   0.0110 (  0.0%)  Standard Library Local Data Structure Analysis
+   0.0040 (  0.0%)   0.0000 (  0.0%)   0.0040 (  0.0%)   0.0061 (  0.0%)  Module Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0027 (  0.0%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0016 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0015 (  0.0%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0014 (  0.0%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0004 (  0.0%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+  608.9440 (100.0%)   1.3000 (100.0%)  610.2440 (100.0%)  611.2533 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0120 seconds (0.1870 wall clock)
+
+   ---User Time---   --System Time--   --User+System--   ---Wall Time---  --- Name ---
+   0.0080 (100.0%)   0.0040 (100.0%)   0.0120 (100.0%)   0.1870 (100.0%)  Parse IR
+   0.0080 (100.0%)   0.0040 (100.0%)   0.0120 (100.0%)   0.1870 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

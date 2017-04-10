@@ -1,0 +1,213 @@
+file parameter: test/chfn/chfn.bc
+Pass Arguments:  -targetlibinfo -datalayout -notti -basictti -x86tti -no-aa -ata -dsa-local -alloc-identify -dsa-stdlib -dsa-bu -dsa-td -dsa-aa -dsnodeequivs -smack-ds-aa -pdg -dot-pdg -verify -verify-di
+Target Library Information
+Data Layout
+No target information
+Target independent code generator's TTI
+X86 Target Transform Info
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    Identify Address Taken Functions
+    Local Data Structure Analysis
+    Allocator Identification Analysis (find malloc/free wrappers)
+      Unnamed pass: implement Pass::getPassName()
+    Standard Library Local Data Structure Analysis
+    Bottom-up Data Structure Analysis
+    Top-down Data Structure Analysis
+    Data Structure Analysis Alias Analysis
+    Compute DSNode equivalence classes
+    Smack - Data Structure Analysis Alias Analysis
+    Program Dependency Graph
+      Unnamed pass: implement Pass::getPassName()
+    FunctionPass Manager
+      Print instruction-level program dependency graph of function to 'dot' file
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+Pass Arguments:  -domtree -loops
+  FunctionPass Manager
+    Dominator Tree Construction
+    Natural Loop Information
+Pass Arguments:  -postdomtree -cdg -fda -ddg
+  FunctionPass Manager
+    Post-Dominator Tree Construction
+    Control Dependency Graph
+    Flow  Dependence Analysis
+    Data Dependency Graph
+ProgramDependencyGraph::runOnModule
+funcMap size = 19
+======Global List: ======
+PDG 5.263158e+00% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:_auth
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:_auth
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 138 Function: _auth
+computerDependencies DEBUG 1
+Intrinsic var_annotation:   %shadow1 = bitcast %struct._IO_FILE** %shadow to i8*
+******** BitInst opcode:   %shadow1 = bitcast %struct._IO_FILE** %shadow to i8*BitCast 
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 20
+llvm.var.annotation is defined outside!
+fopen is defined outside!
+fprintf is defined outside!
+fgetc is defined outside!
+__ctype_b_loc is defined outside!
+strncmp is defined outside!
+fclose is defined outside!
+PDG 1.052632e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:auth
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 224 Function: auth
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 32
+printf is defined outside!
+PDG 1.578947e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:_changeFn
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:_changeFn
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 303 Function: _changeFn
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 46
+strlen is defined outside!
+malloc is defined outside!
+llvm.memset.p0i8.i64 is defined outside!
+strcpy is defined outside!
+strcat is defined outside!
+exit is defined outside!
+PDG 2.105263e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:changeFn
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:changeFn
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 348 Function: changeFn
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 52
+PDG 2.631579e+01% completed
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+FlowDependenceAnalysis::runOnFunction Local Deps: 0
+Local Deps: 0
+++++++++++++++++++++++++++++++ DataDependency::runOnFunction +++++++++++++++++++++++++++++
+Function name:main
+After getAnalysis<FlowDependenceAnalysis>()
+ CDG.cpp after insert nodes.size 369 Function: main
+computerDependencies DEBUG 1
+------------------------DEBUG finding CallInst---------------------------
+allPtrSet.size = 53
+
+
+ PDG construction completed! ^_^
+
+funcs = 5
++++++++++++++++++++++++++++++++++++++++++++++
+globalList.size = 18
+sensitive_values 0 ==   %shadow = alloca %struct._IO_FILE*, align 8
+sensitive_nodes.size = 1
+queue.size = 1
+
+
+++++++++++SENSITIVE INSTRUCTION List is as follows:++++++++++
+
+SENSITIVE INSTRUCTION [0] Mem Addr :0x30ac4b8 Value :   %shadow = alloca %struct._IO_FILE*, align 8
+SENSITIVE INSTRUCTION [1] Mem Addr :0x30ac7b8 Value :   %shadow1 = bitcast %struct._IO_FILE** %shadow to i8*
+SENSITIVE INSTRUCTION [2] Mem Addr :0x30ac888 Value :   call void @llvm.var.annotation(i8* %shadow1, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str1, i32 0, i32 0), i32 25)
+SENSITIVE INSTRUCTION [3] Mem Addr :0x30ac9d0 Value :   store %struct._IO_FILE* %call, %struct._IO_FILE** %shadow, align 8
+SENSITIVE INSTRUCTION [4] Mem Addr :0x30aca48 Value :   %0 = load %struct._IO_FILE** %shadow, align 8
+SENSITIVE INSTRUCTION [5] Mem Addr :0x30acad0 Value :   %cmp = icmp eq %struct._IO_FILE* null, %0
+SENSITIVE INSTRUCTION [6] Mem Addr :0x30acb78 Value :   br i1 %cmp, label %if.then, label %if.end
+SENSITIVE INSTRUCTION [7] Mem Addr :0x30bf668 Value :   %3 = load %struct._IO_FILE** %shadow, align 8
+SENSITIVE INSTRUCTION [8] Mem Addr :0x30bf6f0 Value :   %call4 = call i32 @fgetc(%struct._IO_FILE* %3)
+SENSITIVE INSTRUCTION [9] Mem Addr :0x30c1528 Value :   %13 = load %struct._IO_FILE** %shadow, align 8
+SENSITIVE INSTRUCTION [10] Mem Addr :0x30c15b0 Value :   %call20 = call i32 @fgetc(%struct._IO_FILE* %13)
+SENSITIVE INSTRUCTION [11] Mem Addr :0x30c3968 Value :   %25 = load %struct._IO_FILE** %shadow, align 8
+SENSITIVE INSTRUCTION [12] Mem Addr :0x30c39f0 Value :   %call45 = call i32 @fclose(%struct._IO_FILE* %25)
+
+
+++++++++++The FUNCTION List is as follows:++++++++++
+
+changeFnis uncolored
+mainis uncolored
+authis uncolored
+_changeFnis uncolored
+_auth is colored(sensitive)
+func name = _auth
+non-library functions in total: 5
+sen_FuncSet  : 1
+ins_FuncSet  : 4
+functions count = 5
+Writing 'pdgragh._auth.dot'...
+Writing 'pdgragh.auth.dot'...
+Writing 'pdgragh._changeFn.dot'...
+Writing 'pdgragh.changeFn.dot'...
+Writing 'pdgragh.main.dot'...
+===-------------------------------------------------------------------------===
+                      ... Pass execution timing report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0400 seconds (0.1055 wall clock)
+
+   ---User Time---   --User+System--   ---Wall Time---  --- Name ---
+   0.0080 ( 20.0%)   0.0080 ( 20.0%)   0.0552 ( 52.3%)  Program Dependency Graph
+   0.0080 ( 20.0%)   0.0080 ( 20.0%)   0.0244 ( 23.1%)  Local Data Structure Analysis
+   0.0240 ( 60.0%)   0.0240 ( 60.0%)   0.0189 ( 17.9%)  Print instruction-level program dependency graph of function to 'dot' file
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0021 (  2.0%)  Data Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0015 (  1.4%)  Top-down Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0015 (  1.4%)  Bottom-up Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0009 (  0.9%)  Standard Library Local Data Structure Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.3%)  Compute DSNode equivalence classes
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0003 (  0.2%)  Bitcode Writer
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.1%)  Module Verifier
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.1%)  Smack - Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.1%)  Identify Address Taken Functions
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.1%)  Flow  Dependence Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.1%)  Post-Dominator Tree Construction
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0001 (  0.0%)  Allocator Identification Analysis (find malloc/free wrappers)
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Control Dependency Graph
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Data Structure Analysis Alias Analysis
+   0.0000 (  0.0%)   0.0000 (  0.0%)   0.0000 (  0.0%)  Debug Info Verifier
+   0.0400 (100.0%)   0.0400 (100.0%)   0.1055 (100.0%)  Total
+
+===-------------------------------------------------------------------------===
+                                LLVM IR Parsing
+===-------------------------------------------------------------------------===
+  Total Execution Time: 0.0000 seconds (0.0102 wall clock)
+
+   ---Wall Time---  --- Name ---
+   0.0102 (100.0%)  Parse IR
+   0.0102 (100.0%)  Total
+
+building program dependency graph...
+Done, please enter /visualization and view

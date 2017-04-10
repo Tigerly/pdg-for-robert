@@ -3,3 +3,76 @@ sensitive var: char* progName
 non-library functions in total: 100
 sensitive functions count  : 6
 insensitive functions count: 94
+
+401.bzip2.log.testing:1975:ioError is colored
+401.bzip2.log.testing:1977:panic is colored
+401.bzip2.log.testing:1979:crcError is colored
+401.bzip2.log.testing:1981:compressedStreamEOF is colored
+
+outOfMemory is colored
+uncompressStream is colored
+
+
+
+
+/*---------------------------------------------*/
+static 
+void ioError ( void )
+{
+   fprintf ( stderr,
+             "\n%s: I/O or other error, bailing out.  "
+             "Possible reason follows.\n",
+             progName );
+   perror ( progName );
+   showFileNames();
+   cleanUpAndFail( 1 );
+}
+
+/*---------------------------------------------*/
+static 
+void panic ( Char* s )
+{
+   fprintf ( stderr,
+             "\n%s: PANIC -- internal consistency error:\n"
+             "\t%s\n"
+#if defined(SPEC_CPU)
+             "\tThis is probably a BUG, but it may be in your COMPILER.  Please do not bother\n"
+             "\tthe original author.\n",
+#else
+             "\tThis is a BUG.  Please report it to me at:\n"
+             "\tjseward@bzip.org\n",
+#endif
+             progName, s );
+   showFileNames();
+   cleanUpAndFail( 3 );
+
+
+/*---------------------------------------------*/
+static 
+void crcError ( void )
+{
+   fprintf ( stderr,
+             "\n%s: Data integrity error when decompressing.\n",
+             progName );
+   showFileNames();
+   cadvise();
+   cleanUpAndFail( 2 );
+}
+}
+
+
+/*---------------------------------------------*/
+static 
+void compressedStreamEOF ( void )
+{
+  if (noisy) {
+    fprintf ( stderr,
+	      "\n%s: Compressed file ends unexpectedly;\n\t"
+	      "perhaps it is corrupted?  *Possible* reason follows.\n",
+	      progName );
+    perror ( progName );
+    showFileNames();
+    cadvise();
+  }
+  cleanUpAndFail( 2 );
+}

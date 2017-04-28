@@ -25,6 +25,8 @@ LDFLAGS=`$(LLVM_CONFIG) --ldflags` -fPIC
 
 ${BIN_TARGET} : ${OBJ}
 	${CXX} -shared ${OBJ} ${LIB} -o pdg.so $(LDFLAGS)
+#guarantee the objs will automatically be rebuilt once the source files changed.
+.PHONY : $(OBJS) 
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 #	echo "Compiling $< == S@"

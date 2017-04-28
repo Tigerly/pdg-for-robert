@@ -231,6 +231,7 @@ namespace llvm {
 	  return ret_str;	  
 	}	
 	}//end switch       
+      return ""; //default ret statement
     }//end getEdgeAttr...
   };
 }// end namespace llvm

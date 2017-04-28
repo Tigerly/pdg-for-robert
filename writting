@@ -1,6 +1,0 @@
-\paragraph{chfn}
-The simplest real program we use is a simplified version of Linux chfn which is a privileged program used in {shen \todo: cite upro paper here} for changing a user's finger information stored in the file \texttt{/etc/passwd}. We annotate the file pointer that points to \texttt{/etc/passwd} in the source code as the sensitive data because that file contains the real passwords that need better protection. After separation only the function that updates the sensitive file is colored as sensitive and should be put into the private domain. We run the original chfn and the separated chfn respectively for 100 times and calculate the extra overhead.
-
-\paragraph{ping}
-The second real program we use is the original version of ping program, which sends ICMP echo packets to a server to measure the round-trip delays and packet loss across the network paths. We annotate the buffer for composing the echo request packet as the sensitive data because the packet may contain some malicious code. 
-
